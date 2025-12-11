@@ -68,69 +68,85 @@
         <div class="flex flex-col sm:flex-row gap-4">
           <div class="flex flex-col gap-4 w-full sm:w-1/2">
 
-            <div class="dropdown relative inline-block">
-              <label class="absolute left-3 -top-0.5 bg-white px-1 text-xs z-10">Type Of Medical Provider</label>
+            <div class="dropdown relative inline-block flex-1">
+              <label class="absolute left-3 -top-0.5 bg-white px-1 text-xs z-10">Type of Medical Provider</label>
               <div
                 class="dropdown-btn flex items-center justify-between border border-primary-color rounded-md p-3 mt-2 pt-4 cursor-pointer">
-                <span class="mr-2 selected-value">select</span>
+                <span class="mr-2 selected-value">Select Medical Provider</span>
                 <span class="material-symbols-outlined dropdown-arrow">keyboard_arrow_down</span>
               </div>
               <div
                 class="dropdown-option absolute left-0 border border-primary-color bg-white text-blue-teal shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-full mt-0.5 z-20 max-h-44 overflow-y-auto scroll">
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Doctor
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="bloodtest" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Doctor</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Clinic
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="rtpcr" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Clinic</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Hospital
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Hospital</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Laboratory
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Laboratory</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Diagnostic Center
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Diagnostic Center</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Pharmacy
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Pharmacy</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Physiotherapist
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Physiotherapist</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Nurse Practitioner
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Nurse Practitioner</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Others
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Others</label>
                 </div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Type...
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <label class="flex-1">Type...</label>
                 </div>
               </div>
             </div>
           </div>
 
           <div class="flex flex-col gap-4 w-full sm:w-1/2">
-
-
-            <!-- Services You’re Interested In -->
-            <div class="dropdown relative inline-block">
+            <!--Services-->
+            <div class="dropdown relative inline-block flex-1">
               <label class="absolute left-3 -top-0.5 bg-white px-1 text-xs z-10">Services You Offer</label>
               <div
                 class="dropdown-btn flex items-center justify-between border border-primary-color rounded-md p-3 mt-2 pt-4 cursor-pointer">
-                <span class="mr-2 selected-value">select</span>
+                <span class="mr-2 selected-value">Select Service</span>
                 <span class="material-symbols-outlined dropdown-arrow">keyboard_arrow_down</span>
               </div>
               <div
                 class="dropdown-option absolute left-0 border border-primary-color bg-white text-blue-teal shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-full mt-0.5 z-20 max-h-44 overflow-y-auto scroll">
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Employee Health Plans</div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Medical Partnerships</div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Diagnostic Services</div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Ambulance Services</div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Health Camps</div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Others</div>
-                <div class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Type...</div>
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="bloodtest" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Employee Health Plans</label>
+                </div>
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="rtpcr" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Health Camps</label>
+                </div>
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <input type="checkbox" id="thyroidprofile" class="mr-2 accent-Royal-indigo">
+                  <label class="flex-1">Ambulance Services</label>
+                </div>
+
+                <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                  <label class="flex-1">Type...</label>
+                </div>
               </div>
             </div>
           </div>
@@ -185,55 +201,129 @@
           <!-- Opening Time Dropdown -->
           <div class="dropdown relative inline-block flex-1">
             <label class="absolute left-3 -top-0.5 bg-white px-1 text-xs z-10">Opening Time</label>
-
             <div
               class="dropdown-btn flex items-center justify-between border border-primary-color rounded-md p-3 mt-2 pt-4 cursor-pointer">
-              <span class="mr-2 selected-value">Select time</span>
+              <span class="mr-2 selected-value">Select Time</span>
               <span class="material-symbols-outlined dropdown-arrow">keyboard_arrow_down</span>
             </div>
-
             <div
-              class="dropdown-option absolute left-0 border border-primary-color bg-white text-blue-teal shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-full mt-0.5 z-20 max-h-44 p-4">
-              <div class="flex items-center justify-between w-full">
-                <p class="font-normal text-[17px] text-jet-black">Select Opening Time</p>
-                <div class="relative w-full sm:w-40">
-                  <input type="time" id="opening-time"
-                    class="border rounded px-3 py-2 w-full pr-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-color"
-                    min="06:00" max="23:59" value="09:00" required />
-                  <span data-target="opening-time"
-                    class="trigger-time material-symbols-outlined absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer">
-                    schedule
-                  </span>
-                </div>
+              class="dropdown-option absolute left-0 border border-primary-color bg-white text-blue-teal shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-full mt-0.5 z-20 max-h-44 overflow-y-auto scroll">
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="monday" class="mr-2 accent-Royal-indigo">
+                <label for="monday" class="flex-1">
+                  Opens at 9:00 AM
+                </label>
               </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="tuesday" class="mr-2 accent-Royal-indigo">
+                <label for="tuesday" class="flex-1">
+                  Opens at 9:00 AM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="wednesday" class="mr-2 accent-Royal-indigo">
+                <label for="wednesday" class="flex-1">
+                  Opens at 9:00 AM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="thursday" class="mr-2 accent-Royal-indigo">
+                <label for="thursday" class="flex-1">
+                  Opens at 9:00 AM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="friday" class="mr-2 accent-Royal-indigo">
+                <label for="friday" class="flex-1">
+                  Opens at 9:00 AM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="saturday" class="mr-2 accent-Royal-indigo">
+                <label for="saturday" class="flex-1">
+                  Opens at 10:00 AM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="sunday" class="mr-2 accent-Royal-indigo">
+                <label for="sunday" class="flex-1">
+                  Sunday — Closed
+                </label>
+              </div>
+
             </div>
+
           </div>
 
           <!-- Closing Time Dropdown -->
           <div class="dropdown relative inline-block flex-1">
             <label class="absolute left-3 -top-0.5 bg-white px-1 text-xs z-10">Closing Time</label>
-
             <div
               class="dropdown-btn flex items-center justify-between border border-primary-color rounded-md p-3 mt-2 pt-4 cursor-pointer">
-              <span class="mr-2 selected-value">Select time</span>
+              <span class="mr-2 selected-value">Select Time</span>
               <span class="material-symbols-outlined dropdown-arrow">keyboard_arrow_down</span>
             </div>
-
             <div
-              class="dropdown-option absolute left-0 border border-primary-color bg-white text-blue-teal shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-full mt-0.5 z-20 max-h-44 p-4">
-              <div class="flex items-center justify-between w-full">
-                <p class="font-normal text-[17px] text-jet-black">Select Closing Time</p>
-                <div class="relative w-full sm:w-40">
-                  <input type="time" id="closing-time"
-                    class="border rounded px-3 py-2 w-full pr-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-color"
-                    min="06:00" max="23:59" value="17:00" required />
-                  <span data-target="closing-time"
-                    class="trigger-time material-symbols-outlined absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 cursor-pointer">
-                    schedule
-                  </span>
-                </div>
+              class="dropdown-option absolute left-0 border border-primary-color bg-white text-blue-teal shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-full mt-0.5 z-20 max-h-44 overflow-y-auto scroll">
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="monday" class="mr-2 accent-Royal-indigo">
+                <label for="monday" class="flex-1">
+                  Closes at 5:00 PM
+                </label>
               </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="tuesday" class="mr-2 accent-Royal-indigo">
+                <label for="tuesday" class="flex-1">
+                  Closes at 5:00 PM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="wednesday" class="mr-2 accent-Royal-indigo">
+                <label for="wednesday" class="flex-1">
+                  Closes at 5:00 PM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="thursday" class="mr-2 accent-Royal-indigo">
+                <label for="thursday" class="flex-1">
+                  Closes at 5:00 PM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="friday" class="mr-2 accent-Royal-indigo">
+                <label for="friday" class="flex-1">
+                  Closes at 5:00 PM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="saturday" class="mr-2 accent-Royal-indigo">
+                <label for="saturday" class="flex-1">
+                  Closes at 2:00 PM
+                </label>
+              </div>
+
+              <div class="px-4 py-2 flex items-center hover:bg-gray-100 cursor-pointer">
+                <input type="checkbox" id="sunday" class="mr-2 accent-Royal-indigo">
+                <label for="sunday" class="flex-1">
+                  Sunday — Closed
+                </label>
+              </div>
+
             </div>
+
           </div>
         </div>
 
