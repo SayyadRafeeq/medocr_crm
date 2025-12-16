@@ -11,7 +11,7 @@ $(document).ready(function () {
         let $container = $(this).closest(".dropdown");
 
         // Update the label text with selected date
-        $container.siblings("p").text(dateText);
+        $container.find("p.font-semibold").text(dateText);
 
         // Hide the calendar after selection
         $container.find(".datepicker-container").hide();

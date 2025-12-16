@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacy</title>
+    <link href="../../public/css/output.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+</head>
+
+<body>
+    <main class="h-screen max-w-[1440px] w-full mx-auto bg-slate-white overflow-hidden">
+        <!-- Header -->
+        <div
+            class="h-[100px] w-full flex items-center justify-between p-2 bg-white md:p-5 md:shadow-[0_4px_10px_4px_rgba(0,0,0,0.15)]">
+            <!-- Logo div -->
+            <div class="w-[280px]">
+                <a href="/src/newPharmacy/home.html">
+                    <img src="/public/images/newPharmacy-logo.svg" alt="Logo" loading="lazy"
+                        class="w-[50px] h-[60px]" />
+                </a>
+            </div>
+
+            <!-- Desktop Navbar -->
+            <div class="hidden sm:block flex-1">
+                <div class="flex items-center justify-end gap-2 md:gap-4 flex-[1_0_0]">
+                    <!-- Buttons -->
+                    <div class="relative">
+                        <button
+                            class="w-full max-w-[181px] h-[32px] flex items-center justify-center gap-2 border border-deep-teal-green rounded-md text-deep-teal-green px-5 open-share-modal cursor-pointer text-18-normal">
+                            <p>HEALTH2025</p>
+                            <span class="material-symbols-outlined bold-weight">
+                                share
+                            </span>
+                        </button>
+                        <!--Share Popup-->
+                        <div id="shareModal"
+                            class="hidden absolute right-0  mt-2 bg-white shadow-lg rounded-md z-50 w-130 border border-deep-teal-green">
+                            <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
+                                <div class="flex justify-between items-center">
+                                    <p class="font-semibold text-xl">Share</p>
+                                    <span class="material-symbols-outlined close-share-modal cursor-pointer">
+                                        close
+                                    </span>
+                                </div>
+                                <hr class="text-deep-teal-green mt-4" />
+                                <div class="flex justify-between pt-4">
+                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
+                                        <img src="/public/images/whatsappicon.svg" alt="whatsapp logo"
+                                            class="w-10 h-10 cursor-pointer" />
+                                        <p class="font-normal text-base text-dark-gray">Whatsapp</p>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
+                                        <img src="/public/images/telegramicon.svg" alt="telegram logo"
+                                            class="w-10 h-10 cursor-pointer" />
+                                        <p class="font-normal text-base text-dark-gray">Telegram</p>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
+                                        <img src="/public/images/facebookicon.svg" alt="facebook logo"
+                                            class="w-10 h-10 cursor-pointer" />
+                                        <p class="font-normal text-base text-dark-gray">Facebook</p>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
+                                        <img src="/public/images/smsicon.svg" alt="sms logo"
+                                            class="w-10 h-10 cursor-pointer" />
+                                        <p class="font-normal text-base text-dark-gray">Message</p>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
+                                        <img src="/public/images/gmailicon.svg" alt="gmail logo"
+                                            class="w-10 h-10 cursor-pointer" />
+                                        <p class="font-normal text-base text-dark-gray">E-mail</p>
+                                    </div>
+                                </div>
+                                <div class="pt-4 relative mt-6">
+                                    <input type="text" id="share-link"
+                                        value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
+                                        class="w-full rounded-md p-4 font-normal text-sm border" disabled />
+                                    <button type="button"
+                                        class="copy-btn absolute right-3 top-6 bg-deep-teal-green text-white rounded-md p-2 cursor-pointer"
+                                        data-target="#share-link">
+                                        Copy
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Icons -->
+
+                    <div
+                        class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+                        <a href="/src/pharmacy/advance.html" class="has-tooltip"><img
+                                src="/public/images/walleticon.svg" alt="wallet"
+                                class="cursor-pointer w-[26px] h-[26px]" /></a>
+                        <div
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
+                            Wallet
+                        </div>
+                    </div>
+                    <div
+                        class="relative  rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+                        <a href="#" class="has-tooltip"><img src="/public/images/msgicon-nav.svg" alt="star"
+                                class="cursor-pointer" /></a>
+                        <div
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
+                            Saved
+                        </div>
+                    </div>
+                    <div
+                        class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+                        <img src="/public/images/bell.svg" alt="bell"
+                            class="cursor-pointer has-tooltip w-[26px] h-[26px]" id="bell-icon" />
+                        <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
+                        <div
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal whitespace-nowrap">
+                            Notification
+                        </div>
+                        <!--Notification Dropdown-->
+                        <div id="notificationDropdown"
+                            class="hidden absolute right-1 top-10 bg-white border border-deep-teal-green shadow-lg rounded-md z-50 w-130 h-[19.5rem] overflow-y-auto scroll">
+                            <div class="flex justify-between items-center p-4">
+                                <p class="font-semibold text-lg text-dark-gray">
+                                    Notifications
+                                </p>
+                                <span class="material-symbols-outlined cursor-pointer close-notifications">
+                                    close
+                                </span>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        You have earned 50 credit points through referral
+                                    </p>
+                                </div>
+                                <div class="bg-deep-teal-green rounded-full w-2 h-2"></div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        Profile Updated
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        Profile Updated
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        Monika Singh has requested for some medicines
+                                    </p>
+                                </div>
+                                <div class="bg-deep-teal-green rounded-full w-2 h-2"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Dropdown -->
+                    <div class="relative inline-block">
+                        <button class="profile-btn">
+                            <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-12 h-12" />
+                        </button>
+                        <!-- Dropdown -->
+                        <div class="profile-dropdown border border-light-sea-green mt-1 w-[192px] h-[118px]">
+                            <div class="p-2.5 flex items-center space-x-2.5 cursor-pointer">
+                                <img src="/public/images/user.svg" alt="User" loading="lazy"
+                                    class="w-12 h-12 rounded-full" />
+                                <div>
+                                    <p class="text-18-normal">User Name</p>
+                                </div>
+                            </div>
+                            <div class="p-2.5 hover:bg-light-sea-green-opacity">
+                                <a href="#" class="text-18-normal flex items-center space-x-2.5">
+                                    <span class="material-symbols-outlined"> logout </span>
+                                    <span>Sign out</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Navbar -->
+            <div class="block sm:hidden">
+                <div class="flex items-center gap-4">
+                    <input type="search" placeholder="Search"
+                        class="w-full max-w-[249px] h-[36px] rounded-[6px] bg-light-white border-none px-3 focus:!outline-none focus:ring-0" />
+                    <span class="material-symbols-outlined cursor-pointer text-golden-yellow">
+                        kid_star
+                    </span>
+                    <span class="material-symbols-outlined cursor-pointer">
+                        notifications
+                    </span>
+                    <!-- User Dropdown -->
+                    <div class="relative inline-block">
+                        <button class="profile-btn">
+                            <img src="/public/images/user.svg" alt="User" loading="lazy" />
+                        </button>
+
+                        <!-- Dropdown -->
+                        <div class="profile-dropdown">
+                            <div class="px-4 py-3 flex items-center space-x-3 cursor-pointer">
+                                <img src="/public/images/user.svg" alt="User" loading="lazy"
+                                    class="w-8 h-8 rounded-full" />
+                                <div>
+                                    <p class="text-sm font-normal">User Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="#"
+                                    class="px-4 py-3 text-sm hover:bg-light-sea-green-opacity flex items-center space-x-2">
+                                    <span class="material-symbols-outlined"> logout </span>
+                                    <span>Sign out</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
+            <!-- Sidebar -->
+            <aside
+                class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
+                <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
+                    <div class="relative w-full flex items-center justify-between pl-[33px]">
+                        <div class="flex flex-col items-start justify-center">
+                            <img src="/public/images/diamond-badge.svg" alt="Diamond User" loading="lazy" />
+                            <p class="text-18-normal text-dark-gray">Diamond User</p>
+                        </div>
+
+                        <div
+                            class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-teal flex items-center justify-center rounded-l-md cursor-pointer">
+                            <span class="material-symbols-outlined bold-weight text-deep-teal-green pl-2.5">
+                                arrow_back_ios
+                            </span>
+                        </div>
+                    </div>
+                    <ul
+                        class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
+                        <li>
+                            <a href="/src/newPharmacy/home.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined"> home </span>
+                                <p>Home</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/newPharmacy/orders.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <img src="/public/images/order_icon.svg" alt="">
+                                <p>Orders</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/newPharmacy/coupon.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <img src="/public/images/coupon-percent.svg" alt="">
+                                <p>Coupon</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/newPharmacy/pharmacy.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined"> medical_services </span>
+                                <p>Pharmacy</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/newPharmacy/reports.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined"> patient_list </span>
+                                <p>Reports</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/newPharmacy/settings.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined"> settings </span>
+                                <p>Settings</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <div class="w-full flex flex-col px-6">
+                        <img src="/public/images/Sale.svg" alt="Diamond User" loading="lazy" />
+                    </div>
+                </nav>
+            </aside>
+            <div
+                class="relative transition-all duration-300 main-content bg-slate-white h-full flex-1 flex flex-col gap-8 p-6 overflow-y-auto scroll">
+                <div
+                    class="show-sidebar-toggle hidden fixed top-[100px] left-12 z-50 h-10 w-10 bg-light-teal items-center justify-center rounded-r-md cursor-pointer">
+                    <span class="material-symbols-outlined bold-weight text-deep-teal-green">
+                        arrow_forward_ios
+                    </span>
+                </div>
+                <div class="bg-white p-5 rounded-[10px]">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-xl! font-semibold!">medical_services</span>
+                        <p class="font-semibold text-base">Pharmacy Details</p>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="mt-4 bg-forest-green border border-tropical-green rounded-lg p-2 flex items-center justify-between">
+                            <div class="flex flex-col gap-1">
+                                <p class="font-bold text-sm text-blue-charcoal">PharmaSell</p>
+                                <p class="font-medium text-xs text-blue-charcoal">Date: Tue, 25 June 2025 - 11:32 AM</p>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <span class="font-semibold text-xs text-deep-teal-green">Data shown: Jan 12, 2025 – Mar
+                                    14,
+                                    2025</span>
+                                <div class="relative dropdown">
+                                    <button
+                                        class="filterToggle  flex justify-center items-center border border-blue-haze rounded-md p-1 w-8 h-8 cursor-pointer">
+                                        <span class="material-symbols-outlined  text-xl!">tune</span>
+                                    </button>
+                                    <div
+                                        class="filterDropdown absolute right-0 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-44 z-10">
+                                        <div
+                                            class="p-2 pl-4 hover:bg-forest-green  rounded cursor-pointer flex items-center gap-2 font-normal text-base text-dark-gray">
+                                            <span class="material-symbols-outlined !text-lg text-deep-teal-green">
+                                                check
+                                            </span>Today
+                                        </div>
+                                        <div
+                                            class="p-2 pl-4 hover:bg-forest-green  rounded cursor-pointer flex items-center gap-2 font-normal text-base text-dark-gray">
+                                            <span class="material-symbols-outlined !text-lg text-light-gray">
+                                                check
+                                            </span>Week
+                                        </div>
+                                        <div
+                                            class="p-2 pl-4 hover:bg-forest-green  rounded cursor-pointer flex items-center gap-2 font-normal text-base text-dark-gray">
+                                            <span class="material-symbols-outlined !text-lg text-light-gray">
+                                                check
+                                            </span>Month
+                                        </div>
+                                        <div
+                                            class="p-2 pl-4 flex justify-between items-center cursor-pointer hover:bg-forest-green  rounded font-normal text-base text-dark-gray">
+                                            <div class="flex items-center gap-2">
+                                                <span class="material-symbols-outlined !text-lg text-light-gray">
+                                                    check
+                                                </span>Custom
+                                            </div>
+                                            <span class="material-symbols-outlined calendar-icon">calendar_today</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 lg:right-[180px] z-50 bg-white shadow-md rounded">
+                                        <div class="datepicker-inline"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div
+                                class="bg-white border border-frost-white rounded-2xl p-3 flex flex-col gap-1.5 shadow-(--box-shadow-6)">
+                                <div class="flex items-center justify-between">
+                                    <img src="/public/images/total-orders.svg" alt="orders">
+                                    <p class="font-bold text-xl text-dark-navy">128</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-xs text-charcoal-gray">Total Orders</p>
+                                    <p class="font-normal text-xs text-charcoal-gray">Returns: 6</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border border-frost-white rounded-2xl p-3 flex flex-col gap-1.5 shadow-(--box-shadow-6)">
+                                <div class="flex items-center justify-between">
+                                    <img src="/public/images/revenue-pharmacy.svg" alt="revenue">
+                                    <p class="font-bold text-xl text-dark-navy">&#8377;45,600</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-xs text-charcoal-gray">Revenue</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border border-frost-white rounded-2xl p-3 flex flex-col gap-1.5 shadow-(--box-shadow-6)">
+                                <div class="flex items-center justify-between">
+                                    <img src="/public/images/bids-won.svg" alt="Bids Won">
+                                    <p class="font-bold text-xl text-dark-navy">24</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-xs text-charcoal-gray">Bids Won</p>
+                                    <p class="font-normal text-xs text-lime-green">70%</p>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white border border-frost-white rounded-2xl p-3 flex flex-col gap-1.5 shadow-(--box-shadow-6)">
+                                <div class="flex items-center justify-between">
+                                    <img src="/public/images/bids-lost.svg" alt="Bids Lost">
+                                    <p class="font-bold text-xl text-dark-navy">10</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-xs text-charcoal-gray">Bids Lost</p>
+                                    <p class="font-normal text-xs text-crimson-red">30%</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Bar Chart-->
+                        <div
+                            class="bg-white rounded-[14px] border border-frost-white shadow-(--box-shadow-12) p-4 flex flex-col gap-4">
+                            <div class="flex items-center justify-between">
+                                <p class="font-bold text-sm text-dark-navy">Bid Win/Loss Rate <span
+                                        class="font-normal text-xs">(This Week)</span> </p>
+                                <div class="dropdown relative flex items-center gap-2">
+                                    <p class="font-semibold text-xs text-arctic-gray">14/3/25</p>
+                                    <span
+                                        class="material-symbols-outlined cursor-pointer text-dark-gray text-xl! calendar-icon">calendar_today</span>
+                                    <div
+                                        class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
+                                        <div class="datepicker-inline"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="border border-cool-steel-blue rounded-lg py-2 px-2.5 flex items-center justify-between">
+                                <input type="text"
+                                    class="w-full focus:ring-0 focus:outline-none font-normal text-sm placeholder:font-normal placeholder:text-sm placeholder:text-arctic-gray"
+                                    placeholder="10-12 AM">
+                                <span class="material-symbols-outlined text-[#6A7282]">keyboard_arrow_down</span>
+                            </div>
+
+                            <div class="flex items-center gap-5 customLegend">
+                                <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-1">
+                                        <div class="w-2.5 h-2.5 rounded-full bg-mint-emerald"></div>
+                                        <p class="font-bold text-xs text-dark-gray">Bids Won</p>
+                                    </div>
+                                    <input type="checkbox" class="w-[18px] h-[18px] accent-primary-blue cursor-pointer"
+                                        id="bidsWon" checked>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-1">
+                                        <div class="w-2.5 h-2.5 rounded-full bg-cerise-red"></div>
+                                        <p class="font-bold text-xs text-dark-gray">Bids Lost</p>
+                                    </div>
+                                    <input type="checkbox" class="w-[18px] h-[18px] accent-primary-blue cursor-pointer"
+                                        id="bidsLost" checked>
+                                </div>
+                            </div>
+                            <div>
+                                <canvas id="bidsChart" class="h-[159px]! w-full!"></canvas>
+                            </div>
+                            <p class="font-bold text-xs text-dark-gray">(Total bids per day = Won + Lost)</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                            <div
+                                class="bg-white border border-frost-white shadow-(--box-shadow-14) rounded-[14px] p-4 flex flex-col gap-2 h-[316px]">
+                                <div class="flex items-center justify-between">
+                                    <p class="font-bold text-sm text-dark-navy">Top Selling Products</p>
+                                    <div class="dropdown relative flex items-center gap-2">
+                                        <p class="font-semibold text-xs text-arctic-gray">14/3/25</p>
+                                        <span
+                                            class="material-symbols-outlined cursor-pointer text-dark-gray text-xl! calendar-icon">calendar_today</span>
+                                        <div
+                                            class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
+                                            <div class="datepicker-inline"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <p class="font-normal text-sm text-dark-navy">1.Paracetamol 500mg</p>
+                                        <p class="font-normal text-xs text-bluish-gray">234 orders</p>
+                                    </div>
+                                    <p class="font-bold text-sm text-dark-navy">$2,340</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <p class="font-normal text-sm text-dark-navy">2.Vitamin D3</p>
+                                        <p class="font-normal text-xs text-bluish-gray">189 orders</p>
+                                    </div>
+                                    <p class="font-bold text-sm text-dark-navy">$1,890</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <p class="font-normal text-sm text-dark-navy">3.Aspirin 100mg</p>
+                                        <p class="font-normal text-xs text-bluish-gray">156 orders</p>
+                                    </div>
+                                    <p class="font-bold text-sm text-dark-navy">$1,560</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <p class="font-normal text-sm text-dark-navy">4.Omega-3 Capsules</p>
+                                        <p class="font-normal text-xs text-bluish-gray">143 orders</p>
+                                    </div>
+                                    <p class="font-bold text-sm text-dark-navy">$2,145</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex flex-col gap-1">
+                                        <p class="font-normal text-sm text-dark-navy">5.Calcium Tablets</p>
+                                        <p class="font-normal text-xs text-bluish-gray">128 orders</p>
+                                    </div>
+                                    <p class="font-bold text-sm text-dark-navy">$1,280</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white border border-frost-white shadow-(--box-shadow-14) rounded-[14px] p-4 flex flex-col gap-2 h-[316px]">
+                                <div>
+                                    <p class="font-bold text-sm text-dark-navy">Stock Alerts</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 bg-crimson-red rounded-full"></div>
+                                        <div class="flex flex-col gap-1">
+                                            <p class="font-normal text-sm text-dark-navy">Insulin Pen</p>
+                                            <p class="font-normal text-xs text-bluish-gray">5 units left</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[86px] h-6 bg-blush-pink rounded-2xl py-1 px-2 flex items-center justify-center">
+                                        <span class="font-normal text-xs text-rose-mist text-nowrap">Restock Now</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 bg-sunrise-yellow rounded-full"></div>
+                                        <div class="flex flex-col gap-1">
+                                            <p class="font-normal text-sm text-dark-navy">Blood Pressure Monitor</p>
+                                            <p class="font-normal text-xs text-bluish-gray">12 units left</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[72px] h-6 bg-light-yellow rounded-2xl py-1 px-2 flex items-center justify-center">
+                                        <span class="font-normal text-xs text-dark-yellow text-nowrap">Low Stock</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 bg-crimson-red rounded-full"></div>
+                                        <div class="flex flex-col gap-1">
+                                            <p class="font-normal text-sm text-dark-navy">Thermometer Digital</p>
+                                            <p class="font-normal text-xs text-bluish-gray">8 units left</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[86px] h-6 bg-blush-pink rounded-2xl py-1 px-2 flex items-center justify-center">
+                                        <span class="font-normal text-xs text-rose-mist text-nowrap">Restock Now</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 bg-sunrise-yellow rounded-full"></div>
+                                        <div class="flex flex-col gap-1">
+                                            <p class="font-normal text-sm text-dark-navy">Face Masks (Box)</p>
+                                            <p class="font-normal text-xs text-bluish-gray">25 units left</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[72px] h-6 bg-light-yellow rounded-2xl py-1 px-2 flex items-center justify-center">
+                                        <span class="font-normal text-xs text-dark-yellow text-nowrap">Low Stock</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 bg-crimson-red rounded-full"></div>
+                                        <div class="flex flex-col gap-1">
+                                            <p class="font-normal text-sm text-dark-navy">Thermometer Digital</p>
+                                            <p class="font-normal text-xs text-bluish-gray">8 units left</p>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="w-[86px] h-6 bg-blush-pink rounded-2xl py-1 px-2 flex items-center justify-center">
+                                        <span class="font-normal text-xs text-rose-mist text-nowrap">Restock Now</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white border border-frost-white shadow-(--box-shadow-14) rounded-[14px] p-4 flex flex-col gap-2 h-[316px]">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-1">
+                                        <p class="font-bold text-sm text-dark-navy">User Rating</p>
+                                        <img src="/public/images/star.svg" alt="star">
+                                    </div>
+                                    <div class="dropdown relative flex items-center gap-2">
+                                        <p class="font-semibold text-xs text-arctic-gray">14/3/25</p>
+                                        <span
+                                            class="material-symbols-outlined cursor-pointer text-dark-gray text-xl! calendar-icon">calendar_today</span>
+                                        <div
+                                            class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
+                                            <div class="datepicker-inline"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="my-5 flex flex-col gap-4">
+                                    <div class="flex items-center gap-1">
+                                        <p class="font-normal text-sm text-electric-blue text-nowrap">5 star</p>
+                                        <div class="w-[255px] h-2 bg-pale-gray rounded-[18px] flex items-center">
+                                            <div
+                                                class="w-[212px] h-[5px] ml-[2.5px] bg-mustard-yellow shadow-(--box-shadow-15) rounded-[18px]">
+                                            </div>
+                                        </div>
+                                        <p class="font-normal text-sm text-dark-periwinkle">74%</p>
+                                    </div>
+
+                                    <div class="flex items-center gap-1">
+                                        <p class="font-normal text-sm text-electric-blue text-nowrap">4 star</p>
+                                        <div class="w-[255px] h-2 bg-pale-gray rounded-[18px] flex items-center">
+                                            <div
+                                                class="w-[155px] h-[5px] ml-[2.5px] bg-mustard-yellow shadow-(--box-shadow-15) rounded-[18px]">
+                                            </div>
+                                        </div>
+                                        <p class="font-normal text-sm text-dark-periwinkle">54%</p>
+                                    </div>
+
+                                    <div class="flex items-center gap-1">
+                                        <p class="font-normal text-sm text-electric-blue text-nowrap">3 star</p>
+                                        <div class="w-[255px] h-2 bg-pale-gray rounded-[18px] flex items-center">
+                                            <div
+                                                class="w-[98px] h-[5px] ml-[2.5px] bg-mustard-yellow shadow-(--box-shadow-15) rounded-[18px]">
+                                            </div>
+                                        </div>
+                                        <p class="font-normal text-sm text-dark-periwinkle">38%</p>
+                                    </div>
+
+                                    <div class="flex items-center gap-1">
+                                        <p class="font-normal text-sm text-electric-blue text-nowrap">2 star</p>
+                                        <div class="w-[255px] h-2 bg-pale-gray rounded-[18px] flex items-center">
+                                            <div
+                                                class="w-[31px] h-[5px] ml-[2.5px] bg-mustard-yellow shadow-(--box-shadow-15) rounded-[18px]">
+                                            </div>
+                                        </div>
+                                        <p class="font-normal text-sm text-dark-periwinkle">18%</p>
+                                    </div>
+
+                                    <div class="flex items-center gap-1">
+                                        <p class="font-normal text-sm text-electric-blue text-nowrap">1 star</p>
+                                        <div class="w-[255px] h-2 bg-pale-gray rounded-[18px] flex items-center">
+                                            <div
+                                                class="w-[15px] h-[5px] ml-[2.5px] bg-mustard-yellow shadow-(--box-shadow-15) rounded-[18px]">
+                                            </div>
+                                        </div>
+                                        <p class="font-normal text-sm text-dark-periwinkle">3%</p>
+                                    </div>
+                                </div>
+
+                                <button
+                                    class="bg-deep-teal-green rounded-lg w-[322px] h-10 flex items-center justify-center cursor-pointer">
+                                    <span class="font-normal text-sm text-white">Download Report</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-linear-to-r from-bright-royal-blue to-vivid-sapphire-blue rounded-[14px] p-4 w-full flex flex-col gap-4">
+                            <p class="font-bold text-sm text-white">Earnings Summary</p>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-sm text-white">Total Earnings</p>
+                                    <p class="font-bold text-base text-white">$24,580</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-sm text-white">This Week</p>
+                                    <p class="font-normal text-sm text-white">$6,420</p>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <p class="font-normal text-sm text-white">Previous Week</p>
+                                    <p class="font-normal text-sm text-white">$5,890</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-cloud-gray rounded-lg py-4 px-2.5 relative">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <span class="font-semibold text-base text-blue-charcoal">Heatmap</span>
+                                    <div class="dropdown relative inline-block w-full">
+                                        <button
+                                            class="dropdown-btn cursor-pointer w-[323px] shadow-(--box-shadow-11) bg-white rounded-md lab-report-shadow px-4 py-2 flex justify-between items-center focus:outline-none">
+                                            <span class="dropdown-value">10-12 AM</span>
+                                            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <ul
+                                            class="dropdown-menu absolute hidden mt-1 w-full bg-white rounded-md lab-report-shadow  z-10">
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">8-9 AM</li>
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">10-12 AM</li>
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">5-6 PM</li>
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">9-10 PM</li>
+                                        </ul>
+                                    </div>
+                                    <div class="dropdown relative flex items-center gap-2">
+
+                                        <p class="font-semibold text-xs text-arctic-gray">14/3/25</p>
+                                        <span
+                                            class="material-symbols-outlined cursor-pointer text-dark-gray text-xl! calendar-icon">calendar_today</span>
+
+                                        <div
+                                            class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
+                                            <div class="datepicker-inline"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button
+                                    class="bg-deep-teal-green rounded-lg w-[147px] h-9 flex items-center justify-center cursor-pointer">
+                                    <span class="font-normal text-sm text-white">Download Report</span>
+                                </button>
+                            </div>
+
+                            <div id="heatmap" class="h-80! mt-10"></div>
+
+                            <div class="absolute flex flex-col items-center right-4 bottom-4">
+                                <div id="zoom-out"
+                                    class="w-7 h-7 bg-white flex items-center justify-center rounded-md cursor-pointer">
+                                    <span class="material-symbols-outlined text-lg">remove</span>
+                                </div>
+                                <div class="bg-white w-1 h-40 relative slider">
+                                    <div id="zoom-reset"
+                                        class="w-7 h-3 absolute bg-white flex items-center justify-center rounded-xs cursor-pointer -right-3 top-1/2">
+                                        <span class="material-symbols-outlined text-lg">remove</span>
+                                    </div>
+                                </div>
+                                <div id="zoom-in"
+                                    class="w-7 h-7 bg-white flex items-center justify-center rounded-md cursor-pointer">
+                                    <span class="material-symbols-outlined text-lg">add</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between">
+                            <button
+                                class="w-[105px] h-10 rounded-[10px] bg-frost-white cursor-pointer py-2.5 px-4 flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-dark-slate-blue-gray">cached</span>
+                                <p class="font-normal text-dark-slate-blue-gray">Refresh</p>
+                            </button>
+                            <div class="flex items-center gap-2">
+                                <button
+                                    class="w-[83px] h-10 rounded-[10px] bg-bright-royal-blue text-white cursor-pointer py-2.5 px-4 flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined ">description</span>
+                                    <p class="font-normal ">PDF</p>
+                                </button>
+                                <button
+                                    class="w-[83px] h-10 rounded-[10px] bg-shamrock-green text-white cursor-pointer py-2.5 px-4 flex items-center justify-center gap-2">
+                                    <span class="material-symbols-outlined">download</span>
+                                    <p class="font-normal">CSV</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <script src="/public/js/sidebar.js"></script>
+    <script src="/public/js/common.js"></script>
+    <script src="/public/js/dropdown.js"></script>
+    <script src="/public/js/pharmacy.js"></script>
+
+    <!--Heat map-->
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+</body>
+
+</html>
