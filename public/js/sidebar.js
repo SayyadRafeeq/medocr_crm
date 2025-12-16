@@ -40,9 +40,9 @@ $(document).ready(function () {
       fontWeight: "bold",
     },
     pharmacy: {
-      backgroundColor: "#20B2AA1A",
-      color: "#20B2AA",
-      borderRight: "3px solid #20B2AA",
+      backgroundColor: "#DDEBE7", 
+      color: "#1A7A5E",
+      borderRight: "3px solid #1A7A5E",
       fontWeight: "bold",
     },
     client: {

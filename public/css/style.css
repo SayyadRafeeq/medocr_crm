@@ -4,12 +4,15 @@
   /* Primary Colors */
   --color-primary-color: #1E4D92;
   --color-primary-color-opacity: #1E4D9226;
+  --color-ocean-green:#238B6D;
   --color-light-sea-green: #3AAFA9;
   --color-light-sea-green1: #E5FFFE;
   --color-light-sea-green-opacity: #3AAFA926;
   --color-light-sea-green-opacity-1: #3AAFA980;
   --color-light-sea-green-opacity-2: #3AAFA908;
-
+  --color-dodger-blue-deep: #1167D9;
+  --color-blue-ribbon: #277DEB;
+  --color-cobalt-blue-deep:#084BA9;
   /* Teal Variants */
   --color-mist-teal: #3AAFA90A;
   --color-teal-veil: #3AAFA91A;
@@ -19,9 +22,15 @@
   --color-soft-teal: #DCEFEF;
   --color-deep-teal: #088178;
   --color-powder-teal: #B0D6D3;
+  --color-pale-mint: #CAFFF0;
   --color-deep-teal-green: #1A7A5E;
   --color-deep-teal-green-opacity: #1A7A5E26;
+  --color-deep-teal-green-opacity1: #1A7A5E4D;
+  --color-deep-teal-green-opacity2: #1A7A5E99;
+  --color-deep-teal-green-opacity3: #F0FFF2;
+  --color-deep-teal-green-opacity4: #1A7A5E08;
   --color-jungle-green: #1A7A5E59;
+  --color-green-teal:#08817814;
   --color-light-teal: #DDEBE7;
   /* Cloud & Frost Colors */
   --color-frosted-cloud: #F8FAFC;
@@ -32,6 +41,7 @@
   --color-strong-red: #B00020;
   --color-vibrant-red: #FE5353;
   --color-dark-red: #A30D11;
+  --color-dark-crimson-red:#B72136;
   --color-semi-transparent-red: #A30D1199;
 
   /* Green Variants */
@@ -40,7 +50,9 @@
   --color-emerald-green: #22C55F;
   --color-caribbean-green: #00BC7D;
   --color-light-mint-green: #DCFCE6;
-
+  --color-leaf-green:#009966;
+  --color-light-green:#00C950;
+  --color-dark-green:#016630;
   /* Orange & Peach Variants */
   --color-peach: #FEF2E5;
   --color-burnt-orange: #CD6200;
@@ -72,7 +84,10 @@
   --color-blush-petal: #FFE9E7;
 
   /* Black & Gray Variants */
+  --color-piano-black:#191919;
   --color-charcoal-black: #1C1B1F;
+  --color-grayish-gray:#919EAB3D;
+  --color-raisin-black:#202020;
   --color-dark-gray: #484848;
   --color-transparent-dark-gray: #4848484D;
   --color-light-gray: #D4D4D4;
@@ -101,7 +116,9 @@
   --color-cloud-gray: #DBE1E6;
   --color-spanish-gray: #989898;
   --color-arctic-gray: #919EAB;
+  --color-gainsboro:#DBDBDB;
   --color-foggy-silver: #8E8E93;
+  --color-ebony:#212B36;
 
   /* White Variants */
   --color-light-white: #F1F1F1;
@@ -114,6 +131,8 @@
 
   /* Blue Variants */
   --color-dark-blue: #123456;
+  --color-deep-blue:#101828;
+  --color-light-grayish-blue:#DFE3E8;
   --color-transparent-dark-blue: #12345633;
   --color-transparent-dark-blue1: #12345626;
   --color-dark-blue-opacity: #12345659;
@@ -156,6 +175,8 @@
   --color-pale-blue: #E9EEF6;
   --color-mist-blue: #E7EBEE;
   --color-frosted-sky: #DAE7FAD9;
+  --color-desaturated-blue:#1E2939;
+  --color-dark-grayish-blue:#4A5565;
 
   /* Purple & Violet Variants */
   --color-royal-purple: #3A0CA3;
@@ -173,6 +194,8 @@
   --color-Royal-indigo: #3245D4;
   --color-electric-indigo: #463AFF;
   --color-indigo-purple: #6339F9;
+  --color-electric-purple:#7A5AF8;
+  --color-lavendar-dream:#7A5AF81A;
 
   /* Yellow & Gold Variants */
   --color-golden-yellow: #DAC568;
@@ -188,6 +211,7 @@
   --color-pale-aqua: #BCFFFF;
   --color-bright-cyan: #1BBCBF;
   --color-soft-aqua: #C7F2FF;
+  --color-frost-green:#DCFCE7;
   --color-frost-blue: #EEFBFF;
   --color-aqua-glow: #04CAFF;
   --color-mint-ice: #B8F8F8;
@@ -217,6 +241,7 @@
   --color-deep-muted-grey: #49454F;
   --color-slate-white: #F8F9FA;
   --color-sea-green: #3AAFA90D;
+  --color-dark-cyan:#0881787A;
   --color-direction: #F5EAE8;
   --color-amber-transparent: #FF98001A;
   --color-smoke-gray: #3C3C434D;
@@ -228,19 +253,62 @@
   --color-ghost-white: #F7F9FC;
   --color-snow: #F7F8F9;
   --color-frost-white: #F3F4F6;
-
+  --color-mint-leaf: #22C55E;
+  --color-bright-red: #EF4444;
+  --color-dark-navy:#101828;
+  --color-charcoal-gray:#4A5565;
+  --color-crimson-red:#FB2C36;
+  --color-deep-amber:#BB4D004D;
+  --color-soft-ivory:#FFFBEB;
+  --color-copper-orange:#BB4D00;
+  --color-cinnamon-orange:#BB4D00CC;
+  --color-warm-tangerine:#E17100;
+  --color-pastel-seafoam:#B9F8CF1A;
+  --color-blue-charcoal:#212B36;
+  --color-seafoam:#B9F8CF;
+  --color-soft-pastel-mint:#DCFCE780;
+  --color-pastel-mint:#DCFCE7;
+  --color-cool-ice-gray:#DFE3E8;
+  --color-cool-steel-blue:#919EAB52;
+  --color-ocean-teal:#08817814;
+  --color-pale-ice-blue:#C8DAEA;
+  --color-slate-steel-blue:#62748E;
+  --color-forest-green:#0082360D;
+  --color-tropical-green:#1A7A5E33;
+  --color-lime-green:#84CC16;
+  --color-mint-emerald:#10B981;
+  --color-cerise-red:#D93F66;
+  --color-bluish-gray:#6A7282;
+  --color-blush-pink:#FFE2E2;
+  --color-rose-mist:#C10007;
+  --color-sunrise-yellow:#F0B100;
+  --color-light-yellow:#FEF9C2;
+  --color-dark-yellow:#A65F00;
+  --color-electric-blue:#2A5BDA;
+  --color-pale-gray:#D3D3D3;
+  --color-mustard-yellow:#FFCC48;
+  --color-dark-periwinkle:#323357;
+  --color-bright-royal-blue:#155DFC;
+  --color-vivid-sapphire-blue:#1447E6;
+  --color-dark-slate-blue-gray:#364153;
+  --color-shamrock-green:#00A63E;
   /* Box Shadows */
   --box-shadow-1: 4px 4px 10px 4px #3AAFA926;
   --box-shadow-2: 0px 4px 4px 0px #00000040;
   --box-shadow-3: 4px 4px 10px 4px #00000033;
   --box-shadow-4: 4px 4px 10px 4px #3AAFA933;
   --box-shadow-5: 2px 4px 8px 0px #0000000D;
-  --box-shadow-6: 4px 4px 10px 0px #00000026;
+  --box-shadow-6: 4px 4px 10px 0px #00000026;  
   --box-shadow-7: 0px 4px 4px 0px #6060600D;
-  --box-shadow-8: 4px 4px 10px 4px #00000033;
+  --box-shadow-8: 4px 4px 10px 4px #00000033; 
   --box-shadow-9: 4px 4px 10px 2px #00000026;
   --box-shadow-10: 1px 1px 8px 0px #00000024 inset;
   --box-shadow-11: 0px 1px 2px 0px #919EAB1F;
+  --box-shadow-12: 0px 1px 2px -1px #0000001A,0px 1px 3px 0px #0000001A;
+  --box-shadow-13:1px 1px 8px 0px #00000014 inset,-1px -1px 8px 0px #00000014 inset;
+  --box-shadow-14: 4px -4px 10px 1px #00000026;
+  --box-shadow-15: 0px 4px 10px 0px #FFCC4887;
+
 
   /* Radio Button Colors */
   --radio-border-color: teal;
@@ -504,6 +572,10 @@ body {
   @apply w-full max-w-[360px] h-[48px] rounded-[6px] text-sm text-white bg-dark-blue font-semibold cursor-pointer;
 }
 
+.support-btn-help4 {
+  @apply w-full max-w-[360px] h-[48px] rounded-[6px] text-sm text-white bg-deep-teal-green font-semibold cursor-pointer;
+}
+
 .referral-btn {
   @apply flex items-center gap-2 px-3 max-w-[280px] w-full h-[48px] rounded-[6px] border border-vivid-orange text-vivid-orange text-18-nr;
 }
@@ -596,6 +668,17 @@ body {
 .active-tab-support {
   @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
 }
+
+.active-tab-support-pharmacy {
+  @apply text-deep-teal-green border-b-3 border-deep-teal-green font-semibold;
+}
+
+.active-tab-settings-pharmacy {
+  @apply text-deep-teal-green border-b-3 border-deep-teal-green font-semibold;
+}
+
+
+
 
 .active-tab-main {
   @apply font-semibold text-dodger-blue;
@@ -916,11 +999,41 @@ body {
   cursor: pointer;
 }
 
+
 .custom-radio-label-lab input[type="radio"]:checked+.custom-radio-lab::after {
   content: '';
   width: 10px;
   height: 10px;
   background-color: #007BFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Custom Radio - Lab */
+.custom-radio-label-pharmacy input[type="radio"] {
+  display: none;
+}
+
+.custom-radio-pharmacy {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #1A7A5E;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.custom-radio-label-pharmacy input[type="radio"]:checked+.custom-radio-lab::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #1A7A5E;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -1207,4 +1320,14 @@ input[type="time"] {
   .show-sidebar-toggle {
     left: 0;
   }
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

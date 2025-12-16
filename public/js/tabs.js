@@ -246,6 +246,76 @@ $(document).ready(function () {
     }
   });
 
+
+
+   $(".tab-btn-settings-pharmacy").click(function () {
+    var target = $(this).data("tab");
+    $(".tab-btn-settings-pharmacy")
+      .removeClass(
+        "active-tab-settings-pharmacy font-semibold border-b-2 border-deep-teal-green text-dark-gray"
+      )
+      .addClass("font-medium text-light-gray1");
+    $(this)
+      .addClass(
+        "active-tab-settings-pharmacy font-semibold border-b-2 border-deep-teal-green text-dark-gray"
+      )
+      .removeClass("font-medium text-light-gray1");
+    $(".tab-content-settings").addClass("hidden");
+    $("." + target).removeClass("hidden");
+    if (target === "points") {
+      $(".diamond-user").show();
+    } else {
+      $(".diamond-user").hide();
+    }
+
+    if (target === "documents") {
+      $(".editIcon").hide();
+      $(".fileLimit").removeClass("hidden");
+    } else {
+      $(".editIcon").show();
+      $(".fileLimit").addClass("hidden");
+    }
+    if (target === "notification-control") {
+      $(".edit-toggle").hide();
+    } else {
+      $(".edit-toggle").show();
+    }
+  });
+
+   $(".tab-btn-support-pharmacy").click(function () {
+    var target = $(this).data("tab");
+    $(".tab-btn-support-pharmacy")
+      .removeClass(
+        "active-tab-support-pharmacy font-semibold border-b-2 border-deep-teal-green text-dark-gray"
+      )
+      .addClass("font-medium text-light-gray1");
+    $(this)
+      .addClass(
+        "active-tab-support-pharmacy font-semibold border-b-2 border-deep-teal-green text-dark-gray"
+      )
+      .removeClass("font-medium text-light-gray1");
+    $(".tab-content-support").addClass("hidden");
+    $("." + target).removeClass("hidden");
+    if (target === "points") {
+      $(".diamond-user").show();
+    } else {
+      $(".diamond-user").hide();
+    }
+
+    if (target === "documents") {
+      $(".editIcon").hide();
+      $(".fileLimit").removeClass("hidden");
+    } else {
+      $(".editIcon").show();
+      $(".fileLimit").addClass("hidden");
+    }
+    if (target === "notification-control") {
+      $(".edit-toggle").hide();
+    } else {
+      $(".edit-toggle").show();
+    }
+  });
+
   $(".tab-btn-points").click(function () {
     var target = $(this).data("tab");
     $(".tab-btn-points")
@@ -347,6 +417,46 @@ $(document).ready(function () {
       $(".edit-toggle").show();
     }
   });
+
+
+  $(".tab-btn-supportnewpharmacy").click(function () {
+  var target = $(this).data("tab");
+  $(".tab-btn-supportnewpharmacy")
+    .removeClass(
+      "active-tab-supportnewpharmacy font-semibold border-b-2 border-deep-teal-green text-dark-gray"
+    )
+    .addClass("font-medium text-light-gray1");
+
+  $(this)
+    .addClass(
+      "active-tab-supportnewpharmacy font-semibold border-b-2 border-deep-teal-green text-dark-gray"
+    )
+    .removeClass("font-medium text-light-gray1");
+
+  $(".tab-content-supportnewpharmacy").addClass("hidden");
+  $("." + target).removeClass("hidden");
+
+  if (target === "points") {
+    $(".diamond-user-points").show();
+  } else {
+    $(".diamond-user-points").hide();
+  }
+
+  if (target === "documents") {
+    $(".editIcon").hide();
+    $(".fileLimit").removeClass("hidden");
+  } else {
+    $(".editIcon").show();
+    $(".fileLimit").addClass("hidden");
+  }
+
+  if (target === "notification-control") {
+    $(".edit-toggle").hide();
+  } else {
+    $(".edit-toggle").show();
+  }
+});
+
 
     $(".tab-btn-rewards").click(function () {
     var target = $(this).data("tab");

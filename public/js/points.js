@@ -559,6 +559,15 @@ $(document).ready(function () {
     paginationContainerId: "pagination-numbers2",
     cardsPerPage: 3,
   });
+
+   setupPagination({
+    containerId: "created-coupons",
+    cardClass: "created-coupon",
+    prevBtnId: "prevPage3",
+    nextBtnId: "nextPage3",
+    paginationContainerId: "pagination-numbers3",
+    cardsPerPage: 5,
+  });
 });
 function setupPagination({
   containerId,
