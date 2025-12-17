@@ -446,13 +446,21 @@
                                 </div>
                             </div>
 
-                            <div
-                                class="border border-cool-steel-blue rounded-lg py-2 px-2.5 flex items-center justify-between">
-                                <input type="text"
-                                    class="w-full focus:ring-0 focus:outline-none font-normal text-sm placeholder:font-normal placeholder:text-sm placeholder:text-arctic-gray"
-                                    placeholder="10-12 AM">
-                                <span class="material-symbols-outlined text-[#6A7282]">keyboard_arrow_down</span>
-                            </div>
+                           <div class="dropdown relative inline-block w-full">
+                                        <button
+                                            class="dropdown-btn cursor-pointer w-full shadow-(--box-shadow-11) border border-cool-steel-blue rounded-md lab-report-shadow px-4 py-2 flex justify-between items-center focus:outline-none">
+                                            <span class="dropdown-value">10-12 AM</span>
+                                            <span class="material-symbols-outlined">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <ul
+                                            class="dropdown-menu absolute hidden mt-1 w-full bg-white rounded-md lab-report-shadow  z-10 shadow-xl">
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">8-9 AM</li>
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">10-12 AM</li>
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">5-6 PM</li>
+                                            <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">9-10 PM</li>
+                                        </ul>
+                                    </div>
 
                             <div class="flex items-center gap-5 customLegend">
                                 <div class="flex items-center gap-2">
@@ -698,12 +706,12 @@
                         </div>
 
                         <div class="bg-cloud-gray rounded-lg py-4 px-2.5 relative">
-                            <div class="flex items-center justify-between">
+                            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
                                 <div class="flex items-center gap-4">
                                     <span class="font-semibold text-base text-blue-charcoal">Heatmap</span>
                                     <div class="dropdown relative inline-block w-full">
                                         <button
-                                            class="dropdown-btn cursor-pointer w-[323px] shadow-(--box-shadow-11) bg-white rounded-md lab-report-shadow px-4 py-2 flex justify-between items-center focus:outline-none">
+                                            class="dropdown-btn cursor-pointer sm:w-[220px] lg:w-[323px] shadow-(--box-shadow-11) bg-white rounded-md lab-report-shadow px-4 py-2 flex justify-between items-center focus:outline-none">
                                             <span class="dropdown-value">10-12 AM</span>
                                             <span class="material-symbols-outlined">keyboard_arrow_down</span>
                                         </button>
