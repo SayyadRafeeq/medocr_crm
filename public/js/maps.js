@@ -6,6 +6,7 @@ const themeColors = {
   pharmacy:'light-sea-green',
   client:'dark-blue',
   lab: 'dodger-blue',
+  hospital:'dodger-blue'
 };
 
 // Get the current path

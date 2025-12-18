@@ -8,6 +8,13 @@
   <link href="../../public/css/output.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
     rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <!-- Leaflet Routing Machine CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+  <!-- Leaflet locate me -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
 </head>
 
 <body>
@@ -34,14 +41,61 @@
                 share
               </span>
             </button>
-            <!--  Share Popup  -->
-          </div>
 
+          </div>
+          <!--Share Popup-->
+          <div id="shareModal"
+            class="hidden absolute right-72 top-20 bg-white shadow-lg rounded-md z-50 w-130 border border-dodger-blue">
+            <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
+              <div class="flex justify-between items-center">
+                <p class="font-semibold text-xl">Share</p>
+                <span class="material-symbols-outlined close-share-modal cursor-pointer">
+                  close
+                </span>
+              </div>
+              <hr class="text-dodger-blue mt-4" />
+              <div class="flex justify-between pt-4">
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/whatsappicon.svg" alt="whatsapp logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Whatsapp</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/telegramicon.svg" alt="telegram logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Telegram</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/facebookicon.svg" alt="facebook logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Facebook</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/smsicon.svg" alt="sms logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Message</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/gmailicon.svg" alt="gmail logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">E-mail</p>
+                </div>
+              </div>
+              <div class="pt-4 relative mt-6">
+                <input type="text" id="share-link" value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
+                  class="w-full rounded-md p-4 font-normal text-sm border" disabled />
+                <button type="button"
+                  class="copy-btn absolute right-3 top-6 bg-dodger-blue text-white rounded-md p-2 cursor-pointer"
+                  data-target="#share-link">
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
           <!-- Icons -->
 
           <div
             class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-            <a href="/src/pharmacy/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg"
+            <a href="/src/hospital/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg"
                 alt="wallet" class="cursor-pointer w-[26px] h-[26px]" /></a>
             <div
               class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
@@ -62,8 +116,67 @@
               id="bell-icon" />
             <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
             <div
-              class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal whitespace-nowrap">
+              class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal whitespace-nowrap">
               Notification
+            </div>
+            <div id="notificationDropdown"
+              class=" hidden absolute right-0 top-10 mt-2 bg-white shadow-lg rounded-md z-50 w-[521px] h-[312px] border border-dodger-blue overflow-hidden">
+              <div class="flex justify-between items-center p-5">
+                <p class="text-18-semibold text-dark-gray">
+                  Notifications
+                </p>
+                <span class="material-symbols-outlined cursor-pointer close-notifications">
+                  close
+                </span>
+              </div>
+              <div class="h-[calc(100%-40px)] px-5 pb-5 space-y-4 overflow-y-auto scroll">
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      You have earned 50 credit points through referral
+                    </p>
+                  </div>
+                  <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                </div>
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      Profile Updated
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      Profile Updated
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      Monika Singh has requested for some medicines
+                    </p>
+                  </div>
+                  <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                </div>
+              </div>
             </div>
           </div>
           <!-- User Dropdown -->
@@ -173,6 +286,12 @@
               </a>
             </li>
             <li>
+              <a href="/src/hospital/services.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> gavel</span>
+                <p>Services</p>
+              </a>
+            </li>
+            <li>
               <a href="/src/hospital/settings.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                 <span class="material-symbols-outlined"> settings </span>
                 <p>Settings</p>
@@ -185,11 +304,558 @@
           </div>
         </nav>
       </aside>
+      <!-- Main Content -->
+      <div
+        class="relative transition-all duration-300 main-content h-full flex-1 flex flex-col gap-8 overflow-y-auto scroll p-5">
+        <div
+          class="show-sidebar-toggle hidden fixed top-[100px] left-12 z-50 h-10 w-10 bg-transparent-dodger-blue items-center justify-center rounded-r-md cursor-pointer">
+          <span class="material-symbols-outlined bold-weight text-dodger-blue">
+            arrow_forward_ios
+          </span>
+        </div>
+        <!-- Map View -->
+        <div class="relative map-view z-0">
+          <div id="map" class="rounded-lg" style="height: 80.7vh;"></div>
+          <div class="absolute top-5 z-1000 flex flex-wrap gap-4 ml-14">
+            <div
+              class="bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] rounded-md flex p-2 px-4">
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-medium hidden xl:block">List View</span>
+                <span class="material-symbols-outlined xl:!hidden">format_list_bulleted</span>
+                <label class="inline-flex items-center cursor-pointer relative">
+                  <input type="checkbox" class="sr-only peer view-toggle" checked>
+                  <div
+                    class="w-11 h-[1.55rem] bg-gray-color peer-focus:outline-none rounded-full peer peer-checked:bg-dodger-blue transition duration-300">
+                  </div>
+                  <div
+                    class="absolute w-5 h-5 mr-[0.20rem] bg-white rounded-full transition-all duration-300 transform peer-checked:translate-x-5">
+                  </div>
+                </label>
+                <span class="text-sm font-medium hidden xl:block">Map View</span>
+                <span class="material-symbols-outlined xl:!hidden">map</span>
+              </div>
+            </div>
+            <div
+              class="bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] rounded-md flex flex-wrap">
+              <button class="map-search-btn rounded-l-md hover:bg-dodger-blue">Doctor</button>
+              <button class="map-search-btn hover:bg-dodger-blue">Hospital</button>
+              <button class="map-search-btn hover:bg-dodger-blue">Pharmacy</button>
+              <button class="map-search-btn rounded-r-md hover:bg-dodger-blue">Lab</button>
+            </div>
+            <div
+              class="h-10 md:w-[14rem] xl:w-auto bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] rounded-md flex relative">
+              <span class="material-symbols-outlined absolute left-0 top-2 pl-2 search z-60"> search </span>
+              <input type="text" placeholder="Search by name"
+                class="w-full pl-10 pr-16 bg-transparent border-none focus:ring-0 focus:outline-none z-50 map-search rounded-md md:text-sm xl:text-base" />
+              <span
+                class="material-symbols-outlined absolute right-10 top-2 border-l border-dodger-blue pl-1 z-50 bookmark-icon cursor-pointer">
+                bookmark </span>
+              <span class="material-symbols-outlined absolute right-0 top-2 pr-2 z-50 history-icon cursor-pointer">
+                history </span>
+              <span
+                class="material-symbols-outlined absolute right-0 top-2 pr-2 z-50 close-icon cursor-pointer !hidden">
+                close </span>
+              <div
+                class="absolute -left-2 w-[105%] -top-4 bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] mt-1 rounded-md z-0 suggestion">
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- List View -->
+        <div class="listview">
+          <div class="rounded-md bg-white flex flex-col gap-4 p-2 px-4 m-4">
+            <div class="list">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined">
+                  map_search
+                </span>
+                <p class="font-semibold text-xl">Nearby</p>
+              </div>
+              <p class="text-jet-black text-sm mt-2">List View - Select or search option to see details </p>
+            </div>
+            <div class="flex justify-between w-full mt-4">
+              <div
+                class="bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] rounded-md flex items-center gap-2 px-4">
+                <span class="text-sm font-medium text-jet-black">List View</span>
+                <label class="inline-flex items-center cursor-pointer relative">
+                  <input type="checkbox" class="sr-only peer view-toggle">
+                  <div
+                    class="w-11 h-[1.55rem] bg-dodger-blue-opacity border border-dark-gray peer-focus:outline-none rounded-full peer peer-checked:bg-dodger-blue transition duration-300">
+                  </div>
+                  <div
+                    class="absolute w-5 h-5 bg-dark-gray ml-[0.20rem] rounded-full transition-all duration-300 transform peer-checked:translate-x-5">
+                  </div>
+                </label>
+                <span class="ml-3 text-sm font-medium text-jet-black">Map View</span>
+              </div>
+              <div class="flex items-center justify-center gap-4">
 
+                <!-- Filter Dropdown -->
+                <div class="relative dropdown">
+                  <button
+                    class="filterToggle  flex items-center border border-slate-gray rounded-md p-1 w-8 h-8  cursor-pointer">
+                    <span class="material-symbols-outlined flex justify-center items-center">tune</span>
+                  </button>
+                  <div
+                    class="filterDropdown mt-2 absolute right-0 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-44 z-10">
+                    <div
+                      class="p-2 pl-4 flex justify-between items-center cursor-pointer hover:bg-dodger-blue hover:text-white rounded">
+                      Custom date<span class="material-symbols-outlined calendar-icon">calendar_today</span>
+                    </div>
+                    <div class="p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer">1 Week</div>
+                    <div class="p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer">1 Month</div>
+                    <div class="p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer">1 Year</div>
+                  </div>
+                  <div
+                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 lg:right-[180px] z-50 bg-white shadow-md rounded">
+                    <div class="datepicker-inline"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-4 items-center justify-between w-full">
+              <!-- Button Group -->
+              <div
+                class="w-full xl:w-auto bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] rounded-md flex flex-wrap justify-between gap-1">
+                <button class="list-search-btn rounded-l-md hover:bg-dodger-blue">Doctor</button>
+                <button class="list-search-btn hover:bg-dodger-blue">Hospital</button>
+                <button class="list-search-btn hover:bg-dodger-blue">Pharmacy</button>
+                <button class="list-search-btn hover:bg-dodger-blue">Lab</button>
+                <button class="list-search-btn flex gap-2 items-center hover:bg-dodger-blue">
+                  <span class="material-symbols-outlined">bookmark</span>Saved
+                </button>
+                <button class="list-search-btn flex gap-2 items-center rounded-r-md hover:bg-dodger-blue">
+                  <span class="material-symbols-outlined">history</span>Recent
+                </button>
+              </div>
+
+              <!-- Search Bar -->
+              <div
+                class="w-full sm:w-auto flex-1 min-w-[200px] max-w-[290px] h-10 bg-frosted-sky backdrop-blur-[20px] shadow-[4px_4px_10px_2px_#3AAFA926] rounded-md flex items-center px-2 relative">
+                <span class="material-symbols-outlined absolute left-2 top-2.5 z-50">search</span>
+                <input type="text" placeholder="Search"
+                  class="w-full pl-8 bg-transparent border-none focus:ring-0 focus:outline-none z-50" />
+              </div>
+
+              <!-- View Dropdown -->
+              <div class="w-full sm:w-auto dropdown relative">
+                <button
+                  class="filterToggle activity-buttons w-full max-w-[114px] p-2 h-[40px] border border-dodger-blue rounded-[10px] text-dodger-blue flex items-center justify-center gap-1 cursor-pointer group hover:bg-dodger-blue hover:text-white">
+                  <span class="material-symbols-outlined text-dodger-blue group-hover:text-white">
+                    keyboard_arrow_down
+                  </span>
+                  <span>View</span>
+                </button>
+                <div
+                  class="filterDropdown absolute right-0 top-12 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-44 z-1000">
+                  <div class="p-2 pl-4 cursor-pointer hover:bg-dodger-blue hover:text-white rounded">1 Week</div>
+                  <div class="p-2 pl-4 cursor-pointer hover:bg-dodger-blue hover:text-white rounded">2 Week</div>
+                  <div class="p-2 pl-4 cursor-pointer hover:bg-dodger-blue hover:text-white rounded">3 Week</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-center h-44 text-jet-black placeholder font-semibold">Select option to
+              see details
+            </div>
+            <!-- Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-3 place-items-center cards">
+              <div class="places-card">
+                <div>
+                  <img class="rounded-t-[10px]" src="/public/images/Hospital.svg" alt="Hospital" loading="lazy" />
+                </div>
+                <div class="px-4 py-5 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-24-fs">Zenith Hospital</h1>
+                    <button class="material-symbols-outlined bookmark-fill cursor-pointer">
+                      bookmark
+                    </button>
+                  </div>
+                  <p class="flex items-center gap-1 text-dark-gray text-14-nr">
+                    4.3
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    (3,723)
+                  </p>
+                  <p class="text-dark-gray text-16-nr">Hospital</p>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-medium-gray text-16-nr">
+                      flat no.7, 11th floor, Chembur, Mumbai.
+                    </p>
+                    <p class="text-medium-gray text-16-nr">+91 9234398042</p>
+                    <p class="text-medium-gray text-16-nr">
+                      monika@ocrpharma.net
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-around gap-5">
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        directions
+                      </span>
+                      Direction
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        call
+                      </span>
+                      Call
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        share
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="places-card">
+                <div>
+                  <img class="rounded-t-[10px]" src="/public/images/Hospital.svg" alt="Hospital" loading="lazy" />
+                </div>
+                <div class="px-4 py-5 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-24-fs">Zenith Hospital</h1>
+                    <button class="material-symbols-outlined bookmark-fill cursor-pointer">
+                      bookmark
+                    </button>
+                  </div>
+                  <p class="flex items-center gap-1 text-dark-gray text-14-nr">
+                    4.3
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    (3,723)
+                  </p>
+                  <p class="text-dark-gray text-16-nr">Hospital</p>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-medium-gray text-16-nr">
+                      flat no.7, 11th floor, Chembur, Mumbai.
+                    </p>
+                    <p class="text-medium-gray text-16-nr">+91 9234398042</p>
+                    <p class="text-medium-gray text-16-nr">
+                      monika@ocrpharma.net
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-around gap-5">
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        directions
+                      </span>
+                      Direction
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        call
+                      </span>
+                      Call
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        share
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="places-card">
+                <div>
+                  <img class="rounded-t-[10px]" src="/public/images/Hospital.svg" alt="Hospital" loading="lazy" />
+                </div>
+                <div class="px-4 py-5 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-24-fs">Zenith Hospital</h1>
+                    <button class="material-symbols-outlined bookmark-fill cursor-pointer">
+                      bookmark
+                    </button>
+                  </div>
+                  <p class="flex items-center gap-1 text-dark-gray text-14-nr">
+                    4.3
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    (3,723)
+                  </p>
+                  <p class="text-dark-gray text-16-nr">Hospital</p>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-medium-gray text-16-nr">
+                      flat no.7, 11th floor, Chembur, Mumbai.
+                    </p>
+                    <p class="text-medium-gray text-16-nr">+91 9234398042</p>
+                    <p class="text-medium-gray text-16-nr">
+                      monika@ocrpharma.net
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-around gap-5">
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        directions
+                      </span>
+                      Direction
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        call
+                      </span>
+                      Call
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        share
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="places-card">
+                <div>
+                  <img class="rounded-t-[10px]" src="/public/images/Hospital.svg" alt="Hospital" loading="lazy" />
+                </div>
+                <div class="px-4 py-5 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-24-fs">Zenith Hospital</h1>
+                    <button class="material-symbols-outlined bookmark-fill cursor-pointer">
+                      bookmark
+                    </button>
+                  </div>
+                  <p class="flex items-center gap-1 text-dark-gray text-14-nr">
+                    4.3
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    (3,723)
+                  </p>
+                  <p class="text-dark-gray text-16-nr">Hospital</p>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-medium-gray text-16-nr">
+                      flat no.7, 11th floor, Chembur, Mumbai.
+                    </p>
+                    <p class="text-medium-gray text-16-nr">+91 9234398042</p>
+                    <p class="text-medium-gray text-16-nr">
+                      monika@ocrpharma.net
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-around gap-5">
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        directions
+                      </span>
+                      Direction
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        call
+                      </span>
+                      Call
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        share
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="places-card">
+                <div>
+                  <img class="rounded-t-[10px]" src="/public/images/Hospital.svg" alt="Hospital" loading="lazy" />
+                </div>
+                <div class="px-4 py-5 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-24-fs">Zenith Hospital</h1>
+                    <button class="material-symbols-outlined bookmark-fill cursor-pointer">
+                      bookmark
+                    </button>
+                  </div>
+                  <p class="flex items-center gap-1 text-dark-gray text-14-nr">
+                    4.3
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    (3,723)
+                  </p>
+                  <p class="text-dark-gray text-16-nr">Hospital</p>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-medium-gray text-16-nr">
+                      flat no.7, 11th floor, Chembur, Mumbai.
+                    </p>
+                    <p class="text-medium-gray text-16-nr">+91 9234398042</p>
+                    <p class="text-medium-gray text-16-nr">
+                      monika@ocrpharma.net
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-around gap-5">
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        directions
+                      </span>
+                      Direction
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        call
+                      </span>
+                      Call
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        share
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="places-card">
+                <div>
+                  <img class="rounded-t-[10px]" src="/public/images/Hospital.svg" alt="Hospital" loading="lazy" />
+                </div>
+                <div class="px-4 py-5 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-24-fs">Zenith Hospital</h1>
+                    <button class="material-symbols-outlined bookmark-fill cursor-pointer">
+                      bookmark
+                    </button>
+                  </div>
+                  <p class="flex items-center gap-1 text-dark-gray text-14-nr">
+                    4.3
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    <span class="material-symbols-outlined material-filled text-star-yellow">
+                      star
+                    </span>
+                    (3,723)
+                  </p>
+                  <p class="text-dark-gray text-16-nr">Hospital</p>
+                  <div class="flex flex-col gap-1">
+                    <p class="text-medium-gray text-16-nr">
+                      flat no.7, 11th floor, Chembur, Mumbai.
+                    </p>
+                    <p class="text-medium-gray text-16-nr">+91 9234398042</p>
+                    <p class="text-medium-gray text-16-nr">
+                      monika@ocrpharma.net
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-around gap-5">
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        directions
+                      </span>
+                      Direction
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        call
+                      </span>
+                      Call
+                    </button>
+                    <button class="flex flex-col items-center text-dark-gray text-16-nr">
+                      <span class="material-symbols-outlined material-filled">
+                        share
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Pagination -->
+              <div id="pagination" class="flex justify-center space-x-2 mt-6 col-span-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
   </main>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/public/js/sidebar.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"
+    integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Leaflet Routing Machine JS -->
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+  <!-- Leaflet locate me -->
+  <script src="https://unpkg.com/leaflet.locatecontrol/dist/L.Control.Locate.min.js"></script>
+  <script src="/public/js/maps.js"></script>
+  <script src="/public/js/common.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="/public/js/dropdown.js"></script>
 </body>
 
 </html>

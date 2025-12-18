@@ -131,6 +131,8 @@
 
   /* Blue Variants */
   --color-dark-blue: #123456;
+  --color-charcoal-blue:#364153;
+  --color-lightest-blue:#DBEAFE;
   --color-deep-blue:#101828;
   --color-light-grayish-blue:#DFE3E8;
   --color-transparent-dark-blue: #12345633;
@@ -1330,4 +1332,13 @@ input[type="number"]::-webkit-outer-spin-button {
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.doctor-report-shadow {
+  background-image: url("/public/images/heatmap.png"); /* change image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: var(--box-shadow-5);
+  border-radius: 12px;
 }
