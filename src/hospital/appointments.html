@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
         rel="stylesheet">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
 </head>
 
 <body>
@@ -36,14 +36,64 @@
                                 share
                             </span>
                         </button>
-                        <!--  Share Popup  -->
                     </div>
+                    <!--Share Popup-->
+                    <div id="shareModal"
+                        class="hidden absolute right-72 top-20 bg-white shadow-lg rounded-md z-50 w-130 border border-dodger-blue">
+                        <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
+                            <div class="flex justify-between items-center">
+                                <p class="font-semibold text-xl">Share</p>
+                                <span class="material-symbols-outlined close-share-modal cursor-pointer">
+                                    close
+                                </span>
+                            </div>
+                            <hr class="text-dodger-blue mt-4" />
+                            <div class="flex justify-between pt-4">
+                                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                    <img src="/public/images/whatsappicon.svg" alt="whatsapp logo"
+                                        class="w-10 h-10 cursor-pointer" />
+                                    <p class="font-normal text-base text-dark-gray">Whatsapp</p>
+                                </div>
 
+                                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                    <img src="/public/images/telegramicon.svg" alt="telegram logo"
+                                        class="w-10 h-10 cursor-pointer" />
+                                    <p class="font-normal text-base text-dark-gray">Telegram</p>
+                                </div>
+
+                                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                    <img src="/public/images/facebookicon.svg" alt="facebook logo"
+                                        class="w-10 h-10 cursor-pointer" />
+                                    <p class="font-normal text-base text-dark-gray">Facebook</p>
+                                </div>
+
+                                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                    <img src="/public/images/smsicon.svg" alt="sms logo"
+                                        class="w-10 h-10 cursor-pointer" />
+                                    <p class="font-normal text-base text-dark-gray">Message</p>
+                                </div>
+
+                                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                    <img src="/public/images/gmailicon.svg" alt="gmail logo"
+                                        class="w-10 h-10 cursor-pointer" />
+                                    <p class="font-normal text-base text-dark-gray">E-mail</p>
+                                </div>
+                            </div>
+                            <div class="pt-4 relative mt-6">
+                                <input type="text" id="share-link" value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
+                                    class="w-full rounded-md p-4 font-normal text-sm border" disabled />
+                                <button type="button"
+                                    class="copy-btn absolute right-3 top-6 bg-dodger-blue text-white rounded-md p-2 cursor-pointer"
+                                    data-target="#share-link">
+                                    Copy
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Icons -->
-
                     <div
                         class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                        <a href="/src/pharmacy/advance.html" class="has-tooltip"><img
+                        <a href="/src/hospital/advance.html" class="has-tooltip"><img
                                 src="/public/images/walleticon.svg" alt="wallet"
                                 class="cursor-pointer w-[26px] h-[26px]" /></a>
                         <div
@@ -66,8 +116,71 @@
                             class="cursor-pointer has-tooltip w-[26px] h-[26px]" id="bell-icon" />
                         <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
                         <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal whitespace-nowrap">
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal whitespace-nowrap">
                             Notification
+                        </div>
+                        <div id="notificationDropdown"
+                            class=" hidden absolute right-0 top-10 mt-2 bg-white shadow-lg rounded-md z-50 w-[521px] h-[312px] border border-dodger-blue overflow-hidden">
+                            <div class="flex justify-between items-center p-5">
+                                <p class="text-18-semibold text-dark-gray">
+                                    Notifications
+                                </p>
+                                <span class="material-symbols-outlined cursor-pointer close-notifications">
+                                    close
+                                </span>
+                            </div>
+                            <div class="h-[calc(100%-40px)] px-5 pb-5 space-y-4 overflow-y-auto scroll">
+                                <div
+                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                                    <div class="flex gap-2 items-center">
+                                        <span
+                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                                            notifications
+                                        </span>
+                                        <p class="text-14-semibold text-dark-gray">
+                                            You have earned 50 credit points through referral
+                                        </p>
+                                    </div>
+                                    <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                                </div>
+                                <div
+                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                                    <div class="flex gap-2 items-center">
+                                        <span
+                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                                            notifications
+                                        </span>
+                                        <p class="text-14-semibold text-dark-gray">
+                                            Profile Updated
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                                    <div class="flex gap-2 items-center">
+                                        <span
+                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                                            notifications
+                                        </span>
+                                        <p class="text-14-semibold text-dark-gray">
+                                            Profile Updated
+                                        </p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                                    <div class="flex gap-2 items-center">
+                                        <span
+                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                                            notifications
+                                        </span>
+                                        <p class="text-14-semibold text-dark-gray">
+                                            Monika Singh has requested for some medicines
+                                        </p>
+                                    </div>
+                                    <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- User Dropdown -->
@@ -76,7 +189,7 @@
                             <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-12 h-12" />
                         </button>
                         <!-- Dropdown -->
-                        <div class="profile-dropdown border border-light-sea-green mt-1 w-[192px] h-[118px]">
+                        <div class="profile-dropdown border border-dodger-blue mt-1 w-[192px] h-[118px]">
                             <div class="p-2.5 flex items-center space-x-2.5 cursor-pointer">
                                 <img src="/public/images/user.svg" alt="User" loading="lazy"
                                     class="w-12 h-12 rounded-full" />
@@ -133,7 +246,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Content -->
         <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
             <!-- Sidebar -->
@@ -205,10 +317,2483 @@
                 </nav>
             </aside>
 
+            <div
+                class="h-full flex-1 flex flex-col gap-8 p-6 overflow-y-auto scroll bg-slate-white relative transition-all duration-300 main-content">
+                <div
+                    class="show-sidebar-toggle hidden fixed top-18 left-0 z-50 h-10 w-10 bg-transparent-dark-blue items-center justify-center rounded-r-md cursor-pointer">
+                    <span class="material-symbols-outlined bold-weight text-dark-blue">
+                        arrow_forward_ios
+                    </span>
+                </div>
+                <div class="bg-white shadow-(--box-shadow-5) rounded-[10px] p-5 max-w-full">
+                    <div class="setting-header">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-outlined"> clarify </span>
+                            <p class="font-medium text-xl">Appointments</p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between w-full gap-4 mt-8">
+
+                        <!-- Tabs -->
+                        <div class="flex flex-wrap gap-2 lg:gap-4">
+                            <button
+                                class="tab-btn-hospital active-tab-hospital text-sm sm:text-18-nr px-4 py-1.5 font-semibold cursor-pointer text-dark-gray"
+                                data-tab="all">All</button>
+                            <button
+                                class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-dark-gray"
+                                data-tab="missed">Missed</button>
+                            <button
+                                class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-dark-gray"
+                                data-tab="canceled">Canceled</button>
+                            <button
+                                class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-dark-gray"
+                                data-tab="pending">Pending</button>
+                            <button
+                                class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-dark-gray"
+                                data-tab="equipment">Bed Inventory</button>
+                        </div>
+
+                        <!-- Search + Filter Section -->
+                        <div class="flex items-center gap-3 sm:gap-4 w-full lg:w-auto">
+                            <!-- Search Input -->
+                            <div class="flex items-center w-full lg:w-[300px] h-10 rounded-[6px] bg-light-white px-2">
+                                <span class="material-symbols-outlined text-dark-gray">search</span>
+                                <input type="text" placeholder="Search by name or categories"
+                                    class="w-full ml-1 border-none bg-transparent focus:outline-none focus:ring-0 placeholder:text-medium-gray" />
+                            </div>
+
+                            <!-- Filter Dropdown -->
+                            <div class="relative dropdown">
+                                <button
+                                    class="filterToggle flex items-center border border-slate-gray rounded-md p-1 w-8 h-8 cursor-pointer">
+                                    <span class="material-symbols-outlined flex justify-center items-center">tune</span>
+                                </button>
+                                <div
+                                    class="filterDropdown absolute right-0 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-44 z-10">
+                                    <div
+                                        class="p-2 pl-4 flex justify-between items-center cursor-pointer hover:bg-dodger-blue hover:text-white rounded">
+                                        Custom date<span
+                                            class="material-symbols-outlined calendar-icon">calendar_today</span>
+                                    </div>
+                                    <div class="p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer">
+                                        1 Week
+                                    </div>
+                                    <div class="p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer">
+                                        1 Month
+                                    </div>
+                                    <div class="p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer">
+                                        1 Year
+                                    </div>
+                                </div>
+                                <div
+                                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 lg:right-[180px] z-50 bg-white shadow-md rounded">
+                                    <div class="datepicker-inline"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- All Div -->
+                    <div class="all tab-content pt-8">
+                        <div id="cards-container">
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-burnt-orange">Today</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Lung Disease</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-burnt-orange">Today</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Full Body Checkup</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-burnt-orange">Today</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Allergy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-green">Completed</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Iron Studies </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-green">Completed</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Lung Disease</span>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-dodger-blue">Upcoming</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-all-accepted bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR</span>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-dodger-blue">Upcoming</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!--All Popup-->
+                        <!--All Accepted-->
+
+                        <div
+                            class="modal-all-accepted fixed inset-0 flex items-center justify-center bg-smoky-black bg-opacity-50 px-3 z-50 hidden ">
+                            <div
+                                class="modal-content-all-accepted  bg-white  w-[680px]  p-4 rounded-lg relative max-h-[90vh] overflow-y-auto no-scrollbar">
+
+                                <!-- Header -->
+                                <div class="flex justify-between items-center border-b px-6 py-3">
+                                    <h2 class="text-base font-bold">Patient Information</h2>
+                                    <div class="flex items-center gap-4">
+                                        <button class="cursor-pointer">
+                                            <span class="material-symbols-outlined !text-xl">share</span>
+                                        </button>
+                                        <button
+                                            class="modal-close-all-accepted text-gray-500 hover:text-gray-800 !text-3xl">&times;</button>
+                                    </div>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-6 space-y-6">
+                                    <!-- Patient Details Block -->
+                                    <div class="bg-blue-50 p-4 rounded-md flex gap-4">
+                                        <div class="flex flex-col ">
+                                            <img src="/public/images/rachel-kate1.jpg" alt="">
+                                            <p class="font-normal text-sm text-center pt-4">Rachel Kate</p>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 w-[180px]">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        female
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Gender</p>
+                                                    <p class="font-normal text-sm">Female</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        hourglass
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Age</p>
+                                                    <p class="font-normal text-sm">25</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/visit-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Visit Type</p>
+                                                    <p class="font-normal text-sm">Home Visit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        call
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Phone no.</p>
+                                                    <p class="font-normal text-sm">+91 7737533456</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        calendar_today
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Appointment date
+                                                    </p>
+                                                    <p class="font-normal text-sm">22/07/2025,12:30 PM</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/address-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Address</p>
+                                                    <p class="font-normal text-sm">123 maple los Angeles, CA 90001 usa
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="mt-4 text-blue-haze">
+
+                                      <div class="pt-2">
+                                        <p class="font-semibold text-sm">Medical Information</p>
+                                        <div class="pt-4 flex gap-4">
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        medical_services
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray whitespace-nowrap">
+                                                        Medical Requirement</p>
+                                                    <p class="font-normal text-sm">Lung Disease</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span
+                                                        class="material-symbols-outlined text-dodger-blue !text-lg p-2">
+                                                        details
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Details</p>
+                                                    <p class="font-normal text-sm">Shortness of breath and chest
+                                                        discomfort for 2 weeks. History of mild asthma — seeking
+                                                        diagnosis and treatment.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="enquiredDetail">
+                                        <div class="flex flex-col mt-4 py-4 gap-4">
+                                            <!-- Progress Bar -->
+                                            <div class="flex justify-center items-center gap-1">
+                                                <!-- Enquiry -->
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[138px] h-0.5 bg-dodger-blue"></div>
+
+                                                <!-- Appointment -->
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[138px] h-0.5 bg-dodger-blue"></div>
+
+                                                <!-- Completed -->
+                                                <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
+                                                <div class="w-[138px] h-0.5 bg-blue-haze"></div>
+
+                                                <!-- Cancel/Expired -->
+                                                <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
+                                            </div>
+
+                                            <!-- Labels (text colors unchanged) -->
+                                            <div class="flex items-center justify-between mx-10">
+                                                <p class="pl-6 font-normal text-sm">Enquiry</p>
+                                                <p class="pl-2 text-spanish-gray font-normal text-sm">Appointment</p>
+                                                <p class="text-spanish-gray font-normal text-sm">Completed</p>
+                                                <p class="text-spanish-gray font-normal text-sm">Cancel/Expired</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-4 flex flex-col gap-2">
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm">Order ID</p>
+                                                <p class="font-normal text-sm">6 km</p>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm text-blue-gray">Order #R32512</p>
+                                                <p class="font-normal text-sm">20 mins away</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex justify-between items-center mt-4">
+                                            <label class="flex items-center gap-2 cursor-pointer">
+
+                                                <span class="font-normal text-sm">Show</span>
+                                                <input type="checkbox"
+                                                    class="w-4 h-4 accent-dodger-blue rounded cursor-pointer">
+                                            </label>
+                                            <p class="font-normal text-sm text-blue-gray">Patient didn’t show up</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-2 flex justify-between items-center">
+                                        <div class="flex gap-2 items-center">
+                                            <p class="font-normal text-sm">Home Collection</p>
+                                            <p class="font-normal text-sm text-dodger-blue">&#8377;500</p>
+                                        </div>
+                                        <div
+                                            class="border border-dodger-blue bg-pale-azure px-2.5 py-1 rounded-lg flex items-center gap-2 cursor-pointer">
+                                            <p class="font-normal text-sm">Proforma Bill</p>
+                                            <span class="material-symbols-outlined !text-lg">visibility</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- Footer Buttons -->
+                                <div class="pt-4 flex justify-center items-center gap-2 mb-2">
+                                    <button
+                                        class="bg-dodger-blue text-white rounded-lg w-[180px] h-10 px-4 py-2 cursor-pointer complete-btn">Complete</button>
+                                    <button
+                                        class="border border-strong-red text-strong-red rounded-lg w-[180px] h-10 px-4 py-2 cursor-pointer text-nowrap popup-btn">Cancel
+                                        Appointment</button>
+                                </div>
+                            </div>
+                        </div>
+
+                       
+
+                         <!--All Completed-->
+                        <div
+                            class="modal-all-completed fixed inset-0 flex items-center justify-center bg-smoky-black bg-opacity-50 px-3 z-50 hidden ">
+                            <div
+                                class="modal-content-all-completed  bg-white  w-[680px]  p-4 rounded-lg relative max-h-[90vh] overflow-y-auto no-scrollbar">
+
+                                <!-- Header -->
+                                <div class="flex justify-between items-center border-b px-6 py-3">
+                                    <h2 class="text-base font-bold">Patient Information</h2>
+                                    <div class="flex items-center gap-4">
+                                        <button class="cursor-pointer">
+                                            <span class="material-symbols-outlined !text-xl">share</span>
+                                        </button>
+                                        <button
+                                            class="modal-close-all-completed text-gray-500 hover:text-gray-800 !text-3xl">&times;</button>
+                                    </div>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-6 space-y-6">
+                                    <!-- Patient Details Block -->
+                                    <div class="bg-blue-50 p-4 rounded-md flex gap-4">
+                                        <div class="flex flex-col ">
+                                            <img src="/public/images/rachel-kate1.jpg" alt="">
+                                            <p class="font-normal text-sm text-center pt-4">Rachel Kate</p>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 w-[180px]">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        female
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Gender</p>
+                                                    <p class="font-normal text-sm">Female</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        hourglass
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Age</p>
+                                                    <p class="font-normal text-sm">25</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/visit-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Visit Type</p>
+                                                    <p class="font-normal text-sm">Home Visit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        call
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Phone no.</p>
+                                                    <p class="font-normal text-sm">+91 7737533456</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        calendar_today
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Appointment date
+                                                    </p>
+                                                    <p class="font-normal text-sm">22/07/2025,12:30 PM</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/address-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Address</p>
+                                                    <p class="font-normal text-sm">123 maple los Angeles, CA 90001 usa
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="mt-4 text-blue-haze">
+
+                                    <div class="pt-2">
+                                        <p class="font-semibold text-sm">Medical Information</p>
+                                        <div class="pt-4 flex gap-4">
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        lab_research
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray whitespace-nowrap">
+                                                        Test Requirement</p>
+                                                    <p class="font-normal text-sm">RT-PCR</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span
+                                                        class="material-symbols-outlined text-dodger-blue !text-lg p-2">
+                                                        details
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Details</p>
+                                                    <p class="font-normal text-sm">Experiencing mild fever, sore throat,
+                                                        and body ache —
+                                                        requesting RT-PCR to rule out viral infection.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="pt-4">
+                                        <div class="flex justify-between items-center pt-4">
+                                            <p class="font-normal text-sm">Attachment</p>
+                                            <div
+                                                class="flex items-center gap-1 cursor-pointer text-dodger-blue  view-attachment">
+                                                <p class="font-semibold text-sm">Image.pdf</p>
+                                                <span
+                                                    class="material-symbols-outlined !text-base font-semibold">visibility</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="enquiredDetail">
+                                        <div class="flex flex-col mt-4 py-4 gap-4">
+                                            <div class=" flex justify-center items-center gap-1">
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                            </div>
+                                            <div class="flex items-center justify-between mx-20">
+                                                <p class="font-normal text-sm">Enquiry</p>
+                                                <p class="font-normal text-sm">Appointment</p>
+                                                <p class="font-normal text-sm">Completed</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-4 flex flex-col gap-2">
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm">Order ID</p>
+                                                <p class="font-normal text-sm">6 km</p>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm text-blue-gray">Order #R32512</p>
+                                                <p class="font-normal text-sm">20 mins away</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-2 flex justify-between items-center">
+                                            <div class="flex gap-2 items-center">
+                                                <p class="font-normal text-sm">Home Collection</p>
+                                                <p class="font-normal text-sm text-dodger-blue">&#8377;500</p>
+                                            </div>
+                                            <div
+                                                class="border border-dodger-blue bg-pale-azure px-2.5 py-1 rounded-lg flex items-center gap-2 cursor-pointer">
+                                                <p class="font-normal text-sm">Proforma Bill</p>
+                                                <span class="material-symbols-outlined !text-lg">visibility</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                       
+                    </div>
+
+
+
+                    <!-- Missed Div -->
+                    <div class="missed tab-content pt-8 space-y-6 hidden">
+                        <div id="cards-container">
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Doctor didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Doctor didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Patient didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Patient didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Doctor didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Doctor didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-missed bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Patient didn’t show up</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="modal-missed fixed inset-0 flex items-center justify-center bg-smoky-black bg-opacity-50 px-3 z-50 hidden ">
+                            <div
+                                class="modal-content-missed bg-white  w-[680px]  p-4 rounded-lg relative max-h-[90vh] overflow-y-auto no-scrollbar">
+
+                                <!-- Header -->
+                                <div class="flex justify-between items-center border-b px-6 py-3">
+                                    <h2 class="text-base font-bold">Patient Information</h2>
+                                    <div class="flex items-center gap-4">
+                                        <button class="cursor-pointer">
+                                            <span class="material-symbols-outlined !text-xl">share</span>
+                                        </button>
+                                        <button
+                                            class="modal-close-missed text-gray-500 hover:text-gray-800 !text-3xl">&times;</button>
+                                    </div>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-6 space-y-6">
+                                    <!-- Patient Details Block -->
+                                    <div class="bg-blue-50 p-4 rounded-md flex gap-4">
+                                        <div class="flex flex-col ">
+                                            <img src="/public/images/rachel-kate1.jpg" alt="">
+                                            <p class="font-normal text-sm text-center pt-4">Rachel Kate</p>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 w-[180px]">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        female
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Gender</p>
+                                                    <p class="font-normal text-sm">Female</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        hourglass
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Age</p>
+                                                    <p class="font-normal text-sm">25</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/visit-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Visit Type</p>
+                                                    <p class="font-normal text-sm">Home Visit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        call
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Phone no.</p>
+                                                    <p class="font-normal text-sm">+91 7737533456</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        calendar_today
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Appointment date
+                                                    </p>
+                                                    <p class="font-normal text-sm">22/07/2025,12:30 PM</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/address-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Address</p>
+                                                    <p class="font-normal text-sm">123 maple los Angeles, CA 90001 usa
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="mt-4 text-blue-haze">
+
+                                   <div class="pt-2">
+                                        <p class="font-semibold text-sm">Medical Information</p>
+                                        <div class="pt-4 flex gap-4">
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        medical_services
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray whitespace-nowrap">
+                                                        Medical Requirement</p>
+                                                    <p class="font-normal text-sm">Lung Disease</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span
+                                                        class="material-symbols-outlined text-dodger-blue !text-lg p-2">
+                                                        details
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Details</p>
+                                                    <p class="font-normal text-sm">Shortness of breath and chest
+                                                        discomfort for 2 weeks. History of mild asthma — seeking
+                                                        diagnosis and treatment.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="enquiredDetail">
+                                        <div class="flex flex-col mt-4 py-4 gap-4">
+                                            <div class=" flex justify-center items-center gap-1">
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                            </div>
+                                            <div class="flex items-center justify-between mx-20">
+                                                <p class="font-normal text-sm">Enquiry</p>
+                                                <p class="font-normal text-sm">Appointment</p>
+                                                <p class="font-normal text-sm">No Show</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-4 flex flex-col gap-2">
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm">Order ID</p>
+                                                <p class="font-normal text-sm">Missing Reason</p>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm text-blue-gray">Order #R32512</p>
+                                                <p class="font-normal text-sm  text-strong-red">Doctor didn’t show up
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="canceled tab-content pt-8 space-y-6 hidden">
+                        <div id="cards-container">
+                            <div
+                                class=" bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by doctor</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by Patient</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by doctor</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by Patient</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by doctor</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">RT-PCR </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by Patient</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-canceled">
+                                <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                            class="w-12 h-12 rounded-full object-cover">
+                                        <div class="flex flex-col">
+                                            <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                            <span class="text-xs text-spanish-gray">Pregnancy Test </span>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm text-jet-black">Lung Disease</p>
+                                    </div>
+
+
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-semibold text-sm text-strong-red">Canceled by Patient</p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="modal-canceled fixed inset-0 flex items-center justify-center bg-smoky-black bg-opacity-50 px-3 z-50 hidden ">
+                            <div
+                                class="modal-content-canceled bg-white  w-[680px]  p-4 rounded-lg relative max-h-[90vh] overflow-y-auto no-scrollbar">
+
+                                <!-- Header -->
+                                <div class="flex justify-between items-center border-b px-6 py-3">
+                                    <h2 class="text-base font-bold">Patient Information</h2>
+                                    <div class="flex items-center gap-4">
+                                        <button class="cursor-pointer">
+                                            <span class="material-symbols-outlined !text-xl">share</span>
+                                        </button>
+                                        <button
+                                            class="modal-close-canceled text-gray-500 hover:text-gray-800 !text-3xl">&times;</button>
+                                    </div>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-6 space-y-6">
+                                    <!-- Patient Details Block -->
+                                    <div class="bg-blue-50 p-4 rounded-md flex gap-4">
+                                        <div class="flex flex-col ">
+                                            <img src="/public/images/rachel-kate1.jpg" alt="">
+                                            <p class="font-normal text-sm text-center pt-4">Rachel Kate</p>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 w-[180px]">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        female
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Gender</p>
+                                                    <p class="font-normal text-sm">Female</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        hourglass
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Age</p>
+                                                    <p class="font-normal text-sm">25</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/visit-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Visit Type</p>
+                                                    <p class="font-normal text-sm">Home Visit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        call
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Phone no.</p>
+                                                    <p class="font-normal text-sm">+91 7737533456</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        calendar_today
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Appointment date
+                                                    </p>
+                                                    <p class="font-normal text-sm">22/07/2025,12:30 PM</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/address-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Address</p>
+                                                    <p class="font-normal text-sm">123 maple los Angeles, CA 90001 usa
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="mt-4 text-blue-haze">
+
+                                   <div class="pt-2">
+                                        <p class="font-semibold text-sm">Medical Information</p>
+                                        <div class="pt-4 flex gap-4">
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        medical_services
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray whitespace-nowrap">
+                                                        Medical Requirement</p>
+                                                    <p class="font-normal text-sm">Lung Disease</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span
+                                                        class="material-symbols-outlined text-dodger-blue !text-lg p-2">
+                                                        details
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Details</p>
+                                                    <p class="font-normal text-sm">Shortness of breath and chest
+                                                        discomfort for 2 weeks. History of mild asthma — seeking
+                                                        diagnosis and treatment.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="enquiredDetail">
+                                        <div class="flex flex-col mt-4 py-4 gap-4">
+                                            <div class=" flex justify-center items-center gap-1">
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                            </div>
+                                            <div class="flex items-center justify-between mx-20">
+                                                <p class="font-normal text-sm">Enquiry</p>
+                                                <p class="font-normal text-sm">Appointment</p>
+                                                <p class="font-normal text-sm">Canceled</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="pt-4 flex flex-col gap-2">
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm">Order ID</p>
+                                                <p class="font-normal text-sm">Canceled by</p>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <p class="font-normal text-sm text-blue-gray">Order #R32512</p>
+                                                <p class="font-normal text-sm  text-strong-red">Doctor
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="pending tab-content pt-8 space-y-6 hidden">
+                         <div id="cards-container">
+                        <div
+                            class=" card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50 card-pending">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                        <span class="text-xs text-spanish-gray">Lung Disease</span>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Home Visit</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-semibold text-sm text-dodger-blue">Accepted</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class=" card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/joleen-smith.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Joleen Smith</p>
+                                        <span class="text-xs text-spanish-gray">Heart Disease</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Hospital Visit</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-semibold text-sm text-strong-red">Rejected</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class=" card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/dolly-paris-lab.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Dolly Paris</p>
+                                        <span class="text-xs text-spanish-gray">Kidney Stone</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Hospital Visit</p>
+                                </div>
+
+
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-dodger-blue cursor-pointer accept-icon">
+                                        check_circle
+                                    </span>
+                                    <span class="material-symbols-outlined text-strong-red reject-icon">
+                                        cancel
+                                    </span>
+                                    <span class="text-dodger-blue hidden accepted">Accepted</span>
+                                    <span class="text-strong-red hidden rejected">Rejected</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class=" card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/steve-remark-lab.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Steve Lamark</p>
+                                        <span class="text-xs text-spanish-gray">Vascular Disease</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Home Visit</p>
+                                </div>
+
+
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-dodger-blue cursor-pointer accept-icon">
+                                        check_circle
+                                    </span>
+                                    <span class="material-symbols-outlined text-strong-red reject-icon">
+                                        cancel
+                                    </span>
+                                    <span class="text-dodger-blue hidden accepted">Accepted</span>
+                                    <span class="text-strong-red hidden rejected">Rejected</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class=" card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/rachel-kate.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Rachel Kate</p>
+                                        <span class="text-xs text-spanish-gray">Lung Disease</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Home Visit</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-semibold text-sm text-dodger-blue">Accepted</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class=" card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/joleen-smith.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Joleen Smith</p>
+                                        <span class="text-xs text-spanish-gray">Heart Disease</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Hospital Visit</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-semibold text-sm text-strong-red">Rejected</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div
+                            class="card-pending bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer hover:bg-blue-50">
+                            <div class="flex lg:justify-between lg:items-center flex-col lg:flex-row gap-4">
+
+
+                                <div class="flex items-center gap-3">
+                                    <img src="/public/images/dolly-paris-lab.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Dolly Paris</p>
+                                        <span class="text-xs text-spanish-gray">Kidney Stone</span>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">22/07/2025, 10:30 AM</p>
+                                </div>
+
+
+                                <div class="flex flex-col justify-center">
+                                    <p class="font-normal text-sm text-jet-black">Hospital Visit</p>
+                                </div>
+
+
+                                <div class="flex items-center gap-4">
+                                    <span class="material-symbols-outlined text-dodger-blue cursor-pointer accept-icon">
+                                        check_circle
+                                    </span>
+                                    <span class="material-symbols-outlined text-strong-red reject-icon">
+                                        cancel
+                                    </span>
+                                    <span class="text-dodger-blue hidden accepted">Accepted</span>
+                                    <span class="text-strong-red hidden rejected">Rejected</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        </div>
+                        <div
+                            class="modal-pending fixed inset-0 flex items-center justify-center bg-smoky-black bg-opacity-50 px-3 z-50 hidden ">
+                            <div
+                                class="modal-content-pending bg-white  w-[680px]  p-4 rounded-lg relative max-h-[90vh] overflow-y-auto no-scrollbar">
+
+                                <!-- Header -->
+                                <div class="flex justify-between items-center border-b px-6 py-3">
+                                    <h2 class="text-base font-bold">Patient Information</h2>
+                                    <div class="flex items-center gap-4">
+                                        <button class="cursor-pointer">
+                                            <span class="material-symbols-outlined !text-xl">share</span>
+                                        </button>
+                                        <button
+                                            class="modal-close-pending text-gray-500 hover:text-gray-800 !text-3xl">&times;</button>
+                                    </div>
+                                </div>
+
+                                <!-- Content -->
+                                <div class="p-6 space-y-6">
+                                    <!-- Patient Details Block -->
+                                    <div class="bg-blue-50 p-4 rounded-md flex gap-4">
+                                        <div class="flex flex-col ">
+                                            <img src="/public/images/dolly-paris1.svg" alt="">
+                                            <p class="font-normal text-sm text-center pt-4">Dolly Paris</p>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 w-[180px]">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        female
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Gender</p>
+                                                    <p class="font-normal text-sm">Female</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        hourglass
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Age</p>
+                                                    <p class="font-normal text-sm">25</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/visit-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Visit Type</p>
+                                                    <p class="font-normal text-sm">Home Visit</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4">
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        call
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Phone no.</p>
+                                                    <p class="font-normal text-sm">+91 7737533456</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        calendar_today
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Appointment date
+                                                    </p>
+                                                    <p class="font-normal text-sm">22/07/2025,12:30 PM</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex  gap-2">
+                                                <div
+                                                    class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <img src="/public/images/address-icon.svg" alt="">
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Address</p>
+                                                    <p class="font-normal text-sm">123 maple los Angeles, CA 90001 usa
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <hr class="mt-4 text-blue-haze">
+
+                                    <div class="pt-2">
+                                        <p class="font-semibold text-sm">Medical Information</p>
+                                        <div class="pt-4 flex gap-4">
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                        medical_services
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray whitespace-nowrap">
+                                                        Medical Requirement</p>
+                                                    <p class="font-normal text-sm">Kidney Stone</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex gap-2">
+                                                <div
+                                                    class="border border-blue-haze rounded-lg w-6 h-6 flex items-center justify-center">
+                                                    <span
+                                                        class="material-symbols-outlined text-dodger-blue !text-lg p-2">
+                                                        details
+                                                    </span>
+                                                </div>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="font-normal text-xs text-spanish-gray">Details</p>
+                                                    <p class="font-normal text-sm">Severe lower back pain, burning while
+                                                        urinating, and suspected
+                                                        kidney stone. History of recurrence</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+
+                                </div>
+
+                                <div class="enquiredDetail">
+                                    <div class="flex flex-col mt-4 py-4 gap-4">
+                                        <div class=" flex justify-center items-center gap-1">
+                                            <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                            <div class="w-[138px] h-0.5 flex">
+                                                <div class="w-1/2 h-full bg-dodger-blue"></div>
+                                                <div class="w-1/2 h-full bg-blue-haze"></div>
+                                            </div>
+                                            <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
+                                            <div class="w-[138px] h-0.5 bg-blue-haze"></div>
+                                            <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
+                                            <div class="w-[138px] h-0.5 bg-blue-haze"></div>
+                                            <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between mx-10">
+                                            <p class="pl-6  font-normal text-sm">Enquiry</p>
+                                            <p class="pl-2 text-spanish-gray font-normal text-sm">Appointment</p>
+                                            <p class="text-spanish-gray font-normal text-sm">Completed</p>
+                                            <p class="text-spanish-gray font-normal text-sm">Cancel/Expired</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 flex flex-col gap-2">
+                                        <div class="flex justify-between items-center">
+                                            <p class="font-normal text-sm">Order ID</p>
+                                            <p class="font-normal text-sm">Budget</p>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <p class="font-normal text-sm text-blue-gray">Order #R32512</p>
+                                            <p class="text-dodger-blue font-normal text-sm">&#8377;500</p>
+                                        </div>
+                                    </div>
+                                    <div class="pt-4 flex justify-center items-center gap-2 mb-2">
+                                        <button
+                                            class="bg-dodger-blue text-white rounded-lg w-[180px] h-10 px-4 py-2 cursor-pointer accept-button">Accept</button>
+                                        <button
+                                            class="border border-strong-red text-strong-red rounded-lg w-[180px] h-10 px-4 py-2 cursor-pointer close-popup"
+                                            data-popup="appointmentRequestDetail">Reject</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="equipment tab-content pt-8 space-y-6 hidden">
+                        <div id="cards-container">
+                            <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                    <img src="/public/images/joleen-smith.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Joleen Smith</p>
+                                        <span class="text-xs text-spanish-gray">Heart Disease</span>
+                                    </div>
+                                </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">101</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">ICU</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">ICU Bed</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Occupied</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Occupied</p>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                           <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                    <img src="/public/images/joleen-smith.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Joleen Smith</p>
+                                        <span class="text-xs text-spanish-gray">Heart Disease</span>
+                                    </div>
+                                </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">102</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">ICU</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">ICU Bed</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Occupied</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Occupied</p>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                           <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                    <div class="flex items-center gap-3">
+                                    <img src="/public/images/joleen-smith.svg" alt="Profile"
+                                        class="w-12 h-12 rounded-full object-cover">
+                                    <div class="flex flex-col">
+                                        <p class="font-semibold text-sm text-jet-black">Pt. Joleen Smith</p>
+                                        <span class="text-xs text-spanish-gray">Heart Disease</span>
+                                    </div>
+                                </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">101</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">General</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">Semi-Private</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Occupied</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Occupied</p>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                     <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Assign to</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                             <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Assign to</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Pt. Rachel Kate</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Pt. Joleen Smith</p>
+                                           
+                                        </div>
+                                    </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">101</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">General</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">Private</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Available</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Maintenance</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Out
+                                                of Service</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                             <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                     <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Assign to</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                             <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Assign to</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Pt. Rachel Kate</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Pt. Joleen Smith</p>
+                                           
+                                        </div>
+                                    </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">102</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">General</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">Private</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Available</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Maintenance</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Out
+                                                of Service</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                     <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Assign to</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                             <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Assign to</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Pt. Rachel Kate</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Pt. Joleen Smith</p>
+                                           
+                                        </div>
+                                    </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">103</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">General</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">Private</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Available</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Maintenance</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Out
+                                                of Service</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <div
+                                class="card-equipment bg-white mt-4 p-4 rounded-md shadow-lg transition cursor-pointer ">
+                                <div class="flex lg:justify-between items-center flex-col lg:flex-row gap-4">
+
+
+                                     <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Assign to</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                             <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Assign to</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Pt. Rachel Kate</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                               Pt. Joleen Smith</p>
+                                           
+                                        </div>
+                                    </div>
+
+                                    <!-- Equipment Type -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">104</p>
+                                    </div>
+
+                                    <!-- Equipment ID -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">General</p>
+                                    </div>
+
+                                    <!-- Department -->
+                                    <div class="flex flex-col justify-center">
+                                        <p class="font-normal text-sm ">Private</p>
+                                    </div>
+
+                                    <!-- Status Dropdown -->
+                                    <div class="relative flex flex-col justify-center">
+                                        <button
+                                            class="status-btn flex items-center justify-between text-dodger-blue bg-light-dodger-blue text-sm font-semibold px-3 py-1.5 rounded-md font-medium transition cursor-pointer w-44">
+                                            <span class="status-text">Available</span>
+                                            <span
+                                                class="material-symbols-outlined  text-base font-semibold">keyboard_arrow_down</span>
+                                        </button>
+
+                                        <!-- Dropdown Menu -->
+                                        <div
+                                            class="status-dropdown hidden absolute left-0 top-full mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Available</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Maintenance</p>
+                                            <p
+                                                class="dropdown-item px-3 py-2 text-sm font-semibold text-dodger-blue hover:bg-light-dodger-blue cursor-pointer">
+                                                Out
+                                                of Service</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Image Preview Modal -->
+                <div
+                    class="attachment-modal fixed inset-0 flex items-center justify-center bg-smoky-black bg-opacity-50 px-3 z-50 hidden">
+                    <div class="bg-white p-6 rounded-lg w-[460px] relative shadow-lg">
+
+                        <!-- Close Button -->
+                        <button
+                            class="close-attachment-modal absolute top-2 right-4 text-gray-500 hover:text-gray-800 !text-3xl">&times;</button>
+
+                        <!-- Header -->
+                        <h2 class="text-base font-bold border-b border-blue-haze pb-3">Attachment</h2>
+
+                        <!-- Image Preview -->
+                        <div class="mt-4 flex justify-center">
+                            <img src="/public/images/lab-attachment-img.svg" alt="Attachment Preview"
+                                class="rounded-md w-full h-auto max-h-[420px] object-contain">
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
 
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
     <script src="/public/js/sidebar.js"></script>
+    <script src="/public/js/tabs.js"></script>
+    <script src="/public/js/dropdown.js"></script>
+    <script src="/public/js/appointment.js"></script>
+    <script src="/public/js/common.js"></script>
+
 </body>
 
 </html>
