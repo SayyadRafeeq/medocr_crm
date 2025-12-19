@@ -161,6 +161,9 @@
   --color-azure-blue: #3586FC;
   --color-baby-blue: #D9EBFF;
   --color-dodger-blue: #007BFF;
+  --color-very-light-dodger-blue:#007BFF08 ;
+  --color-light-dodger-blue1: #007BFF99;
+  --color-light-dodger-blue2:#007BFF4D ;
   --color-primary-blue: #007BFF;
   --color-light-sky-blue-tint: #CCE5FF;
   --color-pale-sky-blue: #C8E0FA;
@@ -589,6 +592,12 @@ body {
 .support-btn-help4 {
   @apply w-full max-w-[360px] h-[48px] rounded-[6px] text-sm text-white bg-deep-teal-green font-semibold cursor-pointer;
 }
+
+.support-btn-help5 {
+  @apply w-full max-w-[360px] h-[48px] rounded-[6px] text-sm text-white bg-dodger-blue font-semibold cursor-pointer;
+}
+
+
 
 .referral-btn {
   @apply flex items-center gap-2 px-3 max-w-[280px] w-full h-[48px] rounded-[6px] border border-vivid-orange text-vivid-orange text-18-nr;
