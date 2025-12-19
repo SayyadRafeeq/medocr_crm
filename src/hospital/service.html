@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service</title>
     <link href="../../public/css/output.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
+    rel="stylesheet">
 </head>
 <body>
     <main class="h-screen max-w-[1440px] w-full mx-auto bg-slate-white overflow-hidden">
@@ -13,7 +14,7 @@
         <div class="h-[100px] w-full flex items-center justify-between p-2 bg-white md:p-5 md:shadow-[0_4px_10px_4px_rgba(0,0,0,0.15)]">
         <!-- Logo div -->
         <div class="w-[280px]">
-            <a href="/src/doctor/home.html">
+            <a href="/src/hospital/home.html">
             <img src="/public/images/hospital-logo.svg" alt="Logo" loading="lazy" class="w-[50px] h-[60px]" />
             </a>
         </div>
@@ -32,7 +33,8 @@
                 </button>
             </div>
             <!--Share Popup-->
-            <div id="shareModal" class="hidden absolute right-72 top-20 bg-white shadow-lg rounded-md z-50 w-130 border border-dodger-blue">
+            <div id="shareModal"
+                class="hidden absolute right-72 top-20 bg-white shadow-lg rounded-md z-50 w-130 border border-dodger-blue">
                 <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
                 <div class="flex justify-between items-center">
                     <p class="font-semibold text-xl">Share</p>
@@ -79,26 +81,34 @@
                 </div>
             </div>
             <!-- Icons -->
-            <div class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                <a href="/src/doctor/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg" alt="wallet" class="cursor-pointer w-[26px] h-[26px]" /></a>
-                <div class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
+            <div
+                class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+                <a href="/src/hospital/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg"
+                    alt="wallet" class="cursor-pointer w-[26px] h-[26px]" /></a>
+                <div
+                class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
                 Wallet
                 </div>
             </div>
             <div class="relative  rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                <a href="#" class="has-tooltip"><img src="/public/images/msgicon-nav.svg" alt="star" class="cursor-pointer" /></a>
-                <div class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
+                <a href="#" class="has-tooltip"><img src="/public/images/msgicon-nav.svg" alt="star"
+                    class="cursor-pointer" /></a>
+                <div
+                class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
                 Saved
                 </div>
             </div>
-            <div class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+            <div
+                class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
                 <img src="/public/images/bell.svg" alt="bell" class="cursor-pointer has-tooltip w-[26px] h-[26px]"
                 id="bell-icon" />
                 <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
-                <div class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal whitespace-nowrap">
+                <div
+                class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal whitespace-nowrap">
                 Notification
                 </div>
-                <div id="notificationDropdown" class=" hidden absolute right-0 top-10 mt-2 bg-white shadow-lg rounded-md z-50 w-[521px] h-[312px] border border-dodger-blue overflow-hidden">
+                <div id="notificationDropdown"
+                class=" hidden absolute right-0 top-10 mt-2 bg-white shadow-lg rounded-md z-50 w-[521px] h-[312px] border border-dodger-blue overflow-hidden">
                 <div class="flex justify-between items-center p-5">
                     <p class="text-18-semibold text-dark-gray">
                     Notifications
@@ -108,7 +118,8 @@
                     </span>
                 </div>
                 <div class="h-[calc(100%-40px)] px-5 pb-5 space-y-4 overflow-y-auto scroll">
-                    <div class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                    <div
+                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
                     <div class="flex gap-2 items-center">
                         <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
                         notifications
@@ -119,7 +130,8 @@
                     </div>
                     <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
                     </div>
-                    <div class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                    <div
+                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
                     <div class="flex gap-2 items-center">
                         <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
                         notifications
@@ -129,7 +141,8 @@
                         </p>
                     </div>
                     </div>
-                    <div class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                    <div
+                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
                     <div class="flex gap-2 items-center">
                         <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
                         notifications
@@ -139,7 +152,8 @@
                         </p>
                     </div>
                     </div>
-                    <div class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                    <div
+                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
                     <div class="flex gap-2 items-center">
                         <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
                         notifications
@@ -153,7 +167,6 @@
                 </div>
                 </div>
             </div>
-
             <!-- User Dropdown -->
             <div class="relative inline-block">
                 <button class="profile-btn">
@@ -220,66 +233,69 @@
             <!-- Sidebar -->
             <aside class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
                 <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
-                    <div class="relative w-full flex items-center justify-between pl-[33px]">
-                        <div class="flex flex-col items-start justify-center">
-                            <img src="/public/images/diamond-badge.svg" alt="Diamond User" loading="lazy" />
-                            <p class="text-18-normal text-dark-gray">Diamond User</p>
-                        </div>
-
-                        <div class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-sky-blue-tint flex items-center justify-center rounded-l-md cursor-pointer">
-                            <span class="material-symbols-outlined bold-weight text-dodger-blue pl-2.5">
-                                arrow_back_ios
-                            </span>
-                        </div>
+                <div class="relative w-full flex items-center justify-between pl-[33px]">
+                    <div class="flex flex-col items-start justify-center">
+                    <img src="/public/images/diamond-badge.svg" alt="Diamond User" loading="lazy" />
+                    <p class="text-18-normal text-dark-gray">Diamond User</p>
                     </div>
-                    <ul class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
-                        <li>
-                            <a href="/src/doctor/home.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> home </span>
-                                <p>Home</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/doctor/nearby.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> map_search </span>
-                                <p>Nearby</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/doctor/appointments.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <img src="/public/images/appointments.svg" alt="">
-                                <p>Appointments</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/doctor/reports.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> patient_list </span>
-                                <p>Reports</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/doctor/service.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> gavel </span>
-                                <p>Services</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/doctor/settings.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> settings </span>
-                                <p>Settings</p>
-                            </a>
-                        </li>
 
-                    </ul>
-                    <div class="w-full flex flex-col px-6">
-                        <img src="/public/images/Sale.svg" alt="Diamond User" loading="lazy" />
+                    <div
+                    class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-sky-blue-tint flex items-center justify-center rounded-l-md cursor-pointer">
+                    <span class="material-symbols-outlined bold-weight text-dodger-blue pl-2.5">
+                        arrow_back_ios
+                    </span>
                     </div>
+                </div>
+                <ul
+                    class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
+                    <li>
+                    <a href="/src/hospital/home.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                        <span class="material-symbols-outlined"> home </span>
+                        <p>Home</p>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="/src/hospital/nearby.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                        <span class="material-symbols-outlined"> map_search </span>
+                        <p>Nearby</p>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="/src/hospital/appointments.html"
+                        class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                        <img src="/public/images/appointments.svg" alt="">
+                        <p>Appointments</p>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="/src/hospital/reports.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                        <span class="material-symbols-outlined"> patient_list </span>
+                        <p>Reports</p>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="/src/hospital/service.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                        <span class="material-symbols-outlined"> gavel</span>
+                        <p>Services</p>
+                    </a>
+                    </li>
+                    <li>
+                    <a href="/src/hospital/settings.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                        <span class="material-symbols-outlined"> settings </span>
+                        <p>Settings</p>
+                    </a>
+                    </li>
+
+                </ul>
+                <div class="w-full flex flex-col px-6">
+                    <img src="/public/images/Sale.svg" alt="Diamond User" loading="lazy" />
+                </div>
                 </nav>
             </aside>
 
             <!--Main Content-->
-            <div class="main-section relative transition-all duration-300 main-content h-full flex-1 flex flex-col p-6 overflow-y-auto scroll">
-                <div class="show-sidebar-toggle hidden fixed top-24 left-0 z-50 h-10 w-10 bg-light-sky-blue-tint items-center justify-center rounded-r-md cursor-pointer">
+            <div class="main-section relative transition-all duration-300  main-content h-full flex-1 flex flex-col p-6 overflow-y-auto scroll">
+                <div class="show-sidebar-toggle hidden fixed top-34 left-0 z-50 h-10 w-10 bg-transparent-dodger-blue items-center justify-center rounded-r-md cursor-pointer">
                     <span class="material-symbols-outlined bold-weight text-dodger-blue">
                         arrow_forward_ios
                     </span>
@@ -409,7 +425,7 @@
                                 <div class="flex flex-nowrap items-center justify-between py-0.5 text-sm px-2 relative">
                                     <div class="tab-indicator"></div>
                                     <button class="tab-btn active shrink-0" data-type="services-home">Services</button>
-                                    <button class="tab-btn shrink-0" data-type="visit-charges-home">Visit Charges</button>
+                                    <button class="tab-btn shrink-0" data-type="bed-rooms-home">Bed & Rooms</button>
                                 </div>
                             </div>
                             <div class="w-full flex items-center justify-center mt-5">
@@ -422,7 +438,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>    
+                    </div> 
 
                     <!-- Services Section -->
                     <div class="services-section px-4 hidden">
@@ -440,7 +456,7 @@
                                      <div class="step-circle" data-step="2">
                                         2
                                     </div>
-                                    <span class="step-label font-normal text-xs lg:text-base text-foggy-silver whitespace-nowrap"  data-step="2">Visit Charges</span>
+                                    <span class="step-label font-normal text-xs lg:text-base text-foggy-silver whitespace-nowrap"  data-step="2">Bed & Rooms</span>
                                 </div>
                                 <div class="step-line"  data-step="2"></div>
                                 <div class="flex flex-col items-center gap-2">
@@ -474,10 +490,26 @@
                                             </button>
 
                                             <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Surgery</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Diagnostics</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Consultation</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Donation</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Cold</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Body Ache</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">General Advice</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Rashes</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pimple</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Infection</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Hair Fall</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Child Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Vaccines</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Allergy</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Irregular Periods</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">PCOS</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pregnancy Issue</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Back Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Joint Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fracture Support</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Anxiety</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Depression</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Department</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -528,11 +560,27 @@
                                                 </span>
                                             </button>
 
-                                            <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Surgery</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Diagnostics</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Consultation</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Donation</li>
+                                             <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Cold</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Body Ache</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">General Advice</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Rashes</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pimple</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Infection</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Hair Fall</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Child Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Vaccines</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Allergy</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Irregular Periods</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">PCOS</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pregnancy Issue</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Back Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Joint Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fracture Support</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Anxiety</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Depression</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Department</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -583,11 +631,27 @@
                                                 </span>
                                             </button>
 
-                                            <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Surgery</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Diagnostics</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Consultation</li>
-                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Donation</li>
+                                             <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Cold</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Body Ache</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">General Advice</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Rashes</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pimple</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Infection</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Hair Fall</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Child Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Vaccines</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Allergy</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Irregular Periods</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">PCOS</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pregnancy Issue</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Back Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Joint Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fracture Support</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Anxiety</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Depression</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Department</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -635,7 +699,7 @@
                                     <div class="flex items-center gap-2 file-info">
                                         <span class="material-symbols-outlined">image</span>
                                         <span class="file-name text-sm font-normal text-jet-black">
-                                            Upload CSV File
+                                            Upload Services XL File
                                         </span>
                                     </div>
 
@@ -661,32 +725,69 @@
                                     Next
                                 </button>
                             </div>
-                        </div>    
+                        </div>
 
-                        <!-- STEP 2 : Visit Charger -->  
+                        <!-- STEP 2 : Bed & Rooms -->  
                         <div id="step-2" class="step-content space-y-5 hidden">
-                            <h2 class="text-lg md:text-[23.4px] font-bold text-desaturated-blue">Visit Charge</h2>
+                            <h2 class="text-lg md:text-[23.4px] font-bold text-desaturated-blue">Bed & Rooms</h2>
 
-                            <div class="visit-services-list space-y-5">
+                            <div class="bed-services-list space-y-5">
                                 <!-- Service Card -->
                                 <div class="rounded-lg px-4 py-3 relative bg-[#F9FAFB]">
-                                    <button class="remove-service-visit absolute top-3 right-3 text-ebony hover:text-red-500">✕</button>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <button class="remove-service-bed absolute top-3 right-3 text-ebony hover:text-red-500">✕</button>
+                                    <!-- Category Dropdown -->
+                                    <div class="mb-4 custom-dropdown">
+                                        <label class="text-base sm:text-lg text-jet-black font-semibold">Select Category</label>
+
+                                        <div class="dropdown-trigger mt-2">
+                                            <button type="button" class="w-full border border-slate-gray rounded-md px-3 py-3 text-left flex justify-between items-center">
+                                                <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">Surgery</span>
+                                                <span class="material-symbols-outlined">
+                                                    keyboard_arrow_down
+                                                </span>
+                                            </button>
+
+                                            <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Cold</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Body Ache</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">General Advice</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Rashes</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pimple</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Infection</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Hair Fall</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Child Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Vaccines</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Allergy</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Irregular Periods</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">PCOS</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pregnancy Issue</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Back Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Joint Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fracture Support</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Anxiety</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Depression</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Department</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-col-1 sm:grid-cols-2 gap-4">
                                         <div class="custom-dropdown">
-                                            <label class="text-base sm:text-lg text-jet-black font-semibold">Visit Type</label>
+                                            <label class="text-base sm:text-lg text-jet-black font-semibold">Select Service</label>
 
                                             <div class="dropdown-trigger mt-2">
                                                 <button type="button" class="w-full border border-slate-gray rounded-md px-3 py-3 text-left flex justify-between items-center">
-                                                    <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">In-Clinic Visit</span>
+                                                    <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">Elective Surgery</span>
                                                     <span class="material-symbols-outlined">
                                                         keyboard_arrow_down
                                                     </span>
                                                 </button>
 
                                                 <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">In-Clinic Visit</li>
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Phone Consult</li>
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Home Visit</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Next Day</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Emergency Surgery</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Day Care Surgery</li>
                                                     <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Notification log</li>
                                                 </ul>
                                             </div>
@@ -702,24 +803,61 @@
                                     </div>
                                 </div>
 
-                                 <div class="rounded-lg px-4 py-3 relative bg-[#F9FAFB]">
-                                    <button class="remove-service-visit absolute top-3 right-3 text-ebony hover:text-red-500">✕</button>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="rounded-lg px-4 py-3 relative bg-[#F9FAFB]">
+                                    <button class="remove-service-bed absolute top-3 right-3 text-ebony hover:text-red-500">✕</button>
+                                    <!-- Category Dropdown -->
+                                    <div class="mb-4 custom-dropdown">
+                                        <label class="text-base sm:text-lg text-jet-black font-semibold">Select Category</label>
+
+                                        <div class="dropdown-trigger mt-2">
+                                            <button type="button" class="w-full border border-slate-gray rounded-md px-3 py-3 text-left flex justify-between items-center">
+                                                <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">Surgery</span>
+                                                <span class="material-symbols-outlined">
+                                                    keyboard_arrow_down
+                                                </span>
+                                            </button>
+
+                                            <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Cold</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Body Ache</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">General Advice</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Rashes</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pimple</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Infection</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Hair Fall</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Child Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Vaccines</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Allergy</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Irregular Periods</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">PCOS</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pregnancy Issue</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Back Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Joint Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fracture Support</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Anxiety</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Depression</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Department</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-col-1 sm:grid-cols-2 gap-4">
                                         <div class="custom-dropdown">
-                                            <label class="text-base sm:text-lg text-jet-black font-semibold">Visit Type</label>
+                                            <label class="text-base sm:text-lg text-jet-black font-semibold">Select Service</label>
 
                                             <div class="dropdown-trigger mt-2">
                                                 <button type="button" class="w-full border border-slate-gray rounded-md px-3 py-3 text-left flex justify-between items-center">
-                                                    <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">In-Clinic Visit</span>
+                                                    <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">Elective Surgery</span>
                                                     <span class="material-symbols-outlined">
                                                         keyboard_arrow_down
                                                     </span>
                                                 </button>
 
                                                 <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">In-Clinic Visit</li>
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Phone Consult</li>
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Home Visit</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Next Day</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Emergency Surgery</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Day Care Surgery</li>
                                                     <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Notification log</li>
                                                 </ul>
                                             </div>
@@ -735,24 +873,61 @@
                                     </div>
                                 </div>
 
-                                 <div class="rounded-lg px-4 py-3 relative bg-[#F9FAFB]">
-                                    <button class="remove-service-visit absolute top-3 right-3 text-ebony hover:text-red-500">✕</button>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="rounded-lg px-4 py-3 relative bg-[#F9FAFB]">
+                                    <button class="remove-service-bed absolute top-3 right-3 text-ebony hover:text-red-500">✕</button>
+                                    <!-- Category Dropdown -->
+                                    <div class="mb-4 custom-dropdown">
+                                        <label class="text-base sm:text-lg text-jet-black font-semibold">Select Category</label>
+
+                                        <div class="dropdown-trigger mt-2">
+                                            <button type="button" class="w-full border border-slate-gray rounded-md px-3 py-3 text-left flex justify-between items-center">
+                                                <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">Surgery</span>
+                                                <span class="material-symbols-outlined">
+                                                    keyboard_arrow_down
+                                                </span>
+                                            </button>
+
+                                            <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Cold</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Body Ache</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">General Advice</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Rashes</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pimple</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Infection</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Hair Fall</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Child Fever</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Vaccines</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Skin Allergy</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Irregular Periods</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">PCOS</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Pregnancy Issue</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Back Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Joint Pain</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Fracture Support</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Anxiety</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Depression</li>
+                                                <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Department</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="grid grid-col-1 sm:grid-cols-2 gap-4">
                                         <div class="custom-dropdown">
-                                            <label class="text-base sm:text-lg text-jet-black font-semibold">Visit Type</label>
+                                            <label class="text-base sm:text-lg text-jet-black font-semibold">Select Service</label>
 
                                             <div class="dropdown-trigger mt-2">
                                                 <button type="button" class="w-full border border-slate-gray rounded-md px-3 py-3 text-left flex justify-between items-center">
-                                                    <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">In-Clinic Visit</span>
+                                                    <span class="selected-text text-sm sm:text-base font-normal text-dark-gray">Elective Surgery</span>
                                                     <span class="material-symbols-outlined">
                                                         keyboard_arrow_down
                                                     </span>
                                                 </button>
 
                                                 <ul class="dropdown-menu hidden absolute z-20 mt-1 w-1/2 bg-white border border-primary-blue rounded shadow text-sm sm:text-base text-dark-gray font-normal h-40 overflow-y-auto scroll">
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">In-Clinic Visit</li>
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Phone Consult</li>
-                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Home Visit</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Next Day</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Emergency Surgery</li>
+                                                    <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Day Care Surgery</li>
                                                     <li class="dropdown-item px-3 py-2 hover:bg-premium-light-blue cursor-pointer">Notification log</li>
                                                 </ul>
                                             </div>
@@ -770,7 +945,7 @@
 
                             </div>    
 
-                            <button class="add-service-visit border border-primary-blue text-primary-blue text-xs sm:text-sm font-semibold rounded-lg w-full max-w-[182px] h-[40px] cursro-pointer">+ Add More Services</button>
+                            <button class="add-service-bed border border-primary-blue text-primary-blue text-xs sm:text-sm font-semibold rounded-lg w-full max-w-[182px] h-[40px] cursro-pointer">+ Add More Services</button>
 
                             <div class="file-upload-wrapper flex flex-col sm:flex-row sm:items-center gap-3">
                                 <!-- Hidden File Input -->
@@ -781,7 +956,7 @@
                                     <div class="flex items-center gap-2 file-info">
                                     <span class="material-symbols-outlined">image</span>
                                     <span class="file-name text-sm font-normal text-jet-black">
-                                        Upload CSV File
+                                        Upload Services XL File
                                     </span>
                                     </div>
 
@@ -813,92 +988,6 @@
                         <div id="step-3" class="step-content space-y-5 hidden">
                             <div class="flex flex-col gap-4">
                                 <h2 class="text-lg md:text-[23.4px] font-bold text-desaturated-blue">Services</h2>
-                                <div class="w-full p-3 bg-[#F9FAFB] rounded-[10px] grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                        <div class="flex items-start justify-between w-full">
-                                            <h3 class="text-sm sm:text-base font-semibold text-black">Gallbladder Surgery </h3>
-                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                            <!-- Dropdown -->
-                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                    <img src="/public/images/edit-icon.svg" alt="edit">
-                                                    Edit
-                                                </button>
-                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                    <img src="/public/images/delete-icon.svg" alt="delete">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center w-full">
-                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                        <div class="flex items-start justify-between w-full">
-                                            <h3 class="text-sm sm:text-base font-semibold text-black">Normal Delivery Package</h3>
-                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                            <!-- Dropdown -->
-                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                    <img src="/public/images/edit-icon.svg" alt="edit">
-                                                    Edit
-                                                </button>
-                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                    <img src="/public/images/delete-icon.svg" alt="delete">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center w-full">
-                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                        <div class="flex items-start justify-between w-full">
-                                            <h3 class="text-sm sm:text-base font-semibold text-black">Gallbladder Surgery </h3>
-                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                            <!-- Dropdown -->
-                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                    <img src="/public/images/edit-icon.svg" alt="edit">
-                                                    Edit
-                                                </button>
-                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                    <img src="/public/images/delete-icon.svg" alt="delete">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center w-full">
-                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
-                                        </div>
-                                    </div>
-                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                        <div class="flex items-start justify-between w-full">
-                                            <h3 class="text-sm sm:text-base font-semibold text-black">Normal Delivery Package</h3>
-                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                            <!-- Dropdown -->
-                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                    <img src="/public/images/edit-icon.svg" alt="edit">
-                                                    Edit
-                                                </button>
-                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                    <img src="/public/images/delete-icon.svg" alt="delete">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center w-full">
-                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="flex flex-col gap-4">
-                                <h2 class="text-lg md:text-[23.4px] font-bold text-desaturated-blue">Visit Charges</h2>
                                 <div class="w-full p-3 bg-[#F9FAFB] rounded-[10px] grid grid-cols-1 lg:grid-cols-2 gap-4">
                                     <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
                                         <div class="flex items-start justify-between w-full">
@@ -983,6 +1072,96 @@
                                 </div>
                             </div>
 
+                            <div class="flex flex-col gap-4">
+                                <h2 class="text-lg md:text-[23.4px] font-bold text-desaturated-blue">Visit Charges</h2>
+                                <div class="w-full p-3 bg-[#F9FAFB] rounded-[10px] grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[81px] w-full flex flex-col items-start justify-center gap-2 px-4 py-2 relative">
+                                        <div class="flex items-center justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">General Ward</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between w-full">
+                                            <p class="text-sm sm:text-base font-semibold text-black">1 Days</p>
+                                            <span class="text-base sm:text-lg font-bold text-primary-blue">₹25,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[81px] w-full flex flex-col items-start justify-center gap-2 px-4 py-2 relative">
+                                        <div class="flex items-center justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">General Ward</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between w-full">
+                                            <p class="text-sm sm:text-base font-semibold text-black">1 Days</p>
+                                            <span class="text-base sm:text-lg font-bold text-primary-blue">₹25,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[81px] w-full flex flex-col items-start justify-center gap-2 px-4 py-2 relative">
+                                        <div class="flex items-center justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">General Ward</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between w-full">
+                                            <p class="text-sm sm:text-base font-semibold text-black">1 Days</p>
+                                            <span class="text-base sm:text-lg font-bold text-primary-blue">₹25,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[81px] w-full flex flex-col items-start justify-center gap-2 px-4 py-2 relative">
+                                        <div class="flex items-center justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">General Ward</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between w-full">
+                                            <p class="text-sm sm:text-base font-semibold text-black">1 Days</p>
+                                            <span class="text-base sm:text-lg font-bold text-primary-blue">₹25,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="flex items-center justify-end gap-5">
                                 <button class="step-btn w-full max-w-[270px] border border-strong-red text-strong-red py-3 rounded-lg text-sm font-normal cursor-pointer" data-target="2">
                                     Cancel
@@ -1000,214 +1179,216 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Premium Section -->
-                    <div class="premium-section space-y-4 hidden">
-                        <div class="h-[136px] bg-dodger-blue relative flex flex-col gap-3 px-7 py-6 rounded-lg">
-                            <span class="text-sm sm:text-base font-bold text-white">Subscription Details</span>
-                            <span class="text-[30px] sm:text-[35px] font-bold text-white">
-                                ₹999 <span class="text-sm sm:text-base font-bold text-white">/month</span>
-                            </span>
-                            <div class="absolute right-5 top-4 bg-premium-yellow px-5 py-0.5 text-xs sm:text-sm font-bold text-black rounded-full">
-                                PREMIUM
-                            </div>
-                        </div>
-                        <div class="w-full rounded-lg shadow-17 py-4 px-6 flex flex-col gap-5">
-                            <div class="tabs tabs-inner w-[200px] sm:w-[290px]">
-                                <div class="flex flex-nowrap items-center justify-between py-0.5 text-sm px-2 relative">
-                                    <div class="tab-indicator"></div>
-                                    <button class="tab-btn active shrink-0" data-type="services">Services</button>
-                                    <button class="tab-btn shrink-0" data-type="visit-charges">Visit Charges</button>
-                                </div>
-                            </div>
-                            <!-- Test & Packages Content -->
-                            <div class="tab-content tabs-inner-content" data-type="services">
-                                <div class="bg-[#F9FAFB] rounded-[10px] w-full p-3 space-y-3">
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                         <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                        <div class="flex items-start justify-between w-full">
-                                            <h3 class="text-sm sm:text-base font-semibold text-black">Gallbladder Surgery </h3>
-                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                            <!-- Dropdown -->
-                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                    <img src="/public/images/edit-icon.svg" alt="edit">
-                                                    Edit
-                                                </button>
-                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                    <img src="/public/images/delete-icon.svg" alt="delete">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center w-full">
-                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
-                                        </div>
-                                        </div>
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                            <div class="flex items-start justify-between w-full">
-                                                <h3 class="text-sm sm:text-base font-semibold text-black">Normal Delivery Package</h3>
-                                                <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                                <!-- Dropdown -->
-                                                <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                    <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                        <img src="/public/images/edit-icon.svg" alt="edit">
-                                                        Edit
-                                                    </button>
-                                                    <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                        <img src="/public/images/delete-icon.svg" alt="delete">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center w-full">
-                                                <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
-                                            </div>
-                                        </div>
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                            <div class="flex items-start justify-between w-full">
-                                                <h3 class="text-sm sm:text-base font-semibold text-black">Gallbladder Surgery </h3>
-                                                <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                                <!-- Dropdown -->
-                                                <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                    <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                        <img src="/public/images/edit-icon.svg" alt="edit">
-                                                        Edit
-                                                    </button>
-                                                    <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                        <img src="/public/images/delete-icon.svg" alt="delete">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center w-full">
-                                                <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
-                                            </div>
-                                        </div>
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                            <div class="flex items-start justify-between w-full">
-                                                <h3 class="text-sm sm:text-base font-semibold text-black">Normal Delivery Package</h3>
-                                                <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                                <!-- Dropdown -->
-                                                <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                    <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                        <img src="/public/images/edit-icon.svg" alt="edit">
-                                                        Edit
-                                                    </button>
-                                                    <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                        <img src="/public/images/delete-icon.svg" alt="delete">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center w-full">
-                                                <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-end">
-                                        <button class="w-14 h-14 bg-primary-blue rounded-full flex items-center justify-center cursor-pointer">
-                                            <span class="material-symbols-outlined text-white">add_2</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Collection Mode Content -->
-                            <div class="tab-content tabs-inner-content hidden" data-type="visit-charges">
-                                <div class="bg-[#F9FAFB] rounded-[10px] w-full p-3 space-y-3">
-                                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                        <div class="flex items-start justify-between w-full">
-                                            <h3 class="text-sm sm:text-base font-semibold text-black">In-Clinic Visit</h3>
-                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                            <!-- Dropdown -->
-                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                    <img src="/public/images/edit-icon.svg" alt="edit">
-                                                    Edit
-                                                </button>
-                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                    <img src="/public/images/delete-icon.svg" alt="delete">
-                                                    Delete
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-center w-full">
-                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
-                                        </div>
-                                        </div>
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                            <div class="flex items-start justify-between w-full">
-                                                <h3 class="text-sm sm:text-base font-semibold text-black">Phone Consult</h3>
-                                                <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                                <!-- Dropdown -->
-                                                <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                    <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                        <img src="/public/images/edit-icon.svg" alt="edit">
-                                                        Edit
-                                                    </button>
-                                                    <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                        <img src="/public/images/delete-icon.svg" alt="delete">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center w-full">
-                                                <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
-                                            </div>
-                                        </div>
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                            <div class="flex items-start justify-between w-full">
-                                                <h3 class="text-sm sm:text-base font-semibold text-black">Home Visit</h3>
-                                                <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                                <!-- Dropdown -->
-                                                <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                    <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                        <img src="/public/images/edit-icon.svg" alt="edit">
-                                                        Edit
-                                                    </button>
-                                                    <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                        <img src="/public/images/delete-icon.svg" alt="delete">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center w-full">
-                                                <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
-                                            </div>
-                                        </div>
-                                        <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
-                                            <div class="flex items-start justify-between w-full">
-                                                <h3 class="text-sm sm:text-base font-semibold text-black">Multi Visit Treatment</h3>
-                                                <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
-                                                <!-- Dropdown -->
-                                                <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
-                                                    <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
-                                                        <img src="/public/images/edit-icon.svg" alt="edit">
-                                                        Edit
-                                                    </button>
-                                                    <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
-                                                        <img src="/public/images/delete-icon.svg" alt="delete">
-                                                        Delete
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="flex items-center w-full">
-                                                <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center justify-end">
-                                        <button class="w-14 h-14 bg-primary-blue rounded-full flex items-center justify-center cursor-pointer">
-                                            <span class="material-symbols-outlined text-white">add_2</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
                 </div>
+
+                <!-- Premium Section -->
+                <div class="premium-section space-y-4 hidden">
+                    <div class="h-[136px] bg-dodger-blue relative flex flex-col gap-3 px-7 py-6 rounded-lg">
+                        <span class="text-sm sm:text-base font-bold text-white">Subscription Details</span>
+                        <span class="text-[30px] sm:text-[35px] font-bold text-white">
+                            ₹999 <span class="text-sm sm:text-base font-bold text-white">/month</span>
+                        </span>
+                        <div class="absolute right-5 top-4 bg-premium-yellow px-5 py-0.5 text-xs sm:text-sm font-bold text-black rounded-full">
+                            PREMIUM
+                        </div>
+                    </div>
+                    <div class="w-full rounded-lg shadow-17 py-4 px-6 flex flex-col gap-5 bg-white">
+                        <div class="tabs tabs-inner w-[200px] sm:w-[290px]">
+                            <div class="flex flex-nowrap items-center justify-between py-0.5 text-sm px-2 relative">
+                                <div class="tab-indicator"></div>
+                                <button class="tab-btn active shrink-0" data-type="services">Services</button>
+                                <button class="tab-btn shrink-0" data-type="bed-rooms">Bed & Rooms</button>
+                            </div>
+                        </div>
+                        <!-- Services Content -->
+                        <div class="tab-content tabs-inner-content" data-type="services">
+                            <h2 class="text-lg sm:text-[23.4px] font-bold text-desaturated-blue mb-4">Services</h2>
+                            <div class="bg-[#F9FAFB] rounded-[10px] w-full p-3 space-y-3">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                    <div class="flex items-start justify-between w-full">
+                                        <h3 class="text-sm sm:text-base font-semibold text-black">In-Clinic Visit</h3>
+                                        <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                        <!-- Dropdown -->
+                                        <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                            <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                <img src="/public/images/edit-icon.svg" alt="edit">
+                                                Edit
+                                            </button>
+                                            <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                <img src="/public/images/delete-icon.svg" alt="delete">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center w-full">
+                                        <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
+                                    </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                        <div class="flex items-start justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">Phone Consult</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center w-full">
+                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                        <div class="flex items-start justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">Home Visit</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center w-full">
+                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                        <div class="flex items-start justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">Multi Visit Treatment</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center w-full">
+                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-end">
+                                    <button class="w-14 h-14 bg-primary-blue rounded-full flex items-center justify-center cursor-pointer">
+                                        <span class="material-symbols-outlined text-white">add_2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Bed & Rooms Content -->
+                        <div class="tab-content tabs-inner-content hidden" data-type="bed-rooms">
+                            <h2 class="text-lg sm:text-[23.4px] font-bold text-desaturated-blue mb-4">Bed & Rooms</h2>
+                            <div class="bg-[#F9FAFB] rounded-[10px] w-full p-3 space-y-3">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                    <div class="flex items-start justify-between w-full">
+                                        <h3 class="text-sm sm:text-base font-semibold text-black">In-Clinic Visit</h3>
+                                        <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                        <!-- Dropdown -->
+                                        <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                            <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                <img src="/public/images/edit-icon.svg" alt="edit">
+                                                Edit
+                                            </button>
+                                            <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                <img src="/public/images/delete-icon.svg" alt="delete">
+                                                Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center w-full">
+                                        <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
+                                    </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                        <div class="flex items-start justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">Phone Consult</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center w-full">
+                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                        <div class="flex items-start justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">Home Visit</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center w-full">
+                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹25,000</span>
+                                        </div>
+                                    </div>
+                                    <div class="service-card bg-white border border-frost-white rounded-md shadow-12 h-[85px] w-full flex flex-col items-start px-4 py-3 relative gap-2">
+                                        <div class="flex items-start justify-between w-full">
+                                            <h3 class="text-sm sm:text-base font-semibold text-black">Multi Visit Treatment</h3>
+                                            <span class="material-symbols-outlined cursor-pointer more-btn">more_vert</span>
+                                            <!-- Dropdown -->
+                                            <div class="more-dropdown hidden absolute right-4 top-10 bg-white rounded-2xl w-40 z-20 px-4 shadow-12">
+                                                <button class="open-popup w-full text-left py-2.5 text-ebony text-sm sm:text-base font-semibold flex items-center gap-4 border-b border-light-grayish-blue cursor-pointer" data-target="add-service">
+                                                    <img src="/public/images/edit-icon.svg" alt="edit">
+                                                    Edit
+                                                </button>
+                                                <button class="delete-btn w-full text-left py-2.5 text-sm sm:text-base text-ebony font-semibold flex items-center gap-4 cursor-pointer">
+                                                    <img src="/public/images/delete-icon.svg" alt="delete">
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center w-full">
+                                            <span class="text-base sm:text-lg text-primary-blue font-bold">₹18,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-end">
+                                    <button class="w-14 h-14 bg-primary-blue rounded-full flex items-center justify-center cursor-pointer">
+                                        <span class="material-symbols-outlined text-white">add_2</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </div>
 
             <!-- Add Service Popup -->
@@ -1273,13 +1454,14 @@
                     </button>
                 </div>
             </div>
-        </div>    
-    </main>  
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="/public/js/sidebar.js"></script>
-    <script src="/public/js/dropdown.js"></script>
-    <script src="/public/js/common.js"></script>
-    <script src="/public/js/service-doctor.js"></script>
-    <script src="/public/js/common-services.js"></script>
+        </div>
+    </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="/public/js/sidebar.js"></script>
+  <script src="/public/js/dropdown.js"></script>
+  <script src="/public/js/common.js"></script>
+  <script src="/public/js/common-services.js"></script>
+  <script src="/public/js/service-hospital.js"></script>
 </body>
 </html>
