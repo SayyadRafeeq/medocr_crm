@@ -8,6 +8,7 @@
   <link href="../../public/css/output.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
@@ -488,57 +489,57 @@
 
                 <!-- Bar -->
                 <div class="flex flex-col items-center gap-2">
-                  <div class="w-[56px] h-44 flex flex-col justify-end overflow-hidden">
-                    <div class="bg-bright-red h-[35%]"></div>
-                    <div class="bg-mint-emerald h-[65%]"></div>
+                  <div class="w-[56px] h-44 flex flex-col justify-end relative">
+                    <div class="bar bg-bright-red h-[35%]"  data-label="Lost" data-value="35"></div>
+                    <div class="bar bg-mint-emerald h-[65%]" data-label="Won" data-value="65"></div>
                   </div>
                   <span class="text-xs text-gray-500">Mon</span>
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
                   <div class="w-[56px] h-44 flex flex-col justify-end   overflow-hidden">
-                    <div class="bg-bright-red h-[40%]"></div>
-                    <div class="bg-mint-emerald h-[60%]"></div>
+                    <div class="bar bg-bright-red h-[40%]"  data-label="Lost" data-value="40"></div>
+                    <div class="bar bg-mint-emerald h-[60%]" data-label="Won" data-value="60"></div>
                   </div>
                   <span class="text-xs text-gray-500">Tue</span>
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
                   <div class="w-[56px] h-44 flex flex-col justify-end   overflow-hidden">
-                    <div class="bg-bright-red h-[45%]"></div>
-                    <div class="bg-mint-emerald h-[55%]"></div>
+                    <div class="bar bg-bright-red h-[45%]"  data-label="Lost" data-value="45"></div>
+                    <div class="bar bg-mint-emerald h-[55%]" data-label="Won" data-value="55"></div>
                   </div>
                   <span class="text-xs text-gray-500">Wed</span>
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
                   <div class="w-[56px] h-44 flex flex-col justify-end   overflow-hidden">
-                    <div class="bg-bright-red h-[20%]"></div>
-                    <div class="bg-mint-emerald h-[40%]"></div>
+                    <div class="bar bg-bright-red h-[20%]"  data-label="Lost" data-value="20"></div>
+                    <div class="bar bg-mint-emerald h-[40%]" data-label="Won" data-value="40"></div>
                   </div>
                   <span class="text-xs text-gray-500">Thu</span>
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
                   <div class="w-[56px] h-44 flex flex-col justify-end   overflow-hidden">
-                    <div class="bg-bright-red h-[30%]"></div>
-                    <div class="bg-mint-emerald h-[60%]"></div>
+                    <div class="bar bg-bright-red h-[30%]"  data-label="Lost" data-value="30"></div>
+                    <div class="bar bg-mint-emerald h-[60%]" data-label="Won" data-value="60"></div>
                   </div>
                   <span class="text-xs text-gray-500">Fri</span>
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
                   <div class="w-[56px] h-44 flex flex-col justify-end   overflow-hidden">
-                    <div class="bg-bright-red h-[10%]"></div>
-                    <div class="bg-mint-emerald h-[75%]"></div>
+                    <div class="bar bg-bright-red h-[10%]"  data-label="Lost" data-value="10"></div>
+                    <div class="bar bg-mint-emerald h-[75%]" data-label="Won" data-value="75"></div>
                   </div>
                   <span class="text-xs text-gray-500">Sat</span>
                 </div>
 
                 <div class="flex flex-col items-center gap-2">
                   <div class="w-[56px] h-44 flex flex-col justify-end   overflow-hidden">
-                    <div class="bg-bright-red h-[35%]"></div>
-                    <div class="bg-mint-emerald h-[65%]"></div>
+                    <div class="bar bg-bright-red h-[35%]"  data-label="Lost" data-value="35"></div>
+                    <div class="bar bg-mint-emerald h-[65%]" data-label="Won" data-value="65"></div>
                   </div>
                   <span class="text-xs text-gray-500">Sun</span>
                 </div>
@@ -720,8 +721,6 @@
           </div>
 
         </div>
-      
-
 
   </main>
 
@@ -737,6 +736,8 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="/public/js/sidebar.js"></script>
   <script src="/public/js/chart.js"></script>
+
+
 </body>
 
 </html>

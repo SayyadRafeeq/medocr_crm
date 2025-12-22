@@ -212,7 +212,7 @@ $(document).ready(function () {
   });
 
 });
-//bid win calendar
+
 // bid win calendar
 $(document).ready(function () {
 
@@ -297,7 +297,6 @@ $(document).ready(function () {
 
 });
 
-//consolidation calendar
 // Consolidation calendar
 $(document).ready(function () {
 
@@ -383,6 +382,47 @@ function setupCalendar({
 
   $(popup).on("click", function (e) {
     e.stopPropagation();
-  });  
+  });
 }
-//heatmap custom calendar
+
+//Zoom in and zoom out functionality
+$(document).ready(function () {
+  let zoom = 100;
+  const minZoom = 80;
+  const maxZoom = 300;
+
+  $(".doctor-report-shadow").on("wheel", function (e) {
+    e.preventDefault();
+
+    zoom += e.originalEvent.deltaY < 0 ? 10 : -10;
+    zoom = Math.min(maxZoom, Math.max(minZoom, zoom));
+
+    $(this).css("background-size", zoom + "%");
+  });
+});
+
+
+$(document).ready(function () {
+  $(".bar").on("mouseenter", function (e) {
+    const label = $(this).data("label");
+    const value = $(this).data("value");
+
+    $("body").append(`
+        <div class="bar-tooltip">
+          ${label}: ${value}
+        </div>
+      `);
+  });
+
+  $(".bar").on("mousemove", function (e) {
+    $(".bar-tooltip").css({
+      top: e.clientY - 30 + "px",
+      left: e.clientX + 10 + "px"
+    });
+  });
+
+  $(".bar").on("mouseleave", function () {
+    $(".bar-tooltip").remove();
+  });
+});
+
