@@ -212,7 +212,7 @@ $(document).ready(function () {
   });
 
 });
-//bid win calendar
+
 // bid win calendar
 $(document).ready(function () {
 
@@ -297,26 +297,214 @@ $(document).ready(function () {
 
 });
 
-//consolidation calendar
 // Consolidation calendar
+// $(document).ready(function () {
+
+//   let consolidationDate = "Today";
+
+//   /* ---- TOGGLE CONSOLIDATION CALENDAR ---- */
+//   $(".consolidationCalendarToggle").on("click", function (e) {
+//     e.stopPropagation();
+//     $(".consolidationCalendarPopup").toggleClass("hidden");
+//   });
+
+//   /* ---- SELECT OPTION (KEEP POPUP OPEN) ---- */
+//   $(".consolidation-cal-option").on("click", function (e) {
+//     e.stopPropagation(); // 🔑 critical
+
+//     consolidationDate = $(this).data("value");
+
+//     // reset checks
+//     $(".consolidation-cal-option span:first-child")
+//       .removeClass("text-dodger-blue")
+//       .addClass("text-light-gray");
+
+//     // activate selected
+//     $(this).find("span:first-child")
+//       .removeClass("text-light-gray")
+//       .addClass("text-dodger-blue");
+
+//     // ❌ do NOT close popup here
+//   });
+
+//   /* ---- CLOSE ONLY ON OUTSIDE CLICK ---- */
+//   $(document).on("click", function () {
+//     $(".consolidationCalendarPopup").addClass("hidden");
+//   });
+
+//   $(".consolidationCalendarPopup").on("click", function (e) {
+//     e.stopPropagation();
+//   });
+
+// });
+
+//custome calendar logic
+// function setupCalendar({
+//   toggle,
+//   popup,
+//   option,
+//   dateText
+// }) {
+//   let selected = "Today";
+
+//   // Toggle popup
+//   $(toggle).on("click", function (e) {
+//     e.stopPropagation();
+//     $(popup).toggleClass("hidden");
+//   });
+
+//   // Option click
+//   $(option).on("click", function (e) {
+//     e.stopPropagation();
+
+//     selected = $(this).data("value");
+
+//     // reset all checks
+//     $(option).find("span:first-child")
+//       .removeClass("text-dodger-blue")
+//       .addClass("text-light-gray");
+
+//     // activate selected
+//     $(this).find("span:first-child")
+//       .removeClass("text-light-gray")
+//       .addClass("text-dodger-blue");
+
+//     // update date text (for Today / Week / Month)
+//     if (selected !== "Custom") {
+//       $(dateText).text(selected);
+//     }
+//   });
+
+//   // Close on outside click
+//   $(document).on("click", function () {
+//     $(popup).addClass("hidden");
+//   });
+
+//   $(popup).on("click", function (e) {
+//     e.stopPropagation();
+//   });
+// }
+
+//Zoom in and zoom out functionality
 $(document).ready(function () {
+  let zoom = 100;
+  const minZoom = 80;
+  const maxZoom = 300;
 
-  let consolidationDate = "Today";
+  $(".doctor-report-shadow").on("wheel", function (e) {
+    e.preventDefault();
 
-  /* ---- TOGGLE CONSOLIDATION CALENDAR ---- */
-  $(".consolidationCalendarToggle").on("click", function (e) {
-    e.stopPropagation();
-    $(".consolidationCalendarPopup").toggleClass("hidden");
+    zoom += e.originalEvent.deltaY < 0 ? 10 : -10;
+    zoom = Math.min(maxZoom, Math.max(minZoom, zoom));
+
+    $(this).css("background-size", zoom + "%");
+  });
+});
+
+
+$(document).ready(function () {
+  $(".bar").on("mouseenter", function (e) {
+    const label = $(this).data("label");
+    const value = $(this).data("value");
+
+    $("body").append(`
+        <div class="bar-tooltip">
+          ${label}: ${value}
+        </div>
+      `);
   });
 
-  /* ---- SELECT OPTION (KEEP POPUP OPEN) ---- */
-  $(".consolidation-cal-option").on("click", function (e) {
-    e.stopPropagation(); // 🔑 critical
+  $(".bar").on("mousemove", function (e) {
+    $(".bar-tooltip").css({
+      top: e.clientY - 30 + "px",
+      left: e.clientX + 10 + "px"
+    });
+  });
 
-    consolidationDate = $(this).data("value");
+  $(".bar").on("mouseleave", function () {
+    $(".bar-tooltip").remove();
+  });
+});
+
+
+//calendar for js
+// $(document).ready(function () {
+
+//   /* ---- TOGGLE DROPDOWN ---- */
+//   $(".consolidationCalendarToggle").on("click", function (e) {
+//     e.stopPropagation();
+//     $(".consolidationCalendarPopup").toggleClass("hidden");
+//   });
+
+//   /* ---- OPTION CLICK ---- */
+//   $(".consolidation-cal-option").on("click", function (e) {
+//     e.stopPropagation();
+
+//     const value = $(this).data("value");
+
+//     // reset check icons
+//     $(".consolidation-cal-option span:first-child")
+//       .removeClass("text-dodger-blue")
+//       .addClass("text-light-gray");
+
+//     // activate selected
+//     $(this).find("span:first-child")
+//       .removeClass("text-light-gray")
+//       .addClass("text-dodger-blue");
+
+//     if (value === "Custom") {
+//       $(".consolidationDatePicker")
+//         .removeClass("hidden")
+//         .focus()
+//         .trigger("click");
+//     } else {
+//       $(".calendar-date-text").text(value);
+//       $(".consolidationCalendarPopup").addClass("hidden");
+//     }
+//   });
+
+//   /* ---- DATE SELECT ---- */
+//   $(".consolidationDatePicker").on("change", function () {
+//     $(".calendar-date-text").text(this.value);
+//     $(".consolidationCalendarPopup").addClass("hidden");
+//     $(this).addClass("hidden");
+//   });
+
+//   /* ---- CLOSE ON OUTSIDE CLICK ---- */
+//   $(document).on("click", function () {
+//     $(".consolidationCalendarPopup").addClass("hidden");
+//     $(".consolidationDatePicker").addClass("hidden");
+//   });
+
+//   $(".consolidationCalendarPopup, .consolidationDatePicker").on("click", function (e) {
+//     e.stopPropagation();
+//   });
+
+// });
+
+$(document).ready(function () {
+
+  const $wrapper = $(".consolidationCalendar");
+  const $toggle = $wrapper.find(".consolidationCalendarToggle");
+  const $popup = $wrapper.find(".consolidationCalendarPopup");
+  const $options = $wrapper.find(".consolidation-cal-option");
+  const $dateText = $wrapper.find(".calendar-date-text");
+  const $datePicker = $wrapper.find(".consolidationDatePicker");
+
+  /* ---- TOGGLE DROPDOWN ---- */
+  $toggle.on("click", function (e) {
+    e.stopPropagation();
+    $popup.toggleClass("hidden");
+  });
+
+  /* ---- OPTION CLICK ---- */
+  $options.on("click", function (e) {
+    e.stopPropagation();
+
+    const value = $(this).data("value");
 
     // reset checks
-    $(".consolidation-cal-option span:first-child")
+    $options.find("span:first-child")
       .removeClass("text-dodger-blue")
       .addClass("text-light-gray");
 
@@ -325,64 +513,37 @@ $(document).ready(function () {
       .removeClass("text-light-gray")
       .addClass("text-dodger-blue");
 
-    // ❌ do NOT close popup here
+    if (value === "Custom") {
+      // ✅ close dropdown
+      $popup.addClass("hidden");
+
+      // ✅ open date picker on top
+      $datePicker
+        .removeClass("hidden")
+        .focus()
+        .trigger("click");
+    } else {
+      $dateText.text(value);
+      $popup.addClass("hidden");
+    }
   });
 
-  /* ---- CLOSE ONLY ON OUTSIDE CLICK ---- */
+
+  /* ---- DATE SELECT ---- */
+  $datePicker.on("change", function () {
+    $dateText.text(this.value);
+    $popup.addClass("hidden");
+    $datePicker.addClass("hidden");
+  });
+
+  /* ---- CLOSE ON OUTSIDE CLICK ---- */
   $(document).on("click", function () {
-    $(".consolidationCalendarPopup").addClass("hidden");
+    $popup.addClass("hidden");
+    $datePicker.addClass("hidden");
   });
 
-  $(".consolidationCalendarPopup").on("click", function (e) {
+  $popup.add($datePicker).on("click", function (e) {
     e.stopPropagation();
   });
 
 });
-
-//custome calendar logic
-function setupCalendar({
-  toggle,
-  popup,
-  option,
-  dateText
-}) {
-  let selected = "Today";
-
-  // Toggle popup
-  $(toggle).on("click", function (e) {
-    e.stopPropagation();
-    $(popup).toggleClass("hidden");
-  });
-
-  // Option click
-  $(option).on("click", function (e) {
-    e.stopPropagation();
-
-    selected = $(this).data("value");
-
-    // reset all checks
-    $(option).find("span:first-child")
-      .removeClass("text-dodger-blue")
-      .addClass("text-light-gray");
-
-    // activate selected
-    $(this).find("span:first-child")
-      .removeClass("text-light-gray")
-      .addClass("text-dodger-blue");
-
-    // update date text (for Today / Week / Month)
-    if (selected !== "Custom") {
-      $(dateText).text(selected);
-    }
-  });
-
-  // Close on outside click
-  $(document).on("click", function () {
-    $(popup).addClass("hidden");
-  });
-
-  $(popup).on("click", function (e) {
-    e.stopPropagation();
-  });  
-}
-//heatmap custom calendar

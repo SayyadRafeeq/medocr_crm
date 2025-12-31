@@ -514,9 +514,9 @@ $(document).ready(function () {
     $(this).siblings(".dropdown-option").toggle();
   });
 
-  $(document).on("click", function () {
+  /* $(document).on("click", function () {
     $(".dropdown-option").hide();
-  });
+  }); */
 
   $(".dropdown-option div").on("click", function () {
     const selected = $(this).text().trim();

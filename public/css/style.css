@@ -1436,3 +1436,22 @@ input[type="number"] {
 canvas {
   width: 100% !important;
 }
+
+#heatmap {
+  overflow: hidden;
+  transform-origin: center center;
+  transition: transform 0.15s ease;
+  cursor: zoom-in;
+}
+
+.bar-tooltip {
+  position: fixed;        /* IMPORTANT */
+  background: #111827;
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9999;          /* IMPORTANT */
+}
