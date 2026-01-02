@@ -155,3 +155,31 @@ $(document).on('click', '.remove-file', function (e) {
         .removeClass('bg-primary-blue text-white')
         .addClass('bg-light-gray cursor-not-allowed');
 });
+
+$(document).on("click", '#step-3 button:contains("Pay Now")', function () {
+  // Hide services section
+  $(".services-section").addClass("hidden");
+
+  // Show premium section
+  $(".premium-section").removeClass("hidden");
+  initializeTabs();
+  // Scroll to top of premium section
+  $(".premium-section")[0].scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
+
+$(document).on("click", '#step-3 button:contains("Next")', function () {
+  // Hide services section
+  $(".services-section").addClass("hidden");
+
+  // Show premium section
+  $(".services-without-subscription").removeClass("hidden");
+  initializeTabs();
+  // Scroll to top of premium section
+  $(".services-without-subscription")[0].scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+});
