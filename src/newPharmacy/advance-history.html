@@ -20,7 +20,8 @@
             <!-- Logo div -->
             <div class="w-[280px]">
                 <a href="/src/lab/home.html">
-                    <img src="/public/images/newPharmacy-logo.svg" alt="Logo" loading="lazy" class="w-[50px] h-[60px]" />
+                    <img src="/public/images/newPharmacy-logo.svg" alt="Logo" loading="lazy"
+                        class="w-[50px] h-[60px]" />
                 </a>
             </div>
 
@@ -399,7 +400,7 @@
             </div>
             <!--Receipt popup opens on clicking eye icon in table-->
             <div class="viewModal fixed inset-0 bg-semi-transparent-black flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-lg p-2 max-w-md w-full h-[80vh] overflow-y-auto scroll">
+                <div class="bg-white rounded-lg p-2 max-w-[480px] w-full h-[80vh] overflow-y-auto scroll">
                     <div class="flex items-center justify-between">
                         <div class="flex items-center gap-2">
                             <span
@@ -414,455 +415,566 @@
                             <span class="material-symbols-outlined cursor-pointer">close</span>
                         </button>
                     </div>
-
-                    <img src="/public/images/advance-receipt.svg" alt="Incorporation Certificate"
-                        class="w-full rounded" />
-                </div>
-            </div>
-            <!--Platform Bill popup-->
-            <div
-                class="platformBill fixed inset-0 bg-semi-transparent-black flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-lg p-2 max-w-md w-full h-[80vh] overflow-y-auto scroll">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-2">
-                            <span
-                                class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">share</span>
-                            <span
-                                class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">download</span>
+                    <div class="p-3 text-sm leading-relaxed receipt-content">
+                        <!-- Title -->
+                        <div class="text-center mb-2">
+                            <div class="font-bold">RECEIPT VOUCHER</div>
+                            <div class="text-xs">(Under Rule 58 - GST Compliant)</div>
                         </div>
-                        <p class="font-semibold text-xl text-deep-teal-green">
-                            Platform Bill
-                        </p>
-                        <button class="close-popup" data-popup="platformBill">
-                            <span class="material-symbols-outlined cursor-pointer">close</span>
-                        </button>
-                    </div>
-
-                    <img src="/public/images/platformbill-receipt.svg" alt="advance reciept" class="w-full rounded" />
-                </div>
-            </div>
-            <!--View button popup-->
-            <div class="fileModal fixed inset-0 bg-semi-transparent-black flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-lg w-250">
-                    <div class="flex items-center justify-between bg-deep-teal-green rounded-t-lg p-2 text-white">
-                        <div class="flex items-center gap-2">
-                            <span
-                                class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">share</span>
-                            <span
-                                class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">download</span>
+                        <div class="dotted-line"></div>
+                        <!-- Receipt Details -->
+                        <div class="flex items-center mb-2">
+                            <div class="flex flex-col">
+                                <span class="font-semibold">Receipt No:</span>
+                                <span class="font-semibold">Date:</span>
+                            </div>
+                            <div class="flex flex-col ml-8 text-xs gap-0.5">
+                                <span class="">ADV/2025/0007</span>
+                                <span class="">17-May-2025</span>
+                            </div>
                         </div>
-                        <p class="font-semibold text-xl">Advance History</p>
-                        <button class="closeModal">
-                            <span class="material-symbols-outlined cursor-pointer">close</span>
-                        </button>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 px-4">
-                        <p class="font-semibold text-xl">Pharma Chemist</p>
-                        <p class="font-normal text-base">(14/05/2025 to 21/05/2025)</p>
-                    </div>
-                    <div class="pt-4 px-4 h-96 overflow-y-auto scroll">
-                        <table class="min-w-full table-auto whitespace-nowrap docTable bg-snow-gray">
-                            <thead class="bg-deep-teal-green text-white">
-                                <tr>
-                                    <th class="font-normal text-base border border-r-2 p-2">
-                                        <div class="flex items-center justify-center gap-1">
-                                            Date & Time
-                                            <img src="/public/images/sort-alt.svg" alt="arrow" class="w-4 h-4" />
-                                        </div>
-                                    </th>
-                                    <th class="font-normal text-base border border-r-2 p-2">
-                                        Transaction ID
-                                    </th>
-                                    <th class="font-normal text-base border border-r-2 p-2">
-                                        Type
-                                    </th>
-                                    <th class="font-normal text-base border border-r-2 p-2">
-                                        Description
-                                    </th>
-                                    <th class="font-normal text-base border border-r-2 p-2">
-                                        Amount
-                                    </th>
-                                    <th class="font-normal text-base border border-r-2 p-2">
-                                        Status
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="text-center">
-                                    <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                                    <td class="py-2 px-4">TXN123456789</td>
-                                    <td class="py-2 px-4">Credit</td>
-                                    <td class="py-2 px-4">Advance Payment</td>
-                                    <td class="py-2 px-4">₹2,000</td>
-                                    <td class="px-4 py-2">
-                                        <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                            Successful
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                                    <td class="py-2 px-4">TXN123456789</td>
-                                    <td class="py-2 px-4">Credit</td>
-                                    <td class="py-2 px-4">Advance Payment</td>
-                                    <td class="py-2 px-4">₹2,000</td>
-                                    <td class="px-4 py-2">
-                                        <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                            Successful
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                                    <td class="py-2 px-4">TXN123456789</td>
-                                    <td class="py-2 px-4">Credit</td>
-                                    <td class="py-2 px-4">Advance Payment</td>
-                                    <td class="py-2 px-4">₹2,000</td>
-                                    <td class="px-4 py-2">
-                                        <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                            Successful
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                                    <td class="py-2 px-4">TXN123456789</td>
-                                    <td class="py-2 px-4">Credit</td>
-                                    <td class="py-2 px-4">Advance Payment</td>
-                                    <td class="py-2 px-4">₹2,000</td>
-                                    <td class="px-4 py-2">
-                                        <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                            Successful
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                                    <td class="py-2 px-4">TXN123456789</td>
-                                    <td class="py-2 px-4">Credit</td>
-                                    <td class="py-2 px-4">Advance Payment</td>
-                                    <td class="py-2 px-4">₹2,000</td>
-                                    <td class="px-4 py-2">
-                                        <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                            Successful
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="text-center">
-                                    <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                                    <td class="py-2 px-4">TXN123456789</td>
-                                    <td class="py-2 px-4">Credit</td>
-                                    <td class="py-2 px-4">Advance Payment</td>
-                                    <td class="py-2 px-4">₹2,000</td>
-                                    <td class="px-4 py-2">
-                                        <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                            Successful
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <!-- Platform Details -->
+                        <div class="mb-2">
+                            <div><span class="font-semibold">Platform Name:</span> <span
+                                    class="text-nowrap text-xs">MediConnect
+                                    Digital Services Pvt Ltd</span></div>
+                            <div><span class="font-semibold">GSTIN:</span> <span
+                                    class="ml-16 text-xs">27AALTFOM7890M1Z3</span>
+                            </div>
+                            <div><span class="font-semibold ">Address:</span> <span class="ml-12 text-xs">3rd Floor
+                                    Knowledge
+                                    Tower,Bengaluru-560034</span></div>
+                            <div><span class="font-semibold text-crimson-red">Contact:</span> <span
+                                    class="ml-12 text-crimson-red text-xs">+91-9988776655 | billing@mediconnect.in</span>
+                            </div>
+                        </div>
+                        <div class="dotted-line"></div>
+                        <!-- Received From -->
+                        <div class="mb-2">
+                            <div class="font-semibold mb-1">Received From:</div>
+                            <div><span class="font-semibold">Advertiser Name:</span> <span
+                                    class="ml-2 text-xs">WellnessFit
+                                    Nutrition Pvt. Ltd.</span></div>
+                            <div><span class="font-semibold">GSTIN:</span> <span
+                                    class="ml-23 text-xs">27MELLFIT11234G1Z9</span>
+                            </div>
+                            <div><span class="font-semibold">Address:</span> <span class="ml-19 text-xs">22, Link Road,
+                                    Mumbai -
+                                    400072</span></div>
+                            <div><span class="font-semibold text-crimson-red">Contact:</span> <span
+                                    class="ml-19 text-crimson-red text-xs">info@wellnessfit.in</span></div>
+                        </div>
+                        <div class="dotted-line-red"></div>
+                        <!-- Purpose -->
+                        <div class="mb-2">
+                            <span class="font-semibold text-crimson-red">Purpose:</span>
+                            <span class="ml-14 text-crimson-red text-xs">Advance for future coupon campaign posting</span>
+                        </div>
+                        <div class="dotted-line-red"></div>
+                        <div class="mb-2">
+                            <span class="font-semibold text-crimson-red">Description:</span>
+                            <span class=" text-xs text-crimson-red">| SAC Code | Qty | Rate | GST% | Total (INR)</span>
+                            <div class="dotted-line-red"></div>
+                        </div>
+                            <div class="flex text-xs  mb-2">
+                                <span class="">Advance for Services | 998361</span>
+                                <span class="">| 1</span>
+                                <span class="">| ₹100.00</span>
+                                <span class="">| 18%</span>
+                                <span class="">| ₹100.00</span>
+                            </div>
+                        <!-- GST and Total -->
+                        <div class="mb-2 mt-4">
+                            <div class="flex justify-between">
+                                <span class="font-semibold text-crimson-red">Add: GST @18%</span>
+                                <span class="text-crimson-red">₹18.00</span>
+                            </div>
+                        </div>
+                        <div class="dotted-line-red"></div>
+                        <div class="mb-2">
+                            <div class="flex justify-between font-semibold">
+                                <span class="text-crimson-red">Total Amount Received (INR):</span>
+                                <span class="text-crimson-red">₹118.00</span>
+                            </div>
+                        </div>
+                        <div class="dotted-line-red"></div>
+                        <!-- Amount in Words -->
+                        <div class="mb-2 mt-6">
+                            <span class="font-semibold">Amount in Words:</span>
+                            <span class="ml-2">INR One Hundred Eighteen Only</span>
+                        </div>
+                        <!-- Payment Mode -->
+                        <div class="mb-6">
+                            <span class="font-semibold">Mode of Payment:</span>
+                            <span class="ml-2">UPI (Txn ID: UPI9876SABC)</span>
+                        </div>
+                        <div class="dotted-line"></div>
+                        <!-- Notes -->
+                        <div class="mb-4">
+                            <div class="font-semibold mb-1">**Notes:**</div>
+                            <div class="text-xs leading-relaxed">
+                                <div>- GST paid on advance as per Section 13(2)(a) of CGST Act.</div>
+                                <div>- This is not a tax invoice. Final tax invoice will be issued on actual service
+                                    delivery.</div>
+                                <div class="text-crimson-red">- No Input Tax Credit (ITC) is eligible on the basis of this
+                                    voucher alone.</div>
+                            </div>
+                        </div>
+                        <div class="dotted-line-red"></div>
+                        <!-- Signature -->
+                        <div class="flex items-center justify-between mt-4">
+                            <div>
+                                <div class="font-semibold">Authorized Signatory,</div>
+                                <div class="  inline-block">[Signature]</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--Table-->
-            <div class="pt-4 overflow-x-auto tab-content">
-                <table class="min-w-full table-auto whitespace-nowrap docTable bg-snow-gray">
-                    <thead class="bg-deep-teal-green text-white">
-                        <tr>
-                            <th class="font-normal text-base border border-r-2 p-2">
-                                <div class="flex items-center justify-center gap-1">
-                                    Date & Time
-                                    <img src="/public/images/sort-alt.svg" alt="arrow" class="w-4 h-4" />
-                                </div>
-                            </th>
-                            <th class="font-normal text-base border border-r-2 p-2">
-                                Transaction ID
-                            </th>
-                            <th class="font-normal text-base border border-r-2 p-2">
-                                Type
-                            </th>
-                            <th class="font-normal text-base border border-r-2 p-2">
-                                Description
-                            </th>
-                            <th class="font-normal text-base border border-r-2 p-2">
-                                Amount
-                            </th>
-                            <th class="font-normal text-base border border-r-2 p-2">
-                                Status
-                            </th>
-                            <th class="font-normal text-base p-2">Action</th>
-                        </tr>
-                    </thead>
+        </div>
+        <!--Platform Bill popup-->
+        <div class="platformBill fixed inset-0 bg-semi-transparent-black flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg p-2 max-w-md w-full h-[80vh] overflow-y-auto scroll">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">share</span>
+                        <span
+                            class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">download</span>
+                    </div>
+                    <p class="font-semibold text-xl text-deep-teal-green">
+                        Platform Bill
+                    </p>
+                    <button class="close-popup" data-popup="platformBill">
+                        <span class="material-symbols-outlined cursor-pointer">close</span>
+                    </button>
+                </div>
 
-                    <tbody>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456789</td>
-                            <td class="py-2 px-4">Credit</td>
-                            <td class="py-2 px-4">Advance Payment</td>
-                            <td class="py-2 px-4">₹2,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456788</td>
-                            <td class="py-2 px-4">Debit</td>
-                            <td class="py-2 px-4">Platform Payment</td>
-                            <td class="py-2 px-4">₹1,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span data-popup="platformBill"
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all popup-btn">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456789</td>
-                            <td class="py-2 px-4">Credit</td>
-                            <td class="py-2 px-4">Advance Payment</td>
-                            <td class="py-2 px-4">₹2,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456788</td>
-                            <td class="py-2 px-4">Debit</td>
-                            <td class="py-2 px-4">Platform Payment</td>
-                            <td class="py-2 px-4">₹1,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-peach text-burnt-orange py-2 rounded-md border-none">
-                                    Failed
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456789</td>
-                            <td class="py-2 px-4">Credit</td>
-                            <td class="py-2 px-4">Advance Payment</td>
-                            <td class="py-2 px-4">₹2,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456788</td>
-                            <td class="py-2 px-4">Debit</td>
-                            <td class="py-2 px-4">Platform Payment</td>
-                            <td class="py-2 px-4">₹1,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-transparent-living-coral text-strong-red py-2 rounded-md border-none">
-                                    Cancelled
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456789</td>
-                            <td class="py-2 px-4">Credit</td>
-                            <td class="py-2 px-4">Advance Payment</td>
-                            <td class="py-2 px-4">₹2,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456788</td>
-                            <td class="py-2 px-4">Debit</td>
-                            <td class="py-2 px-4">Platform Payment</td>
-                            <td class="py-2 px-4">₹1,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456789</td>
-                            <td class="py-2 px-4">Credit</td>
-                            <td class="py-2 px-4">Advance Payment</td>
-                            <td class="py-2 px-4">₹2,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456788</td>
-                            <td class="py-2 px-4">Debit</td>
-                            <td class="py-2 px-4">Platform Payment</td>
-                            <td class="py-2 px-4">₹1,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456789</td>
-                            <td class="py-2 px-4">Credit</td>
-                            <td class="py-2 px-4">Advance Payment</td>
-                            <td class="py-2 px-4">₹2,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                        <tr class="text-center">
-                            <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
-                            <td class="py-2 px-4">TXN123456788</td>
-                            <td class="py-2 px-4">Debit</td>
-                            <td class="py-2 px-4">Platform Payment</td>
-                            <td class="py-2 px-4">₹1,000</td>
-                            <td class="px-4 py-2">
-                                <div class="bg-mint-cream text-green py-2 rounded-md border-none">
-                                    Successful
-                                </div>
-                            </td>
-                            <td class="px-4 py-2">
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
-                                    visibility
-                                </span>
-                                <span
-                                    class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
-                                    download
-                                </span>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <img src="/public/images/platformbill-receipt.svg" alt="advance reciept" class="w-full rounded" />
             </div>
+        </div>
+        <!--View button popup-->
+        <div class="fileModal fixed inset-0 bg-semi-transparent-black flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-lg w-250">
+                <div class="flex items-center justify-between bg-deep-teal-green rounded-t-lg p-2 text-white">
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">share</span>
+                        <span
+                            class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">download</span>
+                    </div>
+                    <p class="font-semibold text-xl">Advance History</p>
+                    <button class="closeModal">
+                        <span class="material-symbols-outlined cursor-pointer">close</span>
+                    </button>
+                </div>
+                <div class="flex items-center justify-between pt-4 px-4">
+                    <p class="font-semibold text-xl">Pharma Chemist</p>
+                    <p class="font-normal text-base">(14/05/2025 to 21/05/2025)</p>
+                </div>
+                <div class="pt-4 px-4 h-96 overflow-y-auto scroll">
+                    <table class="min-w-full table-auto whitespace-nowrap docTable bg-snow-gray">
+                        <thead class="bg-deep-teal-green text-white">
+                            <tr>
+                                <th class="font-normal text-base border border-r-2 p-2">
+                                    <div class="flex items-center justify-center gap-1">
+                                        Date & Time
+                                        <img src="/public/images/sort-alt.svg" alt="arrow" class="w-4 h-4" />
+                                    </div>
+                                </th>
+                                <th class="font-normal text-base border border-r-2 p-2">
+                                    Transaction ID
+                                </th>
+                                <th class="font-normal text-base border border-r-2 p-2">
+                                    Type
+                                </th>
+                                <th class="font-normal text-base border border-r-2 p-2">
+                                    Description
+                                </th>
+                                <th class="font-normal text-base border border-r-2 p-2">
+                                    Amount
+                                </th>
+                                <th class="font-normal text-base border border-r-2 p-2">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                                <td class="py-2 px-4">TXN123456789</td>
+                                <td class="py-2 px-4">Credit</td>
+                                <td class="py-2 px-4">Advance Payment</td>
+                                <td class="py-2 px-4">₹2,000</td>
+                                <td class="px-4 py-2">
+                                    <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                        Successful
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                                <td class="py-2 px-4">TXN123456789</td>
+                                <td class="py-2 px-4">Credit</td>
+                                <td class="py-2 px-4">Advance Payment</td>
+                                <td class="py-2 px-4">₹2,000</td>
+                                <td class="px-4 py-2">
+                                    <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                        Successful
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                                <td class="py-2 px-4">TXN123456789</td>
+                                <td class="py-2 px-4">Credit</td>
+                                <td class="py-2 px-4">Advance Payment</td>
+                                <td class="py-2 px-4">₹2,000</td>
+                                <td class="px-4 py-2">
+                                    <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                        Successful
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                                <td class="py-2 px-4">TXN123456789</td>
+                                <td class="py-2 px-4">Credit</td>
+                                <td class="py-2 px-4">Advance Payment</td>
+                                <td class="py-2 px-4">₹2,000</td>
+                                <td class="px-4 py-2">
+                                    <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                        Successful
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                                <td class="py-2 px-4">TXN123456789</td>
+                                <td class="py-2 px-4">Credit</td>
+                                <td class="py-2 px-4">Advance Payment</td>
+                                <td class="py-2 px-4">₹2,000</td>
+                                <td class="px-4 py-2">
+                                    <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                        Successful
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="text-center">
+                                <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                                <td class="py-2 px-4">TXN123456789</td>
+                                <td class="py-2 px-4">Credit</td>
+                                <td class="py-2 px-4">Advance Payment</td>
+                                <td class="py-2 px-4">₹2,000</td>
+                                <td class="px-4 py-2">
+                                    <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                        Successful
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--Table-->
+        <div class="pt-4 overflow-x-auto tab-content">
+            <table class="min-w-full table-auto whitespace-nowrap docTable bg-snow-gray">
+                <thead class="bg-deep-teal-green text-white">
+                    <tr>
+                        <th class="font-normal text-base border border-r-2 p-2">
+                            <div class="flex items-center justify-center gap-1">
+                                Date & Time
+                                <img src="/public/images/sort-alt.svg" alt="arrow" class="w-4 h-4" />
+                            </div>
+                        </th>
+                        <th class="font-normal text-base border border-r-2 p-2">
+                            Transaction ID
+                        </th>
+                        <th class="font-normal text-base border border-r-2 p-2">
+                            Type
+                        </th>
+                        <th class="font-normal text-base border border-r-2 p-2">
+                            Description
+                        </th>
+                        <th class="font-normal text-base border border-r-2 p-2">
+                            Amount
+                        </th>
+                        <th class="font-normal text-base border border-r-2 p-2">
+                            Status
+                        </th>
+                        <th class="font-normal text-base p-2">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456789</td>
+                        <td class="py-2 px-4">Credit</td>
+                        <td class="py-2 px-4">Advance Payment</td>
+                        <td class="py-2 px-4">₹2,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456788</td>
+                        <td class="py-2 px-4">Debit</td>
+                        <td class="py-2 px-4">Platform Payment</td>
+                        <td class="py-2 px-4">₹1,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span data-popup="platformBill"
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all popup-btn">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456789</td>
+                        <td class="py-2 px-4">Credit</td>
+                        <td class="py-2 px-4">Advance Payment</td>
+                        <td class="py-2 px-4">₹2,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456788</td>
+                        <td class="py-2 px-4">Debit</td>
+                        <td class="py-2 px-4">Platform Payment</td>
+                        <td class="py-2 px-4">₹1,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-peach text-burnt-orange py-2 rounded-md border-none">
+                                Failed
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456789</td>
+                        <td class="py-2 px-4">Credit</td>
+                        <td class="py-2 px-4">Advance Payment</td>
+                        <td class="py-2 px-4">₹2,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456788</td>
+                        <td class="py-2 px-4">Debit</td>
+                        <td class="py-2 px-4">Platform Payment</td>
+                        <td class="py-2 px-4">₹1,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-transparent-living-coral text-strong-red py-2 rounded-md border-none">
+                                Cancelled
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456789</td>
+                        <td class="py-2 px-4">Credit</td>
+                        <td class="py-2 px-4">Advance Payment</td>
+                        <td class="py-2 px-4">₹2,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456788</td>
+                        <td class="py-2 px-4">Debit</td>
+                        <td class="py-2 px-4">Platform Payment</td>
+                        <td class="py-2 px-4">₹1,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456789</td>
+                        <td class="py-2 px-4">Credit</td>
+                        <td class="py-2 px-4">Advance Payment</td>
+                        <td class="py-2 px-4">₹2,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456788</td>
+                        <td class="py-2 px-4">Debit</td>
+                        <td class="py-2 px-4">Platform Payment</td>
+                        <td class="py-2 px-4">₹1,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456789</td>
+                        <td class="py-2 px-4">Credit</td>
+                        <td class="py-2 px-4">Advance Payment</td>
+                        <td class="py-2 px-4">₹2,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="py-2 px-4">20 Mar 2025, 10:30 AM</td>
+                        <td class="py-2 px-4">TXN123456788</td>
+                        <td class="py-2 px-4">Debit</td>
+                        <td class="py-2 px-4">Platform Payment</td>
+                        <td class="py-2 px-4">₹1,000</td>
+                        <td class="px-4 py-2">
+                            <div class="bg-mint-cream text-green py-2 rounded-md border-none">
+                                Successful
+                            </div>
+                        </td>
+                        <td class="px-4 py-2">
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all view-receipt">
+                                visibility
+                            </span>
+                            <span
+                                class="material-symbols-outlined cursor-pointer hover:bg-deep-teal-green rounded-full p-1 transition-all download-icon">
+                                download
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
