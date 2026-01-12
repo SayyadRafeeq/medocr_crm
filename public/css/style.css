@@ -42,6 +42,7 @@
   --color-strong-red: #B00020;
   --color-vibrant-red: #FE5353;
   --color-dark-red: #A30D11;
+  --color-crimson-red1:#D00000;
   --color-dark-crimson-red: #B72136;
   --color-semi-transparent-red: #A30D1199;
 
@@ -134,6 +135,7 @@
   --color-dark-blue: #123456;
   --color-charcoal-blue: #364153;
   --color-lightest-blue: #DBEAFE;
+  --color-lightest-blue1: #EDF6FF;
   --color-deep-blue: #101828;
   --color-light-grayish-blue: #DFE3E8;
   --color-transparent-dark-blue: #12345633;
@@ -692,10 +694,14 @@ body {
 }
 
 .active-tab-rewards {
-  @apply text-deep-teal-green border-b-3 border-deep-teal-green font-semibold;
+  @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
 }
 
 .active-tab-support {
+  @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
+}
+
+.active-tab-ordersnewpharmacy {
   @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
 }
 

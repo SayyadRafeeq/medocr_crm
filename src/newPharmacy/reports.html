@@ -2,647 +2,865 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reports</title>
-    <link href="../../public/css/output.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports</title>
+  <link href="../../public/css/output.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 
 <body>
-    <main class="h-screen max-w-[1440px] w-full mx-auto bg-slate-white overflow-hidden">
-        <!-- Header -->
-        <div
-            class="h-[100px] w-full flex items-center justify-between p-2 bg-white md:p-5 md:shadow-[0_4px_10px_4px_rgba(0,0,0,0.15)]">
-            <!-- Logo div -->
-            <div class="w-[280px]">
-                <a href="/src/newPharmacy/home.html">
-                    <img src="/public/images/newPharmacy-logo.svg" alt="Logo" loading="lazy"
-                        class="w-[50px] h-[60px]" />
+  <main class="h-screen max-w-[1440px] w-full mx-auto bg-slate-white overflow-hidden">
+    <!-- Header -->
+    <div
+      class="h-[100px] w-full flex items-center justify-between p-2 bg-white md:p-5 md:shadow-[0_4px_10px_4px_rgba(0,0,0,0.15)]">
+      <!-- Logo div -->
+      <div class="w-[280px]">
+        <a href="/src/doctor/home.html">
+          <img src="/public/images/hospital-logo.svg" alt="Logo" loading="lazy" class="w-[50px] h-[60px]" />
+        </a>
+      </div>
+
+      <!-- Desktop Navbar -->
+      <div class="hidden sm:block flex-1">
+        <div class="flex items-center justify-end gap-2 md:gap-4 flex-[1_0_0]">
+          <!-- Buttons -->
+          <div class="relative">
+            <button
+              class="w-full max-w-[181px] h-[48px] flex items-center justify-center gap-2 border border-dodger-blue rounded-md text-dodger-blue px-5 open-share-modal cursor-pointer text-18-normal">
+              <p>HEALTH2025</p>
+              <span class="material-symbols-outlined bold-weight">
+                share
+              </span>
+            </button>
+          </div>
+          <!--Share Popup-->
+          <div id="shareModal"
+            class="hidden absolute right-72 top-20 bg-white shadow-lg rounded-md z-50 w-130 border border-dodger-blue">
+            <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
+              <div class="flex justify-between items-center">
+                <p class="font-semibold text-xl">Share</p>
+                <span class="material-symbols-outlined close-share-modal cursor-pointer">
+                  close
+                </span>
+              </div>
+              <hr class="text-dodger-blue mt-4" />
+              <div class="flex justify-between pt-4">
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/whatsappicon.svg" alt="whatsapp logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Whatsapp</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/telegramicon.svg" alt="telegram logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Telegram</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/facebookicon.svg" alt="facebook logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Facebook</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/smsicon.svg" alt="sms logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">Message</p>
+                </div>
+
+                <div class="flex flex-col items-center gap-2 w-20 text-center">
+                  <img src="/public/images/gmailicon.svg" alt="gmail logo" class="w-10 h-10 cursor-pointer" />
+                  <p class="font-normal text-base text-dark-gray">E-mail</p>
+                </div>
+              </div>
+              <div class="pt-4 relative mt-6">
+                <input type="text" id="share-link" value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
+                  class="w-full rounded-md p-4 font-normal text-sm border" disabled />
+                <button type="button"
+                  class="copy-btn absolute right-3 top-6 bg-dodger-blue text-white rounded-md p-2 cursor-pointer"
+                  data-target="#share-link">
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Icons -->
+          <div
+            class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+            <a href="/src/doctor/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg" alt="wallet"
+                class="cursor-pointer w-[26px] h-[26px]" /></a>
+            <div
+              class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
+              Wallet
+            </div>
+          </div>
+          <div class="relative  rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+            <a href="#" class="has-tooltip"><img src="/public/images/msgicon-nav.svg" alt="star"
+                class="cursor-pointer" /></a>
+            <div
+              class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
+              Saved
+            </div>
+          </div>
+          <div
+            class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+            <img src="/public/images/bell.svg" alt="bell" class="cursor-pointer has-tooltip w-[26px] h-[26px]"
+              id="bell-icon" />
+            <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
+            <div
+              class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal whitespace-nowrap">
+              Notification
+            </div>
+            <div id="notificationDropdown"
+              class=" hidden absolute right-0 top-10 mt-2 bg-white shadow-lg rounded-md z-50 w-[521px] h-[312px] border border-dodger-blue overflow-hidden">
+              <div class="flex justify-between items-center p-5">
+                <p class="text-18-semibold text-dark-gray">
+                  Notifications
+                </p>
+                <span class="material-symbols-outlined cursor-pointer close-notifications">
+                  close
+                </span>
+              </div>
+              <div class="h-[calc(100%-40px)] px-5 pb-5 space-y-4 overflow-y-auto scroll">
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      You have earned 50 credit points through referral
+                    </p>
+                  </div>
+                  <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                </div>
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      Profile Updated
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      Profile Updated
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
+                  <div class="flex gap-2 items-center">
+                    <span class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
+                      notifications
+                    </span>
+                    <p class="text-14-semibold text-dark-gray">
+                      Monika Singh has requested for some medicines
+                    </p>
+                  </div>
+                  <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Dropdown -->
+          <div class="relative inline-block">
+            <button class="profile-btn">
+              <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-12 h-12" />
+            </button>
+            <!-- Dropdown -->
+            <div class="profile-dropdown border border-dodger-blue mt-1 w-[192px] h-[118px]">
+              <div class="p-2.5 flex items-center space-x-2.5 cursor-pointer">
+                <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-12 h-12 rounded-full" />
+                <div>
+                  <p class="text-18-normal">User Name</p>
+                </div>
+              </div>
+              <div class="p-2.5 hover:bg-light-sea-green-opacity">
+                <a href="#" class="text-18-normal flex items-center space-x-2.5">
+                  <span class="material-symbols-outlined"> logout </span>
+                  <span>Sign out</span>
                 </a>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <!-- Desktop Navbar -->
-            <div class="hidden sm:block flex-1">
-                <div class="flex items-center justify-end gap-2 md:gap-4 flex-[1_0_0]">
-                    <!-- Buttons -->
-                    <div class="relative">
-                        <button
-                            class="w-full max-w-[181px] h-[32px] flex items-center justify-center gap-2 border border-deep-teal-green rounded-md text-deep-teal-green px-5 open-share-modal cursor-pointer text-18-normal">
-                            <p>HEALTH2025</p>
-                            <span class="material-symbols-outlined bold-weight">
-                                share
-                            </span>
-                        </button>
-                        <!--Share Popup-->
-                        <div id="shareModal"
-                            class="hidden absolute right-0  mt-2 bg-white shadow-lg rounded-md z-50 w-130 border border-deep-teal-green">
-                            <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
-                                <div class="flex justify-between items-center">
-                                    <p class="font-semibold text-xl">Share</p>
-                                    <span class="material-symbols-outlined close-share-modal cursor-pointer">
-                                        close
-                                    </span>
-                                </div>
-                                <hr class="text-deep-teal-green mt-4" />
-                                <div class="flex justify-between pt-4">
-                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
-                                        <img src="/public/images/whatsappicon.svg" alt="whatsapp logo"
-                                            class="w-10 h-10 cursor-pointer" />
-                                        <p class="font-normal text-base text-dark-gray">Whatsapp</p>
-                                    </div>
+      <!-- Mobile Navbar -->
+      <div class="block sm:hidden">
+        <div class="flex items-center gap-4">
+          <input type="search" placeholder="Search"
+            class="w-full max-w-[249px] h-[36px] rounded-[6px] bg-light-white border-none px-3 focus:!outline-none focus:ring-0" />
+          <span class="material-symbols-outlined cursor-pointer text-golden-yellow">
+            kid_star
+          </span>
+          <span class="material-symbols-outlined cursor-pointer">
+            notifications
+          </span>
+          <!-- User Dropdown -->
+          <div class="relative inline-block">
+            <button class="profile-btn">
+              <img src="/public/images/user.svg" alt="User" loading="lazy" />
+            </button>
 
-                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
-                                        <img src="/public/images/telegramicon.svg" alt="telegram logo"
-                                            class="w-10 h-10 cursor-pointer" />
-                                        <p class="font-normal text-base text-dark-gray">Telegram</p>
-                                    </div>
-
-                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
-                                        <img src="/public/images/facebookicon.svg" alt="facebook logo"
-                                            class="w-10 h-10 cursor-pointer" />
-                                        <p class="font-normal text-base text-dark-gray">Facebook</p>
-                                    </div>
-
-                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
-                                        <img src="/public/images/smsicon.svg" alt="sms logo"
-                                            class="w-10 h-10 cursor-pointer" />
-                                        <p class="font-normal text-base text-dark-gray">Message</p>
-                                    </div>
-
-                                    <div class="flex flex-col items-center gap-2 w-20 text-left">
-                                        <img src="/public/images/gmailicon.svg" alt="gmail logo"
-                                            class="w-10 h-10 cursor-pointer" />
-                                        <p class="font-normal text-base text-dark-gray">E-mail</p>
-                                    </div>
-                                </div>
-                                <div class="pt-4 relative mt-6">
-                                    <input type="text" id="share-link"
-                                        value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
-                                        class="w-full rounded-md p-4 font-normal text-sm border" disabled />
-                                    <button type="button"
-                                        class="copy-btn absolute right-3 top-6 bg-deep-teal-green text-white rounded-md p-2 cursor-pointer"
-                                        data-target="#share-link">
-                                        Copy
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Icons -->
-
-                    <div
-                        class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                        <a href="/src/newPharmacy/advance.html" class="has-tooltip"><img
-                                src="/public/images/walleticon.svg" alt="wallet"
-                                class="cursor-pointer w-[26px] h-[26px]" /></a>
-                        <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
-                            Wallet
-                        </div>
-                    </div>
-                    <div
-                        class="relative  rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                        <a href="#" class="has-tooltip"><img src="/public/images/msgicon-nav.svg" alt="star"
-                                class="cursor-pointer" /></a>
-                        <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
-                            Saved
-                        </div>
-                    </div>
-                    <div
-                        class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                        <img src="/public/images/bell.svg" alt="bell"
-                            class="cursor-pointer has-tooltip w-[26px] h-[26px]" id="bell-icon" />
-                        <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
-                        <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal whitespace-nowrap">
-                            Notification
-                        </div>
-                        <!--Notification Dropdown-->
-                        <div id="notificationDropdown"
-                            class="hidden absolute right-1 top-10 bg-white border border-deep-teal-green shadow-lg rounded-md z-50 w-130 h-[19.5rem] overflow-y-auto scroll">
-                            <div class="flex justify-between items-center p-4">
-                                <p class="font-semibold text-lg text-dark-gray">
-                                    Notifications
-                                </p>
-                                <span class="material-symbols-outlined cursor-pointer close-notifications">
-                                    close
-                                </span>
-                            </div>
-                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
-                                <div class="flex gap-2 items-center">
-                                    <span
-                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
-                                        notifications
-                                    </span>
-                                    <p class="font-semibold text-sm text-dark-gray">
-                                        You have earned 50 credit points through referral
-                                    </p>
-                                </div>
-                                <div class="bg-deep-teal-green rounded-full w-2 h-2"></div>
-                            </div>
-                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
-                                <div class="flex gap-2 items-center">
-                                    <span
-                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
-                                        notifications
-                                    </span>
-                                    <p class="font-semibold text-sm text-dark-gray">
-                                        Profile Updated
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
-                                <div class="flex gap-2 items-center">
-                                    <span
-                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
-                                        notifications
-                                    </span>
-                                    <p class="font-semibold text-sm text-dark-gray">
-                                        Profile Updated
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
-                                <div class="flex gap-2 items-center">
-                                    <span
-                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
-                                        notifications
-                                    </span>
-                                    <p class="font-semibold text-sm text-dark-gray">
-                                        Monika Singh has requested for some medicines
-                                    </p>
-                                </div>
-                                <div class="bg-deep-teal-green rounded-full w-2 h-2"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- User Dropdown -->
-                    <div class="relative inline-block">
-                        <button class="profile-btn">
-                            <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-12 h-12" />
-                        </button>
-                        <!-- Dropdown -->
-                        <div class="profile-dropdown border border-light-sea-green mt-1 w-[192px] h-[118px]">
-                            <div class="p-2.5 flex items-center space-x-2.5 cursor-pointer">
-                                <img src="/public/images/user.svg" alt="User" loading="lazy"
-                                    class="w-12 h-12 rounded-full" />
-                                <div>
-                                    <p class="text-18-normal">User Name</p>
-                                </div>
-                            </div>
-                            <div class="p-2.5 hover:bg-light-sea-green-opacity">
-                                <a href="#" class="text-18-normal flex items-center space-x-2.5">
-                                    <span class="material-symbols-outlined"> logout </span>
-                                    <span>Sign out</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Dropdown -->
+            <div class="profile-dropdown">
+              <div class="px-4 py-3 flex items-center space-x-3 cursor-pointer">
+                <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-8 h-8 rounded-full" />
+                <div>
+                  <p class="text-sm font-normal">User Name</p>
                 </div>
+              </div>
+              <div>
+                <a href="#" class="px-4 py-3 text-sm hover:bg-light-sea-green-opacity flex items-center space-x-2">
+                  <span class="material-symbols-outlined"> logout </span>
+                  <span>Sign out</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
+      <!-- Sidebar -->
+      <aside class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
+        <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
+          <div class="relative w-full flex items-center justify-between pl-[33px]">
+            <div class="flex flex-col items-start justify-center">
+              <img src="/public/images/diamond-badge.svg" alt="Diamond User" loading="lazy" />
+              <p class="text-18-normal text-dark-gray">Diamond User</p>
             </div>
 
-            <!-- Mobile Navbar -->
-            <div class="block sm:hidden">
-                <div class="flex items-center gap-4">
-                    <input type="search" placeholder="Search"
-                        class="w-full max-w-[249px] h-[36px] rounded-[6px] bg-light-white border-none px-3 focus:!outline-none focus:ring-0" />
-                    <span class="material-symbols-outlined cursor-pointer text-golden-yellow">
-                        kid_star
-                    </span>
-                    <span class="material-symbols-outlined cursor-pointer">
-                        notifications
-                    </span>
-                    <!-- User Dropdown -->
-                    <div class="relative inline-block">
-                        <button class="profile-btn">
-                            <img src="/public/images/user.svg" alt="User" loading="lazy" />
-                        </button>
-
-                        <!-- Dropdown -->
-                        <div class="profile-dropdown">
-                            <div class="px-4 py-3 flex items-center space-x-3 cursor-pointer">
-                                <img src="/public/images/user.svg" alt="User" loading="lazy"
-                                    class="w-8 h-8 rounded-full" />
-                                <div>
-                                    <p class="text-sm font-normal">User Name</p>
-                                </div>
-                            </div>
-                            <div>
-                                <a href="#"
-                                    class="px-4 py-3 text-sm hover:bg-light-sea-green-opacity flex items-center space-x-2">
-                                    <span class="material-symbols-outlined"> logout </span>
-                                    <span>Sign out</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div
+              class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-sky-blue-tint flex items-center justify-center rounded-l-md cursor-pointer">
+              <span class="material-symbols-outlined bold-weight text-dodger-blue pl-2.5">
+                arrow_back_ios
+              </span>
             </div>
+          </div>
+          <ul
+            class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
+            <li>
+              <a href="/src/newPharmacy/home.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> home </span>
+                <p>Home</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/newPharmacy/nearby.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> map_search </span>
+                <p>Nearby</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/newPharmacy/orders.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <img src="/public/images/order_icon.svg" alt="">
+                <p>Orders</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/newPharmacy/history.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined">history</span>
+                <p>History</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/newPharmacy/reports.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> patient_list </span>
+                <p>Reports</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/newPharmacy/service.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> gavel </span>
+                <p>Services</p>
+              </a>
+            </li>
+
+            <li>
+              <a href="/src/newPharmacy/settings.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> settings </span>
+                <p>Settings</p>
+              </a>
+            </li>
+
+          </ul>
+          <div class="w-full flex flex-col px-6">
+            <img src="/public/images/Sale.svg" alt="Diamond User" loading="lazy" />
+          </div>
+        </nav>
+      </aside>
+
+      <div class="flex-grow flex flex-col gap-6 p-4 md:p-8 overflow-y-auto overflow-x-hidden scroll bg-white">
+        <div class="flex gap-2 sm:gap-3 items-center">
+          <span class="material-symbols-outlined !font-semibold text-lg sm:text-xl">patient_list</span>
+          <h1 class="font-semibold text-vase sm:text-lg ms:text-xl">Reports</h1>
         </div>
 
-        <!-- Content -->
-        <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
-            <!-- Sidebar -->
-            <aside
-                class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white shrink-0">
-                <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
-                    <div class="relative w-full flex items-center justify-between pl-[33px]">
-                        <div class="flex flex-col items-start justify-center">
-                            <img src="/public/images/diamond-badge.svg" alt="Diamond User" loading="lazy" />
-                            <p class="text-18-normal text-dark-gray">Diamond User</p>
-                        </div>
+        <div class="flex flex-col sm:flex-row justify-between gap-3 sm:gap-4 sm:items-center">
+          <div class="relative">
+            <span class="material-symbols-outlined absolute top-1 left-2 !text-xl">search</span>
+            <input type="text" placeholder="Search by name or categories"
+              class="py-1.5 pl-8 pr-2 w-full sm:w-[17rem] text-sm rounded-md border border-blue-haze placeholder:text-medium-gray focus:outline-none" />
+          </div>
 
-                        <div
-                            class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-teal flex items-center justify-center rounded-l-md cursor-pointer">
-                            <span class="material-symbols-outlined bold-weight text-deep-teal-green pl-2.5">
-                                arrow_back_ios
-                            </span>
-                        </div>
-                    </div>
-                    <ul
-                        class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
-                        <li>
-                            <a href="/src/newPharmacy/home.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> home </span>
-                                <p>Home</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/newPharmacy/orders.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <img src="/public/images/order_icon.svg" alt="">
-                                <p>Orders</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/newPharmacy/coupon.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <img src="/public/images/coupon-percent.svg" alt="">
-                                <p>Coupon</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/newPharmacy/pharmacy.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> medical_services </span>
-                                <p>Pharmacy</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/newPharmacy/reports.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> patient_list </span>
-                                <p>Reports</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/newPharmacy/settings.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> settings </span>
-                                <p>Settings</p>
-                            </a>
-                        </li>
+          <div class="flex flex-wrap sm:flex-nowrap items-center justify-between sm:justify-end gap-2.5 relative">
+            <p class="text-xs sm:text-sm text-dodger-blue whitespace-nowrap">
+              Data shown: Jan 12, 2025 – Mar 14, 2025
+            </p>
+            <!-- Filter -->
+            <div class="relative shrink-0">
+              <button id="filterToggle"
+                class="flex items-center justify-center border border-blue-haze rounded-md w-8 h-8">
+                <span class="material-symbols-outlined">tune</span>
+              </button>
 
-                    </ul>
-                    <div class="w-full flex flex-col px-6">
-                        <img src="/public/images/Sale.svg" alt="Diamond User" loading="lazy" />
+              <!-- Dropdown -->
+              <div id="filterDropdown"
+                class="hidden absolute right-0 mt-2 w-52 bg-white rounded-lg shadow-[4px_4px_10px_2px_#00000026] z-50">
+
+                <!-- MAIN MENU -->
+                <div id="mainMenu">
+                  <div class="px-4 py-2 cursor-pointer hover:bg-pale-azure" data-open="date">
+                    Date
+                  </div>
+                  <div class="px-4 py-2 cursor-pointer hover:bg-pale-azure" data-open="visit">
+                    Visit Type
+                  </div>
+                </div>
+
+                <!-- DATE MENU -->
+                <div id="dateMenu" class="hidden">
+                  <div class="px-4 py-2 font-medium bg-gray-50 cursor-pointer" data-back>
+                    Date
+                  </div>
+
+                  <div class="option px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-pale-azure"
+                    data-type="date" data-value="Week">
+                    Week
+                  </div>
+
+                  <div class="option px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-pale-azure"
+                    data-type="date" data-value="Month">
+                    Month
+                  </div>
+
+                  <div class="option px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-pale-azure"
+                    data-type="date" data-value="Custom">
+                    <span>Custom</span>
+                    <span class="material-symbols-outlined text-gray-400">calendar_today</span>
+                  </div>
+                </div>
+
+                <!-- VISIT TYPE MENU -->
+                <div id="visitMenu" class="hidden">
+                  <div class="px-4 py-2 font-medium bg-gray-50 cursor-pointer" data-back>
+                    Visit Type
+                  </div>
+
+                  <div class="option px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-pale-azure"
+                    data-type="visit" data-value="Home">
+                    Home
+                  </div>
+
+                  <div class="option px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-pale-azure"
+                    data-type="visit" data-value="Clinic">
+                    Clinic
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+            <div class="flex flex-col justify-between gap-1">
+              <h2 class="text-xs sm:text-sm text-medium-gray">Total Patient</h2>
+              <p class="text-base sm:text-lg font-semibold">50</p>
+            </div>
+            <div
+              class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+              <span class="material-symbols-outlined !font-semibold">currency_rupee_circle</span>
+            </div>
+          </div>
+          <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+            <div class="flex flex-col justify-between gap-1">
+              <h2 class="text-xs sm:text-sm text-medium-gray">Birds Received</h2>
+              <p class="text-base sm:text-lg font-semibold">84</p>
+            </div>
+            <div
+              class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+              <span class="material-symbols-outlined !font-semibold">star</span>
+            </div>
+          </div>
+          <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+            <div class="flex flex-col justify-between gap-1">
+              <h2 class="text-xs sm:text-sm text-medium-gray">Quarter growth</h2>
+              <p class="text-base sm:text-lg font-semibold">+12.5%</p>
+            </div>
+            <div
+              class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+              <span class="material-symbols-outlined !font-semibold">paid</span>
+            </div>
+          </div>
+          <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+            <div class="flex flex-col justify-between gap-1">
+              <h2 class="text-xs sm:text-sm text-medium-gray">Average Revenue/Patient</h2>
+              <p class="text-base sm:text-lg font-semibold">₹3,150</p>
+            </div>
+            <div
+              class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+              <span class="material-symbols-outlined !font-semibold">money_range</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr">
+          <!--Heat map-->
+          <div class="bg-cloud-gray p-4 rounded-xl doctor-report-shadow flex flex-col ">
+            <div class="flex justify-between items-center dropdown relative mb-2">
+              <h3 class="font-semibold">Heatmap</h3>
+              <div class="relative heatmapCalendar">
+
+                <!-- Calendar trigger -->
+                <div class="flex items-center gap-2 cursor-pointer heatmapCalendarToggle">
+                  <span class="text-sm text-medium-gray calendar-date-text">14/3/25</span>
+                  <span class="material-symbols-outlined calendar-icon">calendar_today</span>
+                </div>
+
+                <!-- Calendar Popup -->
+                <div
+                  class="heatmapCalendarPopup hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-[4px_4px_10px_2px_#00000026] z-50">
+
+                  <div class="heatmap-cal-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                    data-value="Today">
+                    <span class="material-symbols-outlined text-dodger-blue">check</span>
+                    Today
+                  </div>
+
+                  <div class="heatmap-cal-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                    data-value="Week">
+                    <span class="material-symbols-outlined text-light-gray">check</span>
+                    Week
+                  </div>
+
+                  <div class="heatmap-cal-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                    data-value="Month">
+                    <span class="material-symbols-outlined text-light-gray">check</span>
+                    Month
+                  </div>
+
+                  <div
+                    class="heatmap-cal-option flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                    data-value="Custom">
+                    <div class="flex items-center gap-3">
+                      <span class="material-symbols-outlined text-light-gray">check</span>
+                      Custom
                     </div>
-                </nav>
-            </aside>
+                    <span class="material-symbols-outlined text-gray-400">calendar_today</span>
+                  </div>
+
+                </div>
+              </div>
+
               <div
-                    class="show-sidebar-toggle hidden fixed top-[100px] left-12 z-50 h-10 w-10 bg-light-teal items-center justify-center rounded-r-md cursor-pointer">
-                    <span class="material-symbols-outlined bold-weight text-deep-teal-green">
-                        arrow_forward_ios
-                    </span>
-                </div>
-            <div class="bg-white m-5 rounded-[10px] overflow-y-auto scroll">
-                <div class=" flex flex-col gap-6 p-4 md:p-8 ">
-                    <div class="flex gap-2 items-center">
-                        <span class="material-symbols-outlined !font-semibold">patient_list</span>
-                        <h1 class="font-semibold">Reports</h1>
-                    </div>
+                class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
+                <div class="datepicker-inline"></div>
+              </div>
+            </div>
+            <!-- Time Dropdown -->
+            <div class="dropdown relative inline-block w-full mb-6 shadow-[var(--box-shadow-11)]">
+              <button
+                class="dropdown-btn cursor-pointer w-full bg-white rounded-md border border-cool-steel-blue px-4 py-2 flex justify-between items-center focus:outline-none">
+                <span class="dropdown-value font-regular text-artic-gray">10-12 AM</span>
+                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+              </button>
 
-                    <div class="flex flex-col md:flex-row justify-between gap-2 md:items-center">
-                        <div class="relative">
-                            <span class="material-symbols-outlined absolute top-1 left-2 !text-xl">search</span>
-                            <input type="text" placeholder="Search by name or categories"
-                                class="py-1.5 pl-8 pr-2 w-full sm:w-[17rem] text-sm rounded-md border border-blue-haze placeholder:text-medium-gray focus:outline-none" />
-                        </div>
-                        <div class="flex items-center md:justify-end gap-2.5">
-                            <p class="font-normal text-xs text-deep-teal-green">Data shown: Jan 12, 2025 – Mar 14, 2025
-                            </p>
-                            <div class="relative dropdown">
-                                <button
-                                    class="filterToggle  flex items-center border border-blue-haze rounded-md p-1 w-8 h-8 cursor-pointer">
-                                    <span class="material-symbols-outlined flex justify-center items-center">tune</span>
-                                </button>
-                                <div
-                                    class="filterDropdown absolute right-0 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-44 z-10">
-                                    <div
-                                        class="p-2 pl-4 hover:bg-forest-green  rounded cursor-pointer flex items-center gap-2 font-normal text-base text-dark-gray">
-                                        <span class="material-symbols-outlined !text-lg text-deep-teal-green">
-                                            check
-                                        </span>Today
-                                    </div>
-                                    <div
-                                        class="p-2 pl-4 hover:bg-forest-green  rounded cursor-pointer flex items-center gap-2 font-normal text-base text-dark-gray">
-                                        <span class="material-symbols-outlined !text-lg text-light-gray">
-                                            check
-                                        </span>Week
-                                    </div>
-                                    <div
-                                        class="p-2 pl-4 hover:bg-forest-green  rounded cursor-pointer flex items-center gap-2 font-normal text-base text-dark-gray">
-                                        <span class="material-symbols-outlined !text-lg text-light-gray">
-                                            check
-                                        </span>Month
-                                    </div>
-                                    <div
-                                        class="p-2 pl-4 flex justify-between items-center cursor-pointer hover:bg-forest-green  rounded font-normal text-base text-dark-gray">
-                                        <div class="flex items-center gap-2">
-                                            <span class="material-symbols-outlined !text-lg text-light-gray">
-                                                check
-                                            </span>Custom
-                                        </div>
-                                        <span class="material-symbols-outlined calendar-icon">calendar_today</span>
-                                    </div>
-                                </div>
-                                <div
-                                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 lg:right-[180px] z-50 bg-white shadow-md rounded">
-                                    <div class="datepicker-inline"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Stats Cards -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div class="bg-ocean-teal p-4 rounded-lg flex justify-between items-center">
-                            <div class="flex flex-col justify-between gap-1">
-                                <h2 class="text-sm">Total Revenue</h2>
-                                <p class="text-lg font-semibold">₹1.2 Cr</p>
-                            </div>
-                            <div
-                                class="bg-forest-green flex justify-center items-center w-14 h-14 rounded-full text-deep-teal-green">
-                                <span class="material-symbols-outlined !font-semibold">currency_rupee_circle</span>
-                            </div>
-                        </div>
-                        <div class="bg-ocean-teal p-4 rounded-lg flex justify-between items-center">
-                            <div class="flex flex-col justify-between gap-1">
-                                <h2 class="text-sm">Ratings</h2>
-                                <p class="text-lg font-semibold">92.2%</p>
-                            </div>
-                            <div
-                                class="bg-forest-green flex justify-center items-center w-14 h-14 rounded-full text-deep-teal-green">
-                                <span class="material-symbols-outlined !font-semibold">star</span>
-                            </div>
-                        </div>
-                        <div class="bg-ocean-teal p-4 rounded-lg flex justify-between items-center">
-                            <div class="flex flex-col justify-between gap-1">
-                                <h2 class="text-sm">Total Bookings</h2>
-                                <p class="text-lg font-semibold">12k</p>
-                            </div>
-                            <div
-                                class="bg-forest-green flex justify-center items-center w-14 h-14 rounded-full text-deep-teal-green">
-                                <span class="material-symbols-outlined !font-semibold">paid</span>
-                            </div>
-                        </div>
-                        <div class="bg-ocean-teal p-4 rounded-lg flex justify-between items-center">
-                            <div class="flex flex-col justify-between gap-1">
-                                <h2 class="text-sm">Avg Bid</h2>
-                                <p class="text-lg font-semibold">49</p>
-                            </div>
-                            <div
-                                class="bg-forest-green flex justify-center items-center w-14 h-14 rounded-full text-deep-teal-green">
-                                <span class="material-symbols-outlined !font-semibold">money_range</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Charts Section -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div class="bg-white p-4 rounded-xl lab-report-shadow">
-                            <div class="flex justify-between items-center dropdown relative mb-2">
-                                <h3 class="font-semibold">Top Selling Products</h3>
-                                <div class="flex items-center gap-2">
-                                    <p class="text-sm text-medium-gray font-semibold">14/3/25</p>
-                                    <span
-                                        class="material-symbols-outlined calendar-icon cursor-pointer">calendar_today</span>
-                                </div>
-                                <div
-                                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
-                                    <div class="datepicker-inline"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col justify-center items-center gap-2 h-full">
-                                <canvas id="barChartPharmacy"></canvas>
-                                <p class="text-deep-teal-green text-sm">14.20% High then last month</p>
-                                <button class=" bg-deep-teal-green text-white w-72 py-2 rounded-lg download-btn"
-                                    data-target="barChartPharmacy">Download PDF</button>
-                            </div>
-                        </div>
-
-                        <div class="bg-white p-4 rounded-xl lab-report-shadow">
-                            <div class="flex justify-between items-center dropdown relative mb-2">
-                                <h3 class="font-semibold">Revenue by Product</h3>
-                                <div class="flex items-center gap-2">
-                                    <p class="text-sm text-medium-gray font-semibold">14/3/25</p>
-                                    <span
-                                        class="material-symbols-outlined calendar-icon cursor-pointer">calendar_today</span>
-                                </div>
-                                <div
-                                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
-                                    <div class="datepicker-inline"></div>
-                                </div>
-                            </div>
-                            <div class="flex flex-col justify-center items-center gap-2">
-                                <canvas id="pieChart" class="!h-[50%] !w-[55%]"></canvas>
-                                <p class="text-strong-red text-sm">14.20% Less then last month</p>
-                                <button class=" bg-deep-teal-green text-white w-72 py-2 rounded-lg download-btn"
-                                    data-target="pieChart">Download PDF</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Heatmap & Trends -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        <div class="bg-cloud-gray p-4 rounded-xl lab-report-shadow flex flex-col justify-between">
-                            <div class="flex justify-between items-center dropdown relative mb-2">
-                                <h3 class="font-semibold">Heatmap</h3>
-                                <div class="flex items-center gap-2">
-                                    <p class="text-sm text-medium-gray font-semibold">14/3/25</p>
-                                    <span
-                                        class="material-symbols-outlined calendar-icon cursor-pointer">calendar_today</span>
-                                </div>
-                                <div
-                                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
-                                    <div class="datepicker-inline"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown relative inline-block w-full">
-                                <button
-                                    class="dropdown-btn cursor-pointer w-full bg-white rounded-md lab-report-shadow px-4 py-2 flex justify-between items-center focus:outline-none">
-                                    <span class="dropdown-value">10-12 AM</span>
-                                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                                </button>
-
-                                <ul
-                                    class="dropdown-menu absolute hidden mt-1 w-full bg-white rounded-md lab-report-shadow  z-10">
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">8-9 AM</li>
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">10-12 AM</li>
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">5-6 PM</li>
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">9-10 PM</li>
-                                </ul>
-                            </div>
-                            <div id="heatmap" class="!h-[60%]"></div>
-                            <button
-                                class=" bg-deep-teal-green text-white w-full text-center mt-4 py-2 rounded-lg download-btn"
-                                data-target="heatmap">Download Report</button>
-                        </div>
-
-                        <div class="bg-white p-4 rounded-xl lab-report-shadow flex flex-col justify-between">
-                            <div class="flex justify-between items-center dropdown relative mb-2">
-                                <h3 class="font-semibold">Bid Trend Price</h3>
-                                <div class="flex items-center gap-2">
-                                    <p class="text-sm text-medium-gray font-semibold">14/3/25</p>
-                                    <span
-                                        class="material-symbols-outlined calendar-icon cursor-pointer">calendar_today</span>
-                                </div>
-                                <div
-                                    class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
-                                    <div class="datepicker-inline"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown relative inline-block w-full">
-                                <button
-                                    class="dropdown-btn cursor-pointer w-full bg-white rounded-md lab-report-shadow px-4 py-2 flex justify-between items-center focus:outline-none">
-                                    <span class="dropdown-value">Week</span>
-                                    <span class="material-symbols-outlined">keyboard_arrow_down</span>
-                                </button>
-
-                                <ul
-                                    class="dropdown-menu absolute hidden mt-1 w-full bg-white rounded-md lab-report-shadow  z-10">
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">Day</li>
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">Week</li>
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">Month</li>
-                                    <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">Year</li>
-                                </ul>
-                            </div>
-                            <canvas id="lineChart" class="!h-[60%]"></canvas>
-                            <button
-                                class=" bg-deep-teal-green text-white w-full text-center mt-4 py-2 rounded-lg download-btn"
-                                data-target="lineChart">Download Report</button>
-                        </div>
-
-                        <div class="space-y-4">
-                            <div class="bg-white p-4 rounded-xl lab-report-shadow space-y-4">
-                                <div class="flex items-center justify-between">
-                                    <h2 class="font-semibold">Bid Win vs. Loss</h2>
-                                    <div class="flex items-center space-x-4 text-sm">
-                                        <div class="flex items-center space-x-1">
-                                            <span class="w-3 h-3 bg-mint-leaf rounded-full"></span>
-                                            <span>win</span>
-                                        </div>
-                                        <div class="flex items-center space-x-1">
-                                            <span class="w-3 h-3 bg-bright-red rounded-full"></span>
-                                            <span>Loss</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-between gap-4">
-                                    <div class="flex-1 h-5 rounded-full overflow-hidden">
-                                        <div class="flex h-full">
-                                            <div class="bg-mint-leaf text-white text-xs font-semibold flex items-center justify-center"
-                                                style="width: 81%;">
-                                                88
-                                            </div>
-                                            <div class="bg-bright-red text-white text-xs font-semibold flex items-center justify-center"
-                                                style="width: 19%;">
-                                                20
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="text-xs">Jul 8–14</span>
-                                </div>
-                                <div class="flex items-center justify-between gap-4">
-                                    <div class="flex-1 h-5 rounded-full overflow-hidden">
-                                        <div class="flex h-full">
-                                            <div class="bg-mint-leaf text-white text-xs font-semibold flex items-center justify-center"
-                                                style="width: 85%;">
-                                                100
-                                            </div>
-                                            <div class="bg-bright-red text-white text-xs font-semibold flex items-center justify-center"
-                                                style="width: 15%;">
-                                                15
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="text-xs">Jul 1-7</span>
-                                </div>
-                                <div class="flex items-center justify-between gap-4">
-                                    <div class="flex-1 h-5 rounded-full overflow-hidden">
-                                        <div class="flex h-full">
-                                            <div class="bg-mint-leaf text-white text-xs font-semibold flex items-center justify-center"
-                                                style="width: 60%;">
-                                                60
-                                            </div>
-                                            <div class="bg-bright-red text-white text-xs font-semibold flex items-center justify-center"
-                                                style="width: 40%;">
-                                                25
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <span class="text-xs">Jun 24-23</span>
-                                </div>
-                            </div>
-                            <div class="bg-white p-4 rounded-xl lab-report-shadow">
-                                <div class="flex justify-between items-center dropdown relative mb-2">
-                                    <h3 class="font-semibold">User Rating ⭐</h3>
-                                    <div class="flex items-center gap-2">
-                                        <p class="text-sm text-medium-gray font-semibold">14/3/25</p>
-                                        <span
-                                            class="material-symbols-outlined calendar-icon cursor-pointer">calendar_today</span>
-                                    </div>
-                                    <div
-                                        class="datepicker-container hidden px-4 pb-3 absolute top-full right-0 z-50 bg-white shadow-md rounded">
-                                        <div class="datepicker-inline"></div>
-                                    </div>
-                                </div>
-                                <div id="ratings" class="space-y-2"></div>
-                                <button
-                                    class=" bg-deep-teal-green text-white w-full text-center mt-4 py-2 rounded-lg download-btn"
-                                    data-target="ratings">Download PDF</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              <ul class="dropdown-menu absolute hidden mt-1 w-full bg-white rounded-md z-10">
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">8-9 AM</li>
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">10-12 AM</li>
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">5-6 PM</li>
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">9-10 PM</li>
+              </ul>
+            </div>
+            <div id="heatmap" class="h-48 sm:h-60 md:h-72"></div>
+            <div class="flex justify-center mt-4">
+              <button class="bg-dodger-blue text-white w-full sm:w-[322px] py-2 rounded-lg download-btn">
+                Download Report
+              </button>
             </div>
 
-    </main>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+          </div>
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          <!-- Bid Win/Loss Rate Card -->
+          <div class="bg-white rounded-xl p-4 shadow-sm w-full">
+            <!-- Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <h3 class="text-sm sm:text-base font-bold text-jungle-navy">
+                Bid Win/Loss Rate <span class="font-normal text-ebony">(This Week)</span>
+              </h3>
+              <div class="flex items-center gap-2 ">
+                <div class="relative">
+                  <!-- Calendar trigger -->
+                  <div class="flex items-center gap-2 cursor-pointer calendarToggle whitespace-nowrap">
+                    <span class="text-sm text-medium-gray calendar-date-text">14/3/25</span>
+                    <span class="material-symbols-outlined calendar-icon">calendar_today</span>
+                  </div>
 
-    <!-- jsPDF -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+                  <!-- Calendar Popup -->
+                  <div
+                    class="calendarPopup hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-[4px_4px_10px_2px_#00000026] z-50">
 
-    <!--Heat map-->
-    <script src="https://www.amcharts.com/lib/4/core.js"></script>
-    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
-    <script src="https://www.amcharts.com/lib/4/geodata/india2019High.js"></script>
-    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+                    <div class="calendar-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                      data-value="Today">
+                      <span class="material-symbols-outlined text-dodger-blue">check</span>
+                      Today
+                    </div>
 
-    <script src="/public/js/sidebar.js"></script>
-    <script src="/public/js/pharmacy-reports.js"></script>
-    <script src="/public/js/dropdown.js"></script>
+                    <div class="calendar-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                      data-value="Week">
+                      <span class="material-symbols-outlined text-light-gray">check</span>
+                      Week
+                    </div>
+
+                    <div class="calendar-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                      data-value="Month">
+                      <span class="material-symbols-outlined text-light-gray">check</span>
+                      Month
+                    </div>
+
+                    <div
+                      class="calendar-option flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                      data-value="Custom">
+                      <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-light-gray">check</span>
+                        Custom
+                      </div>
+                      <span class="material-symbols-outlined text-gray-400">calendar_today</span>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Time Dropdown -->
+            <div class="dropdown relative inline-block w-full mb-2 shadow-[var(--box-shadow-11)]">
+              <button
+                class="dropdown-btn cursor-pointer w-full bg-white rounded-md border border-cool-steel-blue px-4 py-2 flex justify-between items-center focus:outline-none">
+                <span class="dropdown-value font-regular text-artic-gray">10-12 AM</span>
+                <span class="material-symbols-outlined">keyboard_arrow_down</span>
+              </button>
+
+              <ul class="dropdown-menu absolute hidden mt-1 w-full bg-white rounded-md z-10">
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">8-9 AM</li>
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">10-12 AM</li>
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">5-6 PM</li>
+                <li class="px-4 py-2 hover:bg-blue-haze cursor-pointer">9-10 PM</li>
+              </ul>
+            </div>
+
+            <!-- Legend -->
+            <div class="flex items-center gap-4 mt-4 text-xs text-gray-600 mb-8">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-mint-emerald"></span>
+                Bids Won
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-bright-red"></span>
+                Bids Lost
+              </div>
+            </div>
+            <!-- Chart + Y Axis -->
+            <div class="flex gap-3 overflow-x-auto sm:overflow-visible">
+              <!-- Y Axis -->
+              <div class="hidden sm:flex flex-col justify-between text-[10px] text-gray-400 h-48">
+                <span>100</span>
+                <span>75</span>
+                <span>50</span>
+                <span>25</span>
+                <span>0</span>
+              </div>
+
+              <!-- Bars -->
+              <div class="flex-1 flex items-end justify-between h-40 sm:h-48 min-w-[480px]">
+                <!-- Bar -->
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[35%]" data-label="Lost" data-value="35"></div>
+                    <div class="bar bg-mint-emerald h-[65%]" data-label="Won" data-value="65"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Mon</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[40%]" data-label="Lost" data-value="40"></div>
+                    <div class="bar bg-mint-emerald h-[60%]" data-label="Won" data-value="60"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Tue</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[45%]" data-label="Lost" data-value="45"></div>
+                    <div class="bar bg-mint-emerald h-[55%]" data-label="Won" data-value="55"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Wed</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[20%]" data-label="Lost" data-value="20"></div>
+                    <div class="bar bg-mint-emerald h-[40%]" data-label="Won" data-value="40"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Thu</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[30%]" data-label="Lost" data-value="30"></div>
+                    <div class="bar bg-mint-emerald h-[60%]" data-label="Won" data-value="60"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Fri</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[10%]" data-label="Lost" data-value="10"></div>
+                    <div class="bar bg-mint-emerald h-[75%]" data-label="Won" data-value="75"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Sat</span>
+                </div>
+
+                <div class="flex flex-col items-center gap-2">
+                  <div class="w-10 sm:w-[56px] h-36 sm:h-44 flex flex-col justify-end overflow-hidden">
+                    <div class="bar bg-bright-red h-[35%]" data-label="Lost" data-value="35"></div>
+                    <div class="bar bg-mint-emerald h-[65%]" data-label="Won" data-value="65"></div>
+                  </div>
+                  <span class="text-xs text-gray-500">Sun</span>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Note -->
+            <p class="text-xs sm:text-sm font-bold text-dark-gray mt-2">
+              (Total bids per day = Won + Lost)
+            </p>
+
+          </div>
+        </div>
+
+        <!-- Consolation Fee and Appointments -->
+        <div class="bg-white rounded-xl shadow-lg flex flex-col">
+          <!-- Header -->
+          <div class="flex items-center justify-between p-3">
+            <h3 class="text-ebony font-semibold text-base">Consolation fee and appointments</h3>
+            <div class="relative consolidationCalendar">
+
+              <div class="flex items-center gap-2 cursor-pointer consolidationCalendarToggle">
+                <span class="text-sm text-medium-gray calendar-date-text">14/3/25</span>
+                <span class="material-symbols-outlined calendar-icon">calendar_today</span>
+              </div>
+
+              <div
+                class="consolidationCalendarPopup hidden absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-[4px_4px_10px_2px_#00000026] z-50">
+
+                <div
+                  class="consolidation-cal-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                  data-value="Today">
+                  <span class="material-symbols-outlined text-dodger-blue">check</span>
+                  Today
+                </div>
+
+                <div
+                  class="consolidation-cal-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                  data-value="Week">
+                  <span class="material-symbols-outlined text-light-gray">check</span>
+                  Week
+                </div>
+
+                <div
+                  class="consolidation-cal-option flex items-center gap-3 px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                  data-value="Month">
+                  <span class="material-symbols-outlined text-light-gray">check</span>
+                  Month
+                </div>
+
+                <div
+                  class="consolidation-cal-option flex justify-between items-center px-4 py-2 cursor-pointer hover:bg-pale-azure"
+                  data-value="Custom">
+                  <div class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-light-gray">check</span>
+                    Custom
+                  </div>
+                  <span class="material-symbols-outlined text-gray-400">calendar_today</span>
+                </div>
+
+              </div>
+              <!-- ✅ ADD DATE PICKER HERE -->
+              <input type="date" class="absolute right-0 mt-2 hidden consolidationDatePicker z-[9999]" />
+            </div>
+
+          </div>
+          <!-- Table -->
+          <div class="overflow-x-auto p-4">
+            <table class="w-full border-seperate ">
+              <colgroup>
+                <col class="w-[45%] sm:w-[55%]">
+                <col class="w-[18%] sm:w-[15%]">
+                <col class="w-[18%] sm:w-[15%]">
+                <col class="w-[19%] sm:w-[15%]">
+              </colgroup>
+
+              <thead class="bg-lightest-blue ">
+                <tr>
+                  <th
+                    class="rounded-l-lg text-left px-4 py-3 text-dark-slate-blue-gray font-semibold text-xs sm:text-sm">
+                    Day</th>
+                  <th class="text-right px-4 py-3 text-dark-slate-blue-gray font-semibold text-xs sm:text-sm">Appt</th>
+                  <th class="text-right px-4 py-3 text-dark-slate-blue-gray font-semibold text-xs sm:text-sm">Avg. Fee
+                  </th>
+                  <th
+                    class="rounded-r-lg text-right px-4 py-3 text-dark-slate-blue-gray font-semibold text-xs sm:text-sm">
+                    Earnings
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Row 1 -->
+                <tr>
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-azure-radiance"></span> Monday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">10</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+                <!-- Row 2 -->
+                <tr class="">
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-light-green"></span> Tuesday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">20</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+                <!-- Row 3 -->
+                <tr class="">
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-golden-gold"></span> Wednesday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">10</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+                <!-- Row 4 -->
+                <tr class="">
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-safety-orange"></span> Thursday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">10</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+                <!-- Row 5 -->
+                <tr class="">
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-dark-yellow"></span> Friday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">15</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+                <!-- Row 6 -->
+                <tr class="">
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-dodger-blue"></span> Saturday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">12</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+                <!-- Row 7 -->
+                <tr class="">
+                  <td class="px-4 py-1 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-crimson-red"></span> Sunday
+                  </td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">10</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹800</td>
+                  <td class="text-right px-4 py-1 text-deep-blue font-regular text-sm">₹5,000</td>
+                </tr>
+
+                <tr>
+                  <!-- Day column: empty -->
+                  <td></td>
+
+                  <!-- Appt + Avg Fee + Earnings -->
+                  <td colspan="3"
+                    class="border-t border-gray-300 py-1 text-center font-semibold text-xs sm:text-sm whitespace-normal">
+                    <span class="mr-6">Total</span>
+                    <span class="mr-15">-</span>
+                    <span class="mr-6">88</span>
+                    <span class="mr-6">=</span>
+                    <span class="font-bold">₹35,000</span>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+          <!-- FOOTER BUTTONS -->
+          <div class="flex flex-col sm:flex-row sm:justify-end gap-3 pb-4 pr-4">
+            <button
+              class="w-full sm:w-[157px] flex items-center justify-center gap-2 px-6 py-2 rounded-[10px] bg-bright-royal-blue text-white">
+              <span class="material-symbols-outlined text-lg leading-none">picture_as_pdf</span>
+              <span class="text-sm leading-none">PDF</span>
+            </button>
+
+            <button
+              class="w-full sm:w-[157px] flex items-center justify-center gap-2 px-6 py-2 rounded-[10px] bg-shamrock-green text-white">
+              <span class="material-symbols-outlined text-lg leading-none">download</span>
+              <span class="text-sm leading-none">Excel</span>
+            </button>
+          </div>
+
+        </div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <script src="/public/js/sidebar.js"></script>
+  <script src="/public/js/chart.js"></script>
+
 
 </body>
 
