@@ -4,22 +4,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home</title>
     <link href="../../public/css/output.css" rel="stylesheet" />
-    <link href="../../public/css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
+        rel="stylesheet">
 </head>
 
 <body>
     <main class="h-screen max-w-[1440px] w-full mx-auto bg-slate-white overflow-hidden">
         <!-- Header -->
-         <div
+        <div
             class="h-[100px] w-full flex items-center justify-between p-2 bg-white md:p-5 md:shadow-[0_4px_10px_4px_rgba(0,0,0,0.15)]">
             <!-- Logo div -->
             <div class="w-[280px]">
-                <a href="/src/doctor/home.html">
-                    <img src="/public/images/hospital-logo.svg" alt="Logo" loading="lazy" class="w-[50px] h-[60px]" />
+                <a href="/src/newPharmacy/home.html">
+                    <img src="/public/images/newPharmacy-logo.svg" alt="Logo" loading="lazy"
+                        class="w-[50px] h-[60px]" />
                 </a>
             </div>
 
@@ -29,16 +30,15 @@
                     <!-- Buttons -->
                     <div class="relative">
                         <button
-                            class="w-full max-w-[181px] h-[48px] flex items-center justify-center gap-2 border border-dodger-blue rounded-md text-dodger-blue px-5 open-share-modal cursor-pointer text-18-normal">
+                            class="w-full max-w-[181px] h-[32px] flex items-center justify-center gap-2 border border-deep-teal-green rounded-md text-deep-teal-green px-5 open-share-modal cursor-pointer text-18-normal">
                             <p>HEALTH2025</p>
                             <span class="material-symbols-outlined bold-weight">
                                 share
                             </span>
                         </button>
-
                         <!--Share Popup-->
                         <div id="shareModal"
-                            class="hidden absolute right-0  mt-2 bg-white shadow-lg rounded-md z-50 w-130 border border-dodger-blue">
+                            class="hidden absolute right-0  mt-2 bg-white shadow-lg rounded-md z-50 w-130 border border-deep-teal-green">
                             <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative">
                                 <div class="flex justify-between items-center">
                                     <p class="font-semibold text-xl">Share</p>
@@ -46,7 +46,7 @@
                                         close
                                     </span>
                                 </div>
-                                <hr class="text-dodger-blue mt-4" />
+                                <hr class="text-deep-teal-green mt-4" />
                                 <div class="flex justify-between pt-4">
                                     <div class="flex flex-col items-center gap-2 w-20 text-left">
                                         <img src="/public/images/whatsappicon.svg" alt="whatsapp logo"
@@ -81,9 +81,9 @@
                                 <div class="pt-4 relative mt-6">
                                     <input type="text" id="share-link"
                                         value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
-                                        class="w-full border rounded-md p-4 font-normal text-sm" disabled />
+                                        class="w-full rounded-md p-4 font-normal text-sm border" disabled />
                                     <button type="button"
-                                        class="copy-btn absolute right-3 top-6 bg-dodger-blue text-white rounded-md p-2 cursor-pointer"
+                                        class="copy-btn absolute right-3 top-6 bg-deep-teal-green text-white rounded-md p-2 cursor-pointer"
                                         data-target="#share-link">
                                         Copy
                                     </button>
@@ -94,91 +94,90 @@
 
                     <!-- Icons -->
 
-                    <div class="relative w-9 h-9 rounded-full hover:bg-baby-blue flex items-center justify-center">
-                        <a href="/src/doctor/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg"
-                                alt="wallet" class="cursor-pointer w-[26px] h-[26px]" /></a>
+                    <div
+                        class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
+                        <a href="/src/newPharmacy/advance.html" class="has-tooltip"><img
+                                src="/public/images/walleticon.svg" alt="wallet"
+                                class="cursor-pointer w-[26px] h-[26px]" /></a>
                         <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal">
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
                             Wallet
                         </div>
                     </div>
-                    <div class="relative  rounded-full hover:bg-baby-blue flex items-center justify-center">
+                    <div
+                        class="relative  rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
                         <a href="#" class="has-tooltip"><img src="/public/images/msgicon-nav.svg" alt="star"
                                 class="cursor-pointer" /></a>
                         <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal">
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
                             Saved
                         </div>
                     </div>
-                    <div class="relative w-9 h-9 rounded-full hover:bg-baby-blue flex items-center justify-center">
+                    <div
+                        class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
                         <img src="/public/images/bell.svg" alt="bell"
                             class="cursor-pointer has-tooltip w-[26px] h-[26px]" id="bell-icon" />
                         <div class="bg-strong-red w-2 h-2 rounded-full absolute -top-0.5 right-0"></div>
                         <div
-                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-dodger-blue font-normal whitespace-nowrap">
+                            class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal whitespace-nowrap">
                             Notification
                         </div>
+                        <!--Notification Dropdown-->
                         <div id="notificationDropdown"
-                            class=" hidden absolute right-0 top-10 mt-2 bg-white shadow-lg rounded-md z-50 w-[521px] h-[312px] border border-dodger-blue overflow-hidden">
-                            <div class="flex justify-between items-center p-5">
-                                <p class="text-18-semibold text-dark-gray">
+                            class="hidden absolute right-1 top-10 bg-white border border-deep-teal-green shadow-lg rounded-md z-50 w-130 h-[19.5rem] overflow-y-auto scroll">
+                            <div class="flex justify-between items-center p-4">
+                                <p class="font-semibold text-lg text-dark-gray">
                                     Notifications
                                 </p>
                                 <span class="material-symbols-outlined cursor-pointer close-notifications">
                                     close
                                 </span>
                             </div>
-                            <div class="h-[calc(100%-40px)] px-5 pb-5 space-y-4 overflow-y-auto scroll">
-                                <div
-                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
-                                    <div class="flex gap-2 items-center">
-                                        <span
-                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
-                                            notifications
-                                        </span>
-                                        <p class="text-14-semibold text-dark-gray">
-                                            You have earned 50 credit points through referral
-                                        </p>
-                                    </div>
-                                    <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        You have earned 50 credit points through referral
+                                    </p>
                                 </div>
-                                <div
-                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
-                                    <div class="flex gap-2 items-center">
-                                        <span
-                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
-                                            notifications
-                                        </span>
-                                        <p class="text-14-semibold text-dark-gray">
-                                            Profile Updated
-                                        </p>
-                                    </div>
+                                <div class="bg-deep-teal-green rounded-full w-2 h-2"></div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        Profile Updated
+                                    </p>
                                 </div>
-                                <div
-                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
-                                    <div class="flex gap-2 items-center">
-                                        <span
-                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
-                                            notifications
-                                        </span>
-                                        <p class="text-14-semibold text-dark-gray">
-                                            Profile Updated
-                                        </p>
-                                    </div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        Profile Updated
+                                    </p>
                                 </div>
-                                <div
-                                    class="bg-white border-[0.5px] border-silver-gray shadow-[0px_4px_4px_0px_rgba(0, 0, 0, 0.10)] shadow-md rounded-md p-2.5 flex justify-between items-center">
-                                    <div class="flex gap-2 items-center">
-                                        <span
-                                            class="material-symbols-outlined mini-icon bg-dodger-blue rounded-full p-1 text-white">
-                                            notifications
-                                        </span>
-                                        <p class="text-14-semibold text-dark-gray">
-                                            Monika Singh has requested for some medicines
-                                        </p>
-                                    </div>
-                                    <div class="bg-dodger-blue rounded-full w-2 h-2"></div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-md p-2 m-4 flex justify-between items-center">
+                                <div class="flex gap-2 items-center">
+                                    <span
+                                        class="material-symbols-outlined bg-deep-teal-green rounded-full p-1 text-white">
+                                        notifications
+                                    </span>
+                                    <p class="font-semibold text-sm text-dark-gray">
+                                        Monika Singh has requested for some medicines
+                                    </p>
                                 </div>
+                                <div class="bg-deep-teal-green rounded-full w-2 h-2"></div>
                             </div>
                         </div>
                     </div>
@@ -188,7 +187,7 @@
                             <img src="/public/images/user.svg" alt="User" loading="lazy" class="w-12 h-12" />
                         </button>
                         <!-- Dropdown -->
-                        <div class="profile-dropdown border border-dodger-blue mt-1 w-[192px] h-[118px]">
+                        <div class="profile-dropdown border border-light-sea-green mt-1 w-[192px] h-[118px]">
                             <div class="p-2.5 flex items-center space-x-2.5 cursor-pointer">
                                 <img src="/public/images/user.svg" alt="User" loading="lazy"
                                     class="w-12 h-12 rounded-full" />
@@ -196,7 +195,7 @@
                                     <p class="text-18-normal">User Name</p>
                                 </div>
                             </div>
-                            <div class="p-2.5 hover:bg-baby-blue">
+                            <div class="p-2.5 hover:bg-light-sea-green-opacity">
                                 <a href="#" class="text-18-normal flex items-center space-x-2.5">
                                     <span class="material-symbols-outlined"> logout </span>
                                     <span>Sign out</span>
@@ -234,7 +233,8 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="#" class="px-4 py-3 text-sm hover:bg-baby-blue flex items-center space-x-2">
+                                <a href="#"
+                                    class="px-4 py-3 text-sm hover:bg-light-sea-green-opacity flex items-center space-x-2">
                                     <span class="material-symbols-outlined"> logout </span>
                                     <span>Sign out</span>
                                 </a>
@@ -245,13 +245,9 @@
             </div>
         </div>
 
-        <!-- Mobile Navbar -->
-
-
         <!-- Content -->
         <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
             <!-- Sidebar -->
-
             <aside
                 class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
                 <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
@@ -260,10 +256,9 @@
                             <img src="/public/images/diamond-badge.svg" alt="Diamond User" loading="lazy" />
                             <p class="text-18-normal text-dark-gray">Diamond User</p>
                         </div>
-
                         <div
-                            class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-sky-blue-tint flex items-center justify-center rounded-l-md cursor-pointer">
-                            <span class="material-symbols-outlined bold-weight text-dodger-blue pl-2.5">
+                            class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-deep-teal-green-opacity flex items-center justify-center rounded-l-md cursor-pointer">
+                            <span class="material-symbols-outlined bold-weight text-deep-teal-green pl-2.5">
                                 arrow_back_ios
                             </span>
                         </div>
@@ -278,24 +273,10 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/src/newPharmacy/nearby.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> map_search </span>
-                                <p>Nearby</p>
-                            </a>
-                        </li>
-                        <li>
                             <a href="/src/newPharmacy/orders.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <img src="/public/images/order_icon.svg" alt="">
+                                <span class="material-symbols-outlined"> package_2 </span>
                                 <p>Orders</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/src/newPharmacy/history.html"
-                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined">history</span>
-                                <p>History</p>
                             </a>
                         </li>
                         <li>
@@ -306,13 +287,19 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/src/newPharmacy/service.html"
+                            <a href="/src/newPharmacy/subscription.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> gavel </span>
-                                <p>Services</p>
+                                <span class="material-symbols-outlined"> credit_score </span>
+                                <p>Subscription</p>
                             </a>
                         </li>
-
+                        <li>
+                            <a href="/src/newPharmacy/rewards.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined">trophy </span>
+                                <p>Rewards</p>
+                            </a>
+                        </li>
                         <li>
                             <a href="/src/newPharmacy/settings.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
@@ -320,7 +307,22 @@
                                 <p>Settings</p>
                             </a>
                         </li>
-
+                        <li>
+                            <a href="/src/newPharmacy/support.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined"> search_activity </span>
+                                <p>Support</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/newPharmacy/donate.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined">
+                                    volunteer_activism
+                                </span>
+                                <p>Donate</p>
+                            </a>
+                        </li>
                     </ul>
                     <div class="w-full flex flex-col px-6">
                         <img src="/public/images/Sale.svg" alt="Diamond User" loading="lazy" />
@@ -328,30 +330,27 @@
                 </nav>
             </aside>
 
-
-
-            <!-- Main Content -->
-            <div class="h-full flex-1 overflow-y-auto scroll  relative transition-all duration-300 main-content">
+            <div
+                class="relative transition-all duration-300 main-content bg-slate-white h-full flex-1 flex flex-col gap-8 p-6 overflow-y-auto scroll">
                 <div
-                    class="show-sidebar-toggle hidden fixed top-[100px] left-12 z-50 h-10 w-10 bg-azure-mist items-center justify-center rounded-r-md cursor-pointer">
-                    <span class="material-symbols-outlined bold-weight text-dodger-blue">
+                    class="show-sidebar-toggle hidden fixed top-25 left-0 z-50 h-10 w-10 bg-deep-teal-green-opacity items-center justify-center rounded-r-md cursor-pointer">
+                    <span class="material-symbols-outlined bold-weight text-deep-teal-green">
                         arrow_forward_ios
                     </span>
                 </div>
-                <div class="shadow-lg p-4 rounded-lg m-4 max-w-full overflow-x-auto bg-white">
+                <div class="shadow-lg p-4 rounded-lg m-4 max-w-full overflow-x-auto bg-white no-scrollbar">
                     <div class="flex items-center space-x-2">
                         <span class="material-symbols-outlined">volunteer_activism</span>
-                        <p class="font-semibold text-2xl">Donate</p>
+                        <p class="font-medium text-xl sm:text-2xl">Donate</p>
                     </div>
 
                     <div class="flex justify-between items-center">
-                        <p class="font-normal">Help Us Help Others—Donate Today!</p>
-                        <a href="/src/newPharmacy/settings.html" class="text-xl font-bold text-gray-500 hover:text-red-600">
-                            &times;
-                        </a>
+                        <p class="font-normal text-xs sm:text-base">Help Us Help Others—Donate Today!</p>
+                        <button onclick="goToDonatePage()"
+                            class="text-xl font-bold text-gray-500 hover:text-red-600">&times;</button>
                     </div>
 
-                    <div class="shadow-lg p-4 rounded-lg m-4 max-w-full mt-2 bg-white ">
+                    <div class="shadow-lg p-4 rounded-lg m-4 max-w-full mt-2 bg-white">
                         <div class="flex flex-col lg:flex-row gap-4">
                             <!-- Left: Image -->
                             <div class="md:w-1/2 w-full">
@@ -364,7 +363,7 @@
                                 <!-- Top line: Bharat Seva Mandal (left) and Behind Zenith (right) -->
                                 <div class="flex justify-between items-start">
                                     <div>
-                                        <p class="text-lg font-semibold mt-2 md:mt-0 text-dodger-blue">
+                                        <p class="text-lg font-semibold mt-2 md:mt-0 text-deep-teal-green">
                                             Bharat Seva Mandal
                                         </p>
                                         <p class="text-sm text-dark-gray mt-1">Indian Poverty</p>
@@ -407,6 +406,7 @@
                                 <p class="text-lg font-normal text-dark-gray">Platform Fee 2% </p>
                             </div>
 
+                            <!-- Upload Section -->
                             <div class="pan-upload-wrapper w-full">
                                 <!-- Upload Section -->
                                 <div class="upload-section relative w-full">
@@ -423,7 +423,7 @@
 
                                         <!-- Upload Trigger Button -->
                                         <div
-                                            class="pan-upload-trigger flex items-center justify-center cursor-pointer w-32 ml-2 border-dashed border-2 border-dark-gray rounded-md p-3">
+                                            class="pan-upload-trigger flex items-center justify-center cursor-pointer w-32 ml-2 border-dashed border-2 border-dark-gray rounded-md p-4">
                                             <span title="Upload Document"
                                                 class="material-symbols-outlined text-dark-gray text-2xl">upload</span>
                                         </div>
@@ -437,19 +437,20 @@
                                 <div
                                     class="pan-file-access-popup hidden fixed inset-0 bg-black/30 bg-opacity-70 flex items-center justify-center z-50">
                                     <div
-                                        class="bg-white rounded-lg p-6 max-w-sm w-full border border-dodger-blue shadow-lg">
+                                        class="bg-white rounded-lg p-6 max-w-sm w-full border border-deep-teal-green shadow-lg">
                                         <p class="mb-4">This site wants to access your files to upload an image. Do you
                                             allow?</p>
                                         <div class="flex justify-end space-x-3">
                                             <button
-                                                class="pan-deny-access-btn px-4 py-2 border border-dodger-blue text-black rounded-md cursor-pointer">No</button>
+                                                class="pan-deny-access-btn px-4 py-2 border border-deep-teal-green text-black rounded-md cursor-pointer">No</button>
                                             <button
-                                                class="pan-allow-access-btn px-4 py-2 bg-dodger-blue text-white rounded-md cursor-pointer">Yes</button>
+                                                class="pan-allow-access-btn px-4 py-2 bg-deep-teal-green text-white rounded-md cursor-pointer">Yes</button>
                                         </div>
                                     </div>
                                 </div>
 
                                 <!-- Virus Scan Status -->
+                                <!-- Virus scan status UI -->
                                 <div class="flex items-center justify-end mt-4">
                                     <label class="flex items-center gap-3">
                                         <span class="status-text-donate text-dark-gray text-16-nr">Virus scan</span>
@@ -458,7 +459,12 @@
                                             disabled />
                                     </label>
                                 </div>
+
+                                <!-- File input somewhere on the page -->
+
+
                             </div>
+
 
                             <!-- Select Payment Method -->
                             <div class="mt-6">
@@ -471,21 +477,21 @@
                                     class="flex flex-wrap gap-4 p-4 bg-white shadow-[4px_4px_10px_4px_#00000033] rounded-md">
                                     <!-- UPI -->
                                     <div
-                                        class="flex items-center gap-3 border border-inactive-blue py-1 px-3 rounded-md flex-1 min-w-[250px]">
+                                        class="flex items-center gap-3 border border-inactive-blue py-1 px-3 p-4 rounded-md flex-1 min-w-[250px]">
                                         <img src="/public/images/upi.svg" alt="UPI" class="w-10 h-10 mr-2" />
                                         <label for="upi" class="font-semibold text-base flex-1">
                                             UPI Payment
                                         </label>
 
-                                        <label class="custom-radio-label-lab">
+                                        <label class="custom-radio-label-crm">
                                             <input type="radio" name="payment-method" id="upi" />
-                                            <span class="custom-radio-lab"></span>
+                                            <span class="custom-radio-crm"></span>
                                         </label>
                                     </div>
 
                                     <!-- Payment Gateway -->
                                     <div
-                                        class="flex items-center gap-3 border border-inactive-blue py-1 px-3 rounded-md flex-1 min-w-[250px]">
+                                        class="flex items-center gap-3 border border-inactive-blue py-1 px-3 p-4 rounded-md flex-1 min-w-[250px]">
                                         <label for="net-banking"
                                             class="font-semibold text-base w-full flex items-center gap-2">
                                             <span
@@ -493,24 +499,24 @@
                                             Payment Gateway
                                         </label>
 
-                                        <label class="custom-radio-label-lab">
+                                        <label class="custom-radio-label-crm">
                                             <input type="radio" name="payment-method" id="net-banking" />
-                                            <span class="custom-radio-lab"></span>
+                                            <span class="custom-radio-crm"></span>
                                         </label>
                                     </div>
 
                                     <!-- Credit/Debit Card -->
                                     <div
-                                        class="flex items-center gap-3 border border-inactive-blue py-1 px-3 rounded-md flex-1 min-w-[250px]">
+                                        class="flex items-center gap-3 border border-inactive-blue py-1 px-3 p-4 rounded-md flex-1 min-w-[250px]">
                                         <label for="cod" class="font-semibold text-base w-full flex items-center gap-2">
                                             <span
                                                 class="material-symbols-outlined align-middle text-2xl text-dark-gray">credit_card</span>
                                             <span class="align-middle">Credit Card or Debit Card</span>
                                         </label>
 
-                                        <label class="custom-radio-label-lab">
+                                        <label class="custom-radio-label-crm">
                                             <input type="radio" name="payment-method" id="cod" />
-                                            <span class="custom-radio-lab"></span>
+                                            <span class="custom-radio-crm"></span>
                                         </label>
                                     </div>
                                 </div>
@@ -538,11 +544,11 @@
                             <!-- Pay Button -->
                             <div class="flex justify-end mt-10 gap-4">
                                 <a href="#"
-                                    class="w-[140px] h-[48px] rounded-md border border-dodger-blue text-dodger-blue font-normal text-lg transition text-center flex items-center justify-center">
+                                    class="w-[140px] h-[48px] rounded-md border border-deep-teal-green text-deep-teal-green font-normal text-lg transition text-center flex items-center justify-center">
                                     Cancel
                                 </a>
                                 <a href="#" onclick="openPopup(event)"
-                                    class="w-[140px] h-[48px] rounded-md bg-dodger-blue text-white font-normal text-lg transition text-center flex items-center justify-center">
+                                    class="w-[140px] h-[48px] rounded-md bg-deep-teal-green text-white font-normal text-lg transition text-center flex items-center justify-center">
                                     Pay
                                 </a>
 
@@ -557,12 +563,11 @@
                                 <div class="bg-white text-black rounded-2xl w-full max-w-[520px] p-6 shadow-xl relative flex flex-col pointer-events-auto 
   xl:max-h-none xl:overflow-visible 
   max-h-[90vh] overflow-y-auto my-4">
-                                    <!-- Close Button -->
+
                                     <button onclick="closePopup()"
                                         class="absolute top-4 right-4 text-dark-gray text-2xl font-bold hover:text-red-600 transition-colors duration-200 z-10">
                                         &times;
                                     </button>
-
 
                                     <!-- Popup Content -->
                                     <div>
@@ -588,6 +593,7 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
 
                                     <!-- Order Info -->
@@ -625,20 +631,8 @@
                                             <p class="text-xl font-semibold text-dark-gray">₹100</p>
                                         </div>
                                     </div>
-                                    <div class="flex justify-center items-center mt-6 gap-4">
-                                        <a href="/src/lab/donate_pay.html"
-                                            class="w-[140px] h-[48px] rounded-md border border-dodger-blue text-dodger-blue font-normal text-lg transition text-center flex items-center justify-center">
-                                            Donate More
-                                        </a>
-                                        <a href="/src/lab/settings.html"
-                                            class="w-[140px] h-[48px] rounded-md bg-dodger-blue text-white font-normal text-lg transition text-center flex items-center justify-center">
-                                            Go to home
-                                        </a>
 
-                                    </div>
-
-
-
+                                    
 
                                 </div>
                             </div>
@@ -656,15 +650,15 @@
                             <div class="flex items-center justify-between h-10">
                                 <div class="flex items-center gap-3">
                                     <span
-                                        class="material-symbols-outlined cursor-pointer bg-dodger-blue text-white rounded-md p-1">
+                                        class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">
                                         share
                                     </span>
                                     <span
-                                        class="material-symbols-outlined download-btn cursor-pointer bg-dodger-blue text-white rounded-md p-1">
+                                        class="material-symbols-outlined download-btn cursor-pointer bg-deep-teal-green text-white rounded-md p-1">
                                         download
                                     </span>
                                 </div>
-                                <p class="font-semibold text-lg text-dodger-blue">
+                                <p class="font-semibold text-lg text-deep-teal-green">
                                     Donation Receipt
                                 </p>
                                 <button class="close-platform-bill" onclick="closePopupDonation()">
@@ -777,15 +771,15 @@
                             <div class="flex items-center justify-between h-10">
                                 <div class="flex items-center gap-3">
                                     <span
-                                        class="material-symbols-outlined cursor-pointer bg-dodger-blue text-white rounded-md p-1">
+                                        class="material-symbols-outlined cursor-pointer bg-deep-teal-green text-white rounded-md p-1">
                                         share
                                     </span>
                                     <span
-                                        class="material-symbols-outlined download-btn cursor-pointer bg-dodger-blue text-white rounded-md p-1">
+                                        class="material-symbols-outlined download-btn cursor-pointer bg-deep-teal-green text-white rounded-md p-1">
                                         download
                                     </span>
                                 </div>
-                                <p class="font-semibold text-lg text-dodger-blue">
+                                <p class="font-semibold text-lg text-deep-teal-green">
                                     Platform Bill
                                 </p>
                                 <button class="close-platform-bill" onclick="closePopupDonation()">
@@ -907,28 +901,17 @@
                         </div>
                     </div>
 
+
+
                 </div>
-
             </div>
-        </div>
-
-        </div>
-
-
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
-    <script src="/public/js/auth/client-register.js"></script>
-    <script src="../../public/js/files-upload.js"></script>
-
-    <script src="/public/js/common.js"></script>
-    <script src="/public/js/pharmacy/home.js"></script>
-    <script src="/public/js/donate-pay.js"></script>
-    <script src="/public/js/sidebar.js"></script>
-
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="../../public/js/files-upload.js"></script>
+  <script src="/public/js/sidebar.js"></script>
+  <script src="/public/js/common.js"></script>
+  <script src="/public/js/donate-pay.js"></script>
 
 </body>
 
