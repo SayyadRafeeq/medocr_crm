@@ -20,8 +20,6 @@ $(document).ready(function () {
       break;
     }
   }
-
-console.log(activeColorClass)
   const rowsPerPage = 5;
 
   function initPagination(tabContent) {
@@ -96,6 +94,10 @@ console.log(activeColorClass)
  $('.tab-content').each(function () {
   initPagination($(this));
 });
+ $('.tab-content-hospital-rewards').each(function () {
+  initPagination($(this));
+});
+
 
 // $('.tab-button').on('click', function () {
 //   const tabId = $(this).data('tab');

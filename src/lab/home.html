@@ -236,7 +236,7 @@
     <!-- Content -->
     <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
       <!-- Sidebar -->
-      <aside class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
+      <aside class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white shrink-0">
         <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
           <div class="relative w-full flex items-center justify-between pl-[33px]">
             <div class="flex flex-col items-start justify-center">
@@ -278,6 +278,12 @@
               </a>
             </li>
             <li>
+              <a href="/src/lab/service.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> gavel </span>
+                <p>Services</p>
+              </a>
+            </li>
+            <li>
               <a href="/src/lab/settings.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                 <span class="material-symbols-outlined"> settings </span>
                 <p>Settings</p>
@@ -295,7 +301,7 @@
       <div
         class=" relative transition-all duration-300   main-content h-full flex-1 flex flex-col  p-6 overflow-y-auto scroll">
         <div
-          class="show-sidebar-toggle hidden fixed top-24 left-0 z-50 h-10 w-10 bg-light-sky-blue-tint items-center justify-center rounded-r-md cursor-pointer">
+          class="show-sidebar-toggle hidden fixed top-25 left-12 z-50 h-10 w-10 bg-light-sky-blue-tint items-center justify-center rounded-r-md cursor-pointer">
           <span class="material-symbols-outlined bold-weight text-dodger-blue">
             arrow_forward_ios
           </span>
@@ -600,7 +606,8 @@
           <!--Appointment Request Detail Popup-->
           <div
             class="fixed inset-0 flex items-center justify-center bg-semi-transparent-black appointmentRequestDetail hidden">
-            <div class="bg-white h-[500px] md:h-[650px] lg:h-[720px] mx-2 md:mx-0 overflow-y-auto no-scrollbar p-4 rounded-lg">
+            <div
+              class="bg-white h-[500px] md:h-[650px] lg:h-[720px] mx-2 md:mx-0 overflow-y-auto no-scrollbar p-4 rounded-lg">
               <div class="flex items-center justify-between">
                 <p class="font-semibold text-sm">Appointment Details</p>
                 <div class="flex items-center gap-4">

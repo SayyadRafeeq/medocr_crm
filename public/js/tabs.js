@@ -246,6 +246,40 @@ $(document).ready(function () {
     }
   });
 
+   $(".tab-btn-hospital-rewards").click(function () {
+    var target = $(this).data("tab");
+    $(".tab-btn-hospital-rewards")
+      .removeClass(
+        "active-tab-hospital-rewards font-semibold border-b-2 border-dark-blue text-dark-gray"
+      )
+      .addClass("font-medium text-light-gray1");
+    $(this)
+      .addClass(
+        "active-tab-hospital-rewards font-semibold border-b-2 border-dark-blue text-dark-gray"
+      )
+      .removeClass("font-medium text-light-gray1");
+    $(".tab-content-hospital-rewards").addClass("hidden");
+    $("." + target).removeClass("hidden");
+    if (target === "points") {
+      $(".diamond-user").show();
+    } else {
+      $(".diamond-user").hide();
+    }
+
+    if (target === "documents") {
+      $(".editIcon").hide();
+      $(".fileLimit").removeClass("hidden");
+    } else {
+      $(".editIcon").show();
+      $(".fileLimit").addClass("hidden");
+    }
+    if (target === "notification-control") {
+      $(".edit-toggle").hide();
+    } else {
+      $(".edit-toggle").show();
+    }
+  });
+
 
 
    $(".tab-btn-settings-pharmacy").click(function () {
@@ -462,12 +496,12 @@ $(document).ready(function () {
     var target = $(this).data("tab");
     $(".tab-btn-rewards")
       .removeClass(
-        "active-tab-rewards font-semibold border-b-2 border-dark-blue text-dark-gray"
+        "active-tab-rewards font-semibold border-b-2 border-dodger-blue text-dark-gray"
       )
       .addClass("font-medium text-light-gray1");
     $(this)
       .addClass(
-        "active-tab-rewards font-semibold border-b-2 border-dark-blue text-dark-gray"
+        "active-tab-rewards font-semibold border-b-2 border-dodger-blue text-dark-gray"
       )
       .removeClass("font-medium text-light-gray1");
     $(".tab-content").addClass("hidden");
