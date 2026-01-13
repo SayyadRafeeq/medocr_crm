@@ -306,12 +306,12 @@
   --color-muted-gray: #98989852;
   --color-prussian-blue: #0836840D;
   --color-safety-orange: #FF6900;
-  --color-cool-slate-gray:#919EAB14;
-  --color-dark-steel-blue:#314158;
-  --color-soft-neutral-gray:#AEAEB2;
-  --color-soft-peach-cream:#FEF4EF;
-  --color-warm-apricot-orange:#F29058;
-  --color-soft-system-gray:#7878801F;
+  --color-cool-slate-gray: #919EAB14;
+  --color-dark-steel-blue: #314158;
+  --color-soft-neutral-gray: #AEAEB2;
+  --color-soft-peach-cream: #FEF4EF;
+  --color-warm-apricot-orange: #F29058;
+  --color-soft-system-gray: #7878801F;
   /* Box Shadows */
   --box-shadow-1: 4px 4px 10px 4px #3AAFA926;
   --box-shadow-2: 0px 4px 4px 0px #00000040;
@@ -676,6 +676,9 @@ body {
 }
 
 .active-tab-hospital {
+  @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
+}
+.active-tab-hospital-rewards {
   @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
 }
 
