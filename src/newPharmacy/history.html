@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orders</title>
+    <title>History</title>
     <link href="../../public/css/output.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
@@ -245,6 +245,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Content -->
         <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
             <!-- Sidebar -->
@@ -323,6 +324,7 @@
                     </div>
                 </nav>
             </aside>
+
             <div class="relative transition-all duration-300 main-content bg-slate-white h-full flex-1 flex flex-col 
                         gap-4 sm:gap-6 lg:gap-8 
                         p-3 sm:p-4 lg:p-6
@@ -340,13 +342,42 @@
                         </span>
                     </div>
                     <!-- Tabs -->
+                    <div
+                        class="flex flex-col lg:flex-row lg:items-end justify-between w-full gap-3 sm:gap-4 mt-6 sm:mt-8">
+                        <!-- Tabs Section -->
+                        <div
+                            class="tabs-section flex gap-3 sm:gap-4 whitespace-nowrap pt-2 lg:pt-0 flex-1 min-w-0 overflow-x-auto lg:overflow-visible">
 
+                            <button
+                                class="tab-btn-rewards active-tab-rewards text-sm sm:text-18-nr py-1.5 px-4 font-medium cursor-pointer text-light-gray1"
+                                data-tab="completed">
+                                Completed
+                            </button>
+
+                            <button
+                                class="tab-btn-rewards text-sm sm:text-18-nr py-1.5 px-4 font-medium cursor-pointer text-light-gray1"
+                                data-tab="cancelled">
+                                Cancelled
+                            </button>
+                        </div>
+                        <!-- Search Section -->
+                        <div class="flex items-center gap-3 sm:gap-4 w-full lg:w-auto pb-1">
+                            <div
+                                class="w-full lg:w-[310px] h-[40px] rounded-[6px] bg-white border border-blue-haze flex items-center px-2">
+                                <span class="material-symbols-outlined text-dark-gray">
+                                    search
+                                </span>
+                                <input type="text" placeholder="Search by Order ID"
+                                    class="w-full ml-1 border-none bg-transparent focus:outline-none font-regular text-sm sm:text-base focus:ring-0 placeholder:text-medium-gray" />
+                            </div>
+                        </div>
+                    </div>
                     <!-- TAB CONTENT SECTIONS -->
-                    <div class="upcoming ">
 
+                    <div class="tab-content completed ">
                         <!-- === ORDER CARD 1=== -->
                         <div class="order-card popup-btn mb-4 mt-4 sm:mt-6 rounded-lg shadow-(--box-shadow-5) overflow-hidden cursor-pointer"
-                            data-popup="order-details-popup">
+                            data-popup="order-completed-popup">
                             <!-- Header -->
                             <div class="bg-lightest-blue1 p-3 sm:p-4 min-h-[63px]">
 
@@ -368,14 +399,14 @@
                                 <!-- Row 2: Upcoming & Today -->
                                 <div
                                     class="flex items-center justify-between text-[10px] sm:text-sm text-desaturated-blue mt-1">
-                                    <span class="font-semibold text-dodger-blue">
-                                        Upcoming
+                                    <span class="font-semibold text-deep-teal-green">
+                                        Completed
                                     </span>
 
                                     <span class="flex items-center gap-1">
                                         <img src="/public/images/alarm.svg" alt="alarm icon"
                                             class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
-                                        Today · 9:45 AM
+                                        22/05/25, 13:32
                                     </span>
                                 </div>
 
@@ -403,7 +434,7 @@
 
                                     <!-- Left: Customer Details -->
                                     <div class="flex items-start gap-3">
-                                        <img src="/public/images/customer-pharmacy.svg" alt="customer icon"
+                                        <img src="/public/images/rachel-kate.svg" alt="customer icon"
                                             class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
 
                                         <div>
@@ -411,30 +442,28 @@
                                                 Customer Details
                                             </p>
                                             <p class="text-xs sm:text-sm text-dark-grayish-blue font-semibold">
-                                                Hidden until Accepted
+                                                Rachel Kate
                                             </p>
                                         </div>
                                     </div>
 
                                     <!-- Right: Call Button -->
                                     <button
-                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-white bg-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
-                                        <img src="/public/images/call.svg" alt="call icon" class="w-[20px] h-[20px]" />
-                                        Call Customer
+                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-dodger-blue border border-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
+
+                                        View Invoice
                                     </button>
 
                                 </div>
 
                             </div>
                         </div>
-                        <!-- Order Details Popup -->
+                        <!-- Order completed Popup -->
                         <div
-                            class="order-details-popup popup-overlay fixed inset-0 bg-black/40 hidden items-center justify-center z-50 px-3">
+                            class="order-completed-popup popup-overlay fixed inset-0 bg-black/40 hidden items-center justify-center z-50 px-3">
                             <div
                                 class="popup-content rounded-[8px] w-[680px] max-h-[90vh] overflow-y-auto relative shadow-xl bg-white p-4 scroll">
                                 <!-- Header -->
-
-
                                 <div class="flex justify-between items-center px-6 py-3  border-blue-haze z-10">
                                     <h2 class="text-base font-bold">User Information</h2>
                                     <div class="flex items-center gap-4">
@@ -516,7 +545,8 @@
                                 </div>
                                 <!-- Content -->
                                 <div class="space-y-4">
-                                    <div class="rounded-[12px] p-4 space-y-6">
+                                    <div class=" rounded-[12px] p-4 space-y-6">
+
                                         <!-- Customer Info -->
                                         <div class="bg-blue-50 p-4 rounded-md flex gap-4">
                                             <div class="flex flex-col ">
@@ -590,82 +620,24 @@
 
                                         <hr class="mt-4 text-blue-haze">
 
-
-                                        <!-- Delivery Location -->
-                                        <div id="openMap"
-                                            class="flex items-center justify-between p-[12px] border border-light-gray2 rounded-[8px] cursor-pointer">
-
-                                            <div class="flex items-center gap-3">
-                                                <img src="/public/images/map_button.svg" alt="map icon"
-                                                    class="w-[33px] h-[30px]" />
-                                                <div>
-                                                    <p class="text-raisin-black text-sm">Delivering to <span
-                                                            class="font-semibold">Saket Enclave</span> </p>
-                                                    <p class="text-jet-black text-xs">Chhijarpur, New Delhi</p>
-                                                </div>
-                                            </div>
-
-                                            <span class="material-symbols-outlined text-dark-gray text-[18px]">
-                                                chevron_right
-                                            </span>
-                                        </div>
-
-                                        <!-- QR Code Section -->
-                                        <div class="p-[12px] border border-light-gray2 rounded-[8px] qr-section">
-
-                                            <!-- Header -->
-                                            <div class="flex items-center justify-between cursor-pointer qr-toggle">
-                                                <div>
-                                                    <p class="text-ebony font-bold text-sm">QR Code for Payment</p>
-                                                    <p class="text-ebony font-medium text-xs">
-                                                        Date: Tue, 25 June 2025 - 11:32 AM
-                                                    </p>
-                                                </div>
-                                                <span
-                                                    class="material-symbols-outlined pl-[6.43px] text-dark-gray qr-icon">
-                                                    expand_more
-                                                </span>
-                                            </div>
-
-                                            <!-- QR CONTENT -->
-                                            <div class="qr-content hidden mt-4 w-full flex justify-center items-center">
-                                                <img src="/public/images/sample-qr.png" alt="Payment QR"
-                                                    class="w-[160px] h-[160px] object-contain mx-auto" />
-                                            </div>
-
-                                        </div>
-
                                         <!-- Progress Bar -->
                                         <div class="enquiredDetail">
                                             <div class="flex flex-col mt-4 py-4 gap-4">
-                                                <!-- Progress Bar -->
-                                                <div class="flex justify-center items-center gap-1">
-                                                    <!-- Enquiry -->
+                                                <div class=" flex justify-center items-center gap-1">
                                                     <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
-                                                    <div class="w-[138px] h-0.5 bg-dodger-blue"></div>
-
-                                                    <!-- Appointment -->
+                                                    <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
                                                     <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
-                                                    <div class="w-[138px] h-0.5 bg-dodger-blue"></div>
-
-                                                    <!-- Completed -->
-                                                    <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
-                                                    <div class="w-[138px] h-0.5 bg-blue-haze"></div>
-
-                                                    <!-- Cancel/Expired -->
-                                                    <div class="w-2 h-2 bg-blue-haze rounded-full"></div>
+                                                    <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                    <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
                                                 </div>
-
-                                                <!-- Labels (text colors unchanged) -->
-                                                <div class="flex items-center justify-between mx-10">
-                                                    <p class="pl-6 text-ebony font-normal text-sm">Enquiry</p>
-                                                    <p class="pl-2 text-ebony font-normal text-sm">Ongoing
-                                                    </p>
-                                                    <p class="text-arctic-gray font-normal text-sm">Completed</p>
-                                                    <p class="text-arctic-gray font-normal text-sm">Cancel/Expired</p>
+                                                <div class="flex items-center justify-between mx-20">
+                                                    <p class="text-ebony font-normal text-sm">Enquiry</p>
+                                                    <p class="text-ebony font-normal text-sm">Appointment</p>
+                                                    <p class="text-ebony font-normal text-sm">Completed</p>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <!-- Medicine Items -->
                                         <div class="space-y-3">
                                             <!-- Item 1 -->
@@ -751,88 +723,49 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="pt-4 flex flex-col gap-2">
-                                            <div class="flex justify-between items-center">
-                                                <p class="font-normal text-sm">Order ID</p>
-                                                <p class="font-normal text-sm">6 km</p>
-                                            </div>
-                                            <div class="flex justify-between items-center">
-                                                <p class="font-normal text-sm text-blue-gray">Order #R32512</p>
-                                                <p class="font-normal text-sm">20 mins away</p>
-                                            </div>
+                                        <!-- Total and Invoice -->
+                                        <div class="flex items-center justify-center gap-2">
+                                            <p class="text-center text-base text-piano-black font-bold">You have
+                                                completed Order</p>
+                                            <img src="/public/images/ok.svg" alt="ok icon" class="w-[18px] h-[18px]" />
                                         </div>
-
-                                        <div class="flex justify-between items-center mt-4">
-                                            <label class="flex items-center gap-2 cursor-pointer">
-
-                                                <span class="font-normal text-sm">No Show</span>
-                                                <input type="checkbox"
-                                                    class="w-4 h-4 accent-dodger-blue rounded cursor-pointer">
-                                            </label>
-                                            <p class="font-normal text-sm text-spanish-gray">Customer didn’t show up</p>
-                                        </div>
-
-                                        <div class="mt-2 flex justify-between items-center">
-                                            <div class="flex gap-2 items-center">
-                                                <p class="font-normal text-sm">Total</p>
-                                                <p class="font-normal text-sm text-dodger-blue">&#8377;500</p>
-                                            </div>
-                                            <div
-                                                class="border border-dodger-blue bg-pale-azure px-2.5 py-1 rounded-lg flex items-center gap-2 cursor-pointer">
-                                                <p class="font-normal text-sm">View Invoice</p>
-                                                <span class="material-symbols-outlined !text-lg">visibility</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Action Buttons -->
-                                    <div class="flex justify-center gap-3">
-                                        <button
-                                            class="close-popup w-[160px] px-6 py-3 rounded-[8px] bg-dodger-blue text-white text-[15px] popup-btn"
-                                            data-popup="order-details-popup">
-                                            Complete
-                                        </button>
-
-                                        <button
-                                            class="close-popup w-[160px] close-popup px-6 py-3 rounded-[8px] border border-strong-red text-strong-red text-[15px] popup-btn"
-                                            data-popup="cancel-order-popup">
-                                            Cancel Order
-                                        </button>
-                                    </div>
-                                    <!--cancel order Popup-->
-                                    <div
-                                        class="cancel-order-popup popup-overlay fixed inset-0 bg-black/40 hidden items-center justify-center z-50 px-3">
-                                        <div
-                                            class="popup-content rounded-[8px] w-[616px] overflow-y-auto relative shadow-xl bg-white p-4 scroll">
-                                            <div class="absolute right-4 close-popup" data-popup="cancel-order-popup">
-                                                <span class="material-symbols-outlined cursor-pointer">close</span>
-                                            </div>
-                                            <!-- Icon -->
-                                            <div class="flex items-center justify-center mb-4">
-                                                <div
-                                                    class="w-[60px] h-[60px] rounded-full bg-rosewater flex items-center justify-center">
-                                                    <img src="/public/images/cancelorder-icon.svg"
-                                                        alt="cancelorder icon" class="w-[32px] h-[32px] " />
-                                                </div>
-                                            </div>
-                                            <!-- Message -->
-                                            <p class="text-center text-dark-gray font-regular text-base mb-6">
-                                                Are you sure you want to cancel this order ?
-                                            </p>
-                                            <!-- Cancel Button -->
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-ebony font-regular text-sm">Total <span
+                                                    class="text-dodger-blue font-semibold test-sm">₹800</span></span>
                                             <button
-                                                class="block mx-auto w-[198px] px-6 py-3 rounded-[6px] bg-rosewater text-error font-semibold text-base"
-                                                id="confirmCancelOrder">
-                                                Cancel Order
+                                                class="flex items-center gap-2 h-[30px] p-2 rounded-[8px] border border-dodger-blue bg-pale-azure text-vivid-blue">
+                                                <span class="text-sm font-regular text-ebony">View Invoice</span>
+                                                <img src="/public/images/view.svg" alt="visibility icon"
+                                                    class="w-[16px] h-[16px]" />
                                             </button>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Help Section -->
+                                    <div class="border border-light-grayish-blue rounded-[12px] p-4">
+                                        <div class="flex items-center gap-3 rounded-[12px] ">
+                                            <div
+                                                class="w-[48px] h-[48px] flex items-center justify-center rounded-full border border-dodger-blue bg-pale-azure">
+                                                <span class="material-symbols-outlined text-dodger-blue text-[24px]">
+                                                    phone
+                                                </span>
+                                            </div>
+
+                                            <div>
+                                                <p class="text-blue-gray font-regular text-base mb-1">Need help with
+                                                    anything
+                                                    ? </p>
+                                                <p class="text-ebony font-semibold text-base">Call: (239) 555-0108</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- === ORDER CARD 2 === -->
+                        <!-- === ORDER CARD 2=== -->
                         <div class="order-card popup-btn mb-4 mt-4 sm:mt-6 rounded-lg shadow-(--box-shadow-5) overflow-hidden cursor-pointer"
-                            data-popup="order-details-popup">
+                            data-popup="order-completed-popup">
                             <!-- Header -->
                             <div class="bg-lightest-blue1 p-3 sm:p-4 min-h-[63px]">
 
@@ -854,14 +787,14 @@
                                 <!-- Row 2: Upcoming & Today -->
                                 <div
                                     class="flex items-center justify-between text-[10px] sm:text-sm text-desaturated-blue mt-1">
-                                    <span class="font-semibold text-dodger-blue">
-                                        Upcoming
+                                    <span class="font-semibold text-deep-teal-green">
+                                        Completed
                                     </span>
 
                                     <span class="flex items-center gap-1">
                                         <img src="/public/images/alarm.svg" alt="alarm icon"
                                             class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
-                                        Today · 9:45 AM
+                                        22/05/25, 13:32
                                     </span>
                                 </div>
 
@@ -889,7 +822,7 @@
 
                                     <!-- Left: Customer Details -->
                                     <div class="flex items-start gap-3">
-                                        <img src="/public/images/customer-pharmacy.svg" alt="customer icon"
+                                        <img src="/public/images/rachel-kate.svg" alt="customer icon"
                                             class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
 
                                         <div>
@@ -897,16 +830,16 @@
                                                 Customer Details
                                             </p>
                                             <p class="text-xs sm:text-sm text-dark-grayish-blue font-semibold">
-                                                Hidden until Accepted
+                                                Rachel Kate
                                             </p>
                                         </div>
                                     </div>
 
                                     <!-- Right: Call Button -->
                                     <button
-                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-white bg-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
-                                        <img src="/public/images/call.svg" alt="call icon" class="w-[20px] h-[20px]" />
-                                        Call Customer
+                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-dodger-blue border border-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
+
+                                        View Invoice
                                     </button>
 
                                 </div>
@@ -915,7 +848,7 @@
                         </div>
                         <!-- === ORDER CARD 3 === -->
                         <div class="order-card popup-btn mb-4 mt-4 sm:mt-6 rounded-lg shadow-(--box-shadow-5) overflow-hidden cursor-pointer"
-                            data-popup="order-details-popup">
+                            data-popup="order-completed-popup">
                             <!-- Header -->
                             <div class="bg-lightest-blue1 p-3 sm:p-4 min-h-[63px]">
 
@@ -937,14 +870,14 @@
                                 <!-- Row 2: Upcoming & Today -->
                                 <div
                                     class="flex items-center justify-between text-[10px] sm:text-sm text-desaturated-blue mt-1">
-                                    <span class="font-semibold text-dodger-blue">
-                                        Upcoming
+                                    <span class="font-semibold text-deep-teal-green">
+                                        Completed
                                     </span>
 
                                     <span class="flex items-center gap-1">
                                         <img src="/public/images/alarm.svg" alt="alarm icon"
                                             class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
-                                        Today · 9:45 AM
+                                        22/05/25, 13:32
                                     </span>
                                 </div>
 
@@ -972,7 +905,7 @@
 
                                     <!-- Left: Customer Details -->
                                     <div class="flex items-start gap-3">
-                                        <img src="/public/images/customer-pharmacy.svg" alt="customer icon"
+                                        <img src="/public/images/rachel-kate.svg" alt="customer icon"
                                             class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
 
                                         <div>
@@ -980,16 +913,16 @@
                                                 Customer Details
                                             </p>
                                             <p class="text-xs sm:text-sm text-dark-grayish-blue font-semibold">
-                                                Hidden until Accepted
+                                                Rachel Kate
                                             </p>
                                         </div>
                                     </div>
 
                                     <!-- Right: Call Button -->
                                     <button
-                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-white bg-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
-                                        <img src="/public/images/call.svg" alt="call icon" class="w-[20px] h-[20px]" />
-                                        Call Customer
+                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-dodger-blue border border-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
+
+                                        View Invoice
                                     </button>
 
                                 </div>
@@ -998,6 +931,566 @@
                         </div>
                     </div>
 
+
+                    <div class="tab-content cancelled hidden">
+                        <!-- === ORDER CARD 1=== -->
+                         <div class="order-card popup-btn mb-4 mt-4 sm:mt-6 rounded-lg shadow-(--box-shadow-5) overflow-hidden cursor-pointer"
+                           data-popup="order-missed-popup">
+                            <!-- Header -->
+                            <div class="bg-lightest-blue1 p-3 sm:p-4 min-h-[63px]">
+
+                                <!-- Row 1: Order ID & ETA -->
+                                <div class="flex items-center justify-between mb-1">
+                                    <p
+                                        class="rounded-[6px] text-[10px] sm:text-xs px-2 py-1 font-medium text-electric-purple bg-lavendar-dream">
+                                        Order ID #8942
+                                    </p>
+
+                                    <span
+                                        class="flex items-center gap-1 text-[10px] sm:text-xs font-regular text-desaturated-blue">
+                                        <img src="/public/images/time.svg" alt="time icon"
+                                            class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
+                                        ETA : 20 min
+                                    </span>
+                                </div>
+
+                                <!-- Row 2: Upcoming & Today -->
+                                <div
+                                    class="flex items-center justify-between text-[10px] sm:text-sm text-desaturated-blue mt-1">
+                                    <span class="font-semibold text-crimson-red1">
+                                        Cancelled
+                                    </span>
+
+                                    <span class="flex items-center gap-1">
+                                        <img src="/public/images/alarm.svg" alt="alarm icon"
+                                            class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
+                                        22/05/25, 13:32
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- Body -->
+                            <div class="bg-white">
+                                <!-- MEDICINE LIST -->
+                                <div class="flex items-start gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-gainsboro">
+                                    <img src="/public/images/Medicinebg1.svg" alt="calendar icon"
+                                        class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
+                                    <div>
+                                        <p class="font-regular text-foggy-silver mb-2 text-[10px] sm:text-xs">Medicines
+                                            List</p>
+                                        <ul class="text-xs sm:text-sm text-dark-grayish-blue font-semibold space-y-1">
+                                            <li>• Azithromycin 500mg x 1 strip</li>
+                                            <li>• Glucose D Packets x 4</li>
+                                            <li>• Multivitamin (2 strip)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- CUSTOMER DETAILS -->
+                                <div
+                                    class="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-gainsboro">
+
+                                    <!-- Left: Customer Details -->
+                                    <div class="flex items-start gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="customer icon"
+                                            class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
+
+                                        <div>
+                                            <p class="font-regular text-foggy-silver mb-2 text-[10px] sm:text-xs">
+                                                Customer Details
+                                            </p>
+                                            <p class="text-xs sm:text-sm text-dark-grayish-blue font-semibold">
+                                                Rachel Kate
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Call Button -->
+                                    <button
+                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-dodger-blue border border-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
+
+                                        View Invoice
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                       
+                        <!-- Order missed Popup -->
+                        <div
+                            class="order-missed-popup popup-overlay fixed inset-0 bg-black/40 hidden items-center justify-center z-50 px-3">
+                            <div
+                                class="popup-content rounded-[8px] w-[680px] max-h-[90vh] overflow-y-auto relative shadow-xl bg-white p-4 scroll">
+                                <!-- Header -->
+                                <div class="flex justify-between items-center px-6 py-3  border-blue-haze z-10">
+                                    <h2 class="text-base font-bold">User Information</h2>
+                                    <div class="flex items-center gap-4">
+                                        <button class="cursor-pointer pharmacy-open-share">
+                                            <span class="material-symbols-outlined !text-xl">share</span>
+                                        </button>
+
+                                        <!-- Pharmacy Share Popup -->
+                                        <div
+                                            class="pharmacy-share-modal hidden fixed inset-0 bg-black/40 z-50 items-center justify-center">
+
+                                            <div class="bg-white w-[520px] rounded-lg shadow-lg p-6 relative">
+
+                                                <!-- Header -->
+                                                <div class="flex justify-between items-center">
+                                                    <p class="font-semibold text-xl">Share</p>
+                                                    <span
+                                                        class="material-symbols-outlined pharmacy-close-share cursor-pointer">
+                                                        close
+                                                    </span>
+                                                </div>
+
+                                                <hr class="mt-4" />
+
+                                                <!-- Share Icons -->
+                                                <div class="flex justify-between pt-4">
+                                                    <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                                        <img src="/public/images/whatsappicon.svg"
+                                                            class="w-10 h-10 cursor-pointer" />
+                                                        <p class="text-base text-dark-gray">Whatsapp</p>
+                                                    </div>
+
+                                                    <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                                        <img src="/public/images/telegramicon.svg"
+                                                            class="w-10 h-10 cursor-pointer" />
+                                                        <p class="text-base text-dark-gray">Telegram</p>
+                                                    </div>
+
+                                                    <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                                        <img src="/public/images/facebookicon.svg"
+                                                            class="w-10 h-10 cursor-pointer" />
+                                                        <p class="text-base text-dark-gray">Facebook</p>
+                                                    </div>
+
+                                                    <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                                        <img src="/public/images/smsicon.svg"
+                                                            class="w-10 h-10 cursor-pointer" />
+                                                        <p class="text-base text-dark-gray">Message</p>
+                                                    </div>
+
+                                                    <div class="flex flex-col items-center gap-2 w-20 text-center">
+                                                        <img src="/public/images/gmailicon.svg"
+                                                            class="w-10 h-10 cursor-pointer" />
+                                                        <p class="text-base text-dark-gray">E-mail</p>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Copy Link -->
+                                                <div class="pt-4 relative mt-6">
+                                                    <input type="text"
+                                                        class="pharmacy-share-link w-full rounded-md p-4 text-sm border"
+                                                        value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
+                                                        disabled />
+
+                                                    <button
+                                                        class="pharmacy-copy-btn absolute right-3 top-6 bg-dodger-blue text-white rounded-md p-2">
+                                                        Copy
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <span
+                                            class="close-popup material-symbols-outlined close-icon cursor-pointer text-black text-[13.15px]"
+                                            data-popup="order-details-popup">close</span>
+                                    </div>
+                                </div>
+                                <!-- Content -->
+                                <div class="space-y-4">
+                                    <div class=" rounded-[12px] p-4 space-y-6">
+                                        <!-- Customer Info -->
+                                        <div class="bg-blue-50 p-4 rounded-md flex gap-4">
+                                            <div class="flex flex-col ">
+                                                <img src="/public/images/dolly-paris1.svg" alt="">
+                                                <p class="font-normal text-sm text-center pt-4">Dolly Paris</p>
+                                                <p class="font-normal text-sm text-center pt-2">#8942</p>
+
+                                            </div>
+
+                                            <div class="flex flex-col gap-4 w-[180px]">
+                                                <div class="flex  gap-2">
+                                                    <div
+                                                        class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                        <span
+                                                            class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                            female
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <p class="font-normal text-xs text-spanish-gray">Gender</p>
+                                                        <p class="font-normal text-sm">Female</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex  gap-2">
+                                                    <div
+                                                        class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                        <span
+                                                            class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                            hourglass
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <p class="font-normal text-xs text-spanish-gray">Age</p>
+                                                        <p class="font-normal text-sm">25</p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="flex flex-col gap-4">
+                                                <div class="flex  gap-2">
+                                                    <div
+                                                        class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                        <span
+                                                            class="material-symbols-outlined text-dodger-blue !text-lg">
+                                                            call
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <p class="font-normal text-xs text-spanish-gray">Phone no.</p>
+                                                        <p class="font-normal text-sm">+91 7737533456</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="flex  gap-2">
+                                                    <div
+                                                        class="border border-light-gray rounded-lg w-6 h-6 flex items-center justify-center">
+                                                        <img src="/public/images/address-icon.svg" alt="">
+                                                    </div>
+                                                    <div class="flex flex-col gap-2">
+                                                        <p class="font-normal text-xs text-spanish-gray">Address</p>
+                                                        <p class="font-normal text-sm">123 maple los Angeles, CA 90001
+                                                            usa
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <hr class="mt-4 text-blue-haze">
+                                        <!-- Progress Bar -->
+                                        <div class="enquiredDetail">
+                                            <div class="flex flex-col mt-4 py-4 gap-4">
+                                                <div class=" flex justify-center items-center gap-1">
+                                                    <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                    <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                    <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                    <div class="w-[192px] h-0.5 bg-dodger-blue"></div>
+                                                    <div class="w-2 h-2 bg-dodger-blue rounded-full"></div>
+                                                </div>
+                                                <div class="flex items-center justify-between mx-20">
+                                                    <p class="text-ebony font-normal text-sm">Enquiry</p>
+                                                    <p class="text-ebony font-normal text-sm">Appointment</p>
+                                                    <p class="text-ebony font-normal text-sm">No Show</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Medicine Items -->
+                                        <div class="space-y-3">
+                                            <!-- Item 1 -->
+                                            <div class="flex items-start gap-3 border-b border-grayish-gray pb-3">
+                                                <div
+                                                    class="rounded-lg bg-off-white flex items-center justify-center overflow-hidden">
+                                                    <img src="/public/images/medicine.svg" alt="medicine"
+                                                        class="h-[92px] w-[92px]" />
+                                                </div>
+                                                <div class="flex-1">
+                                                    <p class="text-ebony font-semibold text-sm mb-1">Shelcal 500mg Strip
+                                                        of
+                                                        15 Ta...</p>
+                                                    <div class="flex items-center gap-2 mb-2">
+                                                        <span class="text-sm font-regular text-blue-gray">1x1
+                                                            unit</span>
+                                                        <span
+                                                            class="px-2 py-0.5 rounded-md bg-dark-crimson-red text-white text-[8px]">Prescription
+                                                            Needed</span>
+                                                        <img src="/public/images/view.svg" alt="visibility icon"
+                                                            class="w-[16px] h-[16px]" />
+                                                    </div>
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="text-ebony font-regular text-sm">$20.00</span>
+                                                        <span
+                                                            class="text-arctic-gray font-regular text-sm line-through">$30.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Item 2 -->
+                                            <div class="flex items-start gap-3 border-b border-grayish-gray pb-3">
+                                                <div
+                                                    class="rounded-lg bg-off-white flex items-center justify-center overflow-hidden">
+                                                    <img src="/public/images/medicine.svg" alt="medicine"
+                                                        class="h-[92px] w-[92px]" />
+                                                </div>
+                                                <div class="flex-1">
+                                                    <p class="text-ebony font-semibold text-sm mb-1">Shelcal 500mg Strip
+                                                        of
+                                                        15 Ta...</p>
+                                                    <div class="flex items-center gap-2 mb-2">
+                                                        <span class="text-sm font-regular text-blue-gray">1x1
+                                                            unit</span>
+                                                        <span
+                                                            class="px-2 py-0.5 rounded-md bg-ocean-green text-white text-[8px]">Prescription
+                                                            Needed</span>
+                                                        <img src="/public/images/view.svg" alt="visibility icon"
+                                                            class="w-[16px] h-[16px]" />
+
+                                                    </div>
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="text-ebony font-regular text-sm">$15.00</span>
+                                                        <span
+                                                            class="text-arctic-gray font-regular text-sm line-through">$25.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Item 3 -->
+                                            <div class="flex items-start gap-3 border-b border-grayish-gray pb-3">
+                                                <div
+                                                    class="rounded-lg bg-off-white flex items-center justify-center overflow-hidden">
+                                                    <img src="/public/images/medicine.svg" alt="medicine"
+                                                        class="h-[92px] w-[92px]" />
+                                                </div>
+                                                <div class="flex-1">
+                                                    <p class="text-ebony font-semibold text-sm mb-1">Shelcal 500mg Strip
+                                                        of
+                                                        15 Ta...</p>
+                                                    <div class="flex items-center gap-2 mb-2">
+                                                        <span class="text-sm font-regular text-blue-gray">1x1
+                                                            unit</span>
+                                                        <span
+                                                            class="px-2 py-0.5 rounded-md bg-ocean-green text-white text-[8px]">Prescription
+                                                            Needed</span>
+                                                        <img src="/public/images/view.svg" alt="visibility icon"
+                                                            class="w-[16px] h-[16px]" />
+                                                    </div>
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="text-ebony font-regular text-sm">$10.00</span>
+                                                        <span
+                                                            class="text-arctic-gray font-regular text-sm line-through">$18.00</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Total and Invoice -->
+                                        <div class="flex items-center justify-center gap-2">
+                                            <p class="text-center text-base text-piano-black font-bold">You missed
+                                                the Order</p>
+                                            <img src="/public/images/missed.svg" alt="missed icon"
+                                                class="w-[18px] h-[18px]" />
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <span class="text-ebony font-regular text-sm">Total <span
+                                                    class="text-dodger-blue font-semibold test-sm">₹500</span></span>
+                                            <button
+                                                class="flex items-center gap-2 h-[30px] p-2 rounded-[8px] border border-dodger-blue bg-pale-azure text-vivid-blue">
+                                                <span class="text-sm font-regular text-ebony">View Invoice</span>
+                                                <img src="/public/images/view.svg" alt="visibility icon"
+                                                    class="w-[16px] h-[16px]" />
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    
+                                   
+                                    <!-- Help Section -->
+                                     <div class="border border-light-grayish-blue rounded-[12px] p-4">
+                                        <div class="flex items-center gap-3 rounded-[12px] ">
+                                            <div
+                                                class="w-[48px] h-[48px] flex items-center justify-center rounded-full border border-dodger-blue bg-pale-azure">
+                                                <span class="material-symbols-outlined text-dodger-blue text-[24px]">
+                                                    phone
+                                                </span>
+                                            </div>
+
+                                            <div>
+                                                <p class="text-blue-gray font-regular text-base mb-1">Need help with
+                                                    anything
+                                                    ? </p>
+                                                <p class="text-ebony font-semibold text-base">Call: (239) 555-0108</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- === ORDER CARD 2 === -->
+                         <div class="order-card popup-btn mb-4 mt-4 sm:mt-6 rounded-lg shadow-(--box-shadow-5) overflow-hidden cursor-pointer"
+                           data-popup="order-missed-popup">
+                            <!-- Header -->
+                            <div class="bg-lightest-blue1 p-3 sm:p-4 min-h-[63px]">
+
+                                <!-- Row 1: Order ID & ETA -->
+                                <div class="flex items-center justify-between mb-1">
+                                    <p
+                                        class="rounded-[6px] text-[10px] sm:text-xs px-2 py-1 font-medium text-electric-purple bg-lavendar-dream">
+                                        Order ID #8942
+                                    </p>
+
+                                    <span
+                                        class="flex items-center gap-1 text-[10px] sm:text-xs font-regular text-desaturated-blue">
+                                        <img src="/public/images/time.svg" alt="time icon"
+                                            class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
+                                        ETA : 20 min
+                                    </span>
+                                </div>
+
+                                <!-- Row 2: Upcoming & Today -->
+                                <div
+                                    class="flex items-center justify-between text-[10px] sm:text-sm text-desaturated-blue mt-1">
+                                    <span class="font-semibold text-crimson-red1">
+                                        Cancelled
+                                    </span>
+
+                                    <span class="flex items-center gap-1">
+                                        <img src="/public/images/alarm.svg" alt="alarm icon"
+                                            class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
+                                        22/05/25, 13:32
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- Body -->
+                            <div class="bg-white">
+                                <!-- MEDICINE LIST -->
+                                <div class="flex items-start gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-gainsboro">
+                                    <img src="/public/images/Medicinebg1.svg" alt="calendar icon"
+                                        class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
+                                    <div>
+                                        <p class="font-regular text-foggy-silver mb-2 text-[10px] sm:text-xs">Medicines
+                                            List</p>
+                                        <ul class="text-xs sm:text-sm text-dark-grayish-blue font-semibold space-y-1">
+                                            <li>• Azithromycin 500mg x 1 strip</li>
+                                            <li>• Glucose D Packets x 4</li>
+                                            <li>• Multivitamin (2 strip)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- CUSTOMER DETAILS -->
+                                <div
+                                    class="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-gainsboro">
+
+                                    <!-- Left: Customer Details -->
+                                    <div class="flex items-start gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="customer icon"
+                                            class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
+
+                                        <div>
+                                            <p class="font-regular text-foggy-silver mb-2 text-[10px] sm:text-xs">
+                                                Customer Details
+                                            </p>
+                                            <p class="text-xs sm:text-sm text-dark-grayish-blue font-semibold">
+                                                Rachel Kate
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Call Button -->
+                                    <button
+                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-dodger-blue border border-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
+
+                                        View Invoice
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- === ORDER CARD 3 === -->
+                         <div class="order-card popup-btn mb-4 mt-4 sm:mt-6 rounded-lg shadow-(--box-shadow-5) overflow-hidden cursor-pointer"
+                           data-popup="order-missed-popup">
+                            <!-- Header -->
+                            <div class="bg-lightest-blue1 p-3 sm:p-4 min-h-[63px]">
+
+                                <!-- Row 1: Order ID & ETA -->
+                                <div class="flex items-center justify-between mb-1">
+                                    <p
+                                        class="rounded-[6px] text-[10px] sm:text-xs px-2 py-1 font-medium text-electric-purple bg-lavendar-dream">
+                                        Order ID #8942
+                                    </p>
+
+                                    <span
+                                        class="flex items-center gap-1 text-[10px] sm:text-xs font-regular text-desaturated-blue">
+                                        <img src="/public/images/time.svg" alt="time icon"
+                                            class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
+                                        ETA : 20 min
+                                    </span>
+                                </div>
+
+                                <!-- Row 2: Upcoming & Today -->
+                                <div
+                                    class="flex items-center justify-between text-[10px] sm:text-sm text-desaturated-blue mt-1">
+                                    <span class="font-semibold text-crimson-red1">
+                                        Cancelled
+                                    </span>
+
+                                    <span class="flex items-center gap-1">
+                                        <img src="/public/images/alarm.svg" alt="alarm icon"
+                                            class="w-[10px] h-[10px] sm:w-[12px] sm:h-[12px]" />
+                                        22/05/25, 13:32
+                                    </span>
+                                </div>
+
+                            </div>
+
+                            <!-- Body -->
+                            <div class="bg-white">
+                                <!-- MEDICINE LIST -->
+                                <div class="flex items-start gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-gainsboro">
+                                    <img src="/public/images/Medicinebg1.svg" alt="calendar icon"
+                                        class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
+                                    <div>
+                                        <p class="font-regular text-foggy-silver mb-2 text-[10px] sm:text-xs">Medicines
+                                            List</p>
+                                        <ul class="text-xs sm:text-sm text-dark-grayish-blue font-semibold space-y-1">
+                                            <li>• Azithromycin 500mg x 1 strip</li>
+                                            <li>• Glucose D Packets x 4</li>
+                                            <li>• Multivitamin (2 strip)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- CUSTOMER DETAILS -->
+                                <div
+                                    class="flex items-center justify-between gap-3 px-4 sm:px-6 py-4 sm:py-5 border-b border-gainsboro">
+
+                                    <!-- Left: Customer Details -->
+                                    <div class="flex items-start gap-3">
+                                        <img src="/public/images/rachel-kate.svg" alt="customer icon"
+                                            class="w-[32px] h-[32px] sm:w-[37px] sm:h-[37px]" />
+
+                                        <div>
+                                            <p class="font-regular text-foggy-silver mb-2 text-[10px] sm:text-xs">
+                                                Customer Details
+                                            </p>
+                                            <p class="text-xs sm:text-sm text-dark-grayish-blue font-semibold">
+                                                Rachel Kate
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right: Call Button -->
+                                    <button
+                                        class="w-[155px] h-[36px] px-4 rounded-[8px] text-dodger-blue border border-dodger-blue text-xs sm:text-sm font-medium flex items-center justify-center gap-2">
+
+                                        View Invoice
+                                    </button>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
     </main>

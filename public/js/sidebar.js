@@ -39,10 +39,10 @@ $(document).ready(function () {
       borderRight: "3px solid #8F81FF",
       fontWeight: "bold",
     },
-    pharmacy: {
-      backgroundColor: "#DDEBE7", 
-      color: "#1A7A5E",
-      borderRight: "3px solid #1A7A5E",
+    newpharmacy: {
+      backgroundColor: "#CCE5FF", 
+      color: "#007BFF",
+      borderRight: "3px solid #007BFF",
       fontWeight: "bold",
     },
     client: {

@@ -496,12 +496,12 @@ $(document).ready(function () {
     var target = $(this).data("tab");
     $(".tab-btn-rewards")
       .removeClass(
-        "active-tab-rewards font-semibold border-b-2 border-dark-blue text-dark-gray"
+        "active-tab-rewards font-semibold border-b-2 border-dodger-blue text-dark-gray"
       )
       .addClass("font-medium text-light-gray1");
     $(this)
       .addClass(
-        "active-tab-rewards font-semibold border-b-2 border-dark-blue text-dark-gray"
+        "active-tab-rewards font-semibold border-b-2 border-dodger-blue text-dark-gray"
       )
       .removeClass("font-medium text-light-gray1");
     $(".tab-content").addClass("hidden");
