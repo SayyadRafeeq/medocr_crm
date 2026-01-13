@@ -48,19 +48,22 @@ $(document).ready(function () {
   // --------- PIE CHART (Revenue by Test Type) ----------
   const pieCtx = document.getElementById("pieChart").getContext("2d");
   new Chart(pieCtx, {
-    type: "pie",
+    type: "doughnut",
     data: {
       labels: ["Direct (15%)", "NGO Referrals (35%)", "Ads (50%)"],
       datasets: [
         {
           data: [15, 35, 50],
           backgroundColor: ["#EF4444", "#155DFC", "#FFB95A"],
+          spacing:4,
         },
       ],
     },
     options: {
       responsive: true,
-      plugins: { legend: { position: "top" } },
+      plugins: { legend: false },
+      cutout:60,
+      borderRadius:10
     },
   });
 
@@ -245,5 +248,221 @@ $(document).ready(function () {
   // Close dropdown when clicking outside
   $(document).click(function () {
     $(".dropdown-menu").addClass("hidden");
+  });
+
+  // Initialize all jQuery UI Datepickers
+  if ($.fn.datepicker) {
+    $(".datepicker-inline").datepicker({
+      changeYear: true,
+      changeMonth: true,
+      yearRange: "2015:" + new Date().getFullYear(),
+      onSelect: function (dateText) {
+        console.log("Selected date: " + dateText);
+        
+        // Find the corresponding dropdown container
+        let $container = $(this).closest(".dropdown");
+        
+        // Update the date label
+        $container.find("p.font-semibold").text(dateText);
+        
+        // Mark Custom option as selected in the main filter dropdown
+        $("#dateSubmenu .trigger-custom .material-symbols-outlined")
+          .first()
+          .removeClass("text-light-gray")
+          .addClass("!text-dodger-blue");
+        
+        // Close all dropdowns and calendar
+        $(".filterDropdown, .submenu").addClass("hidden");
+        $("#calendarContainer").addClass("hidden");
+        $(".datepicker-container").hide();
+      },
+    });
+  }
+
+  // ===== MAIN FILTER DROPDOWN LOGIC =====
+  
+  // 1. Toggle Main Filter Dropdown
+  $(".filterToggle").on("click", function (e) {
+    e.stopPropagation();
+    const $dropdown = $(this).siblings(".filterDropdown");
+    const isHidden = $dropdown.hasClass("hidden");
+    
+    // Close all other dropdowns
+    $(".filterDropdown, .submenu").addClass("hidden");
+    $("#calendarContainer").addClass("hidden");
+    $(".datepicker-container").hide();
+    
+    // Toggle current dropdown
+    if (isHidden) $dropdown.removeClass("hidden");
+  });
+
+  // 2. Open Date Submenu
+  $(".trigger-date").on("click", function (e) {
+    e.stopPropagation();
+    $(".submenu").not("#dateSubmenu").addClass("hidden");
+    $("#calendarContainer").addClass("hidden");
+    $("#dateSubmenu").removeClass("hidden").css("top", $(this).position().top);
+  });
+
+  // 3. Handle Date Submenu Options (Week/Month - not Custom)
+  $("#dateSubmenu > div:not(.trigger-custom)").on("click", function (e) {
+    e.stopPropagation();
+    
+    // Remove active state from all options
+    $("#dateSubmenu .material-symbols-outlined")
+      .removeClass("!text-dodger-blue")
+      .addClass("text-light-gray");
+    
+    // Add active state to clicked option
+    $(this)
+      .find(".material-symbols-outlined")
+      .removeClass("text-light-gray")
+      .addClass("!text-dodger-blue");
+    
+    // Close all dropdowns
+    $(".filterDropdown, .submenu").addClass("hidden");
+  });
+
+  // 4. Open Calendar when clicking "Custom"
+  $(".trigger-custom").on("click", function (e) {
+    e.stopPropagation();
+    const topPos = $(this).position().top;
+    $("#calendarContainer").removeClass("hidden").css("top", topPos);
+  });
+
+  // 5. Open Status Submenu
+  $(".trigger-status").on("click", function (e) {
+    e.stopPropagation();
+    $(".submenu").addClass("hidden");
+    $("#calendarContainer").addClass("hidden");
+    $("#statusSubmenu").removeClass("hidden").css("top", $(this).position().top);
+  });
+
+  // 6. Open Visit Type Submenu
+  $(".trigger-visit").on("click", function (e) {
+    e.stopPropagation();
+    $(".submenu").addClass("hidden");
+    $("#calendarContainer").addClass("hidden");
+    $("#visitSubmenu").removeClass("hidden").css("top", $(this).position().top);
+  });
+
+  // 7. Handle Status and Visit Submenu Options
+  $("#statusSubmenu > div, #visitSubmenu > div").on("click", function (e) {
+    e.stopPropagation();
+    const $submenu = $(this).closest(".submenu");
+    
+    // Remove active state from all options in this submenu
+    $submenu
+      .find(".material-symbols-outlined")
+      .removeClass("!text-dodger-blue")
+      .addClass("text-light-gray");
+    
+    // Add active state to clicked option
+    $(this)
+      .find(".material-symbols-outlined")
+      .removeClass("text-light-gray")
+      .addClass("!text-dodger-blue");
+    
+    // Close all dropdowns
+    $(".filterDropdown, .submenu").addClass("hidden");
+  });
+
+  // ===== CHART SECTION CALENDAR ICONS =====
+  
+  // Toggle datepicker for chart sections (calendar icon click)
+  $(".calendar-icon").on("click", function (e) {
+    e.stopPropagation();
+    const $container = $(this).closest(".dropdown");
+    const $datepicker = $container.find(".datepicker-container");
+    
+    // Close other datepickers
+    $(".datepicker-container").not($datepicker).hide();
+    
+    // Toggle current datepicker
+    $datepicker.toggle();
+  });
+
+  // ===== CUSTOM DROPDOWN LOGIC (for Department Revenue, Load Analytics, etc.) =====
+  
+  $(".dropdown-btn").on("click", function (e) {
+    e.stopPropagation();
+    const $menu = $(this).siblings(".dropdown-menu");
+    
+    // Close other dropdown menus
+    $(".dropdown-menu").not($menu).addClass("hidden");
+    
+    // Toggle current menu
+    $menu.toggleClass("hidden");
+  });
+
+  $(".dropdown-menu li").on("click", function (e) {
+    e.stopPropagation();
+    const selectedText = $(this).text();
+    const $dropdown = $(this).closest(".dropdown");
+    
+    // Update dropdown button text
+    $dropdown.find(".dropdown-value").text(selectedText);
+    
+    // Hide menu
+    $(this).parent().addClass("hidden");
+  });
+
+  // ===== STATUS DROPDOWN LOGIC =====
+  
+  $(".statusDropdown").each(function () {
+    const $dropdown = $(this);
+    const $selected = $dropdown.find(".selectedStatus");
+    const $options = $dropdown.find(".statusOptions");
+    const $label = $dropdown.find(".status-label");
+
+    $selected.on("click", function (e) {
+      e.stopPropagation();
+      $(".statusOptions").not($options).hide();
+      $options.toggle();
+    });
+
+    $options.find("div").on("click", function (e) {
+      e.stopPropagation();
+      const selectedText = $(this).text();
+      const bgClass = $(this).attr("class").match(/bg-[^\s]+/)[0];
+      const textClass = $(this).attr("class").match(/text-[^\s]+/)[0];
+
+      $label.text(selectedText);
+      $selected
+        .removeClass(function (i, className) {
+          return (className.match(/(bg|text)-[^\s]+/g) || []).join(" ");
+        })
+        .addClass(`${bgClass} ${textClass}`);
+
+      $options.hide();
+    });
+  });
+
+  // ===== GLOBAL CLOSE HANDLERS =====
+  
+  // Close all dropdowns when clicking outside
+  $(document).on("click", function (e) {
+    const $target = $(e.target);
+    const isInsideDropdown =
+      $target.closest(".dropdown").length ||
+      $target.closest(".datepicker-container").length ||
+      $target.closest(".ui-datepicker").length ||
+      $target.closest(".statusDropdown").length ||
+      $target.closest(".filterDropdown").length ||
+      $target.closest(".submenu").length ||
+      $target.closest("#calendarContainer").length;
+
+    if (!isInsideDropdown) {
+      $(".filterDropdown, .submenu").addClass("hidden");
+      $("#calendarContainer").addClass("hidden");
+      $(".datepicker-container").hide();
+      $(".statusOptions").hide();
+      $(".dropdown-menu").addClass("hidden");
+    }
+  });
+
+  // Prevent dropdowns from closing when clicking inside them
+  $(".filterDropdown, .submenu, #calendarContainer, .datepicker-container").on("click", function (e) {
+    e.stopPropagation();
   });
 });
