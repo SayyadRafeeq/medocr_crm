@@ -7,7 +7,9 @@ $(document).ready(function () {
     '/ngo/': 'bg-violet-sky',
     '/client-company':'bg-dark-blue',
     '/hospital':'bg-dodger-blue',
-    '/newPharmacy':'bg-deep-teal-green'
+    '/doctor':'bg-dodger-blue',
+    '/newPharmacy':'bg-deep-teal-green',
+    '/lab':'bg-dodger-blue',
   };
 
   let activeColorClass = 'bg-violet-sky'; // default fallback
@@ -95,6 +97,9 @@ $(document).ready(function () {
   initPagination($(this));
 });
  $('.tab-content-hospital-rewards').each(function () {
+  initPagination($(this));
+});
+ $('.tab-content-points').each(function () {
   initPagination($(this));
 });
 
