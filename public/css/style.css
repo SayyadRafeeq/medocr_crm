@@ -310,12 +310,13 @@
   --color-muted-gray: #98989852;
   --color-prussian-blue: #0836840D;
   --color-safety-orange: #FF6900;
-  --color-cool-slate-gray:#919EAB14;
-  --color-dark-steel-blue:#314158;
-  --color-soft-neutral-gray:#AEAEB2;
-  --color-soft-peach-cream:#FEF4EF;
-  --color-warm-apricot-orange:#F29058;
-  --color-soft-system-gray:#7878801F;
+  --color-cool-slate-gray: #919EAB14;
+  --color-dark-steel-blue: #314158;
+  --color-soft-neutral-gray: #AEAEB2;
+  --color-soft-peach-cream: #FEF4EF;
+  --color-warm-apricot-orange: #F29058;
+  --color-soft-system-gray: #7878801F;
+  --color-periwinkle-blue:#D6E4FF;
   /* Box Shadows */
   --box-shadow-1: 4px 4px 10px 4px #3AAFA926;
   --box-shadow-2: 0px 4px 4px 0px #00000040;
@@ -336,6 +337,7 @@
   --shadow-17: 4px 4px 10px 0px #00000033;
   --shadow-appointments: 0px 8px 16px 0px #919EAB1F;
   --shadow-doctor: 0px 4px 12px 0px #007BFF40;
+  --shadow-header: 0px 4px 10px 4px #00000026;
 
 
   /* Radio Button Colors */
@@ -680,6 +682,10 @@ body {
 }
 
 .active-tab-hospital {
+  @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
+}
+
+.active-tab-hospital-rewards {
   @apply text-dodger-blue border-b-3 border-dodger-blue font-semibold;
 }
 

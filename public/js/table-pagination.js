@@ -7,7 +7,9 @@ $(document).ready(function () {
     '/ngo/': 'bg-violet-sky',
     '/client-company':'bg-dark-blue',
     '/hospital':'bg-dodger-blue',
-    '/newPharmacy':'bg-deep-teal-green'
+    '/doctor':'bg-dodger-blue',
+    '/newPharmacy':'bg-deep-teal-green',
+    '/lab':'bg-dodger-blue',
   };
 
   let activeColorClass = 'bg-violet-sky'; // default fallback
@@ -20,8 +22,6 @@ $(document).ready(function () {
       break;
     }
   }
-
-console.log(activeColorClass)
   const rowsPerPage = 5;
 
   function initPagination(tabContent) {
@@ -96,6 +96,13 @@ console.log(activeColorClass)
  $('.tab-content').each(function () {
   initPagination($(this));
 });
+ $('.tab-content-hospital-rewards').each(function () {
+  initPagination($(this));
+});
+ $('.tab-content-points').each(function () {
+  initPagination($(this));
+});
+
 
 // $('.tab-button').on('click', function () {
 //   const tabId = $(this).data('tab');

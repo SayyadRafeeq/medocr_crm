@@ -293,6 +293,13 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/src/hospital/doctors.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined"> group </span>
+                                <p>Doctors</p>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/src/hospital/reports.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> patient_list </span>
@@ -375,7 +382,7 @@
                         </div>
                         <div class="flex items-center">
                             <!--Tabs-->
-                            <div class="flex gap-4 sm:gap-5 whitespace-nowrap mt-8 overflow-x-auto no-scrollbar tabs">
+                            <div class="flex gap-4 sm:gap-5 whitespace-nowrap mt-8 overflow-x-auto no-scrollbar setting-tabs">
                                 <button
                                     class="tab-btn-hospital active-tab-hospital text-sm sm:text-18-nr px-4 py-1.5 cursor-pointer text-light-gray1 font-light"
                                     data-tab="account-details">
@@ -2064,41 +2071,41 @@
                             <!-- Tabs -->
                             <div class="flex gap-4 sm:gap-4 whitespace-nowrap mt-8 overflow-x-auto no-scrollbar">
                                 <button
-                                    class="tab-btn-hospital active-tab-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
+                                    class="tab-btn-hospital-rewards active-tab-hospital-rewards text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
                                     data-tab="points">
                                     Points
                                 </button>
                                 <button
-                                    class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
+                                    class="tab-btn-hospital-rewards text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
                                     data-tab="points-history">
                                     Points History
                                 </button>
                                 <button
-                                    class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
+                                    class="tab-btn-hospital-rewards text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
                                     data-tab="all-rewards">
                                     All Rewards
                                 </button>
                                 <button
-                                    class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
+                                    class="tab-btn-hospital-rewards text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
                                     data-tab="rewards-claimed">
                                     Rewards Claimed
                                 </button>
                                 <button
-                                    class="tab-btn-hospital text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
+                                    class="tab-btn-hospital-rewards text-sm sm:text-18-nr px-4 py-1.5 font-medium cursor-pointer text-light-gray1"
                                     data-tab="create-coupon">
                                     Create Coupon
                                 </button>
                             </div>
 
                             <!--Points Tab content-->
-                            <div class="tab-content points  pt-6 pb-3 space-y-2">
+                            <div class="tab-content-hospital-rewards points  pt-6 pb-3 space-y-2">
                                 <div class="flex   justify-between items-start lg:items-center gap-4 pt-6">
                                     <!-- Custom Legend -->
                                     <div class="flex flex-wrap items-center md:gap-1.5 lg:gap-5"
                                         id="hospitalCustomLegend">
                                         <label class="flex items-center md:gap-2 lg:gap-4 cursor-pointer">
                                             <input type="checkbox"
-                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs text-dodger-blue text-2xl w-5 h-5 cursor-pointer"
+                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs accent-dodger-blue text-2xl w-5 h-5 cursor-pointer"
                                                 data-index="0" checked />
                                             <span class="flex items-center gap-1">
                                                 <div class="bg-slate-blue w-2 h-2 rounded-full"></div>
@@ -2108,7 +2115,7 @@
 
                                         <label class="flex items-center md:gap-2 lg:gap-4 cursor-pointer">
                                             <input type="checkbox"
-                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs text-dodger-blue text-2xl w-5 h-5 cursor-pointer"
+                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs accent-dodger-blue text-2xl w-5 h-5 cursor-pointer"
                                                 data-index="1" checked />
                                             <span class="flex items-center gap-1">
                                                 <div class="bg-green w-2 h-2 rounded-full"></div>
@@ -2118,7 +2125,7 @@
 
                                         <label class="flex items-center md:gap-2 lg:gap-4 cursor-pointer">
                                             <input type="checkbox"
-                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs text-dodger-blue text-2xl w-5 h-5 cursor-pointer"
+                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs accent-dodger-blue text-2xl w-5 h-5 cursor-pointer"
                                                 data-index="2" checked />
                                             <span class="flex items-center gap-1">
                                                 <div class="bg-dodger-blue w-2 h-2 rounded-full"></div>
@@ -2350,7 +2357,7 @@
                             </div>
 
                             <!-- All Rewards Tab content-->
-                            <div class="tab-content hidden all-rewards relative">
+                            <div class="tab-content-hospital-rewards hidden all-rewards relative">
                                 <!--Rewards section-->
                                 <div class="flex justify-between items-center pt-5">
                                     <p class="font-semibold lg:text-lg sm:text-nowrap text-jet-black">
@@ -2729,7 +2736,7 @@
                             </div>
 
                             <!--Rewards Claimed Tab section-->
-                            <div class="tab-content hidden rewards-claimed relative">
+                            <div class="tab-content-hospital-rewards hidden rewards-claimed relative">
                                 <div class="flex justify-between items-center pt-5">
                                     <p class="font-semibold text-lg sm:text-nowrap">
                                         Recent Redemptions
@@ -2908,7 +2915,7 @@
                             </div>
 
                             <!--Points History Tab Section-->
-                            <div class="tab-content hidden points-history relative">
+                            <div class="tab-content-hospital-rewards hidden points-history relative">
                                 <div class="flex justify-between items-center pt-5">
                                     <p class="font-semibold lg:text-lg sm:text-nowrap">
                                         Points History
@@ -3093,7 +3100,7 @@
                             </div>
 
                             <!--Create Coupon Tab Content-->
-                            <div class="tab-content hidden create-coupon">
+                            <div class="tab-content-hospital-rewards hidden create-coupon">
                                 <div class="pt-6">
                                     <h1 class="Font-semibold text-lg">Create New Coupon</h1>
                                     <div class="pt-4">
@@ -3136,12 +3143,12 @@
                                         <div class="flex items-center gap-6 mb-4 justify-end">
                                             <label class="text-base font-semibold text-dark-gray">
                                                 <input type="checkbox" id="percentageCheck" checked
-                                                    class="h-4 w-4 text-blue-500 focus:ring-0 border-gray-300 rounded" />
+                                                    class="h-4 w-4 accent-dodger-blue focus:ring-0  rounded" />
                                                 Percentage
                                             </label>
                                             <label class="text-base font-semibold text-dark-gray">
                                                 <input type="checkbox" id="fixedCheck"
-                                                    class="h-4 w-4 text-blue-500 focus:ring-0 border-gray-300 rounded" />
+                                                    class="h-4 w-4 accent-dodger-blue focus:ring-0rounded" />
                                                 Fixed Amount
                                             </label>
                                         </div>
@@ -4574,7 +4581,11 @@
                             </div>
 
 
-                            <!--Donate Section-->
+                            
+                        </div>
+                    </div>
+
+                    <!--Donate Section-->
                             <div class="mainTab-content hidden" id="donate">
                                 <div
                                     class="bg-white  rounded-[10px] px-2 sm:px-4 py-4 max-w-full overflow-x-auto no-scrollbar">
@@ -5944,7 +5955,8 @@
                                                         <p class="flex items-center gap-2"> Eligible for 80G Deduction:
                                                             <span
                                                                 class="material-symbols-outlined material-filled text-bright-green">check_box</span>
-                                                            Yes</p>
+                                                            Yes
+                                                        </p>
                                                     </div>
                                                     <!-- Amount in Words -->
                                                     <div class="mt-5"><strong>Amount in Words:</strong> INR One Hundred
@@ -5969,10 +5981,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                    </div>
+                    
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

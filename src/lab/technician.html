@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctors</title>
+    <title>Technicians</title>
     <link href="../../public/css/output.css" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400..700,0..1,0"
         rel="stylesheet">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
@@ -20,7 +19,7 @@
             class="h-[100px] w-full flex items-center justify-between p-2 bg-white md:p-5 md:shadow-[0_4px_10px_4px_rgba(0,0,0,0.15)]">
             <!-- Logo div -->
             <div class="w-[280px]">
-                <a href="/src/hospital/home.html">
+                <a href="/src/lab/home.html">
                     <img src="/public/images/hospital-logo.svg" alt="Logo" loading="lazy" class="w-[50px] h-[60px]" />
                 </a>
             </div>
@@ -94,9 +93,8 @@
                     <!-- Icons -->
                     <div
                         class="relative w-9 h-9 rounded-full hover:bg-transparent-light-sea-green flex items-center justify-center">
-                        <a href="/src/hospital/advance.html" class="has-tooltip"><img
-                                src="/public/images/walleticon.svg" alt="wallet"
-                                class="cursor-pointer w-[26px] h-[26px]" /></a>
+                        <a href="/src/lab/advance.html" class="has-tooltip"><img src="/public/images/walleticon.svg"
+                                alt="wallet" class="cursor-pointer w-[26px] h-[26px]" /></a>
                         <div
                             class="absolute py-1 px-1.5 text-start text-xs tooltip -bottom-7 right-1 z-10 bg-white border rounded-md border-light-sea-green font-normal">
                             Wallet
@@ -184,6 +182,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- User Dropdown -->
                     <div class="relative inline-block">
                         <button class="profile-btn">
@@ -247,11 +246,12 @@
                 </div>
             </div>
         </div>
+
         <!-- Content -->
         <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
             <!-- Sidebar -->
             <aside
-                class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
+                class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white shrink-0">
                 <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
                     <div class="relative w-full flex items-center justify-between pl-[33px]">
                         <div class="flex flex-col items-start justify-center">
@@ -269,56 +269,56 @@
                     <ul
                         class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
                         <li>
-                            <a href="/src/hospital/home.html"
+                            <a href="/src/lab/home.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> home </span>
                                 <p>Home</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/nearby.html"
+                            <a href="/src/lab/nearby.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> map_search </span>
                                 <p>Nearby</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/appointments.html"
+                            <a href="/src/lab/appointments.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <img src="/public/images/appointments.svg" alt="">
                                 <p>Appointments</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/history.html"
+                            <a href="/src/lab/history.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> history </span>
                                 <p>History</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/doctors.html"
+                            <a href="/src/lab/technician.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> group </span>
-                                <p>Doctors</p>
+                                <p>Technician</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/reports.html"
+                            <a href="/src/lab/reports.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> patient_list </span>
                                 <p>Reports</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/service.html"
+                            <a href="/src/lab/service.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
-                                <span class="material-symbols-outlined"> gavel</span>
+                                <span class="material-symbols-outlined"> gavel </span>
                                 <p>Services</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/hospital/settings.html"
+                            <a href="/src/lab/settings.html"
                                 class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> settings </span>
                                 <p>Settings</p>
@@ -332,6 +332,7 @@
                 </nav>
             </aside>
 
+            <!--Main Content-->
             <div
                 class="h-full flex-1 flex flex-col gap-8 p-5 overflow-y-auto scroll bg-slate-white relative transition-all duration-300 main-content">
                 <div
@@ -343,14 +344,14 @@
                 <div class="p-4 max-w-full flex flex-col gap-5">
                     <div class="flex items-center gap-2.5">
                         <span class="material-symbols-outlined !font-semibold !text-lg">group</span>
-                        <span class="font-semibold text-base">Doctors</span>
+                        <span class="font-semibold text-base">Technician</span>
                     </div>
                     <div class="flex items-center justify-between">
                         <button
-                            class="bg-primary-blue w-[163px] h-10 rounded-lg flex items-center justify-center gap-1.5 cursor-pointer addDoctorBtn text-white py-2 popup-btn"
+                            class="bg-dodger-blue w-[197px] h-10 rounded-lg flex items-center justify-center gap-1.5 cursor-pointer addDoctorBtn text-white py-2 popup-btn"
                             data-popup="addDoctorPopup">
                             <span class="material-symbols-outlined">add</span>
-                            <span class="font-semibold text-lg">Add Doctor</span>
+                            <span class="font-semibold text-lg">Add Technician</span>
                         </button>
 
                         <div class="flex items-center gap-3 sm:gap-4 w-full lg:w-auto">
@@ -373,16 +374,13 @@
                                     class="filterDropdown absolute right-0 mt-2 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] hidden rounded-md w-44 z-10">
                                     <div
                                         class="trigger-date p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer flex justify-between items-center">
-                                        Date
+                                        Availabe
                                     </div>
                                     <div
                                         class="trigger-status p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer flex justify-between items-center">
-                                        Status
+                                        Department
                                     </div>
-                                    <div
-                                        class="trigger-visit p-2 pl-4 hover:bg-dodger-blue hover:text-white rounded cursor-pointer flex justify-between items-center">
-                                        Visit Type
-                                    </div>
+
                                 </div>
 
                                 <div id="dateSubmenu"
@@ -418,28 +416,21 @@
                                     <div
                                         class="p-2 pl-4 hover:bg-dodger-blue hover:text-white cursor-pointer flex items-center gap-2">
                                         <span class="material-symbols-outlined text-light-gray !text-xl">check</span>
-                                        Accepted
+                                        Lab Technician
                                     </div>
                                     <div
                                         class="p-2 pl-4 hover:bg-dodger-blue hover:text-white cursor-pointer flex items-center gap-2">
                                         <span class="material-symbols-outlined text-light-gray !text-xl">check</span>
-                                        Rejected
+                                        Pathology Technician
+                                    </div>
+                                    <div
+                                        class="p-2 pl-4 hover:bg-dodger-blue hover:text-white cursor-pointer flex items-center gap-2">
+                                        <span class="material-symbols-outlined text-light-gray !text-xl">check</span>
+                                        Etc
                                     </div>
                                 </div>
 
-                                <div id="visitSubmenu"
-                                    class="submenu hidden absolute top-10 right-44 z-50 bg-white shadow-md rounded w-40 border border-gray-200">
-                                    <div
-                                        class="p-2 pl-4 hover:bg-dodger-blue hover:text-white cursor-pointer flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-light-gray !text-xl">check</span>
-                                        Home
-                                    </div>
-                                    <div
-                                        class="p-2 pl-4 hover:bg-dodger-blue hover:text-white cursor-pointer flex items-center gap-2">
-                                        <span class="material-symbols-outlined text-light-gray !text-xl">check</span>
-                                        Hospital
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -454,13 +445,13 @@
                             id="nextBtn">Next</button>
                     </div>
 
-                    <!--Add Doctor Popup-->
+                    <!--Add Technician Popup-->
                     <div
                         class="fixed inset-0 bg-semi-transparent-black flex items-center justify-center hidden addDoctorPopup">
                         <div
                             class="bg-white w-[680px] h-[700px] overflow-y-auto scroll rounded-lg p-4 border border-cool-slate-gray shadow-appointments flex flex-col gap-4">
                             <div class="flex items-center justify-between">
-                                <span class="font-semibold text-sm">Register as Doctor</span>
+                                <span class="font-semibold text-sm">Register as Technician</span>
                                 <span class="material-symbols-outlined cursor-pointer close-popup"
                                     data-popup="addDoctorPopup">close</span>
                             </div>
@@ -471,9 +462,9 @@
                                         <div
                                             class="upload-image w-[104px] h-[104px] rounded-lg border border-blue-haze flex items-center justify-center cursor-pointer">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue text-!6xl">upload</span>
+                                                class="material-symbols-outlined text-dodger-blue text-!6xl">upload</span>
                                         </div>
-                                        <span class="font-normal text-xs text-primary-blue">Upload clear face
+                                        <span class="font-normal text-xs text-dodger-blue">Upload clear face
                                             picture</span>
                                     </div>
 
@@ -482,7 +473,7 @@
                                             <div
                                                 class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                                 <span
-                                                    class="material-symbols-outlined text-primary-blue !text-lg">person</span>
+                                                    class="material-symbols-outlined text-dodger-blue !text-lg">person</span>
                                             </div>
                                             <div class="flex flex-col gap-2">
                                                 <label for="name"
@@ -497,7 +488,7 @@
                                             <div
                                                 class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                                 <span
-                                                    class="material-symbols-outlined text-primary-blue !text-lg">person</span>
+                                                    class="material-symbols-outlined text-dodger-blue !text-lg">person</span>
                                             </div>
                                             <div class="flex flex-col gap-2">
                                                 <label for="phone" class="font-normal text-xs text-spanish-gray">Phone
@@ -514,7 +505,7 @@
                                             <div
                                                 class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                                 <span
-                                                    class="material-symbols-outlined text-primary-blue !text-lg">person</span>
+                                                    class="material-symbols-outlined text-dodger-blue !text-lg">person</span>
                                             </div>
                                             <div class="flex flex-col gap-2">
                                                 <label for="gender"
@@ -529,7 +520,7 @@
                                             <div
                                                 class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                                 <span
-                                                    class="material-symbols-outlined text-primary-blue !text-lg">person</span>
+                                                    class="material-symbols-outlined text-dodger-blue !text-lg">person</span>
                                             </div>
                                             <div class="flex flex-col gap-2">
                                                 <label for="age"
@@ -546,33 +537,13 @@
                                         <div
                                             class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">medical_services</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">medical_services</span>
                                         </div>
                                         <span class="font-normal text-xs text-spanish-gray">Specialty</span>
                                     </div>
-                                    <div class="flex items-center gap-2 relative">
-                                        <span class="dropdown-text font-normal text-sm">Select</span>
-                                        <span
-                                            class="material-symbols-outlined text-primary-blue cursor-pointer dropdown-btn">keyboard_arrow_down</span>
-                                        <div
-                                            class="dropdown hidden absolute right-0 top-full mt-2 w-[128px] h-[150px] overflow-y-auto scroll bg-white border border-blue-haze rounded-md shadow-lg z-50">
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white hover:rounded-tr-md hover:rounded-tl-md">
-                                                Neurologist</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                Dermatologist</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                Orthopedic</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                ENT Specialist</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                Cardiologist</p>
-                                        </div>
-                                    </div>
+                                    <input type="text"
+                                        class="focus:ring-0 focus:outline-none w-[78px] font-normal text-sm placeholder:font-normal placeholder:text-sm placeholder:text-black"
+                                        placeholder="Type Here...">
                                 </div>
 
                                 <div class="flex items-center justify-between">
@@ -580,33 +551,13 @@
                                         <div
                                             class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">school</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">school</span>
                                         </div>
                                         <span class="font-normal text-xs text-spanish-gray">Education</span>
                                     </div>
-                                    <div class="flex items-center gap-2 relative">
-                                        <span class="dropdown-text font-normal text-sm">Select</span>
-                                        <span
-                                            class="material-symbols-outlined text-primary-blue cursor-pointer dropdown-btn">keyboard_arrow_down</span>
-                                        <div
-                                            class="dropdown hidden absolute right-0 top-full mt-2 w-[140px] h-[150px] overflow-y-auto scroll bg-white border border-blue-haze rounded-md shadow-lg z-50">
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white hover:rounded-tr-md hover:rounded-tl-md">
-                                                MBBS, DM in neurology</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                MS Ortho</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                BHMS</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                MD General Medicine</p>
-                                            <p
-                                                class="dropdown-item px-3 py-2 text-sm font-normal  cursor-pointer hover:bg-primary-blue hover:text-white">
-                                                BUMS</p>
-                                        </div>
-                                    </div>
+                                    <input type="text"
+                                        class="focus:ring-0 focus:outline-none w-[78px] font-normal text-sm placeholder:font-normal placeholder:text-sm placeholder:text-black"
+                                        placeholder="Type Here...">
                                 </div>
 
                                 <div class="flex items-center justify-between">
@@ -614,50 +565,17 @@
                                         <div
                                             class="w-6 h-6 rounded-lg border border-blue-haze flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">show_chart</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">show_chart</span>
                                         </div>
                                         <span class="font-normal text-xs text-spanish-gray">Experience</span>
                                     </div>
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-6 h-6 rounded-sm bg-soft-system-gray flex items-center justify-center cursor-pointer decreaseBtn">
-                                            <span
-                                                class="material-symbols-outlined text-primary-blue !text-base">remove</span>
-                                        </div>
-                                        <span>0</span>
-                                        <div
-                                            class="w-6 h-6 rounded-sm bg-soft-system-gray flex items-center justify-center cursor-pointer increaseBtn">
-                                            <span
-                                                class="material-symbols-outlined text-primary-blue !text-base">add</span>
-                                        </div>
-                                    </div>
+                                    <input type="number"
+                                        class="focus:ring-0 focus:outline-none w-[78px] font-normal text-sm placeholder:font-normal placeholder:text-sm placeholder:text-black"
+                                        placeholder="Type Here...">
                                 </div>
                             </div>
                             <hr class="text-blue-haze">
-                            <div class="flex flex-col gap-4">
-                                <span class="font-semibold text-sm">Fees</span>
-                                <div class="flex items-center justify-between">
-                                    <span class="font-normal text-sm">Home Visit</span>
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-primary-blue !text-lg">currency_rupee</span>
-                                        <input type="number"
-                                            class="focus:ring-0 focus:outline-none border-b border-blue-haze pb-1 placeholder:font-semibold placeholder:text-sm placeholder:text-primary-blue font-semibold text-sm text-primary-blue w-[37px]"
-                                            placeholder="00.00">
-                                    </div>
-                                </div>
-
-                                <div class="flex items-center justify-between">
-                                    <span class="font-normal text-sm">Hospital Visit</span>
-                                    <div class="flex items-center gap-1.5">
-                                        <span
-                                            class="material-symbols-outlined text-primary-blue !text-lg">currency_rupee</span>
-                                        <input type="number"
-                                            class="focus:ring-0 focus:outline-none border-b border-blue-haze pb-1 placeholder:font-semibold placeholder:text-sm placeholder:text-primary-blue font-semibold text-sm text-primary-blue w-[37px]"
-                                            placeholder="00.00">
-                                    </div>
-                                </div>
-                            </div>
+                          
                             <hr class="text-blue-haze">
                             <div class="flex flex-col gap-4">
                                 <p class="font-semibold text-sm">Availability</p>
@@ -777,12 +695,11 @@
                             </div>
                             <div class="flex items-center justify-center gap-4">
                                 <button
-                                    class="w-[180px] h-10 flex items-center justify-center rounded-lg bg-primary-blue text-white cursor-pointer registerDocBtn">
+                                    class="w-[180px] h-10 flex items-center justify-center rounded-lg bg-dodger-blue text-white cursor-pointer registerDocBtn">
                                     <span class="font-semibold text-sm">Register</span>
                                 </button>
                                 <button
-                                    class="w-[180px] h-10 flex items-center justify-center rounded-lg border border-strong-red cursor-pointer cancelBtn"
-                                    >
+                                    class="w-[180px] h-10 flex items-center justify-center rounded-lg border border-strong-red cursor-pointer cancelBtn">
                                     <span class="font-semibold text-sm text-strong-red">Cancel</span>
                                 </button>
                             </div>
@@ -795,7 +712,7 @@
                         <div
                             class="bg-white w-[680px] rounded-lg p-4 flex flex-col gap-4 border border-cool-slate-gray shadow-appointments">
                             <div class="flex items-center justify-between">
-                                <p class="font-semibold text-sm">Doctor Information</p>
+                                <p class="font-semibold text-sm">Technician Information</p>
                                 <div class="flex items-center gap-4">
                                     <span class="material-symbols-outlined cursor-pointer !text-lg">edit</span>
                                     <span class="material-symbols-outlined cursor-pointer !text-lg">share</span>
@@ -814,7 +731,7 @@
                                         <div
                                             class="w-6 h-6 border border-blue-haze rounded-lg flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">female</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">female</span>
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <span class="font-normal text-xs text-spanish-gray">Gender</span>
@@ -825,7 +742,7 @@
                                         <div
                                             class="w-6 h-6 border border-blue-haze rounded-lg flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">hourglass</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">hourglass</span>
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <span class="font-normal text-xs text-spanish-gray">Age</span>
@@ -836,11 +753,11 @@
                                         <div
                                             class="w-6 h-6 border border-blue-haze rounded-lg flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">medical_services</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">medical_services</span>
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <span class="font-normal text-xs text-spanish-gray">Specialty</span>
-                                            <span class="font-normal text-sm">Neurologist</span>
+                                            <span class="font-normal text-sm">Micobiology Technician</span>
                                         </div>
                                     </div>
                                 </div>
@@ -849,7 +766,7 @@
                                         <div
                                             class="w-6 h-6 border border-blue-haze rounded-lg flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">call</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">call</span>
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <span class="font-normal text-xs text-spanish-gray">Phone No.</span>
@@ -860,7 +777,7 @@
                                         <div
                                             class="w-6 h-6 border border-blue-haze rounded-lg flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">school</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">school</span>
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <span class="font-normal text-xs text-spanish-gray">Education</span>
@@ -871,7 +788,7 @@
                                         <div
                                             class="w-6 h-6 border border-blue-haze rounded-lg flex items-center justify-center">
                                             <span
-                                                class="material-symbols-outlined text-primary-blue !text-lg">show_chart</span>
+                                                class="material-symbols-outlined text-dodger-blue !text-lg">show_chart</span>
                                         </div>
                                         <div class="flex flex-col gap-2">
                                             <span class="font-normal text-xs text-spanish-gray">Experience</span>
@@ -884,9 +801,9 @@
                             <div class="flex items-center  justify-between">
                                 <span class="font-semibold text-sm">Availability</span>
                                 <div class="flex items-center gap-2 cursor-pointer historyBtn">
-                                    <span class="font-semibold text-sm text-primary-blue">History</span>
+                                    <span class="font-semibold text-sm text-dodger-blue">History</span>
                                     <span
-                                        class="material-symbols-outlined text-primary-blue !text-xl pt-0.5">chevron_right</span>
+                                        class="material-symbols-outlined text-dodger-blue !text-xl pt-0.5">chevron_right</span>
                                 </div>
                             </div>
                             <div class="flex items-center justify-between">
@@ -894,7 +811,7 @@
                                     <div
                                         class="border border-blue-haze w-6 h-6 rounded-lg flex items-center justify-center">
                                         <span
-                                            class="material-symbols-outlined text-primary-blue !text-base">timer</span>
+                                            class="material-symbols-outlined text-dodger-blue !text-base">timer</span>
                                     </div>
                                     <span class="font-normal text-sm">Attendance</span>
                                 </div>
@@ -918,28 +835,23 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex items-center justify-between">
-                                <p class="font-normal text-sm">Home Visit <span
-                                        class="text-primary-blue">&#8377;500</span></p>
-                                <p class="font-normal text-sm">Hospital Visit <span
-                                        class="text-primary-blue">&#8377;500</span></p>
-                            </div>
+                           
                             <div class="border border-blue-haze p-4 flex flex-col gap-4">
                                 <div class="flex items-center justify-between">
                                     <span class="font-normal text-sm">Monday</span>
-                                    <span class="font-normal text-sm text-primary-blue">9 AM to 1 PM</span>
+                                    <span class="font-normal text-sm text-dodger-blue">9 AM to 1 PM</span>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="font-normal text-sm">Tuesday</span>
-                                    <span class="font-normal text-sm text-primary-blue">9 AM to 1 PM</span>
+                                    <span class="font-normal text-sm text-dodger-blue">9 AM to 1 PM</span>
                                 </div>
                                 <div class="flex items-center justify-between">
                                     <span class="font-normal text-sm">Friday</span>
-                                    <span class="font-normal text-sm text-primary-blue">9 AM to 1 PM</span>
+                                    <span class="font-normal text-sm text-dodger-blue">9 AM to 1 PM</span>
                                 </div>
                             </div>
                             <div class="flex items-center justify-between">
-                                <span class="font-normal text-sm">Doctor’s ID</span>
+                                <span class="font-normal text-sm">Technician ID</span>
                                 <span class="font-normal text-sm text-blue-gray">#R32512</span>
                             </div>
                         </div>
@@ -962,18 +874,18 @@
                             <hr class="text-blue-haze">
                             <div class="flex items-center justify-between">
                                 <span class="font-normal text-sm">Dr. Rachel Kate</span>
-                                <span class="font-normal text-sm text-blue-gray">Neurologist</span>
+                                <span class="font-normal text-sm text-blue-gray">Micobiology Technician</span>
                             </div>
                             <hr class="text-blue-haze">
                             <div class="p-4 border border-blue-haze">
                                 <div class="flex flex-col gap-4 h-[236px] overflow-y-auto scroll">
                                     <div class="flex items-center justify-between">
                                         <span class="font-normal text-sm">01/01/2025</span>
-                                        <span class="font-normal text-sm text-primary-blue">Present</span>
+                                        <span class="font-normal text-sm text-dodger-blue">Present</span>
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <span class="font-normal text-sm">02/01/2025</span>
-                                        <span class="font-normal text-sm text-primary-blue">Present</span>
+                                        <span class="font-normal text-sm text-dodger-blue">Present</span>
                                     </div>
                                     <div class="flex items-center justify-between">
                                         <span class="font-normal text-sm">03/01/2025</span>
@@ -1025,13 +937,14 @@
                     </div>
                 </div>
             </div>
+
+
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="/public/js/sidebar.js"></script>
+    <script src="/public/js/technician.js"></script>
     <script src="/public/js/common.js"></script>
-    <script src="/public/js/doctors.js"></script>
 </body>
 
 </html>

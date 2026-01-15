@@ -313,8 +313,6 @@ $(document).ready(function () {
     options: getChartOptions(),
   });
 
-  
-
   //Custom Legend Working Code
   const charts = [
     {
@@ -1445,10 +1443,9 @@ $(document).ready(function () {
     }, 5000);
   });
 
-  $('.close-eventsuccess-popup').on('click',function(){
-     $(".eventsuccessPopup").addClass("hidden");
-  })
-
+  $(".close-eventsuccess-popup").on("click", function () {
+    $(".eventsuccessPopup").addClass("hidden");
+  });
 
   //Accept Button Click
   $(".accept-button").on("click", function () {
@@ -1480,25 +1477,31 @@ $(document).ready(function () {
     $(".cancelDetails").removeClass("hidden");
   });
 
-  
   $(".accept-icon, .reject-icon").on("click", function (e) {
     e.stopPropagation();
-    let parent = $(this).closest(".popup-btn");
+
+    // Get the parent container that holds all the icons
+    let parent = $(this).parent();
+
+    // Hide both icons
     parent.find(".accept-icon, .reject-icon").hide();
+
     if ($(this).hasClass("accept-icon")) {
       parent.find(".accepted").removeClass("hidden");
       parent.find(".rejected").addClass("hidden");
+      toastr.success("Appointment accepted");
     } else {
       parent.find(".rejected").removeClass("hidden");
       parent.find(".accepted").addClass("hidden");
+      toastr.error("Appointment rejected");
     }
   });
 
-  $('.view-attachment').on('click',function(){
-    $('.attachmentPopup').removeClass('hidden')
-  })
+  $(".view-attachment").on("click", function () {
+    $(".attachmentPopup").removeClass("hidden");
+  });
 
-  $('.close-attachment').on('click',function(){
-    $('.attachmentPopup').addClass('hidden')
-  })
+  $(".close-attachment").on("click", function () {
+    $(".attachmentPopup").addClass("hidden");
+  });
 });

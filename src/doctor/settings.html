@@ -249,7 +249,8 @@
         <!-- Content -->
         <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
             <!-- Sidebar -->
-           <aside class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
+            <aside
+                class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white ">
                 <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
                     <div class="relative w-full flex items-center justify-between pl-[33px]">
                         <div class="flex flex-col items-start justify-center">
@@ -257,45 +258,60 @@
                             <p class="text-18-normal text-dark-gray">Diamond User</p>
                         </div>
 
-                        <div class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-sky-blue-tint flex items-center justify-center rounded-l-md cursor-pointer">
+                        <div
+                            class="menu-toggle absolute right-0 top-1/2 -translate-y-1/2 h-[48px] w-[48px] bg-light-sky-blue-tint flex items-center justify-center rounded-l-md cursor-pointer">
                             <span class="material-symbols-outlined bold-weight text-dodger-blue pl-2.5">
                                 arrow_back_ios
                             </span>
                         </div>
                     </div>
-                    <ul class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
+                    <ul
+                        class="font-normal text-dark-gray flex flex-col gap-1 sm:text-sm md:text-18-normal py-2 whitespace-nowrap">
                         <li>
-                            <a href="/src/doctor/home.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                            <a href="/src/doctor/home.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> home </span>
                                 <p>Home</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/doctor/nearby.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                            <a href="/src/doctor/nearby.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> map_search </span>
                                 <p>Nearby</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/doctor/appointments.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                            <a href="/src/doctor/appointments.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <img src="/public/images/appointments.svg" alt="">
                                 <p>Appointments</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/doctor/reports.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                            <a href="/src/doctor/history.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                                <span class="material-symbols-outlined">history</span>
+                                <p>History</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/src/doctor/reports.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> patient_list </span>
                                 <p>Reports</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/doctor/service.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                            <a href="/src/doctor/service.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> gavel </span>
                                 <p>Services</p>
                             </a>
                         </li>
                         <li>
-                            <a href="/src/doctor/settings.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                            <a href="/src/doctor/settings.html"
+                                class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                                 <span class="material-symbols-outlined"> settings </span>
                                 <p>Settings</p>
                             </a>
@@ -362,7 +378,8 @@
                         </div>
                         <div class="flex items-center">
                             <!--Tabs-->
-                            <div class="flex gap-4 sm:gap-5 whitespace-nowrap mt-8 overflow-x-auto no-scrollbar tabs">
+                            <div
+                                class="flex gap-4 sm:gap-5 whitespace-nowrap mt-8 overflow-x-auto no-scrollbar setting-tabs">
                                 <button
                                     class="tab-btn-hospital active-tab-hospital text-sm sm:text-18-nr px-4 py-1.5 cursor-pointer text-light-gray1 font-light"
                                     data-tab="account-details">
@@ -2022,7 +2039,8 @@
                                             calendar_month
                                         </span>
                                     </div>
-                                    <div class="flex flex-col gap-3 lg:gap-0 lg:flex-row lg:items-center justify-between mb-2 lg:mb-0">
+                                    <div
+                                        class="flex flex-col gap-3 lg:gap-0 lg:flex-row lg:items-center justify-between mb-2 lg:mb-0">
                                         <div class="bg-pale-azure rounded-lg py-2 px-4 flex items-center gap-2.5">
                                             <div class="w-2 h-2 rounded-full bg-dodger-blue"></div>
                                             <p class="font-normal text-base">High-value leads</p>
@@ -2149,13 +2167,15 @@
                                 <div class="absolute right-4 close-payment-failed-popup">
                                     <span class="material-symbols-outlined cursor-pointer">close</span>
                                 </div>
-                                <img src="/public/images/payment-failed.svg" alt="Wallet-image" class="w-[220px] h-[147px]">
+                                <img src="/public/images/payment-failed.svg" alt="Wallet-image"
+                                    class="w-[220px] h-[147px]">
                                 <p class="font-semibold text-[28px] text-strong-red">Payment Failed</p>
-                                <p class="font-normal text-base text-dark-gray">Oops! We couldn’t process your payment. No worries — you can try again</p>
+                                <p class="font-normal text-base text-dark-gray">Oops! We couldn’t process your payment.
+                                    No worries — you can try again</p>
                                 <button
                                     class="bg-dodger-blue flex items-center justify-center rounded-md w-[198px] h-12 cursor-pointer try-again-btn">
                                     <span class="font-semibold text-base text-white">Try Again</span>
-                            </button>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -2219,7 +2239,7 @@
                                         id="hospitalCustomLegend">
                                         <label class="flex items-center md:gap-2 lg:gap-4 cursor-pointer">
                                             <input type="checkbox"
-                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs text-dodger-blue text-2xl w-5 h-5 cursor-pointer"
+                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs accent-dodger-blue text-2xl w-5 h-5 cursor-pointer"
                                                 data-index="0" checked />
                                             <span class="flex items-center gap-1">
                                                 <div class="bg-slate-blue w-2 h-2 rounded-full"></div>
@@ -2229,7 +2249,7 @@
 
                                         <label class="flex items-center md:gap-2 lg:gap-4 cursor-pointer">
                                             <input type="checkbox"
-                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs text-dodger-blue text-2xl w-5 h-5 cursor-pointer"
+                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs accent-dodger-blue text-2xl w-5 h-5 cursor-pointer"
                                                 data-index="1" checked />
                                             <span class="flex items-center gap-1">
                                                 <div class="bg-green w-2 h-2 rounded-full"></div>
@@ -2239,7 +2259,7 @@
 
                                         <label class="flex items-center md:gap-2 lg:gap-4 cursor-pointer">
                                             <input type="checkbox"
-                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs text-dodger-blue text-2xl w-5 h-5 cursor-pointer"
+                                                class="legend-checkbox focus:outline-none focus:ring-0 focus:ring-offset-0 rounded-xs accent-dodger-blue text-2xl w-5 h-5 cursor-pointer"
                                                 data-index="2" checked />
                                             <span class="flex items-center gap-1">
                                                 <div class="bg-light-sea-green w-2 h-2 rounded-full"></div>
@@ -3257,12 +3277,12 @@
                                         <div class="flex items-center gap-6 mb-4 justify-end">
                                             <label class="text-base font-semibold text-dark-gray">
                                                 <input type="checkbox" id="percentageCheck" checked
-                                                    class="h-4 w-4 text-blue-500 focus:ring-0 border-gray-300 rounded" />
+                                                    class="h-4 w-4 accent-dodger-blue focus:ring-0 rounded" />
                                                 Percentage
                                             </label>
                                             <label class="text-base font-semibold text-dark-gray">
                                                 <input type="checkbox" id="fixedCheck"
-                                                    class="h-4 w-4 text-blue-500 focus:ring-0 border-gray-300 rounded" />
+                                                    class="h-4 w-4 accent-dodger-blue focus:ring-0rounded" />
                                                 Fixed Amount
                                             </label>
                                         </div>
@@ -4492,7 +4512,8 @@
                                     </span>
                                 </div>
 
-                                <div class="mt-4 rounded-md w-full account-subscription border border-light-dodger-blue2">
+                                <div
+                                    class="mt-4 rounded-md w-full account-subscription border border-light-dodger-blue2">
                                     <div
                                         class="flex flex-wrap items-center justify-between p-4 cursor-pointer toggle-subscription bg-very-light-dodger-blue">
                                         <h2 class="text-lg font-semibold whitespace-normal w-full sm:w-auto">
@@ -4537,7 +4558,8 @@
                                 </div>
 
 
-                                <div class="mt-4 rounded-md w-full troubleshooting-section border border-light-dodger-blue2">
+                                <div
+                                    class="mt-4 rounded-md w-full troubleshooting-section border border-light-dodger-blue2">
                                     <div
                                         class="flex flex-wrap items-center justify-between p-4 cursor-pointer toggle-troubleshooting bg-very-light-dodger-blue">
                                         <h2 class="text-lg font-semibold whitespace-normal w-full sm:w-auto">
@@ -4559,7 +4581,8 @@
                                 </div>
 
 
-                                <div class="mt-4 rounded-md w-full billing-payments-section border border-light-dodger-blue2">
+                                <div
+                                    class="mt-4 rounded-md w-full billing-payments-section border border-light-dodger-blue2">
                                     <div
                                         class="flex flex-wrap items-center justify-between p-4 cursor-pointer toggle-billing-payments bg-very-light-dodger-blue">
                                         <h2 class="text-lg font-semibold whitespace-normal w-full sm:w-auto">
@@ -4586,7 +4609,7 @@
                                     <div
                                         class="flex flex-wrap items-center justify-between p-4 cursor-pointer toggle-support-contact bg-very-light-dodger-blue">
                                         <h2 class="text-lg font-semibold whitespace-normal w-full sm:w-auto">
-                                           How can I bid for the user orders ?
+                                            How can I bid for the user orders ?
                                         </h2>
                                         <span
                                             class="material-symbols-outlined chevron-icon transition-transform mt-2 sm:mt-0">
@@ -4683,28 +4706,31 @@
                     </div>
                     <!--Donate Section-->
                     <div class="mainTab-content hidden" id="donate">
-                        <div class="shadow-lg p-4 rounded-lg m-4 max-w-full overflow-x-auto bg-white">
+                        <div class="bg-white  rounded-[10px] px-2 sm:px-4 py-4 max-w-full overflow-x-auto no-scrollbar">
                             <div class="flex items-center space-x-2">
                                 <span class="material-symbols-outlined">volunteer_activism</span>
                                 <p class="font-medium text-xl">Donate</p>
                             </div>
+
                             <div class="flex justify-between items-center mt-2">
-                                <p class="font-normal">Help Us Help Others—Donate Today!</p>
+                                <p class="text-18-nr">Help Us Help Others—Donate Today!</p>
                                 <button
-                                    class="close-expanded text-xl font-bold text-gray-500 hover:text-red-600 hidden">&times;</button>
+                                    class="close-expanded text-xl font-bold text-gray-500 hover:text-red-600 hidden">
+                                    &times;
+                                </button>
                             </div>
                             <!-- Tabs -->
-                            <div class="flex flex-col lg:flex-row lg:items-end justify-between w-full gap-4 mt-8 ">
+                            <div class="flex flex-col lg:flex-row lg:items-end justify-between w-full gap-4 mt-8">
                                 <!-- Tabs Section -->
-                                <div class=" flex gap-4 whitespace-nowrap pt-2 lg:pt-0 flex-1 min-w-0">
+                                <div class="tabs-section flex gap-4 whitespace-nowrap pt-2 lg:pt-0 flex-1 min-w-0">
                                     <button
-                                        class="tab-btn-donate active-tab-donate text-sm sm:text-18-nr px-4 py-1.5 cursor-pointer text-light-gray1 font-light"
-                                        data-tab="organizations">
+                                        class="tab-btn-donate active-tab-donate text-sm sm:text-18-nr py-1.5 px-4 font-semibold cursor-pointer text-dark-gray "
+                                        data-tab="report-issue">
                                         Organizations
                                     </button>
                                     <button
-                                        class="tab-btn-donate text-sm sm:text-18-nr px-4 py-1.5 cursor-pointer text-light-gray1 font-light"
-                                        data-tab="donation-history">
+                                        class="tab-btn-donate text-sm sm:text-18-nr py-1.5 px-4 font-medium cursor-pointer text-light-gray1"
+                                        data-tab="contact-support">
                                         Donation History
                                     </button>
                                 </div>
@@ -4753,7 +4779,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="organizations tab-content-donate pt-8 ">
+
+
+                            <div class="report-issue tab-content-donate pt-8">
                                 <div class="card-container grid grid-cols-1 xl:grid-cols-2 gap-4 justify-items-center">
                                     <!-- Card 1 -->
                                     <div
@@ -4765,15 +4793,16 @@
                                             class="top-section flex flex-col md:flex-row justify-between items-start mt-2">
                                             <div class="heading-area flex-1 min-w-0 w-full">
                                                 <!-- Title -->
+
                                                 <p
-                                                    class="default-heading text-base font-bold cursor-pointer toggle-expand">
+                                                    class="default-heading text-base font-semibold text-jet-black cursor-pointer toggle-expand">
                                                     Bharat Seva Mandal
                                                 </p>
 
                                                 <!-- Address and Read More in same line container -->
                                                 <div class="flex items-baseline mt-1 w-full toggle-expand">
                                                     <p
-                                                        class="expanded-heading text-sm font-semibold break-words flex-shrink min-w-0">
+                                                        class="expanded-heading text-base text-jet-black font-semibold break-words flex-shrink min-w-0">
                                                         Behind Zenith Hospital Malad East
                                                     </p>
                                                     <a href="#"
@@ -4781,11 +4810,17 @@
                                                         Read More
                                                     </a>
                                                 </div>
-
+                                                <!-- Location line -->
+                                                <div
+                                                    class="location-line flex items-center text-dark-gray text-base font-nomal mt-2">
+                                                    <span>0.8 Miles away</span>
+                                                    <span class="mx-2 text-sm">•</span>
+                                                    <span>Indian Poverty</span>
+                                                </div>
                                                 <!-- Full width paragraph -->
                                                 <div class="w-full">
                                                     <p
-                                                        class="expanded-para text-base font-normal text-light-gray1 mt-2 hidden w-full">
+                                                        class="expanded-para text-base font-normal text-jet-black mt-2 hidden w-full">
                                                         Child malnutrition is a widespread problem in the entire
                                                         country, which creates a vicious cycle of poverty, low
                                                         economic growth, and health concerns. The major reasons
@@ -4809,13 +4844,7 @@
                                                     </p>
                                                 </div>
 
-                                                <!-- Location line -->
-                                                <div
-                                                    class="location-line flex items-center text-dark-gray text-sm mt-2">
-                                                    <span>0.8 Miles away</span>
-                                                    <span class="mx-2 text-sm">•</span>
-                                                    <span>Indian Poverty</span>
-                                                </div>
+
                                             </div>
 
                                             <!-- Donate section -->
@@ -4823,14 +4852,14 @@
                                                 class="donate-button-wrapper mt-4 md:mt-0 md:ml-4 flex flex-col  gap-1 w-full md:w-auto">
                                                 <!-- Only changed the donation amount line - all other code remains exactly the same -->
                                                 <span
-                                                    class="donation-amount text-2xl text-dodger-blue whitespace-nowrap block text-center">₹500</span>
+                                                    class="donation-amount text-2xl font-semibold text-dodger-blue whitespace-nowrap block text-center">₹500</span>
                                                 <div
                                                     class="donate-btn-container relative flex items-center gap-4 w-full md:w-auto justify-end">
                                                     <div class="hidden md:block w-px h-20 bg-dodger-blue mt-[-16px]">
                                                     </div>
-                                                    <a href="/src/doctor/donate_pay.html"
-                                                        class="donate-now-btn primary-btn-lab flex items-center gap-1  text-white px-4 py-2 rounded hover:bg-blue-600 transition relative w-full md:w-auto justify-center">
-                                                        <span class="text-sm">Donate Now</span>
+                                                    <a href="/src/hospital/donate_pay.html"
+                                                        class="donate-now-btn primary-btn-donate flex items-center gap-1  text-white px-4 py-2 rounded  transition relative w-full md:w-auto justify-center">
+                                                        <span class="text-base font-normal">Donate Now</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -4845,7 +4874,7 @@
                                                     class="visit-website-btn text-dodger-blue px-4 py-2 rounded-md border border-dodger-blue whitespace-nowrap">
                                                     <span class="text-sm">Visit Website</span>
                                                 </a>
-                                                <a href="/src/doctor/donate_pay.html"
+                                                <a href="/src/hospital/donate_pay.html"
                                                     class="pay-button bg-dodger-blue text-white px-12 py-2 rounded-md whitespace-nowrap">
                                                     <span class="text-sm">Pay</span>
                                                 </a>
@@ -4863,15 +4892,16 @@
                                             class="top-section flex flex-col md:flex-row justify-between items-start mt-2">
                                             <div class="heading-area flex-1 min-w-0 w-full">
                                                 <!-- Title -->
+
                                                 <p
-                                                    class="default-heading text-base font-bold cursor-pointer toggle-expand">
+                                                    class="default-heading text-base font-semibold text-jet-black cursor-pointer toggle-expand">
                                                     Bharat Seva Mandal
                                                 </p>
 
                                                 <!-- Address and Read More in same line container -->
                                                 <div class="flex items-baseline mt-1 w-full toggle-expand">
                                                     <p
-                                                        class="expanded-heading text-sm font-semibold break-words flex-shrink min-w-0">
+                                                        class="expanded-heading text-base text-jet-black font-semibold break-words flex-shrink min-w-0">
                                                         Behind Zenith Hospital Malad East
                                                     </p>
                                                     <a href="#"
@@ -4879,11 +4909,17 @@
                                                         Read More
                                                     </a>
                                                 </div>
-
+                                                <!-- Location line -->
+                                                <div
+                                                    class="location-line flex items-center text-dark-gray text-base font-nomal mt-2">
+                                                    <span>0.8 Miles away</span>
+                                                    <span class="mx-2 text-sm">•</span>
+                                                    <span>Indian Poverty</span>
+                                                </div>
                                                 <!-- Full width paragraph -->
                                                 <div class="w-full">
                                                     <p
-                                                        class="expanded-para text-base font-normal text-light-gray1 mt-2 hidden w-full">
+                                                        class="expanded-para text-base font-normal text-jet-black mt-2 hidden w-full">
                                                         Child malnutrition is a widespread problem in the entire
                                                         country, which creates a vicious cycle of poverty, low
                                                         economic growth, and health concerns. The major reasons
@@ -4907,13 +4943,7 @@
                                                     </p>
                                                 </div>
 
-                                                <!-- Location line -->
-                                                <div
-                                                    class="location-line flex items-center text-dark-gray text-sm mt-2">
-                                                    <span>0.8 Miles away</span>
-                                                    <span class="mx-2 text-sm">•</span>
-                                                    <span>Indian Poverty</span>
-                                                </div>
+
                                             </div>
 
                                             <!-- Donate section -->
@@ -4921,14 +4951,14 @@
                                                 class="donate-button-wrapper mt-4 md:mt-0 md:ml-4 flex flex-col  gap-1 w-full md:w-auto">
                                                 <!-- Only changed the donation amount line - all other code remains exactly the same -->
                                                 <span
-                                                    class="donation-amount text-2xl text-dodger-blue whitespace-nowrap block text-center">₹500</span>
+                                                    class="donation-amount text-2xl font-semibold text-dodger-blue whitespace-nowrap block text-center">₹500</span>
                                                 <div
                                                     class="donate-btn-container relative flex items-center gap-4 w-full md:w-auto justify-end">
                                                     <div class="hidden md:block w-px h-20 bg-dodger-blue mt-[-16px]">
                                                     </div>
-                                                    <a href="/src/doctor/donate_pay.html"
-                                                        class="donate-now-btn primary-btn-lab flex items-center gap-1 bg-orange-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition relative w-full md:w-auto justify-center">
-                                                        <span class="text-sm">Donate Now</span>
+                                                    <a href="/src/hospital/donate_pay.html"
+                                                        class="donate-now-btn primary-btn-donate flex items-center gap-1  text-white px-4 py-2 rounded  transition relative w-full md:w-auto justify-center">
+                                                        <span class="text-base font-normal">Donate Now</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -4943,15 +4973,13 @@
                                                     class="visit-website-btn text-dodger-blue px-4 py-2 rounded-md border border-dodger-blue whitespace-nowrap">
                                                     <span class="text-sm">Visit Website</span>
                                                 </a>
-                                                <a href="/src/doctor/donate_pay.html"
+                                                <a href="/src/hospital/donate_pay.html"
                                                     class="pay-button bg-dodger-blue text-white px-12 py-2 rounded-md whitespace-nowrap">
                                                     <span class="text-sm">Pay</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-
-
 
                                     <!-- Duplicate Card 3 -->
                                     <div
@@ -4963,15 +4991,16 @@
                                             class="top-section flex flex-col md:flex-row justify-between items-start mt-2">
                                             <div class="heading-area flex-1 min-w-0 w-full">
                                                 <!-- Title -->
+
                                                 <p
-                                                    class="default-heading text-base font-bold cursor-pointer toggle-expand">
+                                                    class="default-heading text-base font-semibold text-jet-black cursor-pointer toggle-expand">
                                                     Bharat Seva Mandal
                                                 </p>
 
                                                 <!-- Address and Read More in same line container -->
                                                 <div class="flex items-baseline mt-1 w-full toggle-expand">
                                                     <p
-                                                        class="expanded-heading text-sm font-semibold break-words flex-shrink min-w-0">
+                                                        class="expanded-heading text-base text-jet-black font-semibold break-words flex-shrink min-w-0">
                                                         Behind Zenith Hospital Malad East
                                                     </p>
                                                     <a href="#"
@@ -4979,11 +5008,17 @@
                                                         Read More
                                                     </a>
                                                 </div>
-
+                                                <!-- Location line -->
+                                                <div
+                                                    class="location-line flex items-center text-dark-gray text-base font-nomal mt-2">
+                                                    <span>0.8 Miles away</span>
+                                                    <span class="mx-2 text-sm">•</span>
+                                                    <span>Indian Poverty</span>
+                                                </div>
                                                 <!-- Full width paragraph -->
                                                 <div class="w-full">
                                                     <p
-                                                        class="expanded-para text-base font-normal text-light-gray1 mt-2 hidden w-full">
+                                                        class="expanded-para text-base font-normal text-jet-black mt-2 hidden w-full">
                                                         Child malnutrition is a widespread problem in the entire
                                                         country, which creates a vicious cycle of poverty, low
                                                         economic growth, and health concerns. The major reasons
@@ -5007,13 +5042,7 @@
                                                     </p>
                                                 </div>
 
-                                                <!-- Location line -->
-                                                <div
-                                                    class="location-line flex items-center text-dark-gray text-sm mt-2">
-                                                    <span>0.8 Miles away</span>
-                                                    <span class="mx-2 text-sm">•</span>
-                                                    <span>Indian Poverty</span>
-                                                </div>
+
                                             </div>
 
                                             <!-- Donate section -->
@@ -5021,14 +5050,14 @@
                                                 class="donate-button-wrapper mt-4 md:mt-0 md:ml-4 flex flex-col  gap-1 w-full md:w-auto">
                                                 <!-- Only changed the donation amount line - all other code remains exactly the same -->
                                                 <span
-                                                    class="donation-amount text-2xl text-dodger-blue whitespace-nowrap block text-center">₹500</span>
+                                                    class="donation-amount text-2xl font-semibold text-dodger-blue whitespace-nowrap block text-center">₹500</span>
                                                 <div
                                                     class="donate-btn-container relative flex items-center gap-4 w-full md:w-auto justify-end">
                                                     <div class="hidden md:block w-px h-20 bg-dodger-blue mt-[-16px]">
                                                     </div>
-                                                    <a href="/src/doctor/donate_pay.html"
-                                                        class="donate-now-btn primary-btn-lab flex items-center gap-1 bg-orange-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition relative w-full md:w-auto justify-center">
-                                                        <span class="text-sm">Donate Now</span>
+                                                    <a href="/src/hospital/donate_pay.html"
+                                                        class="donate-now-btn primary-btn-donate flex items-center gap-1  text-white px-4 py-2 rounded  transition relative w-full md:w-auto justify-center">
+                                                        <span class="text-base font-normal">Donate Now</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -5043,14 +5072,13 @@
                                                     class="visit-website-btn text-dodger-blue px-4 py-2 rounded-md border border-dodger-blue whitespace-nowrap">
                                                     <span class="text-sm">Visit Website</span>
                                                 </a>
-                                                <a href="/src/doctor/donate_pay.html"
+                                                <a href="/src/hospital/donate_pay.html"
                                                     class="pay-button bg-dodger-blue text-white px-12 py-2 rounded-md whitespace-nowrap">
                                                     <span class="text-sm">Pay</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-
 
                                     <!-- Duplicate Card 4 -->
                                     <div
@@ -5062,15 +5090,16 @@
                                             class="top-section flex flex-col md:flex-row justify-between items-start mt-2">
                                             <div class="heading-area flex-1 min-w-0 w-full">
                                                 <!-- Title -->
+
                                                 <p
-                                                    class="default-heading text-base font-bold cursor-pointer toggle-expand">
+                                                    class="default-heading text-base font-semibold text-jet-black cursor-pointer toggle-expand">
                                                     Bharat Seva Mandal
                                                 </p>
 
                                                 <!-- Address and Read More in same line container -->
                                                 <div class="flex items-baseline mt-1 w-full toggle-expand">
                                                     <p
-                                                        class="expanded-heading text-sm font-semibold break-words flex-shrink min-w-0">
+                                                        class="expanded-heading text-base text-jet-black font-semibold break-words flex-shrink min-w-0">
                                                         Behind Zenith Hospital Malad East
                                                     </p>
                                                     <a href="#"
@@ -5078,11 +5107,17 @@
                                                         Read More
                                                     </a>
                                                 </div>
-
+                                                <!-- Location line -->
+                                                <div
+                                                    class="location-line flex items-center text-dark-gray text-base font-nomal mt-2">
+                                                    <span>0.8 Miles away</span>
+                                                    <span class="mx-2 text-sm">•</span>
+                                                    <span>Indian Poverty</span>
+                                                </div>
                                                 <!-- Full width paragraph -->
                                                 <div class="w-full">
                                                     <p
-                                                        class="expanded-para text-base font-normal text-light-gray1 mt-2 hidden w-full">
+                                                        class="expanded-para text-base font-normal text-jet-black mt-2 hidden w-full">
                                                         Child malnutrition is a widespread problem in the entire
                                                         country, which creates a vicious cycle of poverty, low
                                                         economic growth, and health concerns. The major reasons
@@ -5106,13 +5141,7 @@
                                                     </p>
                                                 </div>
 
-                                                <!-- Location line -->
-                                                <div
-                                                    class="location-line flex items-center text-dark-gray text-sm mt-2">
-                                                    <span>0.8 Miles away</span>
-                                                    <span class="mx-2 text-sm">•</span>
-                                                    <span>Indian Poverty</span>
-                                                </div>
+
                                             </div>
 
                                             <!-- Donate section -->
@@ -5120,14 +5149,14 @@
                                                 class="donate-button-wrapper mt-4 md:mt-0 md:ml-4 flex flex-col  gap-1 w-full md:w-auto">
                                                 <!-- Only changed the donation amount line - all other code remains exactly the same -->
                                                 <span
-                                                    class="donation-amount text-2xl text-dodger-blue whitespace-nowrap block text-center">₹500</span>
+                                                    class="donation-amount text-2xl font-semibold text-dodger-blue whitespace-nowrap block text-center">₹500</span>
                                                 <div
                                                     class="donate-btn-container relative flex items-center gap-4 w-full md:w-auto justify-end">
                                                     <div class="hidden md:block w-px h-20 bg-dodger-blue mt-[-16px]">
                                                     </div>
-                                                    <a href="/src/doctor/donate_pay.html"
-                                                        class="donate-now-btn primary-btn-lab flex items-center gap-1 bg-orange-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition relative w-full md:w-auto justify-center">
-                                                        <span class="text-sm">Donate Now</span>
+                                                    <a href="/src/hospital/donate_pay.html"
+                                                        class="donate-now-btn primary-btn-donate flex items-center gap-1  text-white px-4 py-2 rounded  transition relative w-full md:w-auto justify-center">
+                                                        <span class="text-base font-normal">Donate Now</span>
                                                     </a>
                                                 </div>
                                             </div>
@@ -5142,20 +5171,123 @@
                                                     class="visit-website-btn text-dodger-blue px-4 py-2 rounded-md border border-dodger-blue whitespace-nowrap">
                                                     <span class="text-sm">Visit Website</span>
                                                 </a>
-                                                <a href="/src/doctor/donate_pay.html"
+                                                <a href="/src/hospital/donate_pay.html"
                                                     class="pay-button bg-dodger-blue text-white px-12 py-2 rounded-md whitespace-nowrap">
                                                     <span class="text-sm">Pay</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
+                                    <div
+                                        class="donation-card shadow-lg p-4 rounded-lg m-4 w-full bg-white transition-all duration-300 flex flex-col">
+                                        <img src="/public/images/children.jpg" alt="Donation Banner"
+                                            class="children-banner w-full rounded-md" />
+
+                                        <div
+                                            class="top-section flex flex-col md:flex-row justify-between items-start mt-2">
+                                            <div class="heading-area flex-1 min-w-0 w-full">
+                                                <!-- Title -->
+
+                                                <p
+                                                    class="default-heading text-base font-semibold text-jet-black cursor-pointer toggle-expand">
+                                                    Bharat Seva Mandal
+                                                </p>
+
+                                                <!-- Address and Read More in same line container -->
+                                                <div class="flex items-baseline mt-1 w-full toggle-expand">
+                                                    <p
+                                                        class="expanded-heading text-base text-jet-black font-semibold break-words flex-shrink min-w-0">
+                                                        Behind Zenith Hospital Malad East
+                                                    </p>
+                                                    <a href="#"
+                                                        class="read-more-btn text-sm text-dodger-blue font-semibold underline ml-4 whitespace-nowrap flex-shrink-0">
+                                                        Read More
+                                                    </a>
+                                                </div>
+                                                <!-- Location line -->
+                                                <div
+                                                    class="location-line flex items-center text-dark-gray text-base font-nomal mt-2">
+                                                    <span>0.8 Miles away</span>
+                                                    <span class="mx-2 text-sm">•</span>
+                                                    <span>Indian Poverty</span>
+                                                </div>
+                                                <!-- Full width paragraph -->
+                                                <div class="w-full">
+                                                    <p
+                                                        class="expanded-para text-base font-normal text-jet-black mt-2 hidden w-full">
+                                                        Child malnutrition is a widespread problem in the entire
+                                                        country, which creates a vicious cycle of poverty, low
+                                                        economic growth, and health concerns. The major reasons
+                                                        for high child mortality rate in India are poor maternal
+                                                        health and improper nutrition availability in the first
+                                                        few years of a child's life. As per the 2021 National
+                                                        Family Health Survey (NFHS)-5 India report, 1 in every 3
+                                                        children is underweight. While India continues to make
+                                                        strides in many spheres, child hunger and malnutrition
+                                                        remain to be one of the most pressing issues. A child on
+                                                        an empty stomach will not be able to perform to their
+                                                        best abilities, leading to unequal access to
+                                                        opportunities. Children who suffer from hunger for
+                                                        long-term go on to become malnourished, which affects
+                                                        them physically, mentally, and socially. With the Poshan
+                                                        to Pathshala campaign, Feeding India is supporting
+                                                        schools for low-income families through daily meals. The
+                                                        goal is to ensure that all the children in their
+                                                        formative years get the right nutrition for their
+                                                        holistic development.
+                                                    </p>
+                                                </div>
+
+
+                                            </div>
+
+                                            <!-- Donate section -->
+                                            <div
+                                                class="donate-button-wrapper mt-4 md:mt-0 md:ml-4 flex flex-col  gap-1 w-full md:w-auto">
+                                                <!-- Only changed the donation amount line - all other code remains exactly the same -->
+                                                <span
+                                                    class="donation-amount text-2xl font-semibold text-dodger-blue whitespace-nowrap block text-center">₹500</span>
+                                                <div
+                                                    class="donate-btn-container relative flex items-center gap-4 w-full md:w-auto justify-end">
+                                                    <div class="hidden md:block w-px h-20 bg-dodger-blue mt-[-16px]">
+                                                    </div>
+                                                    <a href="/src/hospital/donate_pay.html"
+                                                        class="donate-now-btn primary-btn-donate flex items-center gap-1  text-white px-4 py-2 rounded  transition relative w-full md:w-auto justify-center">
+                                                        <span class="text-base font-normal">Donate Now</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Expanded buttons -->
+                                        <div class="expanded-buttons hidden w-full flex justify-end mt-3">
+                                            <div class="flex flex-wrap gap-3 items-center justify-end">
+                                                <img src="/public/images/upi.svg" alt="UPI QR"
+                                                    class="h-8 w-auto rounded" />
+                                                <a href=""
+                                                    class="visit-website-btn text-dodger-blue px-4 py-2 rounded-md border border-dodger-blue whitespace-nowrap">
+                                                    <span class="text-sm">Visit Website</span>
+                                                </a>
+                                                <a href="/src/hospital/donate_pay.html"
+                                                    class="pay-button bg-dodger-blue text-white px-12 py-2 rounded-md whitespace-nowrap">
+                                                    <span class="text-sm">Pay</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
+                                <div class="pagination flex justify-center gap-2 mt-6"></div>
                             </div>
-                            <div class="donation-history tab-content-donate pt-8 space-y-6 hidden">
+
+                            <div class="contact-support tab-content-donate pt-8 space-y-6 hidden">
                                 <div class="flex items-center gap-5">
-                                    <h1 class="font-semibold text-base text-dark-gray">Donation history</h1>
+                                    <h1 class="font-semibold text-base text-dark-gray">
+                                        Donation history
+                                    </h1>
                                     <div
                                         class="search-filter-section flex items-center justify-end gap-5 w-full sm:w-auto mt-2 sm:mt-0 sm:ml-auto">
+
                                         <div class="flex gap-2 ml-2">
                                             <div class="relative inline-block z-20">
                                                 <button
@@ -5164,26 +5296,30 @@
                                                     <span>Filter</span>
                                                 </button>
                                                 <div
-                                                    class="filter-popup absolute mt-1 left-0  w-28 bg-white text-dark-gray  shadow-[4px_4px_10px_2px_#00000026] rounded-lg shadow-lg hidden z-50">
+                                                    class="filter-popup absolute left-0 mt-1 w-28 bg-white text-dark-gray shadow-[4px_4px_10px_2px_#00000026] rounded-lg  hidden z-50">
                                                     <div
-                                                        class="px-4 py-2 hover:bg-dodger-blue cursor-pointer rounded hover:text-white">
-                                                        Show 5</div>
+                                                        class="px-4 py-2 hover:bg-dodger-blue rounded cursor-pointer hover:text-white">
+                                                        Show 5
+                                                    </div>
                                                     <div
-                                                        class="px-4 py-2 hover:bg-dodger-blue cursor-pointer rounded hover:text-white">
+                                                        class="px-4 py-2 hover:bg-dodger-blue rounded cursor-pointer hover:text-white">
                                                         Show 10
                                                     </div>
                                                     <div
-                                                        class="px-4 py-2 hover:bg-dodger-blue cursor-pointer rounded hover:text-white">
+                                                        class="px-4 py-2 hover:bg-dodger-blue rounded cursor-pointer hover:text-white">
                                                         Show 15
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <!-- Example Button -->
                                             <button onclick="toggleViewButton(this)"
-                                                class="view-btn-lab flex items-center gap-1 px-4 py-2 border rounded-xl transition-colors duration-200 cursor-pointer
+                                                class="view-btn-client flex items-center gap-1 px-4 py-2 border rounded-xl transition-colors duration-200 cursor-pointer
          border-dodger-blue text-dodger-blue hover:bg-dodger-blue hover:text-white active:bg-dodger-blue active:text-white">
                                                 <span class="material-symbols-outlined">file_export</span>
                                                 <span>View</span>
                                             </button>
+
                                             <div
                                                 class="viewPopup fixed inset-0 bg-opacity-70 bg-black/30 flex items-center justify-center z-50 hidden">
                                                 <div class="bg-white w-[90%] max-w-3xl rounded-lg shadow-lg">
@@ -5192,18 +5328,17 @@
                                                         <div class="relative mb-4 h-6">
                                                             <!-- Left Icons -->
                                                             <div class="absolute left-0 top-0 flex items-center gap-3">
-
                                                                 <span
                                                                     class="material-symbols-outlined openSharePopup cursor-pointer text-white p-2 rounded-md text-lg">share</span>
 
-
                                                                 <span
-                                                                    class="material-symbols-outlined cursor-pointer text-white  p-2 rounded-md text-lg">download</span>
+                                                                    class="material-symbols-outlined cursor-pointer text-white p-2 rounded-md text-lg">download</span>
                                                             </div>
                                                             <!-- Centered Title -->
                                                             <h2
                                                                 class="absolute inset-0 flex justify-center items-center text-xl font-semibold text-white">
-                                                                Donation History</h2>
+                                                                Donation History
+                                                            </h2>
                                                         </div>
                                                         <button
                                                             onclick="document.querySelector('.viewPopup').classList.add('hidden')"
@@ -5212,13 +5347,16 @@
                                                         </button>
                                                     </div>
                                                     <div
-                                                        class="flex justify-between items-center px-4 py-3 border-b border-gray-200 ">
-                                                        <span class="font-semibold  text-lg">Mr. Ravi Gupta</span>
-                                                        <span class="text-base font-normal">Last 7 days (12/05/25 to
+                                                        class="flex justify-between items-center px-4 py-3 border-b border-gray-200">
+                                                        <span class="font-semibold text-lg">Mr. Ravi
+                                                            Gupta</span>
+                                                        <span class="text-base font-normal">Last 7 days
+                                                            (12/05/25 to
                                                             18/05/25)</span>
                                                     </div>
 
-                                                    <div class="w-full overflow-x-auto">
+                                                    <!-- Responsive Scroll Wrapper -->
+                                                    <div class="w-full overflow-x-auto lg:overflow-visible max-w-full">
                                                         <table
                                                             class="table-auto min-w-full text-sm text-dark-gray whitespace-nowrap">
                                                             <thead class="bg-dodger-blue text-white">
@@ -5251,15 +5389,19 @@
                                                             </thead>
                                                             <tbody class="bg-snow-gray text-dark-gray text-[16px]">
                                                                 <tr>
-                                                                    <td class="px-4 py-2.5 text-center">20/03/25,14:30
+                                                                    <td class="px-4 py-2.5 text-center">
+                                                                        20/03/25,14:30
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Bills</td>
-                                                                    <td class="px-4 py-2.5 text-center">Bharat Seva<br>
-                                                                        Mandal
+                                                                    <td class="px-4 py-2.5 text-center">Bills
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Poverty Relief
+                                                                    <td class="px-4 py-2.5 text-center">Bharat
+                                                                        Seva<br />Mandal
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">₹500000</td>
+                                                                    <td class="px-4 py-2.5 text-center">Poverty
+                                                                        Relief
+                                                                    </td>
+                                                                    <td class="px-4 py-2.5 text-center">₹500000
+                                                                    </td>
                                                                     <td class="px-4 py-2.5 text-center">
                                                                         <button
                                                                             class="bg-mint-cream text-green px-5 py-2 rounded-md text-sm font-semibold">
@@ -5268,15 +5410,19 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="px-4 py-2.5 text-center">20/03/25,14:30
+                                                                    <td class="px-4 py-2.5 text-center">
+                                                                        20/03/25,14:30
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Bills</td>
-                                                                    <td class="px-4 py-2.5 text-center">Bharat Seva<br>
-                                                                        Mandal
+                                                                    <td class="px-4 py-2.5 text-center">Bills
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Poverty Relief
+                                                                    <td class="px-4 py-2.5 text-center">Bharat
+                                                                        Seva<br />Mandal
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">₹500000</td>
+                                                                    <td class="px-4 py-2.5 text-center">Poverty
+                                                                        Relief
+                                                                    </td>
+                                                                    <td class="px-4 py-2.5 text-center">₹500000
+                                                                    </td>
                                                                     <td class="px-4 py-2.5 text-center">
                                                                         <button
                                                                             class="bg-soft-pink text-strong-red px-6 py-2 rounded-md text-sm font-semibold">
@@ -5285,15 +5431,19 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="px-4 py-2.5 text-center">20/03/25,14:30
+                                                                    <td class="px-4 py-2.5 text-center">
+                                                                        20/03/25,14:30
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Bills</td>
-                                                                    <td class="px-4 py-2.5 text-center">Bharat Seva<br>
-                                                                        Mandal
+                                                                    <td class="px-4 py-2.5 text-center">Bills
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Poverty Relief
+                                                                    <td class="px-4 py-2.5 text-center">Bharat
+                                                                        Seva<br />Mandal
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">₹500000</td>
+                                                                    <td class="px-4 py-2.5 text-center">Poverty
+                                                                        Relief
+                                                                    </td>
+                                                                    <td class="px-4 py-2.5 text-center">₹500000
+                                                                    </td>
                                                                     <td class="px-4 py-2.5 text-center">
                                                                         <button
                                                                             class="bg-soft-pink text-strong-red px-6 py-2 rounded-md text-sm font-semibold">
@@ -5302,15 +5452,19 @@
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td class="px-4 py-2.5 text-center">20/03/25,14:30
+                                                                    <td class="px-4 py-2.5 text-center">
+                                                                        20/03/25,14:30
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Bills</td>
-                                                                    <td class="px-4 py-2.5 text-center">Bharat Seva<br>
-                                                                        Mandal
+                                                                    <td class="px-4 py-2.5 text-center">Bills
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">Poverty Relief
+                                                                    <td class="px-4 py-2.5 text-center">Bharat
+                                                                        Seva<br />Mandal
                                                                     </td>
-                                                                    <td class="px-4 py-2.5 text-center">₹500000</td>
+                                                                    <td class="px-4 py-2.5 text-center">Poverty
+                                                                        Relief
+                                                                    </td>
+                                                                    <td class="px-4 py-2.5 text-center">₹500000
+                                                                    </td>
                                                                     <td class="px-4 py-2.5 text-center">
                                                                         <button
                                                                             class="bg-mint-cream text-green px-5 py-2 rounded-md text-sm font-semibold">
@@ -5331,25 +5485,23 @@
                                                 <div
                                                     class="bg-white/20 backdrop-blur-md rounded-lg shadow-lg w-[90%] max-w-md p-6 relative">
                                                     <h3 class="text-xl font-semibold mb-4 justify-start text-white">
-                                                        Share </h3>
-                                                    <hr class="my-6 border-dodger-blue border-1">
+                                                        Share
+                                                    </h3>
+                                                    <hr class="my-6 border-dodger-blue border-1" />
 
                                                     <div class="flex gap-4 justify-start">
-
                                                         <button
-                                                            class=" text-white px-4 py-2 rounded  flex flex-col items-center">
+                                                            class="text-white px-4 py-2 rounded flex flex-col items-center">
                                                             <img src="/public/images/whatsappicon.svg" alt="WhatsApp"
-                                                                class="w-8 h-8 mb-1">
+                                                                class="w-8 h-8 mb-1" />
                                                             <span class="text-xs mt-1">WhatsApp</span>
                                                         </button>
                                                         <button
-                                                            class=" text-white px-4 py-2 rounded  flex flex-col items-center">
+                                                            class="text-white px-4 py-2 rounded flex flex-col items-center">
                                                             <img src="/public/images/telegramicon.svg" alt="WhatsApp"
-                                                                class="w-8 h-8 mb-1">
+                                                                class="w-8 h-8 mb-1" />
                                                             <span class="text-xs mt-1">Telegram</span>
                                                         </button>
-
-
                                                     </div>
                                                     <div
                                                         class="flex justify-between items-center border border-gray-300 rounded w-full max-w-xl px-2 py-1">
@@ -5362,54 +5514,58 @@
                                                         </button>
                                                     </div>
                                                     <button
-                                                        class="closeSharePopup absolute top-3 right-3 text-white text-2xl ">
+                                                        class="closeSharePopup absolute top-3 right-3 text-white text-2xl">
                                                         &times;
                                                     </button>
                                                 </div>
                                             </div>
-
                                         </div>
-
                                     </div>
-
                                 </div>
                                 <div class="overflow-x-auto no-scrollbar ">
                                     <table
-                                        class="table-auto min-w-full text-sm text-dark-gray whitespace-nowrap docTable ">
-                                        <thead class="bg-dodger-blue  text-white">
+                                        class="table-auto min-w-full text-sm text-dark-gray whitespace-nowrap  docTable">
+                                        <thead class="bg-dodger-blue text-white">
                                             <tr>
-                                                <th class="text-center px-4 py-4 border-r border-white">Date & Time
+                                                <th class="text-center px-4 py-4 border-r border-white">
+                                                    Date & Time
 
                                                 </th>
                                                 <th class="px-4 py-4 text-center border-r border-white">
                                                     Post Name
-
                                                 </th>
-                                                <th class="text-center px-4 py-4 border-r border-white">NGO Name</th>
-                                                <th class="text-center px-4 py-4 border-r border-white">Post Type</th>
-                                                <th class="text-center px-4 py-4 border-r border-white">Paid Donation
+                                                <th class="text-center px-4 py-4 border-r border-white">
+                                                    NGO Name
+                                                </th>
+                                                <th class="text-center px-4 py-4 border-r border-white">
+                                                    Post Type
+                                                </th>
+                                                <th class="text-center px-4 py-4 border-r border-white">
+                                                    Paid Donation
                                                 </th>
                                                 <th class="text-center px-4 py-4 border-r border-white">
                                                     Status
-
                                                 </th>
-                                                <th class="text-center px-4 py-4 border-r border-white">Actions</th>
+                                                <th class="text-center px-4 py-4 border-r border-white">
+                                                    Actions
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-snow-gray text-dark-gray text-[16px]">
                                             <tr>
-                                                <td class="px-4 py-2.5 text-center">
-                                                    20/03/25,14:30
-                                                </td>
+                                                <td class="px-4 py-2.5 text-center">20/03/25,14:30</td>
                                                 <td class="px-4 py-2.5 text-center">Bills</td>
 
-                                                <td class="px-4 py-2.5 text-center">Bharat Seva<br> Mandal</td>
+                                                <td class="px-4 py-2.5 text-center">
+                                                    Bharat Seva<br />
+                                                    Mandal
+                                                </td>
                                                 <td class="px-4 py-2.5 text-center">Poverty Relief</td>
                                                 <td class="px-4 py-2.5 text-center">₹500000</td>
 
                                                 <td class="px-4 py-2.5 text-center">
                                                     <button
-                                                        class="bg-mint-cream text-green px-5 py-2 rounded-md text-sm font-semibold ">
+                                                        class="bg-mint-cream text-green px-5 py-2 rounded-md text-sm font-semibold">
                                                         Successful
                                                     </button>
                                                 </td>
@@ -5419,12 +5575,12 @@
                                                         <!-- Bookmark icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="material-symbols-outlined bookmark-donate-lab cursor-pointer hover:bg-azure-mist rounded-full p-2 transition-all"
+                                                                class="material-symbols-outlined bookmark-fill cursor-pointer hover:bg-transparent-dodger-blue rounded-full p-2 transition-all"
                                                                 onclick="/* your bookmark logic */">
                                                                 bookmark
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 Bookmark
                                                             </div>
                                                         </div>
@@ -5432,51 +5588,50 @@
                                                         <!-- Assignment icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopup()">
                                                                 <img src="/public/images/assignment.svg"
                                                                     alt="Assignment"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
-                                                                View Tax Bill
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                View Platform Bill
                                                             </div>
                                                         </div>
 
                                                         <!-- Calendar icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopupDonation()">
                                                                 <img src="/public/images/calendar_today.svg"
                                                                     alt="Calendar"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 View Donation Receipt
                                                             </div>
                                                         </div>
 
                                                     </div>
                                                 </td>
+
                                             </tr>
-
-
                                             <tr>
-                                                <td class="px-4 py-2.5 text-center">
-                                                    20/03/25,14:30
-                                                </td>
+                                                <td class="px-4 py-2.5 text-center">20/03/25,14:30</td>
                                                 <td class="px-4 py-2.5 text-center">Bills</td>
 
-                                                <td class="px-4 py-2.5 text-center">Bharat Seva <br>Mandal</td>
+                                                <td class="px-4 py-2.5 text-center">
+                                                    Bharat Seva <br />Mandal
+                                                </td>
                                                 <td class="px-4 py-2.5 text-center">Education</td>
                                                 <td class="px-4 py-2.5 text-center">₹500000</td>
 
                                                 <td class="px-4 py-2.5 text-center">
                                                     <button
-                                                        class="bg-soft-pink text-strong-red px-6 py-2 rounded-md text-sm font-semibold ">
+                                                        class="bg-soft-pink text-strong-red px-6 py-2 rounded-md text-sm font-semibold">
                                                         Failed
                                                     </button>
                                                 </td>
@@ -5486,12 +5641,12 @@
                                                         <!-- Bookmark icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="material-symbols-outlined bookmark-donate-lab cursor-pointer hover:bg-azure-mist rounded-full p-2 transition-all"
+                                                                class="material-symbols-outlined bookmark-fill cursor-pointer hover:bg-transparent-dodger-blue rounded-full p-2 transition-all"
                                                                 onclick="/* your bookmark logic */">
                                                                 bookmark
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 Bookmark
                                                             </div>
                                                         </div>
@@ -5499,29 +5654,29 @@
                                                         <!-- Assignment icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopup()">
                                                                 <img src="/public/images/assignment.svg"
                                                                     alt="Assignment"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
-                                                                View Tax Bill
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                View Platform Bill
                                                             </div>
                                                         </div>
 
                                                         <!-- Calendar icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopupDonation()">
                                                                 <img src="/public/images/calendar_today.svg"
                                                                     alt="Calendar"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 View Donation Receipt
                                                             </div>
                                                         </div>
@@ -5530,18 +5685,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="px-4 py-2.5 text-center">
-                                                    20/03/25,14:30
-                                                </td>
+                                                <td class="px-4 py-2.5 text-center">20/03/25,14:30</td>
                                                 <td class="px-4 py-2.5 text-center">Bills</td>
 
-                                                <td class="px-4 py-2.5 text-center">Bharat Seva<br> Mandal</td>
+                                                <td class="px-4 py-2.5 text-center">
+                                                    Bharat Seva<br />
+                                                    Mandal
+                                                </td>
                                                 <td class="px-4 py-2.5 text-center">Healthcare</td>
                                                 <td class="px-4 py-2.5 text-center">₹10000</td>
 
                                                 <td class="px-4 py-2.5 text-center">
                                                     <button
-                                                        class="bg-mint-cream text-green px-5 py-2 rounded-md text-sm font-semibold ">
+                                                        class="bg-mint-cream text-green px-5 py-2 rounded-md text-sm font-semibold">
                                                         Successful
                                                     </button>
                                                 </td>
@@ -5551,12 +5707,12 @@
                                                         <!-- Bookmark icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="material-symbols-outlined bookmark-donate-lab cursor-pointer hover:bg-azure-mist rounded-full p-2 transition-all"
+                                                                class="material-symbols-outlined bookmark-fill cursor-pointer hover:bg-transparent-dodger-blue rounded-full p-2 transition-all"
                                                                 onclick="/* your bookmark logic */">
                                                                 bookmark
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 Bookmark
                                                             </div>
                                                         </div>
@@ -5564,29 +5720,29 @@
                                                         <!-- Assignment icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopup()">
                                                                 <img src="/public/images/assignment.svg"
                                                                     alt="Assignment"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
-                                                                View Tax Bill
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                View Platform Bill
                                                             </div>
                                                         </div>
 
                                                         <!-- Calendar icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopupDonation()">
                                                                 <img src="/public/images/calendar_today.svg"
                                                                     alt="Calendar"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 View Donation Receipt
                                                             </div>
                                                         </div>
@@ -5595,18 +5751,19 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="px-4 py-2.5 text-center">
-                                                    20/03/25,14:30
-                                                </td>
+                                                <td class="px-4 py-2.5 text-center">20/03/25,14:30</td>
                                                 <td class="px-4 py-2.5 text-center">Bills</td>
 
-                                                <td class="px-4 py-2.5 text-center">Bharat Seva<br> Mandal</td>
+                                                <td class="px-4 py-2.5 text-center">
+                                                    Bharat Seva<br />
+                                                    Mandal
+                                                </td>
                                                 <td class="px-4 py-2.5 text-center">Poverty Relief</td>
                                                 <td class="px-4 py-2.5 text-center">₹500000</td>
 
                                                 <td class="px-4 py-2.5 text-center">
                                                     <button
-                                                        class="bg-soft-pink text-strong-red px-6 py-2 rounded-md text-sm font-semibold ">
+                                                        class="bg-soft-pink text-strong-red px-6 py-2 rounded-md text-sm font-semibold">
                                                         Failed
                                                     </button>
                                                 </td>
@@ -5616,12 +5773,12 @@
                                                         <!-- Bookmark icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="material-symbols-outlined bookmark-donate-lab cursor-pointer hover:bg-azure-mist rounded-full p-2 transition-all"
+                                                                class="material-symbols-outlined bookmark-fill cursor-pointer hover:bg-transparent-dodger-blue rounded-full p-2 transition-all"
                                                                 onclick="/* your bookmark logic */">
                                                                 bookmark
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 Bookmark
                                                             </div>
                                                         </div>
@@ -5629,38 +5786,40 @@
                                                         <!-- Assignment icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopup()">
                                                                 <img src="/public/images/assignment.svg"
                                                                     alt="Assignment"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
-                                                                View Tax Bill
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                View Platform Bill
                                                             </div>
                                                         </div>
 
                                                         <!-- Calendar icon with tooltip below -->
                                                         <div class="relative group">
                                                             <span
-                                                                class="hover:bg-azure-mist rounded-full p-2 transition-all cursor-pointer"
+                                                                class="hover:bg-transparent-dodger-blue rounded-full p-2 transition-all cursor-pointer"
                                                                 onclick="openPopupDonation()">
                                                                 <img src="/public/images/calendar_today.svg"
                                                                     alt="Calendar"
                                                                     class="inline-block w-6 h-6 align-middle" />
                                                             </span>
                                                             <div
-                                                                class="absolute bottom-[-28px] left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
+                                                                class="absolute  left-1/2 -translate-x-1/2 z-20 bg-white border border-dodger-blue rounded-md text-xs px-2 py-1 font-normal hidden group-hover:block whitespace-nowrap shadow">
                                                                 View Donation Receipt
                                                             </div>
                                                         </div>
+
                                                     </div>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+
                                 <div
                                     class=" platform-bill-modal assignmentPopup popup hidden fixed inset-0 flex items-center justify-center bg-smoky-black px-3  z-50">
                                     <div
@@ -5779,14 +5938,16 @@
                                                 </tr>
                                             </table>
                                             <!-- Amount in Words -->
-                                            <div class="mt-5"><strong>Amount in Words:</strong> INR Two Rupees and
+                                            <div class="mt-5"><strong>Amount in Words:</strong> INR Two Rupees
+                                                and
                                                 Thirty-Six Paise Only</div>
 
                                             <!-- Note -->
                                             <div class="mt-5 text-[13px] italic">
                                                 *This invoice is generated for the facilitation of the donation
                                                 process.<br>
-                                                The actual donation amount of ₹100 was made directly to the NGO.*
+                                                The actual donation amount of ₹100 was made directly to the
+                                                NGO.*
                                             </div>
 
                                             <!-- Signature -->
@@ -5895,9 +6056,11 @@
                                             <hr class="border-t border-dashed border-black my-[15px]">
                                             <div class="flex flex-col gap-1">
                                                 <p>Purpose of Donation: Medical Aid for Child in Need</p>
-                                                <p class="flex items-center gap-2"> Eligible for 80G Deduction: <span
+                                                <p class="flex items-center gap-2"> Eligible for 80G Deduction:
+                                                    <span
                                                         class="material-symbols-outlined material-filled text-bright-green">check_box</span>
-                                                    Yes</p>
+                                                    Yes
+                                                </p>
                                             </div>
                                             <!-- Amount in Words -->
                                             <div class="mt-5"><strong>Amount in Words:</strong> INR One Hundred
@@ -5905,7 +6068,8 @@
 
                                             <!-- Note -->
                                             <div class="mt-5 text-[13px] italic">
-                                                *This receipt acknowledges that we have received the above mentioned<br>
+                                                *This receipt acknowledges that we have received the above
+                                                mentioned<br>
                                                 donation voluntarily. Thank you for your support.
                                             </div>
 
@@ -5918,13 +6082,11 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
-                
+
             </div>
     </main>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -5938,6 +6100,7 @@
     <script src="/public/js/toaster.js"></script>
     <script src="/public/js/tabs.js"></script>
     <script src="/public/js/table-pagination.js"></script>
+    <script src="/public/js/table-pagination-donate.js"></script>
     <script src="/public/js/donate.js"></script>
     <script src="/public/js/help.js"></script>
 </body>
