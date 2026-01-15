@@ -236,7 +236,8 @@
     <!-- Content -->
     <div class="h-[calc(100vh-100px)] w-full flex relative z-10 shrink-0">
       <!-- Sidebar -->
-      <aside class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white shrink-0">
+      <aside
+        class="sidebar w-[200px] md:w-[240px] h-full transition-all transform duration-300 ease-in-out bg-white shrink-0">
         <nav class="h-full py-4 overflow-y-auto scroll no-scrollbar">
           <div class="relative w-full flex items-center justify-between pl-[33px]">
             <div class="flex flex-col items-start justify-center">
@@ -269,6 +270,18 @@
               <a href="/src/lab/appointments.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
                 <img src="/public/images/appointments.svg" alt="">
                 <p>Appointments</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/lab/history.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> history </span>
+                <p>History</p>
+              </a>
+            </li>
+            <li>
+              <a href="/src/lab/technician.html" class="flex items-center gap-2.5 pl-[30px] pr-2.5 py-3.5 w-full">
+                <span class="material-symbols-outlined"> group </span>
+                <p>Technician</p>
               </a>
             </li>
             <li>
@@ -517,8 +530,7 @@
               <a href="#" class="text-dodger-blue text-sm font-normal">View all</a>
             </div>
             <div
-              class="bg-white shadow-md w-full  mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-60 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg popup-btn"
-              data-popup="appointmentRequestDetail">
+              class="bg-white shadow-md w-full  mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-50 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg">
               <div class="flex items-center gap-2">
                 <img src="/public/images/patient-4.svg" alt="Patient Profile">
                 <div class="flex flex-col gap-1">
@@ -529,6 +541,8 @@
               <p class="font-normal text-sm text-nowrap">22/07/2025, 12:30 PM</p>
               <p class="font-normal text-sm">Lab Walk-in</p>
               <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined cursor-pointer popup-btn"
+                  data-popup="appointmentRequestDetail">visibility</span>
                 <span class="material-symbols-outlined text-dodger-blue cursor-pointer accept-icon">
                   check_circle
                 </span>
@@ -541,8 +555,7 @@
             </div>
 
             <div
-              class="bg-white shadow-md w-full  mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-60 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg popup-btn"
-              data-popup="appointmentRequestDetail">
+              class="bg-white shadow-md w-full  mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-50 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg">
               <div class="flex items-center gap-2">
                 <img src="/public/images/patient-5.svg" alt="Patient Profile">
                 <div class="flex flex-col gap-1">
@@ -553,6 +566,8 @@
               <p class="font-normal text-sm  text-nowrap">22/07/2025, 01:30 PM</p>
               <p class="font-normal text-sm text-nowrap">Home Collection</p>
               <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined cursor-pointer popup-btn"
+                  data-popup="appointmentRequestDetail">visibility</span>
                 <span class="material-symbols-outlined text-dodger-blue cursor-pointer accept-icon">
                   check_circle
                 </span>
@@ -565,8 +580,7 @@
             </div>
 
             <div
-              class="bg-white shadow-md w-full  mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-60 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg popup-btn"
-              data-popup="appointmentRequestDetail">
+              class="bg-white shadow-md w-full  mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-50 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg">
               <div class="flex items-center gap-2">
                 <img src="/public/images/patient-4.svg" alt="Patient Profile">
                 <div class="flex flex-col gap-1">
@@ -577,6 +591,8 @@
               <p class="font-normal text-sm text-nowrap">22/07/2025, 10:30 AM</p>
               <p class="font-normal text-sm text-nowrap">Home Collection</p>
               <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined cursor-pointer popup-btn"
+                  data-popup="appointmentRequestDetail">visibility</span>
                 <span class=" text-dodger-blue">
                   Accepted
                 </span>
@@ -584,8 +600,7 @@
             </div>
 
             <div
-              class="bg-white shadow-md w-full mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-60 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg popup-btn"
-              data-popup="appointmentRequestDetail">
+              class="bg-white shadow-md w-full mt-4 border-snow border rounded-lg p-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 lg:gap-50 items-center cursor-pointer hover:bg-pale-azure hover:shadow-lg">
               <div class="flex items-center gap-2">
                 <img src="/public/images/patient-4.svg" alt="Patient Profile">
                 <div class="flex flex-col gap-1">
@@ -596,6 +611,8 @@
               <p class="font-normal text-sm text-nowrap">22/07/2025, 10:30 AM</p>
               <p class="font-normal text-sm">Lab Walk-in</p>
               <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined cursor-pointer popup-btn"
+                  data-popup="appointmentRequestDetail">visibility</span>
                 <span class=" text-strong-red">
                   Rejected
                 </span>
@@ -611,9 +628,62 @@
               <div class="flex items-center justify-between">
                 <p class="font-semibold text-sm">Appointment Details</p>
                 <div class="flex items-center gap-4">
-                  <button class="cursor-pointer">
-                    <span class="material-symbols-outlined !text-xl">share</span>
-                  </button>
+                  <div class="relative">
+                    <button class="cursor-pointer popup-btn" data-popup="sharePopup">
+                      <span class="material-symbols-outlined !text-xl ">share</span>
+                    </button>
+                    <!--Share Popup-->
+                    <div class="sharePopup hidden absolute right-0">
+                      <div class="bg-white w-130 rounded-lg shadow-lg p-6 relative border border-dodger-blue">
+                        <div class="flex justify-between items-center">
+                          <p class="font-semibold text-xl">Share</p>
+                          <span class="material-symbols-outlined close-popup cursor-pointer" data-popup="sharePopup">
+                            close
+                          </span>
+                        </div>
+                        <hr class="text-dodger-blue mt-4" />
+                        <div class="flex justify-between pt-4">
+                          <div class="flex flex-col items-center gap-2 w-20 text-center">
+                            <img src="/public/images/whatsappicon.svg" alt="whatsapp logo"
+                              class="w-10 h-10 cursor-pointer" />
+                            <p class="font-normal text-base text-dark-gray">Whatsapp</p>
+                          </div>
+
+                          <div class="flex flex-col items-center gap-2 w-20 text-center">
+                            <img src="/public/images/telegramicon.svg" alt="telegram logo"
+                              class="w-10 h-10 cursor-pointer" />
+                            <p class="font-normal text-base text-dark-gray">Telegram</p>
+                          </div>
+
+                          <div class="flex flex-col items-center gap-2 w-20 text-center">
+                            <img src="/public/images/facebookicon.svg" alt="facebook logo"
+                              class="w-10 h-10 cursor-pointer" />
+                            <p class="font-normal text-base text-dark-gray">Facebook</p>
+                          </div>
+
+                          <div class="flex flex-col items-center gap-2 w-20 text-center">
+                            <img src="/public/images/smsicon.svg" alt="sms logo" class="w-10 h-10 cursor-pointer" />
+                            <p class="font-normal text-base text-dark-gray">Message</p>
+                          </div>
+
+                          <div class="flex flex-col items-center gap-2 w-20 text-center">
+                            <img src="/public/images/gmailicon.svg" alt="gmail logo" class="w-10 h-10 cursor-pointer" />
+                            <p class="font-normal text-base text-dark-gray">E-mail</p>
+                          </div>
+                        </div>
+                        <div class="pt-4 relative mt-6">
+                          <input type="text" id="share-link" value="https://avatar.com/shorts/cZKr0CtLuYU?si=RHci"
+                            class="w-full rounded-md p-4 font-normal text-sm border" disabled />
+                          <button type="button"
+                            class="copy-btn absolute right-3 top-6 bg-dodger-blue text-white rounded-md p-2 cursor-pointer"
+                            data-target="#share-link">
+                            Copy
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                   <button class="close-popup cursor-pointer" data-popup="appointmentRequestDetail">
                     <span class="material-symbols-outlined !text-2xl">close</span>
                   </button>

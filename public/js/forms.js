@@ -69,7 +69,7 @@ $(document).ready(function () {
   $(".editIcon").on("click", function () {
     $(".edit-details").removeClass("hidden");
     $(".account-detail").hide();
-    $(".tabs").hide();
+    $(".setting-tabs").hide();
     $(".edit-toggle").hide();
     $(".tabs-menu").hide();
   });
@@ -80,7 +80,7 @@ $(document).ready(function () {
     $(".edit-details").addClass("hidden");
     $(".toggle-section").addClass("hidden");
     $(".account-detail").show();
-    $(".tabs").show();
+    $(".setting-tabs").show();
     $(".setting-header").show();
     $(".edit-toggle").show();
     $(".tabs-menu").show();
@@ -156,7 +156,7 @@ $(document).ready(function () {
     // Hide form
     $(".edit-details").addClass("hidden");
     $(".account-detail").show();
-    $(".tabs").show();
+    $(".setting-tabs").show();
   });
 
   // Input validation clearing for edit form
@@ -244,7 +244,7 @@ $(document).ready(function () {
     $(".toggle-section").addClass("hidden");
     $(".setting-header").hide();
     $(".account-detail").hide();
-    $(".tabs").hide();
+    $(".setting-tabs").hide();
     $(`.toggle-section[data-section="${target}"]`).removeClass("hidden");
     $(".tabs-menu").hide();
   });
@@ -304,7 +304,7 @@ $(document).ready(function () {
 
     $(".toggle-section").addClass("hidden");
     $(".account-detail").show();
-    $(".tabs").show();
+    $(".setting-tabs").show();
 
     window.showToaster("success", "Password changed successfully!");
   });
