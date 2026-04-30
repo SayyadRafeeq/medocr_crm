@@ -546,4 +546,53 @@ $(document).ready(function () {
     e.stopPropagation();
   });
 
+  const centerTextPlugin = {
+  id: 'centerText',
+  beforeDraw(chart) {
+    const { width, height, ctx } = chart;
+
+    ctx.save();
+
+    ctx.font = '600 18px sans-serif';
+    ctx.fillStyle = '#161C24';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('17/25', width / 2, height / 2 - 8);
+
+    ctx.font = '12px sans-serif';
+    ctx.fillStyle = '#6B7280';
+    ctx.fillText('Bids Left Today', width / 2, height / 2 + 8);
+   
+
+    ctx.restore();
+  }
+};
+
+// ✅ IMPORTANT FIX HERE
+const ctxBids = $('#yourBidsChart')[0].getContext('2d');
+
+new Chart(ctxBids, {
+  type: 'doughnut',
+  data: {
+    labels: ['Completed', 'Upcoming', 'Cancelled'],
+    datasets: [{
+      data: [25, 8],
+      backgroundColor: [
+        '#1C7AE4',
+        '#9CC8F5'
+      ],
+      borderWidth: 0,
+      borderRadius: 6
+    }]
+  },
+  options: {
+    responsive: true,
+    cutout: '80%',
+    plugins: {
+      legend: { display: false }
+    }
+  },
+  plugins: [centerTextPlugin]
+});
+
 });

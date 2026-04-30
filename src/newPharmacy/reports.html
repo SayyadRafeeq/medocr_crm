@@ -433,7 +433,72 @@
               </div>
             </div>
           </div>
+          <div class="grid grid-cols-2 gap-5">
+            <!--Subscription Details-->
+            <div class="bg-white border border-cool-ice-gray rounded-sm p-4 flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <p class="font-semibold text-lg text-midnight-blue-gray">Subscription Details</p>
+                <div class="w-[120px] h-10 flex items-center justify-center bg-premium-light-blue rounded-[10px]">
+                  <span class="font-semibold text-base text-primary-blue">Active</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="font-normal text-lg text-midnight-blue-gray">Premium Subscription Plan</p>
+                <p class="font-bold text-[32px] text-blue-charcoal">&#8377;999<span
+                    class="font-normal text-base">/month</span></p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-base text-cool-gray">High-value leads</p>
+                  <p class="font-normal text-sm text-cool-gray text-left">24th May, 2026 (32 days left)</p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-base text-cool-gray">Fewer but richer bids</p>
+                  <p class="font-normal text-sm text-cool-gray text-left! shrink-0">Featured listing</p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-base text-cool-gray">Doctors gain in efficiency</p>
+                  <p class="font-normal text-sm text-cool-gray ">Analytics Dashboard</p>
+                </div>
+              </div>
+              <div class="pt-3.5 flex items-center justify-center">
+                <a href="/src/newPharmacy/settings.html?tab=subscription"
+                  class="bg-primary-blue w-[322px] h-10 rounded-lg flex items-center justify-center">
+                  <span class="font-semibold text-sm text-white">View Plan Details</span>
+                </a>
+              </div>
+            </div>
 
+            <!--Your Bids-->
+            <div class="bg-white border border-cool-ice-gray rounded-sm p-4 flex flex-col gap-4">
+              <p class="font-semibold text-lg text-midnight-blue-gray">Your Bids</p>
+              <div class="flex items-center justify-between">
+                <div class="w-40 h-40 relative">
+                  <canvas id="yourBidsChart"></canvas>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-semibold text-base text-blue-charcoal">Total Bids Per Day</p>
+                  <p class="font-semibold text-base text-blue-charcoal">Used Bids</p>
+                  <p class="font-semibold text-base text-blue-charcoal">Remaining Bids</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-semibold text-xl text-primary-blue">25</p>
+                  <p class="font-semibold text-xl text-primary-blue">8</p>
+                  <p class="font-semibold text-xl text-primary-blue">17</p>
+                </div>
+              </div>
+              <div class="pt-3.5 flex items-center justify-center mt-5">
+                <a href="history.html"
+                  class="bg-primary-blue w-[322px] h-10 rounded-lg flex items-center justify-center">
+                  <span class="font-semibold text-sm text-white">View Bid History</span>
+                </a>
+              </div>
+            </div>
+
+
+
+
+          </div>
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div
               class="bg-white border border-frost-white shadow-(--box-shadow-14) rounded-[14px] p-4 flex flex-col gap-2 h-[316px]">

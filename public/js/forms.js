@@ -1,64 +1,71 @@
 $(document).ready(function () {
-  
   // ===== POPUP FUNCTIONS - MOVED INSIDE DOCUMENT READY =====
-  
+
   // Define popup functions globally so inline onclick can access them
-  window.openPopup = function(id) {
-    $("#" + id).removeClass("hidden").addClass("flex");
+  window.openPopup = function (id) {
+    $("#" + id)
+      .removeClass("hidden")
+      .addClass("flex");
     $("body").css("overflow", "hidden");
   };
 
-  window.closePopup = function(id) {
-    $("#" + id).addClass("hidden").removeClass("flex");
+  window.closePopup = function (id) {
+    $("#" + id)
+      .addClass("hidden")
+      .removeClass("flex");
     $("body").css("overflow", "auto");
   };
 
-  window.clearSearchHistory = function() {
+  window.clearSearchHistory = function () {
     window.showToaster("success", "Search history cleared!");
     closePopup("searchHistoryPopup");
   };
 
-  window.clearSavedData = function() {
+  window.clearSavedData = function () {
     window.showToaster("success", "Saved data cleared!");
     closePopup("savedDataPopup");
   };
 
-  window.deleteAccount = function() {
+  window.deleteAccount = function () {
     window.showToaster("success", "Account deleted!");
     closePopup("deleteAccountPopup");
   };
 
   // ===== ALTERNATIVE: USE JQUERY EVENT HANDLERS (RECOMMENDED) =====
   // Replace inline onclick with data attributes in HTML, then use these handlers:
-  
+
   // Open popup via data attribute
-  $(document).on("click", "[data-popup-open]", function(e) {
+  $(document).on("click", "[data-popup-open]", function (e) {
     e.preventDefault();
     const popupId = $(this).data("popup-open");
-    $("#" + popupId).removeClass("hidden").addClass("flex");
+    $("#" + popupId)
+      .removeClass("hidden")
+      .addClass("flex");
     $("body").css("overflow", "hidden");
   });
 
   // Close popup via data attribute
-  $(document).on("click", "[data-popup-close]", function(e) {
+  $(document).on("click", "[data-popup-close]", function (e) {
     e.preventDefault();
     const popupId = $(this).data("popup-close");
-    $("#" + popupId).addClass("hidden").removeClass("flex");
+    $("#" + popupId)
+      .addClass("hidden")
+      .removeClass("flex");
     $("body").css("overflow", "auto");
   });
 
   // Specific popup actions
-  $(document).on("click", "[data-action='clearSearchHistory']", function() {
+  $(document).on("click", "[data-action='clearSearchHistory']", function () {
     window.showToaster("success", "Search history cleared!");
     closePopup("searchHistoryPopup");
   });
 
-  $(document).on("click", "[data-action='clearSavedData']", function() {
+  $(document).on("click", "[data-action='clearSavedData']", function () {
     window.showToaster("success", "Saved data cleared!");
     closePopup("savedDataPopup");
   });
 
-  $(document).on("click", "[data-action='deleteAccount']", function() {
+  $(document).on("click", "[data-action='deleteAccount']", function () {
     window.showToaster("success", "Account deleted!");
     closePopup("deleteAccountPopup");
   });
@@ -198,7 +205,7 @@ $(document).ready(function () {
 
   function handleTabSwitch(tabTarget) {
     $(".tab-btn").removeClass(
-      "border-b-2 text-light-sea-green text-vivid-orange text-dark-blue text-living-coral text-violet-sky"
+      "border-b-2 text-light-sea-green text-vivid-orange text-dark-blue text-living-coral text-violet-sky",
     );
     $("#" + tabTarget).removeClass("hidden");
     let activeClass = "border-b-2 text-light-sea-green";
@@ -424,7 +431,7 @@ $(document).ready(function () {
     $input.val("");
     $input.prop("readonly", false).focus();
     $(".issue-type-dropdown").hide();
-    
+
     $input.on("blur", function () {
       $(this).prop("readonly", true);
     });
@@ -478,7 +485,7 @@ $(document).ready(function () {
     $input.data("original", currentValue.toUpperCase());
     $text.replaceWith($input);
     $input.focus();
-    
+
     $input.on("input", function () {
       this.value = this.value.toUpperCase();
     });
@@ -492,7 +499,7 @@ $(document).ready(function () {
     if ($input.length === 0) return;
     const newValue = $input.val().trim().toUpperCase();
     const $newP = $(
-      `<p class="doc-info font-normal text-base text-medium-gray">${newValue}</p>`
+      `<p class="doc-info font-normal text-base text-medium-gray">${newValue}</p>`,
     );
     $input.replaceWith($newP);
     $container.find(".buttons-container").addClass("hidden");
@@ -505,7 +512,7 @@ $(document).ready(function () {
     if ($input.length === 0) return;
     const fallback = $input.data("original") || "U8110MH2022PTC123456";
     const $newP = $(
-      `<p class="doc-info font-normal text-base text-medium-gray">${fallback}</p>`
+      `<p class="doc-info font-normal text-base text-medium-gray">${fallback}</p>`,
     );
     $input.replaceWith($newP);
     $container.find(".buttons-container").addClass("hidden");
@@ -681,38 +688,38 @@ $(document).ready(function () {
     $(".paymentFailedPopup").addClass("hidden");
   });
 
-  $('.try-again-btn').on('click',function(){
-    $('.paymentFailedPopup').addClass('hidden')
-    $('.paymentDetailsPopup').removeClass('hidden')
-  })
+  $(".try-again-btn").on("click", function () {
+    $(".paymentFailedPopup").addClass("hidden");
+    $(".paymentDetailsPopup").removeClass("hidden");
+  });
 
   if ($(window).width() > 768) {
-    $('.info-container').hover(
-      function() {
-        $(this).find('.info-section').removeClass('hidden');
+    $(".info-container").hover(
+      function () {
+        $(this).find(".info-section").removeClass("hidden");
       },
-      function() {
-        $(this).find('.info-section').addClass('hidden');
-      }
+      function () {
+        $(this).find(".info-section").addClass("hidden");
+      },
     );
   } else {
     // For mobile/small screens: toggle on click
-    $('.info-icon-subscription').on('click', function(e) {
+    $(".info-icon-subscription").on("click", function (e) {
       e.stopPropagation();
-      $(this).siblings('.info-section').toggleClass('hidden');
+      $(this).siblings(".info-section").toggleClass("hidden");
     });
-    
+
     // Close when clicking outside
-    $(document).on('click', function(e) {
-      if (!$(e.target).closest('.info-container').length) {
-        $('.info-section').addClass('hidden');
+    $(document).on("click", function (e) {
+      if (!$(e.target).closest(".info-container").length) {
+        $(".info-section").addClass("hidden");
       }
     });
   }
-  
+
   // Handle window resize
-  $(window).on('resize', function() {
-    $('.info-section').addClass('hidden');
+  $(window).on("resize", function () {
+    $(".info-section").addClass("hidden");
   });
 
   const isTouch = "ontouchstart" in window || navigator.maxTouchPoints;
@@ -730,16 +737,16 @@ $(document).ready(function () {
   const $bellIcon = $("#bell-icon");
   const $popup = $("#popup");
   const $closePopup = $("#close-popup");
-  
+
   $bellIcon.on("click", function (e) {
     e.stopPropagation();
     $popup.toggleClass("hidden");
   });
-  
+
   $closePopup.on("click", function () {
     $popup.addClass("hidden");
   });
-  
+
   $(document).on("click", function (e) {
     const $target = $(e.target);
 
@@ -754,7 +761,12 @@ $(document).ready(function () {
       // Handle view details dropdown if needed
     }
   });
+  const params = new URLSearchParams(window.location.search);
+  const tab = params.get("tab");
 
+  if (tab === "subscription") {
+    $('.main-tab[data-tab="subscription"]').trigger("click");
+  }
 });
 
 // ===== HELPER FUNCTIONS OUTSIDE DOCUMENT READY =====
@@ -847,7 +859,7 @@ function setupPagination({
         .addClass(
           i === activePage
             ? `bg-dodger-blue text-white`
-            : "bg-pagination text-jet-black"
+            : "bg-pagination text-jet-black",
         )
         .on("click", function () {
           currentPage = i;
@@ -866,7 +878,7 @@ function setupPagination({
 
   $(`#${nextBtnId}`).on("click", function () {
     const totalPages = Math.ceil(
-      $(`#${containerId} .${cardClass}`).length / cardsPerPage
+      $(`#${containerId} .${cardClass}`).length / cardsPerPage,
     );
     if (currentPage < totalPages) {
       currentPage++;

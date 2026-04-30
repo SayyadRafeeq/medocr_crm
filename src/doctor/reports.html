@@ -432,8 +432,149 @@
                 <img src="/public/images/avg_revenue.svg" alt="">
               </div>
             </div>
+            <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+              <div class="flex flex-col justify-between gap-1">
+                <h2 class="font-normal text-sm">Total Appointments</h2>
+                <p class="text-base sm:text-lg font-semibold">120</p>
+              </div>
+              <div
+                class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+                <span class="material-symbols-outlined !font-semibold text-dodger-blue">outpatient_med</span>
+              </div>
+            </div>
+            <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+              <div class="flex flex-col justify-between gap-1">
+                <h2 class="font-normal text-sm">Today's Appointments</h2>
+                <p class="text-base sm:text-lg font-semibold">8</p>
+              </div>
+              <div
+                class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+                <span class="material-symbols-outlined !font-semibold text-dodger-blue">outpatient_med</span>
+              </div>
+            </div>
+            <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+              <div class="flex flex-col justify-between gap-1">
+                <h2 class="font-normal text-sm">Upcoming</h2>
+                <p class="text-base sm:text-lg font-semibold">15</p>
+              </div>
+              <div
+                class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+                <img src="/public/images/quarter_growth.svg" alt="">
+              </div>
+            </div>
+            <div class="bg-ghost-white p-4 rounded-lg flex items-center justify-between gap-3">
+              <div class="flex flex-col justify-between gap-1">
+                <h2 class="font-normal text-sm">Completed</h2>
+                <p class="text-base sm:text-lg font-semibold">95</p>
+              </div>
+              <div
+                class="bg-light-dodger-blue flex justify-center items-center w-12 h-12 sm:w-14 sm:h-14 rounded-full shrink-0">
+                <img src="/public/images/avg_revenue.svg" alt="">
+              </div>
+            </div>
           </div>
+          <div class="grid grid-cols-2 gap-5">
+            <!--Subscription Details-->
+            <div class="bg-white border border-cool-ice-gray rounded-sm p-4 flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <p class="font-semibold text-lg text-midnight-blue-gray">Subscription Details</p>
+                <div class="w-[120px] h-10 flex items-center justify-center bg-premium-light-blue rounded-[10px]">
+                  <span class="font-semibold text-base text-primary-blue">Active</span>
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="font-normal text-lg text-midnight-blue-gray">Premium Subscription Plan</p>
+                <p class="font-bold text-[32px] text-blue-charcoal">&#8377;999<span
+                    class="font-normal text-base">/month</span></p>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-base text-cool-gray">High-value leads</p>
+                  <p class="font-normal text-sm text-cool-gray text-left">24th May, 2026 (32 days left)</p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-base text-cool-gray">Fewer but richer bids</p>
+                  <p class="font-normal text-sm text-cool-gray text-left! shrink-0">Featured listing</p>
+                </div>
+                <div class="flex items-center justify-between">
+                  <p class="font-semibold text-base text-cool-gray">Doctors gain in efficiency</p>
+                  <p class="font-normal text-sm text-cool-gray ">Analytics Dashboard</p>
+                </div>
+              </div>
+              <div class="pt-3.5 flex items-center justify-center">
+                <a href="/src/doctor/settings.html?tab=subscription" class="bg-primary-blue w-[322px] h-10 rounded-lg flex items-center justify-center">
+                  <span class="font-semibold text-sm text-white">View Plan Details</span>
+                </a>
+              </div>
+            </div>
 
+            <!--Your Bids-->
+            <div class="bg-white border border-cool-ice-gray rounded-sm p-4 flex flex-col gap-4">
+              <p class="font-semibold text-lg text-midnight-blue-gray">Your Bids</p>
+              <div class="flex items-center justify-between">
+                <div class="w-40 h-40 relative">
+                  <canvas id="yourBidsChart"></canvas>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-semibold text-base text-blue-charcoal">Completed</p>
+                  <p class="font-semibold text-base text-blue-charcoal">Upcoming</p>
+                  <p class="font-semibold text-base text-blue-charcoal">Cancelled</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-semibold text-xl text-primary-blue">25</p>
+                  <p class="font-semibold text-xl text-primary-blue">8</p>
+                  <p class="font-semibold text-xl text-scarlet-red">17</p>
+                </div>
+              </div>
+              <div class="pt-3.5 flex items-center justify-center mt-5">
+                <a href="history.html" class="bg-primary-blue w-[322px] h-10 rounded-lg flex items-center justify-center">
+                  <span class="font-semibold text-sm text-white">View Bid History</span>
+                </a>
+              </div>
+            </div>
+
+            <!--Today's Appointments-->
+            <div class="bg-white border border-cool-ice-gray rounded-sm p-4 flex flex-col gap-4">
+              <p class="font-semibold text-lg text-midnight-blue-gray">Today’s Appointments</p>
+              <div class="flex items-center justify-between pt-10">
+               
+                <div class="flex flex-col gap-4">
+                  <p class="font-bold text-base text-cool-gray">Total</p>
+                  <p class="font-bold text-base text-shamrock-green">Completed</p>
+                  <p class="font-bold text-base text-cool-gray">Pending</p>
+                </div>
+                <div class="flex flex-col gap-4">
+                  <p class="font-normal text-base text-cool-gray">8</p>
+                  <p class="font-normal text-base text-cool-gray">5</p>
+                  <p class="font-normal text-base text-cool-gray">3</p>
+                </div>
+              </div>
+             
+            </div>
+
+            <!--Next Appointment-->
+            <div class="bg-white border border-cool-ice-gray rounded-sm p-4 flex flex-col gap-4">
+              <p class="font-semibold text-lg text-midnight-blue-gray">Next Appointment</p>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-[13px]">
+                  <img src="/public/images/doctor-5.jpg" alt="doctor" class="w-11 h-11 rounded-full ">
+                  <p class="font-normal text-base text-midnight-blue-gray">Riya Sharma</p>
+                </div>
+                <p class="font-normal text-base text-midnight-blue-gray">12:30 PM, Today</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <p class="font-normal text-base text-midnight-blue-gray">Problem: Fever</p>
+                <button class="w-[158px] h-10 flex items-center justify-center bg-premium-light-blue rounded-[10px] cursor-pointer">
+                 <span class="font-semibold text-base text-primary-blue">View Consultation</span>
+                </button>
+              </div>
+              <div class="pt-8 flex items-center justify-center mt-5">
+                <a href="appointments.html" class="bg-primary-blue w-[322px] h-10 rounded-lg flex items-center justify-center">
+                  <span class="font-semibold text-sm text-white">View Details</span>
+                </a>
+              </div>
+            </div>
+          </div>
           <!-- Charts Section -->
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr">
             <!--Heat map-->
